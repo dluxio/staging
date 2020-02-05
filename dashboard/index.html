@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en"><head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,6 +15,8 @@
   <script type="text/javascript" src="../ScriptLibrary/dmxDataBindings.js"></script>
   <script type="text/javascript" src="../ScriptLibrary/dmxDataSet.js"></script>
   <script type="text/javascript">
+	  
+
   /* dmxDataSet name "photo" */
        jQuery.dmxDataSet(
          {"id": "photo", "preset": "Flickr_Public_Feed", "url": "http://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=?", "data": {"tags": "", "tagmode": "ALL", "ids": "89023698@N00", "lang": "en-us"}, "designUrl": "http://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=?&tags=&tagmode=ALL&ids=89023698@N00&lang=en-us", "dataType": "jsonp"}
@@ -59,7 +60,7 @@
           <li class="nav-item">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
               <span data-feather="home"></span>
-              Dashboard <span class="sr-only">(current)</span>
+              Home <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
@@ -93,39 +94,220 @@
               Settings
             </a>
           </li>
-        </ul>
-
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-          <span>CONNECTIONS</span>
-          <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-            <span data-feather="plus-circle"></span>
-          </a>
-        </h6>
-        <ul class="nav flex-column mb-2">
-          <li class="nav-item">
+			<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">CONNECTIONS
+           <a class="d-flex align-items-center text-muted" href="connectionModal" aria-label="Add a new connection"><span data-feather="plus-circle"></span></a></h6>
+			<li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="coffee"></span>
               Steem Wallet
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="loader"></span>
+            <a class="nav-link" id="dlux-wallet-tab" data-toggle="tab" href="#dlux-wallet" role="tab" aria-controls="dlux-wallet">
+              <span data-feather="zap"></span>
               dlux Wallet
             </a>
           </li>
 			
         </ul>
+
+        
+        <ul class="nav flex-column mb-2">
+          
+			
+        </ul>
       </div>
     </nav>
 	 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"> 
-	  <div class="tab-content" id="myTabContent">
-		  
-	 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    
+	  <div class="tab-content" id="mainTabContent">
+	
+		  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
+        <h1 class="h2">Home</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group mr-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary">Profile</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Sell</button>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
+            <span data-feather="calendar"></span>
+            This Week
+          </button>
+			<div class="dropdown-menu">
+    <a class="dropdown-item" href="#">This Month</a>
+    <a class="dropdown-item" href="#">This Year</a>
+    <a class="dropdown-item" href="#">All Time</a>
+  </div>
+        </div>
+      </div>
+<div class="container mt-3">
+      <div class="row">
+        <div class="col-12">
+          <div class="jumbotron">
+            <h1 class="display-4">dlux Sidechain</h1>
+            
+			<p class="lead">Explore all the content and transactions currently running on the dlux sidechain.</p>
+			  <hr class="my-4">
+			  <p>dlux price ticker or something</p>
+          </div>
+        </div>
+      </div>
+            </div>
+      <hr>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-12">
+            <ul class="list-unstyled">
+              <li class="media">
+                <img class="mr-3 rounded-circle" src="../images/100X100.gif" alt="Generic placeholder image">
+                <div class="media-body">
+                  <h5 class="mt-0 mb-1">#1 Node</h5>
+                  <p class="mb-0">System Report System Report System Report System Report System Report System Report</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12">
+            <ul class="list-unstyled">
+              <li class="media">
+                <img class="mr-3 rounded-circle" src="../images/100X100.gif" alt="Generic placeholder image">
+                <div class="media-body ">
+                  <h5 class="mt-0 mb-1">#2 Node</h5>
+                  <p class="mb-0">System Report System Report System Report System Report System Report System Report</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 d-md-none d-lg-block">
+            <ul class="list-unstyled">
+              <li class="media">
+                <img class="mr-3 rounded-circle" src="../images/100X100.gif" alt="Generic placeholder image">
+                <div class="media-body">
+                  <h5 class="mt-0 mb-1">#3 Node</h5>
+                  <p class="mb-0">System Report System Report System Report System Report System Report System Report</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </section>
+    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-12">
+          <div class="row">
+            <div class="col-sm-6 col-12">
+              <div class="card">
+                <img class="card-img-top" src="../images/400X200.gif" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">360 Video Vacation</h5>
+                  <p class="card-text">My family gets out of control on our yearly trip to exotic places. Stream it at Platform, the only place for premium VR video.</p>
+                  <a href="#" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Platform</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-12">
+              <div class="card">
+                <img class="card-img-top" src="../images/400X200.gif" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Duman Gallery VR</h5>
+                  <p class="card-text">Free to view on mobile, desktop, and headset. You won't believe your eyes when you see.</p>
+                  <a href="#" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> WebVR</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-12">
+              <div class="card">
+                <img class="card-img-top" src="../images/400X200.gif" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">VR Chat Room</h5>
+                  <p class="card-text">Pick a spot and invite your friends. Works in Oculus Quest browser. It includes touch support for hands. Play games.</p>
+                  <a href="#" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> WebVR</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-12">
+              <div class="card">
+                <img class="card-img-top" src="../images/400X200.gif" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">3D 180 </h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Platform</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="col-lg-4 col-12">
+          <div class="row mx-0">
+            <div class="col-12 card bg-light mx-auto">
+              <h3 class="text-center card-header">Search DLUX&nbsp;</h3>
+              <form class="card-body">
+                <div class="form-group row">
+                  <label for="location1" class="col-form-label">Type</label>
+                  <select class="form-control" name="location" id="location1">
+                    <option value="">Any </option>
+                    <option value="">360 Video </option>
+                    <option value="">3D 180 Video </option>
+					<option value="">VR Experience </option>
+					<option value="">AR Experience </option>
+                  </select>
+                </div>
+                <div class="form-group row">
+                  <label for="pricefrom" class="col-form-label">Price From</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text" id="basic-addon1">$</div>
+                    </div>
+                    <input type="text" class="form-control" id="pricefrom" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="priceto" class="col-form-label">Price To</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text" id="basic-addon2">$</div>
+                    </div>
+                    <input type="text" class="form-control" id="priceto" aria-describedby="basic-addon2">
+                  </div>
+                </div>
+                <p class="text-center"><a href="#" class="btn btn-danger" role="button">Search </a></p>
+              </form>
+            </div>
+            <div class="col-12">
+              <p><h3 class="text-center">Asset Prices</h3></p>
+              <hr>
+              <div class="media">
+                <img class="mr-3" src="../images/64X64.gif" alt="Generic placeholder image">
+                <div class="media-body">
+                  <h5 class="mt-0">DLUX&nbsp;</h5>
+                 <p>0.00002 STM <br> <a href="#">Purchase</a></p>
+                </div>
+              </div>
+              <div class="media mt-2">
+                <img class="mr-3" src="../images/64X64.gif" alt="Generic placeholder image">
+                <div class="media-body">
+                  <h5 class="mt-0">STEEM</h5>
+                  <p>12,732.12 DLX <br> 
+                  <a href="#">Purchase</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+		  </div>
 		  
+	 <div class="tab-pane fade show " id="dlux-wallet" role="tabpanel" aria-labelledby="dlux-wallet-tab">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dlux Token</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
@@ -392,13 +574,13 @@
 	</div>
 		  
 		  
-		 <div class="tab-pane fade show " id="videos" role="tabpanel" aria-labelledby="videos-tab">
+		 <div class="tab-pane fade show" id="videos" role="tabpanel" aria-labelledby="videos-tab">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Videos</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Upload</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Record</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" href="#videoUploadModal" data-toggle="modal">Upload</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" href="#videoRecordModal" data-toggle="modal">Record</button>
           </div>
 			<div class="dropdown">
           <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
@@ -413,6 +595,83 @@
         </div>
       </div>
 			 </div>
+			 
+<div class="modal fade" id="videoUploadModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-full" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Video Upload</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" id="VUMresult">
+                <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading"><strong>Supports</strong> <small>HEVC (H.265) up to 4K 60 FPS (4096x2160)</small></div>
+        <div class="panel-body">
+
+          <!-- Standar Form -->
+          <h4 class="mt-4">Select</h4>
+          <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+            <div class="form-inline">
+              <div class="form-group">
+                <input type="file" name="files[]" id="js-upload-files" multiple>
+              </div>
+              <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
+            </div>
+          </form>
+
+          <!-- Drop Zone -->
+          <h4 class="mt-4">Drag and Drop</h4>
+          <div class="upload-drop-zone" id="drop-zone">
+            Just drag and drop files here
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+              <span class="sr-only">60% Complete</span>
+            </div>
+          </div>
+
+          <!-- Upload Finished -->
+          <div class="js-upload-finished mt-4">
+            <h3>Processed files</h3>
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>wakeboarding-trip.mov</a>
+              <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>skydiving.mov</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+    </div>
+    <div class="modal-footer">
+			<p></p>
+			</div>        
+        </div>
+    </div>
+</div>
+			 
+			 <div class="modal fade" id="videoRecordModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-full" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Video Recording</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body p-4" id="VRMresult">
+                <p>We do not currently support video recording in browser on your device.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <div class="container">
       <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" style="background-color: grey">
@@ -839,10 +1098,11 @@
       
 		</div>
 		  </div>
-	   
+
+		 
 	 </main>
 	 </div>
-		  
+	  </div>
  
 
 <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
@@ -851,7 +1111,7 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="../js/popper.min.js"></script> 
   <script src="../js/bootstrap-4.3.1.js"></script>
-	  
+<script src="../js/dropzone.js"></script>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
 	  <script src="dashboard.js"></script>
