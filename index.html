@@ -29,8 +29,11 @@ function getCookie(c_name){
 }
 let user
 function checkCookie(){
+	console.log('Checking for login...')
     user = getCookie('user');
+	console.log('user='+user)
     if (user!=null){
+	console.log(user + ' logged in successfully')
       document.getElementById('user-button').href.value = 'dashboard/index.html?e='+ user;
     }
 }
