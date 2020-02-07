@@ -123,3 +123,11 @@ body {
   color: #222;
   border-color: #222;
 }
+.testimonial-group > .row {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.testimonial-group > .row > .col-quests {
+  display: inline-block;
+  float: none;
+}
