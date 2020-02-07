@@ -12,7 +12,7 @@
   </head>
   <body class="text-center">
 	  
-	<form class="form-signin">
+	<form class="form-signin" action="api/login" method="post">
 		<img src="images/dluxcolorlogo.png" alt="Placeholder image" width="72" height="72" class="img-fluid rounded">
 <h1>Please sign in</h1>
 		<br>
@@ -20,7 +20,7 @@
 	<div class="row">
   <div class="form-group mx-sm-3 mb-2">
     <label for="inputEmail" class="sr-only">Email</label>
-    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
   </div>
   <a href="#"><button type="submit" class="btn mb-2 btn-danger"> <i class="fas fa-paper-plane"></i> Magic Link</button></a>
 </div>
