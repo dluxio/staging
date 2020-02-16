@@ -5,23 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>dlux User Dashboard</title>
   <!-- Bootstrap -->
-  <link href="../css/bootstrap-4.3.1.css" rel="stylesheet">
+  <!-- <link href="../css/bootstrap-4.3.1.css" rel="stylesheet"> -->
+  <link href="../css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
   <link href="dashboard.css" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
   <style type="text/css">
   /* Chart.js */
 @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}
   </style>
-  <script type="text/javascript" src="../ScriptLibrary/jquery-latest.pack.js"></script>
+<!-- <script type="text/javascript" src="../ScriptLibrary/jquery-latest.pack.js"></script> -->
+  <script src="../js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="../ScriptLibrary/dmxDataBindings.js"></script>
   <script type="text/javascript" src="../ScriptLibrary/dmxDataSet.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-    <script src="vendor/aframe-master-custom.js"></script>
-<script src="vendor/three.xr.js"></script>
-    <script src="vendor/aframe-xr.js"></script>
-    <script src="vendor/aframe-input-mapping-component.js"></script>
-    <script src="build.js"></script>
-    <link rel="stylesheet" href="css/main.css">
-  <script type="text/javascript">
+
+<script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+<script type="text/javascript">
     const urlParams = new URLSearchParams(window.location.search);
     let userpage = urlParams.get('e'),
         user
@@ -321,7 +319,7 @@
 		  </div>
 		  
 		  <!-- Avatar Tab -->
-	    <div class="tab-pane fade show active" id="avatar" role="tabpanel" aria-labelledby="avatar-tab">
+	    <div class="tab-pane fade show" id="avatar" role="tabpanel" aria-labelledby="avatar-tab">
    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 			<h1 class="h2">Avatar</h1>
 			<div class="float-right btn-group btn-group-sm">
@@ -330,10 +328,10 @@
         <a href="#avatar-design" class="btn-sm btn-outline-secondary nav-link active mr-2" data-toggle="tab"><span data-feather="grid"></span> Design</a>
     </li>
     <li class="nav-item">
-        <a href="#avatar-upload" class="btn-sm btn-outline-secondary nav-link mr-2" data-toggle="tab"><span data-feather="upload"></span> Upload</a>
+        <a href="#avatar-upload" class="btn-sm btn-outline-secondary nav-link mr-2" data-toggle="tab"><span data-feather="plus-square"></span> Import</a>
     </li>
     <li class="nav-item">
-        <a href="#avatar-pose" class="btn-sm btn-outline-secondary nav-link mr-2" data-toggle="tab"><span data-feather="anchor"></span> Pose</a>
+        <a href="#avatar-download" class="btn-sm btn-outline-secondary nav-link mr-2" data-toggle="tab"><span data-feather="box"></span> Export</a>
     </li>
 </ul>
 		</div>
@@ -341,38 +339,144 @@
 <div class="tab-content">
 	<!-- must be active for XR to display -->
     <div class="tab-pane fade show active" id="avatar-design">
-       <div id="arui">
-      <div id="arui-step1">
-          <div id="arui-device-icon"><img src="assets/images/device-icon.png"/></div>
-          <div class="arui-text">Move around to detect a surface</div>
-      </div>
-      <div id="arui-step2">
-          <div class="arui-text">Tap to place</div>
-      </div>
-    </div>
 		<div id="container">
-      <div id="body">
-        <div id="upperSheet">
-          <div id="visualSheet">
-              <div id="thumbs">
-                <div id="thumb0" class="thumb"><img src="assets/images/thumbs-0-0-0.png"/></div>
-                <div id="thumb1" class="thumb"><img src="assets/images/thumbs-0-0-1.png"/></div>
-                <div id="thumb2" class="thumb last selected"><img src="assets/images/thumbs-0-0-2.png"/></div>
+			<div class="row">
+			  <div class="col-xl-8">
+				<div class="container">
+				  <div class="row">
+				    
+					  
+					  <div class="container-fluid">
+					    <ul id="avatar-nav" class="nav nav-pills" role="tablist" style="text-align: center">
+					      <li class="nav-item"> <a class="nav-link active" href="#avatar-body" id="avatar-body-tab" role="tab" data-toggle="tab" aria-controls="avatar-body" aria-expanded="true"><i class="fas fa-universal-access"></i><br>BODY</a> </li>
+					      <li class="nav-item"> <a class="nav-link" href="#avatar-face" role="tab" id="avatar-face-tab" data-toggle="tab" aria-controls="avatar-face"><i class="fas fa-smile-beam"></i><br>FACE</a> </li>
+						  <li class="nav-item"> <a class="nav-link" href="#avatar-hair" role="tab" id="avatar-hair-tab" data-toggle="tab" aria-controls="avatar-hair"><i class="fas fa-spray-can"></i><br>HAIR</a> </li>
+						  <li class="nav-item"> <a class="nav-link" href="#avatar-hat" role="tab" id="avatar-hat-tab" data-toggle="tab" aria-controls="avatar-hat"><i class="fas fa-hat-wizard"></i><br>HAT</a> </li>
+						  <li class="nav-item"> <a class="nav-link" href="#avatar-shirt" role="tab" id="avatar-shirt-tab" data-toggle="tab" aria-controls="avatar-shirt"><i class="fas fa-tshirt"></i><br>SHIRT</a> </li>
+						  <li class="nav-item"> <a class="nav-link" href="#avatar-shoes" role="tab" id="avatar-shoes-tab" data-toggle="tab" aria-controls="avatar-shoes"><i class="fas fa-shoe-prints"></i><br>SHOES</a> </li>
+						  <li class="nav-item"> <a class="nav-link" href="#avatar-accessories" role="tab" id="avatar-accessories-tab" data-toggle="tab" aria-controls="avatar-accessories"><i class="fab fa-jedi-order"></i><br>ACCESSORIES</a> </li>
+					    </ul>
+					    <!-- Content Panel -->
+					    <div id="avatar-content" class="tab-content mt-4">
+					      <div role="tabpanel" class="tab-pane fade show active" id="avatar-body" aria-labelledby="avatar-body-tab">
+					       <div class="mt-4">
+							  <h6 >COLOR</h6>
+							 	<ul class="list-group list-group-horizontal">
+                    			<li id="color0" class="active">
+                        			<img src="assets/images/color0.png" alt="">
+                    			</li>
+                    			<li id="color1">
+                        			<img src="assets/images/color1.png" alt="">
+                    			</li>
+                    			<li id="color2">
+                        			<img src="assets/images/color2.png" alt="">
+                    			</li>
+                  				</ul>
+							</div>  
+							  <div class="mt-4">
+							  <h6 >SHAPE</h6>
+							 	<ul class="list-group list-group-horizontal">
+                   				 <li id="shape0">
+                       				 <img src="assets/images/shape0.png" alt="">
+                    			</li>
+                    			<li id="shape1" class="active">
+                        			<img src="assets/images/shape1.png" alt="">
+                    			</li>
+                    			<li id="shape2">
+                        			<img src="assets/images/shape2.png" alt="">
+                    			</li>
+                  				</ul>
+							</div>  
+					        </div>
+					      <div role="tabpanel" class="tab-pane fade" id="avatar-face" aria-labelledby="avatar-face-tab">
+					        <div class="container-fluid">
+					          <ul id="avatar-face-nav" class="nav nav-tabs" role="tablist">
+					            <li class="nav-item"> <a class="nav-link active" href="#face-eyebrows" id="face-eyebrows-tab" role="tab" data-toggle="tab" aria-controls="face-eyebrows" aria-expanded="true">Eyebrows</a> </li>
+					            <li class="nav-item"> <a class="nav-link" href="#face-eyes" role="tab" id="face-eyes-tab" data-toggle="tab" aria-controls="face-eyes">Eyes</a> </li>
+					            <li class="nav-item"> <a class="nav-link" href="#face-mouth" role="tab" id="face-mouth-tab" data-toggle="tab" aria-controls="face-mouth">Mouth</a> </li>
+								<li class="nav-item"> <a class="nav-link" href="#face-facial-hair" role="tab" id="face-facial-hair-tab" data-toggle="tab" aria-controls="face-facial-hair">Facial Hair</a> </li>
+								<li class="nav-item"> <a class="nav-link" href="#face-glasses" role="tab" id="face-glasses-tab" data-toggle="tab" aria-controls="face-glasses">Glasses</a> </li>
+					            </ul>
+					          <!-- Content Panel -->
+					          <div id="avatar-face-content" class="tab-content mt-4">
+					            <div role="tabpanel" class="tab-pane fade show active" id="face-eyebrows" aria-labelledby="face-eyebrows-tab">
+					              <p>Eyebrows</p>
+					              </div>
+					            <div role="tabpanel" class="tab-pane fade" id="face-eyes" aria-labelledby="face-eyes-tab">
+					              <p>Eyes</p>
+					              </div>
+					            <div role="tabpanel" class="tab-pane fade" id="face-mouth" aria-labelledby="face-mouth-tab">
+					              <p>Mouth</p>
+					              </div>
+					            <div role="tabpanel" class="tab-pane fade" id="face-facial-hair" aria-labelledby="face-facial-hair-tab">
+					              <p>Facial Hair</p>
+					              </div>
+								  <div role="tabpanel" class="tab-pane fade" id="face-glasses" aria-labelledby="face-glasses-tab">
+					              <p>Glasses</p>
+					              </div>
+					            </div>
+					          </div>
+                          </div>
+					      <div role="tabpanel" class="tab-pane fade" id="avatar-hair" aria-labelledby="avatar-hair-tab">
+					        <div class="mt-4">
+							  <h6 >COLOR</h6>
+							 	<ul class="list-group list-group-horizontal">
+                    			<li id="color0" class="active">
+                        			<img src="assets/images/color0.png" alt="">
+                    			</li>
+                    			<li id="color1">
+                        			<img src="assets/images/color1.png" alt="">
+                    			</li>
+                    			<li id="color2">
+                        			<img src="assets/images/color2.png" alt="">
+                    			</li>
+                  				</ul>
+							</div>  
+							  <div class="mt-4">
+							  <h6 >SHAPE</h6>
+							 	<ul class="list-group list-group-horizontal">
+                   				 <li id="shape0">
+                       				 <img src="assets/images/shape0.png" alt="">
+                    			</li>
+                    			<li id="shape1" class="active">
+                        			<img src="assets/images/shape1.png" alt="">
+                    			</li>
+                    			<li id="shape2">
+                        			<img src="assets/images/shape2.png" alt="">
+                    			</li>
+                  				</ul>
+							 
+							</div>
+					        </div>
+					      <div role="tabpanel" class="tab-pane fade" id="avatar-hat" aria-labelledby="avatar-hat-tab">
+					        <p>Hat</p>
+					        </div>
+							<div role="tabpanel" class="tab-pane fade" id="avatar-shirt" aria-labelledby="avatar-shirt-tab">
+					        <p>Shirt</p>
+					        </div>
+							<div role="tabpanel" class="tab-pane fade" id="avatar-shoes" aria-labelledby="avatar-shoes-tab">
+					        <p>Shoes</p>
+					        </div>
+							<div role="tabpanel" class="tab-pane fade" id="avatar-accessories" aria-labelledby="avatar-accessories-tab">
+					        <p>Accessories</p>
+					        </div>
+					      </div>
+					    </div>
+                  </div>
+                </div>
               </div>
-              <div id="content3D">
-                <a-scene embedded xr="arAutostart: false">
+			  <div class="col-xl-4">
+				  <div id="content3D">
+                <a-scene antialias="true" embedded>
                   <a-assets>
-                    <img id="skymap" src="assets/images/sky.jpg" crossorigin="anonymous">
-                    <img id="floor" src="assets/images/floor.jpg" crossorigin="anonymous">
+                    <img id="skymap" src="assets/images/sky.jpg" crossorigin="anonymous" alt="">
+                    <img id="floor" src="assets/images/floor.jpg" crossorigin="anonymous" alt="">
                   </a-assets>
                   <a-light type="point" light="color: #fff; intensity:0.5" position="3 10 1"></a-light>
                   <a-light type="point" light="color: #fff; intensity:0.1" position="-3 10 0"></a-light>
                   <a-light type="hemisphere" groundColor="#888" intensity="0.8"></a-light>
             
-                  <a-entity id="ground"
-                            geometry="primitive: box; width: 12; height: 0.01; depth: 12"
-                            material="shader:flat; src: #floor" xr="ar: false">
-                          </a-entity>
+                  <a-entity id="ground" geometry="primitive: box; width: 12; height: 0.01; depth: 12" material="shader:flat; src: #floor" xr="ar: false"></a-entity>
                   <a-entity id="cameraRig">
                     <!-- camera -->
                     <a-entity id="acamera" camera position="0 1.2 0" look-controls></a-entity>
@@ -381,79 +485,30 @@
                     <a-entity id="right-hand" store-controls="hand: right" laser-controls="hand: right" raycaster="objects: .collidable" line="color: #118A7E" xr="ar: false"></a-entity>
                   </a-entity>
                   <!-- Meshes -->
-                  <a-entity class="collidable" id="meshContainer" position="0 0.75 -1.25">
-                    <a-entity id="geo0" geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5" material="color: #66ca9c" rotation="0 30 0" visible="true"></a-entity>
-                    <a-entity id="geo1" geometry="primitive: sphere; radius: 0.35" material="color: #66ca9c" visible="false"></a-entity>
-                    <a-entity id="geo2" geometry="primitive: cone; radiusBottom: 0.35; height: 0.5; segmentsRadial: 4" rotation="0 15 0" material="color: #66ca9c" visible="false"></a-entity>
+                  <a-entity class="collidable" id="avatarModel" position="0 1.3 -1.5" rotation="180 0 180">
+					  <a-entity>
+            			<a-entity geometry="primitive: sphere" material="color:#21FFB5" scale="0.45 0.5 0.4"></a-entity>
+            			<a-entity position="0 0.05 0">
+              				<a-entity geometry="primitive: sphere" class="eye" material="color:#efefef" position="0.16 0.1 -0.35" scale="0.12 0.12 0.12">
+                				<a-entity geometry="primitive: sphere" class="pupil"  material="color:#000;" position="0 0 -1" scale="0.2 0.2 0.2"></a-entity>
+             				 </a-entity>
+              				<a-entity geometry="primitive: sphere" class="eye"  material="color:#efefef" position="-0.16 0.1 -0.35" scale="0.12 0.12 0.12">
+               				 	<a-entity geometry="primitive: sphere" class="pupil" material="color:#000;" position="0 0 -1" scale="0.2 0.2 0.2"></a-entity>
+             				 </a-entity>
+           				 </a-entity>
+          			</a-entity>
                 </a-entity>
                   <a-entity id="sky" geometry="primitive:sphere; radius:30; phiLength:360; phiStart:0; thetaLength:90" material="shader:flat; side:back; height:2048; src:#skymap; width:2048" xr="ar: false"></a-entity>
                   <a-entity id="skyFloor" geometry="primitive:sphere; radius:30; phiLength:360; phiStart:0; thetaLength:90; thetaStart: 90" material="shader:flat; color: white; side:back; height:2048; width:2048" xr="ar: false"></a-entity>
                   <a-entity reticle geometry="primitive: ring; radiusInner: 0.04; radiusOuter: 0.05" material="color: #ffffff"></a-entity>
                 </a-scene>
               </div>
-            </div>
-            <div id="productOptions">
-              <div class="productOption">
-                <div class="productOptionTitle">
-                  Model
-                </div>
-                <div class="productOptionThumbs">
-                  <ul>
-                    <li id="shape0" class="optionSelected">
-                        <img src="assets/images/shape0.png"/>
-                    </li>
-                    <li id="shape1">
-                        <img src="assets/images/shape1.png"/>
-                    </li>
-                    <li id="shape2">
-                        <img src="assets/images/shape2.png"/>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="productOption">
-                <div class="productOptionTitle">
-                  Texture
-                </div>
-                <div class="productOptionThumbs">
-                  <ul>
-                    <li id="color0" class="optionSelected">
-                        <img src="assets/images/color0.png"/>
-                    </li>
-                    <li id="color1">
-                        <img src="assets/images/color1.png"/>
-                    </li>
-                    <li id="color2">
-                        <img src="assets/images/color2.png"/>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-        </div>
-        <div id="sheet">
-          <div id="brand">
-             
-          </div>
-          <div id="productName">
-              Items
-          </div>
-          <div class="invisible" id="price"></div>
-          <div class="invisible" id="buttonCart"></div>
-
-	 <div class="container testimonial-group">
-	 		<div class="row mt-2 text-center flex-nowrap" data-binding-id="repeat3" data-binding-repeat-children="{{quests.items}}">
-          <div class="col-lg-4 col-md-6 col-sm-12 text-center col-quests">
-            <a href="{{link}}" target="_blank"><img src="../images/140X140.gif" alt="140x140" class="rounded-circle mt-4" style="width: 140px; height: 140px;" data-holder-rendered="true" data-binding-src="{{media.m}}"></a>
-            <h3>{{title}}</h3>
-            <p>{{date_taken}}</p>
-          </div>
-        </div>
-	 </div>
-        </div>
+				</div>
+			  </div>
+			
       </div>
 		</div>
-	</div>
+	
 	
 	<div class="tab-pane fade show " id="avatar-upload">
        <div class="container">
@@ -461,9 +516,9 @@
 			</div>
 		  </div>
 	
-	<div class="tab-pane fade show " id="avatar-pose">
+	<div class="tab-pane fade show " id="avatar-download">
        <div class="container">
-		   <p>Pose and share your Avatar</p>
+		   <p>Export and share your Avatar</p>
 			</div>
 		  </div>
 			</div>
@@ -1332,15 +1387,14 @@
 	 </main>
 	 </div>
 	  </div>
- 
-
 <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
   
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="../js/popper.min.js"></script> 
-  <script src="../js/bootstrap-4.3.1.js"></script>
-<script src="../js/dropzone.js"></script>  
+	<script src="../js/popper.min.js"></script>
+  <!-- <script src="../js/bootstrap-4.3.1.js"></script> -->
+  <script src="../js/bootstrap-4.4.1.js"></script>
+  <script src="../js/dropzone.js"></script>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js"></script>
 	  <script src="dashboard.js"></script>
