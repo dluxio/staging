@@ -131,3 +131,11 @@ body {
   display: inline-block;
   float: none;
 }
+
+#content3D {
+  height: 80vh;
+  width: 100%;
+}
+ul {
+  list-style-type: none;
+}
