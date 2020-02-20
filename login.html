@@ -14,33 +14,44 @@
 	  
 	<form class="form-signin" action="api/login" method="post">
 		<img src="images/dluxcolorlogo.png" alt="Placeholder image" width="72" height="72" class="img-fluid rounded">
-<h1>Please sign in</h1>
+<h1 class="mt-2">Please sign in</h1>
 		<br>
 <div class="container">
 	<div class="row">
-  <div class="form-group mx-sm-3 mb-2">
+  <div class="form-group mx-sm-3 mb-0 mt-2">
     <label for="inputEmail" class="sr-only">Email</label>
     <input type="email" class="form-control" id="email" name="email" placeholder="Email">
   </div>
-  <a href="#"><button type="submit" class="btn mb-2 btn-danger"> <i class="fas fa-paper-plane"></i> Magic Link</button></a>
+  <button type="submit" class="btn btn-danger mb-0 mt-2 "> <i class="fas fa-paper-plane"></i> Magic Link</button>
 </div>
 	<hr>
 	
  <div class="row">
-
- <div class="form-group mx-sm-3 mb-2">
+	 <div></div>
+ <div class="form-group mx-sm-3 mb-2 mt-0">
     <label for="inputUsername" class="sr-only">Username</label>
-    <input type="text" class="form-control" id="inputUsername" placeholder="Username">
-	 
+    <input type="text" class="form-control" id="inputUsernameSK" placeholder="Username"> 
   </div>
-  <button type="" class="btn btn-success mb-2"><i class="fas fa-key"></i> <i class="fas fa-shield-alt"></i> Extension</button>
+  <button type="" class="btn btn-success mb-2 mt-0"><i class="fas fa-key"></i> Steem Keychain</button>
   </div>
+	<hr>
 	
-	<p><a href="https://github.com/MattyIce/steem-keychain" target="_blank">Steem Keychain</a> and <a href="https://beta.steemconnect.com/" target="_blank">Steem Connect</a> are browser extensions.</p><p>If no extensions are present, you will be taken to the <br>Steem Connect <a href="https://beta.steemconnect.com/login"> login page.</a></p>
-		
-	</div>
+	 <div class="row">
+ <div class="form-group mx-sm-3 mb-2 mt-0">
+    <label for="inputUsername" class="sr-only">Username</label>
+    <input type="text" class="form-control" id="inputUsernameSC" placeholder="Username"> 
+  </div>
+  <button type="" class="btn btn-primary mb-2 mt-0"><i class="fas fa-shield-alt"></i> Steem Connnect</button>
+  </div>
 	<br>
-		<p><a href="index.html">Cancel</a>  |  <a href="dashboard/index.html" target="_blank">Dashboard <i class="fas fa-external-link-alt"></i></a></p>	
+			
+	</div>
+
+		<!--
+		<p><a href="https://github.com/MattyIce/steem-keychain" target="_blank">Get Keychain</a>  |  <a href="https://beta.steemconnect.com" target="_blank">Get Connect</a></p>	
+		-->
+	  
+	  <p><a href="index.html" target="_blank">Cancel</a></p>
 </form>
   <!-- body code goes here -->
 
