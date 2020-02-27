@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>dlux User Dashboard</title>
   <!-- Bootstrap -->
-  <!-- <link href="../css/bootstrap-4.3.1.css" rel="stylesheet"> -->
-  <link href="../css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	
   <link href="dashboard.css" rel="stylesheet">
   <script src="../ScriptLibrary/jquery-latest.pack.js"></script>
+  <script src="../js/session.js" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
 <style type="text/css">
   /* Chart.js */
@@ -16,9 +17,16 @@
   </style>
 <!-- <script type="text/javascript" src="../ScriptLibrary/jquery-latest.pack.js"></script> -->  <script type="text/javascript" src="../ScriptLibrary/dmxDataBindings.js"></script>
 <script type="text/javascript" src="../ScriptLibrary/dmxDataSet.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/steem/dist/steem.min.js"></script>
 <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
 <script type="text/javascript">
+  function appendData(){  
+    let steemid = localStorage.getItem('steemid')
+    let jwt = localStorage.getItem('jwt')
+    let account = JSON.parse(localStorage.getItem('account'))
+    let email = localStorage.getItem('email')
+    let session = new Dluxsession(steem, {steemid,jwt,account,email})
+    }
     const urlParams = new URLSearchParams(window.location.search);
     let userpage = urlParams.get('e'),
         user
@@ -89,7 +97,7 @@
 </div>
   	<!-- body code goes here -->
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <a id="user-name" class="navbar-brand col-sm-3 col-md-2 mr-0" href="#" ><img src="../images/user-icon.svg" alt="Placeholder image" width="24" height="25" class="img-fluid bg-light rounded-circle"> username</a>
+  <a id="user-name" class="navbar-brand col-sm-3 col-md-2 mr-0" href="#" ><img src="../images/user-icon.svg" alt="Placeholder image" width="24" height="25" class="img-fluid bg-light rounded-circle"></a>
   <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
@@ -318,7 +326,7 @@
 		  </div>
 		  
 		  <!-- Avatar Tab -->
-	    <div class="tab-pane fade show" id="avatar" role="tabpanel" aria-labelledby="avatar-tab">
+	    <div class="tab-pane fade show " id="avatar" role="tabpanel" aria-labelledby="avatar-tab">
    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 			<h1 class="h2">Avatar</h1>
 			<div class="float-right btn-group btn-group-sm">
@@ -1388,17 +1396,16 @@
 	  </div>
 <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
   
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="../js/popper.min.js"></script>
-  <!-- <script src="../js/bootstrap-4.3.1.js"></script> -->
-  <script src="../js/bootstrap-4.4.1.js"></script>
-  <script src="../js/dropzone.js"></script>  
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js"></script>
+    <script src="../js/dropzone.js"></script> 
 	  <script src="dashboard.js"></script>
 	<script type="text/javascript">
-		checkCookie()
+		appendData()
 	</script>
   </body>
 </html>
