@@ -27,7 +27,7 @@
       fetch(`https://ipfs.dlux.io/api/presign/${session.steemid}?key=${session.steemid}/${document.getElementById('js-upload-files').files[0].name}&put=true`)
         .then(r=>{
               console.log(r)
-              r.json()})
+              r.body.json()})
         .then(s=>console.log(s))
         .catch(e=>console.log(e))
     } else {
