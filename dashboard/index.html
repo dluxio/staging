@@ -693,12 +693,12 @@
 
           <!-- Standar Form -->
           <h4 class="mt-4">Select</h4>
-          <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+          <form action="" method="put" enctype="multipart/form-data" id="js-upload-form">
             <div class="form-inline">
               <div class="form-group">
                 <input type="file" name="files[]" onchange="updatePreflight()" id="js-upload-files">
               </div>
-              <button onclick="uploadSec()" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
+              <button onclick="uploadSec" type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
             </div>
           </form>
 
