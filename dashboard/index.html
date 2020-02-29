@@ -36,10 +36,10 @@
   }
   
   function appendData(){  
-    let steemid = JSON.parse(localStorage.getItem('steemid'))
-    let jwt = JSON.parse(localStorage.getItem('jwt'))
-    let account = JSON.parse(localStorage.getItem('account'))
-    let email = JSON.parse(localStorage.getItem('email'))
+    let steemid = JSON.parse(localStorage.getItem('steemid') || "")
+    let jwt = JSON.parse(localStorage.getItem('jwt') || "")
+    let account = JSON.parse(localStorage.getItem('account') || "")
+    let email = JSON.parse(localStorage.getItem('email') || "")
     session = new Dluxsession(steem, {steemid,jwt,account,email})
     }
     const urlParams = new URLSearchParams(window.location.search);
