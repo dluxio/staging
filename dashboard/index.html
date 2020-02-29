@@ -26,7 +26,12 @@
       console.log(session.steemid)
       fetch(`https://ipfs.dlux.io/api/presign/${session.steemid}?key=${session.steemid}/${document.getElementById('js-upload-files').files[0].name}&put=true`)
         .then(r=> r.json())
-        .then(s=>console.log(s))
+        .then(s=> {
+          session.decode(s.account,s.s3auths[2])
+	  .then(l => {
+	    document.getElementById('js-upload-form').action = l
+	  })
+        })
         .catch(e=>console.log(e))
     } else {
       console.log('no')
