@@ -46,7 +46,8 @@
 
 	fetch(document.getElementById('js-upload-form').action, {
   		method: 'PUT',
- 		body: formData
+ 		body: formData,
+		mode: 'cors'
 	})
 	.then((response) => response.json())
 	.then((result) => {
