@@ -43,11 +43,11 @@
   	const formData = new FormData();
 	const fileField = document.querySelector('input[type="file"]');
 	formData.append(fileField.files[0].name, fileField.files[0]);
-
+	console.log(fileField.files[0].name)
 	fetch(document.getElementById('js-upload-form').action, {
   		method: 'PUT',
  		body: formData,
-		mode: 'cors'
+		mode: 'no-cors'
 	})
 	.then((response) => response.json())
 	.then((result) => {
