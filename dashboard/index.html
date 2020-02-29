@@ -20,12 +20,27 @@
 <script src="https://cdn.jsdelivr.net/npm/steem/dist/steem.min.js"></script>
 <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
 <script type="text/javascript">
+  let session
+  function updatePreflight(){
+    if(session.steemid){
+      console.log(session.steemid)
+      fetch(`https://ipfs.dlux.io/api/presign/${session.steemid}?key=${session.steemid}/${document.getElementById('js-upload-files').files[0].name}&put=true`)
+        .then(r=>{
+              console.log(r)
+              r.json()})
+        .then(s=>console.log(s))
+        .catch(e=>console.log(e))
+    } else {
+      console.log('no')
+    }  
+  }
+  
   function appendData(){  
     let steemid = localStorage.getItem('steemid')
     let jwt = localStorage.getItem('jwt')
     let account = JSON.parse(localStorage.getItem('account'))
     let email = localStorage.getItem('email')
-    let session = new Dluxsession(steem, {steemid,jwt,account,email})
+    session = new Dluxsession(steem, {steemid,jwt,account,email})
     }
     const urlParams = new URLSearchParams(window.location.search);
     let userpage = urlParams.get('e'),
@@ -112,13 +127,13 @@
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+            <a class="nav-link " id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" >
               <span data-feather="home"></span>
               Home <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="avatar-tab" data-toggle="tab" href="#avatar" role="tab" aria-controls="avatar" >
+            <a class="nav-link active" id="avatar-tab" data-toggle="tab" href="#avatar" role="tab" aria-controls="avatar" aria-selected="true">
               <span data-feather="github"></span>
               Avatar
             </a>
@@ -175,7 +190,7 @@
 	  <div class="tab-content">
 	 
 		  	 <!-- Home Tab -->
- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+ <div class="tab-pane fade show " id="home" role="tabpanel" aria-labelledby="home-tab">
     
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Home</h1>
@@ -326,7 +341,7 @@
 		  </div>
 		  
 		  <!-- Avatar Tab -->
-	    <div class="tab-pane fade show " id="avatar" role="tabpanel" aria-labelledby="avatar-tab">
+	    <div class="tab-pane fade show active" id="avatar" role="tabpanel" aria-labelledby="avatar-tab">
    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 			<h1 class="h2">Avatar</h1>
 			<div class="float-right btn-group btn-group-sm">
@@ -481,7 +496,7 @@
                   </a-assets>
                   <a-light type="point" light="color: #fff; intensity:0.5" position="3 10 1"></a-light>
                   <a-light type="point" light="color: #fff; intensity:0.1" position="-3 10 0"></a-light>
-                  <a-light type="hemisphere" groundColor="#888" intensity="0.8"></a-light>
+                  <a-light type="hemisphere" groundcolor="#888" intensity="0.8"></a-light>
             
                   <a-entity id="ground" geometry="primitive: box; width: 12; height: 0.01; depth: 12" material="shader:flat; src: #floor" xr="ar: false"></a-entity>
                   <a-entity id="cameraRig">
@@ -641,6 +656,7 @@
           </div></a>
         </div> 
         </div>
+         
 		 <div class="text-center mt-4"><p><a href="#">Show More</a></p></div>
 			 </div>
 	    </div>
@@ -653,10 +669,10 @@
 
           <!-- Standar Form -->
           <h4 class="mt-4">Select</h4>
-          <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+          <form action="" method="get" enctype="multipart/form-data" id="js-upload-form">
             <div class="form-inline">
               <div class="form-group">
-                <input type="file" name="files[]" id="js-upload-files" multiple>
+                <input type="file" name="files[]" onchange="updatePreflight()" id="js-upload-files">
               </div>
               <button type="submit" class="btn btn-sm btn-primary" id="js-upload-submit">Upload files</button>
             </div>
