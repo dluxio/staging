@@ -37,10 +37,10 @@
   
   function appendData(){  
     let steemid = JSON.parse(localStorage.getItem('steemid') || "")
-    let jwt = JSON.parse(localStorage.getItem('jwt') || "")
+    let jwt = localStorage.getItem('jwt')
     let account = JSON.parse(localStorage.getItem('account') || "")
-    let email = JSON.parse(localStorage.getItem('email') || "")
-    session = new Dluxsession(steem, {steemid,jwt,account,email})
+    //let email = localStorage.getItem('email')
+    session = new Dluxsession(steem, {steemid,jwt,account})
     }
     const urlParams = new URLSearchParams(window.location.search);
     let userpage = urlParams.get('e'),
