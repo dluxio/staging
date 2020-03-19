@@ -37,6 +37,7 @@ body {
 }
 .form-signin .btn {
 	width: 170px;
+	height: 100%;
 }
 a {
 	color: #033EFD;
