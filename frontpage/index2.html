@@ -11,11 +11,11 @@
   <script type="text/javascript" src="../ScriptLibrary/dmxDataBindings.js"></script>
   <script type="text/javascript" src="../ScriptLibrary/dmxDataSet.js"></script>
   <script type="text/javascript">
-  /* dmxDataSet name "dluxio" */
+  /* dmxDataSet name "videos" */
        jQuery.dmxDataSet(
-         {"id": "dluxio", "url": "https://token.dlux.io/getblog/robotolux", "dataType": "jsonp"}
+         {"id": "videos", "preset": "YouTube_3_Video_Search", "url": "https://www.googleapis.com/youtube/v3/search", "data": {"q": "cats", "key": "AIzaSyBuL7UZatjMgIhPZCGpiQRomFYFfbWIhAk", "order": "relevance", "part": "snippet", "type": "video", "maxResults": "20"}, "designUrl": "https://www.googleapis.com/youtube/v3/search?q=cats&key=AIzaSyBuL7UZatjMgIhPZCGpiQRomFYFfbWIhAk&order=relevance&part=snippet&type=video&maxResults=20", "dataType": "jsonp"}
        );
-  /* END dmxDataSet name "dluxio" */
+  /* END dmxDataSet name "videos" */
   </script>
 </head>
   <body>
@@ -134,13 +134,13 @@
 
       <div class="row text-center mt-4">
         <div class="col-md-4 pb-1 pb-md-0">
-		  
-		<div class="card" data-binding-id="repeat1" data-binding-repeat-children="{{dluxio.items}}">
-        <img src="../images//400X200.gif" class="card-img-top" data-binding-src="{{media.m}}" alt="Card image cap" />
+		 
+<div class="card" data-binding-id="repeat1" data-binding-repeat-children="{{videos.items}}">
+        <img src="../images/400x200.gif" data-binding-src="{{snippet.thumbnails.default.url}}" class="card-img-top"  alt="Card image cap" />
         <div class="card-body">
-              <h5 class="card-title">{{author}}              </h5>
-              <p class="card-text">{{blog}}              </p>
-              <a href="#" class="btn btn-primary">Add to Cart</a>
+              <h5 class="card-title">{{snippet.title}}              </h5>
+              <p class="card-text">{{snippet.description}}              </p>
+              <a href="{{snippet.publishedAt}}" class="btn btn-primary">Add to Cart</a>
             </div>
           </div>
         </div>
