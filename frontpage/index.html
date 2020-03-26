@@ -13,7 +13,7 @@
   <script type="text/javascript">
   /* dmxDataSet name "dluxio" */
        jQuery.dmxDataSet(
-         {"id": "dluxio", "url": "https://token.dlux.io/getblog/robotolux", "dataType": "jsonp"}
+         {"id": "dluxio", "url": "https://token.dlux.io/getblog/robotolux", "data": "", "dataSourceType": "local", "dataType": "json"}
        );
   /* END dmxDataSet name "dluxio" */
   </script>
@@ -135,7 +135,7 @@
       <div class="row text-center mt-4">
         <div class="col-md-4 pb-1 pb-md-0">
 		  
-		<div class="card" data-binding-id="repeat1" data-binding-repeat-children="{{dluxio.items}}">
+		<div class="card" data-binding-id="repeat1" data-binding-repeat-children="{{dluxio.items}}" data-binding-repeat-size="20">
         <img src="../images//400X200.gif" class="card-img-top" data-binding-src="{{media.m}}" alt="Card image cap" />
         <div class="card-body">
               <h5 class="card-title">{{author}}              </h5>
