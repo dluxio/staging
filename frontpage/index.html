@@ -23,30 +23,31 @@
   <body style="background-color: #222222">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#"><img src="../images/dluxcolorlogo.png" alt="" width="32" height="32" class="img-fluid rounded"/></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+             <li class="nav-item active dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Apps<span class="sr-only">(current)</span></a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Virtual Reality</a>
+                <a class="dropdown-item" href="#">Augmented Reality</a>
+				<a class="dropdown-item" href="#">Games</a>
+				<a class="dropdown-item" href="#">Utilities</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">View All Posts</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
+              <a class="nav-link" href="#">Exchange</a>
             </li>
+			 <li class="nav-item">
+              <a class="nav-link" href="#">Documentation</a>
+            </li>
+           
+          
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -55,15 +56,28 @@
         </div>
       </div>
     </nav>
- 
 	  
- <div class="container mt-5">
-    <div class="row" data-binding-id="repeat1" data-binding-repeat-children="{{dluxio.items}}" data-binding-repeat-size="20">
+	<div class="container mt-4">
+<div class="row">
+   <div class="col-md-8 text-white">
+	   <div class="display-4">Virtual Reality <i class="fas fa-vr-cardboard"></i></div>
+    <p class="lead">Responsive WebVR across mobile, desktop, and headset.</p>
+  </div>
+	<div class="col-md-4 text-center m-auto">
+		<a class="btn btn-primary btn-lg m-1" style="width: 125px;" href="#" role="button">Learn <i class="fas fa-shapes"></i></a>
+  <a class="btn btn-primary btn-lg m-1" style="width: 125px;" href="#" role="button">Create <i class="fas fa-tools"></i></a>
+	</div>
+</div>
+		 <hr style="background-color: aliceblue;">
+ </div>
+	
+<div class="container mt-4">
+   <div class="row" data-binding-id="repeat1" data-binding-repeat-children="{{dluxio.items}}" data-binding-repeat-size="20">
   		<div class="col-md-4">
 			<div class="card text-white bg-dark mb-4" >
 				<div class="card-header">
 				<div class="float-left"><a href="https://dlux.io/dlux/@{{author}}"><img src="../images/user-icon.svg" alt="" class="rounded-circle bg-light img-fluid img-thumbnail mr-2" width="38" height="38"></a></div>
-				<div class="float-left"><h6 class="mt-0 mb-0 text-muted text-semibold"><a href="https://dlux.io/dlux/@{{author}}">{{author}}<span class="ml-2 badge badge-pill badge-light">80</span></a> </h6>
+				<div class="float-left"><h6 class="mt-0 mb-0 text-muted text-semibold"><a style="text-decoration: none; color: aliceblue;" href="https://dlux.io/dlux/@{{author}}">{{author}}<span class="ml-2 badge badge-pill badge-light">80</span></a> </h6>
 				<small class="text-muted">date</small>
 				</div>
 				<div class="float-right"><span class="badge badge-secondary">VR</span></div>
@@ -72,8 +86,9 @@
 				<h3 class="card-title mt-2 text-center">Scelerisque Viverra</h3>
         		<img src="..." class="card-img-top" data-binding-src="{{media.m}}" alt="Card image cap" />
         		<div class="card-body">
-              		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          		</div>
+           		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				  <center><button type="button" class="btn btn-outline-danger">Launch VR</button></center>
+                </div>
 				</a>
 				<div class="card-footer">
       				<div class="float-left"><i class="fas fa-heart mr-1"></i>7123<i class="fas fa-heart-broken ml-2 mr-1"></i>23<i class="fas fa-comment ml-2 mr-1"></i>277</div>
