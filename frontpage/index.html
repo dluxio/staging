@@ -105,18 +105,29 @@
     <div class="row" data-binding-id="repeat1" data-binding-repeat-children="{{dluxio.items}}" data-binding-repeat-size="20">
   <div class="col-md-4">
 		<div class="card mb-4" >
-        <img src="../images//400X200.gif" class="card-img-top" data-binding-src="{{media.m}}" alt="Card image cap" />
+			<div class="card-header">
+				<a class="">
+					<div class="float-left"><img src="../images/user-icon.svg" alt="" class="rounded-circle bg-light img-fluid img-thumbnail mr-2" width="38" height="38"></div></a>
+				<div><h6 class="mt-0 mb-0 text-muted text-semibold" style="line-height: 1.2;"><a>{{author}} <span class="badge">68</span></a> </h6>
+				<span class="text-muted" style="font-size: 13px;">Feb 13, 2019</span>
+				</div>
+				
+			
+			</div>
+		  <h3>Title</h3>
+			
+        <img src="..." class="card-img-top" data-binding-src="{{media.m}}" alt="Card image cap" />
         <div class="card-body">
               <h5 class="card-title">{{author}}              </h5>
-              <p class="card-text">{{blog}}              </p>
-              <a href="#" class="btn btn-primary">Add to Cart</a>
+              <p class="card-text">              </p>
+              <a href="https://dlux.io/dlux/@{{author}}/{{permlink}}" class="btn btn-primary">Open Post</a>
           </div>
 		 
        </div>
     
 		</div>
 		  </div>
-
+	  </div>
 <hr>
 <footer class="text-center">
   <div class="container">
