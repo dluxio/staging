@@ -36,7 +36,7 @@ class Dluxsession {
     const opts = ip || {}
     this.email = opts.email || ''
     this.keychain = {
-      installed: !!window.steem_keychain,
+      installed: !!window.hive_keychain,
       active: false,
       posting: false,
       memo: false
@@ -143,9 +143,9 @@ class Dluxsession {
   static decode (self, encoded) {
     return new Promise ((resolve, reject) => {
       var jwt = ''
-      if (window.steem_keychain){
+      if (window.hive_keychain){
         try {
-        window.steem_keychain.requestVerifyKey(self, encoded[0], encoded[1], function(response) {
+        window.hive_keychain.requestVerifyKey(self, encoded[0], encoded[1], function(response) {
           console.log(response);
           jwt = response.result.substring(1, response.result.length -1)
           resolve(jwt)
