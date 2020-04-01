@@ -13,7 +13,7 @@
     <script src="js/session.js" crossorigin="anonymous"></script>
     <script>
       function blah () {
-    if(window.steem_keychain) {
+    if(window.hive_keychain) {
             console.log('good')
         } else {
           console.log('bad')
@@ -50,18 +50,18 @@
     
 	<hr>
   
-  <div id="steemKeychain" class="input-group mb-3 ">
+  <div id="hiveKeychain" class="input-group mb-3 ">
   <div class="input-group-prepend">
     <span class="input-group-text" id="sk-addon">@</span>
   </div>
   <input type="text" class="form-control" id="sk-username" placeholder="username" aria-label="Username" aria-describedby="sk-addon">
   <div class="input-group-append">
-    <button type="" class="btn btn-form btn-success mb-2 mt-0" onclick="steemKeychain()"><i class="fas fa-key"></i> Steem Keychain</button>
+    <button type="" class="btn btn-form btn-success mb-2 mt-0" onclick="hiveKeychain()"><i class="fas fa-key"></i> Hive Keychain</button>
   </div>
   </div>
   
     <div id="getKeychain" class="input-group mb-3">
-   <a href="https://github.com/MattyIce/steem-keychain" target="_blank" class="btn btn-get btn-outline-success btn-block">Get <i class="fas fa-key"></i> Steem Keychain</a>
+   <a href="https://github.com/stoodkev/hive-keychain" target="_blank" class="btn btn-get btn-outline-success btn-block">Get <i class="fas fa-key"></i> Hive Keychain</a>
   </div>
   
 	</div>
@@ -74,22 +74,22 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script>
-    function steemKeychain () {
+    function hiveKeychain () {
       let username = document.getElementById('sk-username').value
-      let session = new Dluxsession(steem, {steemidip:username})
+      let session = new Dluxsession(hive, {steemidip:username})
     } 
       
     setTimeout(function(){
-     let use = document.getElementById("steemKeychain");
+     let use = document.getElementById("hiveKeychain");
 		 let get = document.getElementById("getKeychain");
-		 if(window.steem_keychain) {
-    		// Steem Keychain extension installed...
+		 if(window.hive_keychain) {
+    		// Hive Keychain extension installed...
 			 get.style.display = "none";
-			console.log('You have Steem Keychain');
+			console.log('You have Hive Keychain');
 		 } else {
-    		// Steem Keychain extension not installed...
+    		// Hive Keychain extension not installed...
 			use.style.display = "none";
-			console.log('Please install Steem Keychain');
+			console.log('Please install Hive Keychain');
 		 }
     }, 500);
     /*
