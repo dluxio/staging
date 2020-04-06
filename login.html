@@ -75,13 +75,9 @@
      let use = document.getElementById("hiveKeychain");
 		 let get = document.getElementById("getKeychain");
 		 if(window.hive_keychain) {
-    		// Hive Keychain extension installed...
 			 get.style.display = "none";
-			alert('You have Hive Keychain');
 		 } else {
-    		// Hive Keychain extension not installed...
 			use.style.display = "none";
-			alert('Please install Hive Keychain');
 		 }
     }, 1000);
     </script>
