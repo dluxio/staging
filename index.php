@@ -43,6 +43,7 @@ function checkCookie(){
 	  
 <?php
 print_r($_SESSION);
+	  
 ?>
     <div class="jumbotron jumbotron-fluid text-center text-white bg-win">
        <div class="container">
