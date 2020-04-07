@@ -25,5 +25,3 @@ body {background-color: #222222}
 .acct-link {color: cornflowerblue; text-decoration: underline}
 
 #active-session {display: none}
-
-#no-session {display: inline-block}
