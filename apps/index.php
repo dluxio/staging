@@ -9,11 +9,10 @@
   <!-- Bootstrap -->
   <link href="../css/bootstrap-4.4.1.css" rel="stylesheet">
   <link href="../css/dlux.css" rel="stylesheet">
+  <script type="text/javascript" src="../dmxAppConnect/dmxAppConnect.js"></script>
   <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="../dmxAppConnect/dmxMoment.js"></script>
-  <script type="text/javascript" src="../dmxAppConnect/dmxFormatter.js"></script>
-  <script type="text/javascript" src="../dmxAppConnect/dmxAppConnect.js"></script>
-  <script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../dmxAppConnect/dmxFormatter.js"></script> <script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
 </head>
 
 <body id="index" is="dmx-app">

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="style.css" rel="stylesheet" type="text/css">
+  <link href="../css/dex.css" rel="stylesheet" type="text/css">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -16,35 +16,7 @@
 <body id="top">
 <div class="container" style="padding-top: 70px">
 	
-  <nav class="navbar navbar-dark navbar-custom fixed-top navbar-expand-lg justify-content-end">
-	 <a class="navbar-brand" href="https://dlux.io" target="_blank">dlux</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-	  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-    <form class="form-inline">
-    <a href="https://dlux.io/vr" target="_blank"><button class="btn btn-outline-primary ml-2" type="button">Explore XR</button></a>
-	<a href="https://dlux-vr.glitch.me/build.html" target="_blank"><button class="btn btn-outline-danger ml-2" type="button">Start Building</button></a>
-	<div class="dropdown show"> <button class="btn btn-outline-info dropdown-toggle ml-2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> More Info </button>
-	    <div class="dropdown-menu">
-	      <a class="dropdown-item" href="https://docs.google.com/presentation/d/1L0ZhqUsetBB2jI8fcHqUIOt7ddDKFtn4VV_C2-Uogcw" target="_blank">Slide Deck</a>
-		  <a class="dropdown-item" href="https://docs.google.com/document/d/1_jHIJsX0BRa5ujX0s-CQg3UoQC2CBW4wooP2lSSh3n0" target="_blank">White Paper</a>
-		  <a class="dropdown-item" href="https://github.com/dluxio/dluxio/wiki" target="_blank">GitHub Wiki</a> 
-	      <div class="dropdown-divider"></div>
-		  <a class="dropdown-item" href="https://steempeak.com/@dlux-io" target="_blank">Steem Blog</a>
-		  <a class="dropdown-item" href="https://discord.gg/Beeb38j" target="_blank">Discord Server</a>
-		  <a class="dropdown-item" href="https://dlux.tokenbb.io/" target="_blank">Community BB</a>
-		</div>
-	</div>
-  </form>
-	  </div>
-			<ul class="navbar-nav">
-	      <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> username </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown1"> <a class="dropdown-item" href="#">Send</a>
-			  <a class="dropdown-item" href="#">Recieve</a>
-	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">Logout</a> </div>
-          </li>
-        </ul>
-  </nav>
+  <?php include '../modules/nav.php';?>
  
 	<div class="alert alert-success alert-dismissible">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
