@@ -22,8 +22,8 @@ body {background-color: #222222}
 
 .bg-win {background-color: #222222}
 
-.acct-link {text-decoration: underline}
+.acct-link {color: cornflowerblue; text-decoration: underline}
 
 #active-session {display: none}
 
-#no-session {display: block}
+#no-session {display: inline-block}
