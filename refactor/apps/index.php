@@ -5,57 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DLUX</title>
-  <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
   <!-- Bootstrap -->
   <link href="../css/bootstrap-4.4.1.css" rel="stylesheet">
-  <script type="text/javascript" src="../dmxAppConnect/dmxAppConnect.js"></script>
-  <script type="text/javascript" src="../ScriptLibrary/jquery-latest.pack.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js" integrity="sha256-CutOzxCRucUsn6C6TcEYsauvvYilEniTXldPa6/wu0k=" crossorigin="anonymous"></script>
+  <link href="../css/dlux.css" rel="stylesheet">
+  <script type="text/javascript" src="../js/dmxAppConnect.js"></script>
+  <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="../js/dmxMoment.js"></script>
+  <script type="text/javascript" src="../js/dmxFormatter.js"></script>
   <script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="../dmxAppConnect/dmxMoment/dmxMoment.js"></script>
-  <script type="text/javascript" src="../dmxAppConnect/dmxFormatter/dmxFormatter.js"></script>
-  <script type="text/javascript"></script>
-  <style>
-	body {background-color: #222222}
-	.fill {object-fit: fill;}
-	.contain {object-fit: contain;}
-	.cover {object-fit: cover;}
-	.scale-down {object-fit: scale-down;}
-	.none {object-fit: none;}
-	.btn-launch {border-radius: 20px 20px 20px 20px;}
-	.author-img {width: 38px; height: 38px; border: 2px solid #B1B1B1;}
-	.a-1, .a-1:hover {text-decoration: none; color: aliceblue;}
-	.btn-1 {width: 125px;}
-	.padme-7 {padding-top: 70px;}
-</style>
 </head>
+	
+
+
   <body id="index" is="dmx-app">
+	  <? php require '../modules/nav.php';?>
   <dmx-api-datasource id="dluxGetBlog" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_blog'" dmx-param:params="'[%22robotolux%22,0,10]'"></dmx-api-datasource>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top flex-md-nowrap"> <a class="navbar-brand" href="../index.html"><img src="../images/dluxcolorlogo.png" alt="dlux-logo" width="32" height="32" class="rounded"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active"> <a class="nav-link" href="#">Apps<span class="sr-only">(current)</span></a>
-          <div class="dropdown-menu" aria-labelledby="appsDropdown"> <a class="dropdown-item" href="#">VR<i class="fas fa-vr-cardboard float-right"></i></a> <a class="dropdown-item" href="#">AR<i class="fas fa-cube float-right"></i></a> <a class="dropdown-item" href="#">Blog<i class="fab fa-buffer float-right"></i></a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Create<i class="fas fa-plus-circle float-right"></i></a></div>
-        </li>
-        <li class="nav-item dropdown"> <a class="nav-link " href="../dex/index.html">Exchange</a></li>
-		<li class="nav-item dropdown"> <a class="nav-link " href="../dex/index.html">Updates</a></li>
-        <li class="nav-item"> <a class="nav-link disabled" href="../docs/index.html">Documentation</a></li>
-      </ul>
-      <ul class="navbar-nav ">
-        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle text-white-50" id="userDropdown" data-toggle="dropdown" href="#"><img src="../images/user-icon.svg" alt="Placeholder image" width="30" height="30" class="img-fluid rounded-circle bg-light mr-2">username</a>
-          <div class="dropdown-menu" aria-labelledby="userDropdown"> <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Profile</a> <a class="dropdown-item" href="#"><i class="fas fa-wallet mr-2"></i>Wallet</a> <a class="dropdown-item" href="../dashboard/index.html"><i class="fas fa-tools mr-2"></i>Tools</a> <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Settings</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#"><i class="fas fa-robot mr-2"></i>Nodes</a> <a class="dropdown-item" href="#"><i class="fas fa-info-circle mr-2"></i>About</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#"><i class="fas fa-user-friends mr-2"></i>Switch User</a> <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a></div>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <div class="container-fluid padme-7">
+  <div class="container-fluid padme-t70">
     <div class="row mt-3">
       <div class="col-md-8 text-white text-center">
         <div class="display-4">Virtual Reality <i class="fas fa-vr-cardboard"></i></div>

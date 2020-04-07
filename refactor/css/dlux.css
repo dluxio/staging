@@ -1,0 +1,21 @@
+body {background-color: #222222}
+
+.fill {object-fit: fill;}
+
+.contain {object-fit: contain;}
+
+.cover {object-fit: cover;}
+
+.scale-down {object-fit: scale-down;}
+
+.none {object-fit: none;}
+
+.btn-launch {border-radius: 20px 20px 20px 20px;}
+
+.author-img {width: 38px; height: 38px; border: 2px solid #B1B1B1;}
+
+.a-1, .a-1:hover {text-decoration: none; color: aliceblue;}
+
+.btn-1 {width: 125px;}
+
+.padme-t70 {padding-top: 70px;}
