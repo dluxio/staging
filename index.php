@@ -26,7 +26,7 @@ function getCookie(c_name){
 let user
 function checkCookie(){
 	console.log('Checking for login...')
-    user = getCookie('user');
+    user = sessionStorage.getItem('user');
 	console.log('user='+user)
     if (user!=null){
 	console.log(user + ' logged in successfully')
