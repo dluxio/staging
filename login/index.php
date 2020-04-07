@@ -61,7 +61,7 @@
 	sessionStorage.setItem("user", username);
 	console.log('session set')
       let session = new Dluxsession(steem, {steemidip:username})
-      	console.log('lets go')
+      	console.log(session)
     } 
       
     setTimeout(function(){
