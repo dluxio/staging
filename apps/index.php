@@ -14,10 +14,11 @@
   <script type="text/javascript" src="../js/dmxMoment.js"></script>
   <script type="text/javascript" src="../js/dmxFormatter.js"></script>
   <script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../dmxAppConnect/dmxAppConnect.js"></script>
 </head>
 
 <body id="index" is="dmx-app">
-	<?php include "./nav.php";?>
+	<?php include '../modules/nav.php';?>
 	<dmx-api-datasource id="dluxGetBlog" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_blog'" dmx-param:params="'[%22robotolux%22,0,10]'"></dmx-api-datasource>
   <div class="container-fluid padme-t70">
     <div class="row mt-3">
