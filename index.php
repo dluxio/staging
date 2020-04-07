@@ -8,7 +8,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
-	<link href="css/dlux.css" rel="stylesheet">
+  <link href="css/dlux.css" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
 function getCookie(c_name){
@@ -34,10 +34,10 @@ function checkCookie(){
     }
 }
 </script>
-  </head>
+</head>
   <body>
  <?php include 'modules/nav.php';?>
-    <div class="jumbotron jumbotron-fluid text-center bg-white">
+    <div class="jumbotron jumbotron-fluid text-center text-white bg-win">
        <div class="container">
 		<div class="row">
          <div class="col-xl-6"><h1 class="display-4">dlux</h1>
@@ -60,7 +60,7 @@ function checkCookie(){
     </div> 
     </div>
 	  
-    <div class="container-fluid bg-light">
+    <div class="container-fluid">
 	  <div class="row">
 		  <div class="col-xl-4">
 			   <p class="lead">Smart</p>
@@ -84,16 +84,7 @@ function checkCookie(){
 	</div>
   </div>
 	  <br>
-<footer class="text-center bg-dark shadow">
-  <div class="container">
-        <div class="row">
-          <div class="col-12 text-light">
-			  <br>
-            <h6>Copyright © dlux. All rights reserved.</h6>
-          </div>
-        </div>
-      </div>
-    </footer>
+<?php include 'modules/footer.php';?>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
     <script src="js/jquery-3.3.1.min.js"></script>
 
