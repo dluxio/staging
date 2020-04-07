@@ -56,6 +56,7 @@
     function hiveKeychain () {
       let username = document.getElementById('sk-username').value
       steem.api.setOptions({ url: "https://anyx.io" })
+	sessionStorage.setItem("user", username);
       let session = new Dluxsession(steem, {steemidip:username})
     } 
       
