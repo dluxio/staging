@@ -7,7 +7,7 @@
     <title>dlux Login</title>
     <!-- Bootstrap -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link href="../css/dlux.css" rel="stylesheet">  
+	<link href="../css/login.css" rel="stylesheet">  
 	<script src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/steem/dist/steem.min.js"></script>
     <script src="js/session.js" crossorigin="anonymous"></script>
@@ -15,7 +15,7 @@
   <body class="text-center">
 	  
 	<div class="form-signin" >
-		<img src="images/dluxcolorlogo.png" alt="Placeholder image" width="72" height="72" class="img-fluid rounded">
+		<img src="../img/dluxcolorlogo.png" alt="Placeholder image" width="72" height="72" class="img-fluid rounded">
 <h1 class="mt-2">Please sign in</h1>
 		<br>
 <div class="container">
@@ -23,22 +23,10 @@
   <div id="magicLink" class="input-group mb-3 ">
   <input type="text" class="form-control" id="ml-email" placeholder="Email" aria-label="Email" aria-describedby="ml-addon">
   <div class="input-group-append">
-    <button type="" class="btn btn-form btn-danger mb-2 mt-0"><i class="fas fa-paper-plane"></i> Magic Link</button>
+    <button type="" class="btn btn-form btn-primary mb-2 mt-0"><i class="fas fa-paper-plane"></i> Magic Link</button>
   </div>
   </div>
   
-	<hr>
-  
-  <div id="steemConnect" class="input-group mb-3 ">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="sc-addon">@</span>
-  </div>
-  <input type="text" class="form-control" id="sc-username" placeholder="username" aria-label="Username" aria-describedby="sc-addon">
-  <div class="input-group-append">
-    <button type="" class="btn btn-form btn-primary mb-2 mt-0"><i class="fas fa-shield-alt"></i> Steem Connect</button>
-  </div>
-  </div>
-    
 	<hr>
   
   <div id="hiveKeychain" class="input-group mb-3 ">
@@ -47,12 +35,12 @@
   </div>
   <input type="text" class="form-control" id="sk-username" placeholder="username" aria-label="Username" aria-describedby="sk-addon">
   <div class="input-group-append">
-    <button type="" class="btn btn-form btn-success mb-2 mt-0" onclick="hiveKeychain()"><i class="fas fa-key"></i> Hive Keychain</button>
+    <button type="" class="btn btn-form btn-danger mb-2 mt-0" onclick="hiveKeychain()"><i class="fas fa-key"></i> Hive Keychain</button>
   </div>
   </div>
   
     <div id="getKeychain" class="input-group mb-3">
-   <a href="https://github.com/stoodkev/hive-keychain" target="_blank" class="btn btn-get btn-outline-success btn-block">Get <i class="fas fa-key"></i> Hive Keychain</a>
+   <a href="https://github.com/stoodkev/hive-keychain" target="_blank" class="btn btn-get btn-outline-danger btn-block">Get <i class="fas fa-key"></i> Hive Keychain</a>
   </div>
   
 	</div>
