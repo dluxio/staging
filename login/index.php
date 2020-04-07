@@ -10,7 +10,7 @@
 	<link href="../css/login.css" rel="stylesheet">  
 	<script src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/steem/dist/steem.min.js"></script>
-    <script src="js/session.js" crossorigin="anonymous"></script>
+    <script src="../js/session.js" crossorigin="anonymous"></script>
   </head>
   <body class="text-center">
 	  
