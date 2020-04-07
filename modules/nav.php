@@ -7,7 +7,11 @@
 		<li class="nav-item"> <a class="nav-link" href="../news/">Updates</a></li>
         <li class="nav-item"> <a class="nav-link" href="../docs/">Documentation</a></li>
       </ul>
-      <ul class="navbar-nav ">
+      <ul class="navbar-nav" id="no-session">
+		<li class="nav-item"><a class="nav-link acct-link" href="../login/">Login</a></li>
+		<li class="nav-item"><a class="nav-link acct-link" href="https://signup.hive.io/">Sign up</a></li>
+		</ul>
+		<ul class="navbar-nav" id="active-session">
         <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle text-white-50" id="userDropdown" data-toggle="dropdown" href="#"><img src="../img/user-icon.svg" alt="Placeholder image" width="30" height="30" class="img-fluid rounded-circle bg-light mr-2">username</a>
           <div class="dropdown-menu" aria-labelledby="userDropdown"> <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Profile</a> <a class="dropdown-item" href="#"><i class="fas fa-wallet mr-2"></i>Wallet</a> <a class="dropdown-item" href="../dashboard/index.html"><i class="fas fa-tools mr-2"></i>Tools</a> <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Settings</a>
             <div class="dropdown-divider"></div>

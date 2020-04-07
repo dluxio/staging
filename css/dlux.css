@@ -21,3 +21,9 @@ body {background-color: #222222}
 .padme-t70 {padding-top: 70px;}
 
 .bg-win {background-color: #222222}
+
+.acct-link {text-decoration: underline}
+
+#active-session {display: none}
+
+#no-session {display: block}
