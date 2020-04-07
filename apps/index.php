@@ -38,7 +38,7 @@
               <small class="text-muted">{{comment.created.formatDate("MMM dd, yyyy")}}</small></div>
             <div class="float-right"><span class="badge badge-secondary">{{comment.json_metadata.scat()}}</span></div>
           </div>
-          <a dmx-bind:href="https://dlux.io/dlux/{{comment.url}}" class="a-1">
+          <a dmx-bind:href="https://dlux.io{{comment.url}}" class="a-1">
             <h5 class="card-title mt-2 text-center text-capitalize">{{comment.title}}</h5>
             <img src="..."  alt="Card image cap" class="card-img-top" dmx-bind:src="{{comment.json_metadata.parseJSON().image}}" />
             <div class="card-body">
