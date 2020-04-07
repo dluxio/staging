@@ -38,7 +38,7 @@
   <!-- Footer Elements -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+  <div class="footer-copyright text-center text-white py-3">© 2020 Copyright:
     <a href="https://dlux.io/"> dlux.io</a>
   </div>
   <!-- Copyright -->
