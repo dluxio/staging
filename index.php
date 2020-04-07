@@ -60,7 +60,7 @@ function checkCookie(){
     </div> 
     </div>
 	  
-    <div class="container-fluid">
+    <div class="container-fluid text-white">
 	  <div class="row">
 		  <div class="col-xl-4">
 			   <p class="lead">Smart</p>
