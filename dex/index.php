@@ -564,7 +564,7 @@
 	  </div>
 </div>
 	</div>
-	<div class="text-center" style="padding-top: 30px; padding-bottom: 10px"></div>
+	 <?php include '../modules/footer.php';?>
 <script>
 	
     var historicPriceSteem = document.getElementById('historicpricesteem').getContext('2d');

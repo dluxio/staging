@@ -57,23 +57,7 @@
     </div>
   </div>
   <hr>
-  <footer class="text-center text-white">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <p>Copyright © dlux. All rights reserved.</p>
-          <nav class="navbar">
-            <ul class="navbar-nav ml-sm-auto">
-              <li class="nav-item"><a class="nav-link px-2" href="https://github.com/dluxio/dluxio" target="_blank"><i class="fab fa-github"></i></a></li>
-              <li class="nav-item"><a class="nav-link px-2" href="https://discord.gg/Beeb38j" target="_blank"><i class="fab fa-discord"></i></a></li>
-              <li class="nav-item"><a class="nav-link px-2" href="https://peakd.com/@dlux-io" target="_blank"><i class="fas fa-rss"></i></a></li>
-              <li class="nav-item"><a class="nav-link px-2" href="https://twitter.com/dluxxr" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </footer>
+   <?php include '../modules/footer.php';?>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="../js/popper.min.js"></script>
