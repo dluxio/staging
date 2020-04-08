@@ -1,16 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>dlux</title>
-
-    <!-- Bootstrap -->
-    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
-    <link href="css/dlux.css" rel="stylesheet">
-	<script src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dlux</title>
+  <!-- Bootstrap -->
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+  <link href="css/dlux.css" rel="stylesheet">
+  <script type="text/javascript" src="dmxAppConnect/dmxAppConnect.js"></script>
+  <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
 function getCookie(c_name){
   if (document.cookie.length>0){
@@ -37,9 +37,9 @@ function checkCookie(){
 	document.getElementById('userDropdown').text = '@' + user;
     }
 }
-</script>
+  </script>
 </head>
-  <body>
+  <body id="index" is="dmx-app">
  <?php include 'modules/nav.php';?>
     <div class="jumbotron jumbotron-fluid text-center text-white mt-5 bg-win">
        <div class="container">
@@ -89,9 +89,7 @@ function checkCookie(){
   </div>
 	  <br>
 <?php include 'modules/footer.php';?>
-	  <script src="js/session.js"></script>
-  <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
-	    <script type="text/javascript" src="../js/popper.min.js"></script>
+	  <script src="js/session.js"></script> <script type="text/javascript" src="../js/popper.min.js"></script>
   <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
     <script type="text/javascript">
 	checkCookie()
