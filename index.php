@@ -36,7 +36,7 @@ function checkCookie(){
 	document.getElementById('active-session').style.display = 'block';
 	console.log(document.getElementById('userName'))
 	document.getElementById('userImage').src = 'https://token.dlux.io/getauthorpic/' + user
-	document.getElementById('userName').text = '@' + user;
+	document.getElementById('userName').innerText = '@' + user;
     }
 }
   </script>
