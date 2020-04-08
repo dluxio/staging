@@ -13,6 +13,7 @@
   <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script> <script type="text/javascript" src="../dmxAppConnect/dmxMoment.js"></script>
   <script type="text/javascript" src="../dmxAppConnect/dmxFormatter.js"></script>
   <script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
+	  <script src="../js/session.js"></script>
 </head>
 
 <body id="index" is="dmx-app">
@@ -62,5 +63,8 @@
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script type="text/javascript" src="../js/popper.min.js"></script>
   <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
+	<script>
+		checkCookie()
+	</script>
 </body>
 </html>

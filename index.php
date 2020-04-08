@@ -12,35 +12,7 @@
   <script type="text/javascript" src="dmxAppConnect/dmxAppConnect.js"></script>
   <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
   <script src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
-	<script src="js/session.js"></script>
-<script type="text/javascript">
-function getCookie(c_name){
-  if (document.cookie.length>0){
-      c_start=document.cookie.indexOf(c_name + "=");
-      if (c_start!=-1){
-        c_start=c_start + c_name.length+1;
-        c_end=document.cookie.indexOf(";",c_start);
-        if (c_end==-1) c_end=document.cookie.length;
-        return unescape(document.cookie.substring(c_start,c_end));
-        }
-     }
-   return "";
-}
-let user
-function checkCookie(){
-	console.log('Checking for login')
-    user = sessionStorage.getItem('user');
-	console.log('user='+user)
-    if (user != null){
-	document.getElementById('no-session').style.display = 'none';
-	document.getElementById('active-session').style.display = 'inline-table';
-	document.getElementById('userImage').src = 'https://token.dlux.io/getauthorpic/' + user
-	document.getElementById('userName').innerText = '@' + user;
-    } else {
-    	document.getElementById('active-session').style.display = 'none';
-    }
-}
-  </script>
+  <script src="js/session.js"></script>
 </head>
   <body id="index" is="dmx-app">
  <?php include 'modules/nav.php';?>

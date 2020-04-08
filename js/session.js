@@ -8,6 +8,20 @@
 function readResponseAsBlob(response) {
   return response.blob();
 }
+let user
+function checkCookie(){
+	console.log('Checking for login')
+    user = sessionStorage.getItem('user');
+	console.log('user='+user)
+    if (user != null){
+	document.getElementById('no-session').style.display = 'none';
+	document.getElementById('active-session').style.display = 'inline-table';
+	document.getElementById('userImage').src = 'https://token.dlux.io/getauthorpic/' + user
+	document.getElementById('userName').innerText = '@' + user;
+    } else {
+    	document.getElementById('active-session').style.display = 'none';
+    }
+}
 
 
 function showProfileImage(responseAsBlob) {
