@@ -32,6 +32,7 @@ function checkCookie(){
 	console.log('user='+user)
     if (user != null){
 	document.getElementById('no-session').style.display = 'none';
+	document.getElementById('active-session').style.display = 'inline-table';
 	document.getElementById('userImage').src = 'https://token.dlux.io/getauthorpic/' + user
 	document.getElementById('userName').innerText = '@' + user;
     } else {
