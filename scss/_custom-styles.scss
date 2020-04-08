@@ -1,22 +1,48 @@
 /* Scss Document */
 
+  
+body {background-color: #222222}
 
+.fill {object-fit: fill;}
 
+.contain {object-fit: contain;}
+
+.cover {object-fit: cover;}
+
+.scale-down {object-fit: scale-down;}
+
+.none {object-fit: none;}
+
+.btn-launch {border-radius: 20px 20px 20px 20px;}
+
+.author-img {width: 38px; height: 38px; border: 2px solid #B1B1B1;}
+
+.a-1, .a-1:hover {text-decoration: none; color: aliceblue;}
+
+.btn-1 {width: 125px;}
+
+.padme-t70 {padding-top: 70px;}
+
+.bg-win {background-color: #222222}
+
+.acct-link {color: cornflowerblue; text-decoration: underline}
+
+.footer-copyright {background-color: #212529}
 
 .card-columns {
   @include media-breakpoint-only(xs) {
     column-count: 1;
   }
   @include media-breakpoint-only(sm) {
-    column-count: 2;
+    column-count: 1;
   }
   @include media-breakpoint-only(md) {
-    column-count: 3;
+    column-count: 2;
   }
   @include media-breakpoint-only(lg) {
-    column-count: 4;
+    column-count: 3;
   }
   @include media-breakpoint-only(xl) {
-    column-count: 5;
+    column-count: 4;
   }
 }
