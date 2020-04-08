@@ -30,7 +30,8 @@ function checkCookie(){
 	console.log('user='+user)
     if (user!=null){
 	console.log(user + ' logged in successfully')
-      document.getElementById('user-button').href.value = 'dashboard/index.html?e='+ user;
+      document.getElementById('no-session').style.display = 'none';
+	document.getElementById('active-session').style.display = 'block';
     }
 }
 </script>
