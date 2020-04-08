@@ -29,7 +29,7 @@
 		  <li class="nav-item"> <a class="nav-link" href="#info" id="infotab" role="tab" data-toggle="tab" aria-controls="info" aria-expanded="true">INFO</a></li>
 	    <li class="nav-item"> <a class="nav-link active" href="#steem" id="steemtab" role="tab" data-toggle="tab" aria-controls="steem" aria-expanded="true">STEEM</a></li>
 	    <li class="nav-item"> <a class="nav-link" href="#sbd" role="tab" id="sbdtab" data-toggle="tab" aria-controls="sbd">SBD</a></li>
-		  <li class="nav-item"> <a class="nav-link" href="#ticker" role="tab" id="tickertab" data-toggle="tab" aria-controls="ticker">TICKER</a></li>
+		  <li class="nav-item"> <a class="nav-link" href="#feed" role="tab" id="feed" data-toggle="tab" aria-controls="feed">FEED</a></li>
 	  </ul>
 	  <!-- Content Panel -->
 	  <div id="pagecontent" class="tab-content">
@@ -76,7 +76,7 @@
                       <div class="card" style="margin-bottom:20px;"> <img class="card-img-top" src="images/builder-2.jpg" alt="Card image cap">
                         <div class="card-body" style="background:#1B1717">
                           <h5 class="card-title">XR Builder</h5>
-                          <p class="card-text">Build AR and VR experiences right in your web browser, without downloading any software</p>
+                          <p class="card-text">Build AR and VR apps right in your web browser, without downloading anything</p>
                           <a href="https://dlux-vr.glitch.me/build.html" class="btn btn-danger" target="_blank">Build the Metaverse</a></div>
                       </div>
                     </div>
@@ -528,7 +528,7 @@
         </div>
 	    
     </div>
-		   <div role="tabpanel" class="tab-pane fade" id="ticker" aria-labelledby="tickertab">
+		   <div role="tabpanel" class="tab-pane fade" id="feed" aria-labelledby="feed">
 			<div class="container-fluid" style="padding:0">
 		  <div class="col-lg-12 text-center" style="padding: 0">
 			  <h5 style="padding-top: 40px">DLUX TRANSACTION FEED</h5>

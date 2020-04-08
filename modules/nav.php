@@ -4,8 +4,8 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item"> <a class="nav-link" href="../apps/">Apps</a></li>
         <li class="nav-item"> <a class="nav-link" href="../dex/">Exchange</a></li>
-		<li class="nav-item"> <a class="nav-link" href="../news/">Updates</a></li>
-        <li class="nav-item"> <a class="nav-link" href="../docs/">Documentation</a></li>
+		<li class="nav-item"> <a class="nav-link" href="https://peakd.com/@dlux-io/" target="_blank">Updates</a></li>
+        <li class="nav-item"> <a class="nav-link" href="https://github.com/dluxio/dluxio/wiki" target="_blank">Documentation</a></li>
       </ul>
 	<ul class="navbar-nav" id="no-session">
 	<li class="nav-item"><a class="nav-link acct-link" href="../login/">Login</a></li>
