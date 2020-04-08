@@ -18,7 +18,7 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#"><i class="fas fa-robot mr-2"></i>Nodes</a> <a class="dropdown-item" href="#"><i class="fas fa-info-circle mr-2"></i>About</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#"><i class="fas fa-user-friends mr-2"></i>Switch User</a> <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a></div>
+            <a class="dropdown-item" href="../login/"><i class="fas fa-user-friends mr-2"></i>Switch User</a> <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a></div>
         </li>
       </ul>
     </div>
