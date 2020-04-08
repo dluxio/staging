@@ -33,7 +33,7 @@ function checkCookie(){
       document.getElementById('no-session').style.display = 'none';
 	document.getElementById('active-session').style.display = 'block';
 	console.log(document.getElementById('userDropdown'))
-	document.getElementById('userDropdown').value = '@' + user;
+	document.getElementById('userDropdown').text = '@' + user;
     }
 }
 </script>
