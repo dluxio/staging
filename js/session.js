@@ -1,4 +1,4 @@
-function validateResponse(response) {
+ function validateResponse(response) {
   if (!response.ok) {
     throw Error(response.statusText);
   }
@@ -81,16 +81,17 @@ class Dluxsession {
           .then(ret => {
             let itr = {}
             itr.jwt = ret[0]
-            itr.account = account
+            itr.user = id
             itr.challenges = r[0].challenges
             itr.steemid = id
             let storables = ['email', 'steemid', 'jwt', 'account']
               for ( var i = 0; i < storables.length; i++){
                 console.log(itr[storables[i]])
-                window.localStorage.setItem(storables[i], JSON.stringify(itr[storables[i]]))
+                window.sessionStorage.setItem(storables[i], JSON.stringify(itr[storables[i]]))
               }
-            if (window.location.pathname === '/login.html'){
-              window.location = 'https://' + window.location.host + '/dashboard/index.html'
+            if (window.location.pathname.substr(0,6) === '/login'){
+		// url param for return to url
+              window.location = 'https://' + window.location.host 
             }
           resolve(this.jwt)
         })
