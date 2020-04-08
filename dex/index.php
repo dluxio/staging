@@ -29,7 +29,7 @@
 		  <li class="nav-item"> <a class="nav-link" href="#info" id="infotab" role="tab" data-toggle="tab" aria-controls="info" aria-expanded="true">INFO</a></li>
 	    <li class="nav-item"> <a class="nav-link active" href="#steem" id="steemtab" role="tab" data-toggle="tab" aria-controls="steem" aria-expanded="true">STEEM</a></li>
 	    <li class="nav-item"> <a class="nav-link" href="#sbd" role="tab" id="sbdtab" data-toggle="tab" aria-controls="sbd">SBD</a></li>
-		  <li class="nav-item"> <a class="nav-link" href="#feed" role="tab" id="feed" data-toggle="tab" aria-controls="feed">FEED</a></li>
+		  <li class="nav-item"> <a class="nav-link" href="#feed" role="tab" id="feedtab" data-toggle="tab" aria-controls="feed">FEED</a></li>
 	  </ul>
 	  <!-- Content Panel -->
 	  <div id="pagecontent" class="tab-content">
