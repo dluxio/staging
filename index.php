@@ -32,6 +32,7 @@ function checkCookie(){
 	console.log(user + ' logged in successfully')
       document.getElementById('no-session').style.display = 'none';
 	document.getElementById('active-session').style.display = 'block';
+	    document.getElementById('userDropdown').value = '@' + user;
     }
 }
 </script>
