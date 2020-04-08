@@ -91,7 +91,7 @@
                   </div>
                  <div class="jumbotron" style="background-color:#0F1F28; margin-bottom:20px;">
                     <h1 class="display-4">decentralized limitless user experiences</h1>
-                    <p class="lead">dlux is an open-source, fully decentralized asset platform on the hive blockchain.</p>
+                    <p class="lead">dlux is an open-source, fully decentralized asset platform on the HIVE blockchain.</p>
                     <hr class="my-4" style="background-color:#fff">
                     <p>Make and monetize anything - dlux empowers the spatial web with tokenization and crypto rewards. Join us in the metaverse today!</p>
                     <div class="btn-toolbar" role="toolbar">

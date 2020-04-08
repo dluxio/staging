@@ -22,7 +22,7 @@
          <div class="col-xl-6"><h1 class="display-4">dlux</h1>
 		   <h6>DECENTRALIZED LIMITLESS USER EXPERIENCES</h6>
 		   <hr class="my-4">
-       <p class="lead">The easiest wayt to build and distribute dApps on HIVE</p>
+       <p class="lead">The easiest way to build and distribute dApps on HIVE</p>
        
 		<p></p>
        <p>Empower your  project with an open source token  and wallet backed by deterministic concensus on a distributed ledger</p>
@@ -51,7 +51,7 @@
 	    <div class="col-xl-4">
 			<p class="lead">Secure</p>
 	    	<p><img src="img/secure-img.png" class="img-fluid rounded" alt="secure"></p>
-			<p>Dlux utilizes the STEEM proof-of-stake blockchain to maintain trustless concensus via node networks for peer-to-peer transactions in a deterministic way.</p>
+			<p>Dlux utilizes the HIVE proof-of-stake blockchain to maintain trustless concensus via node networks for peer-to-peer transactions in a deterministic way.</p>
 			<p class="text-center"><a class="btn btn-lg btn-outline-primary" href="/docs/index.html" role="button">Run a node</a></p>
 	    </div>
 	    
