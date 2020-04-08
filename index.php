@@ -8,14 +8,11 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
-  <link href="css/dlux.css" rel="stylesheet">
+    <link href="css/dlux.css" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
 	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 
-    <!-- Include all compiled plugins (below), or include individual files as needed --> 
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap-4.3.1.js"></script>
 <script type="text/javascript">
 function getCookie(c_name){
   if (document.cookie.length>0){
@@ -94,6 +91,9 @@ function checkCookie(){
   </div>
 	  <br>
 <?php include 'modules/footer.php';?>
+	      <!-- Include all compiled plugins (below), or include individual files as needed --> 
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-4.3.1.js"></script>
     <script type="text/javascript">
 	checkCookie()
     </script>

@@ -9,10 +9,11 @@
   <!-- Bootstrap -->
   <link href="../css/bootstrap-4.4.1.css" rel="stylesheet">
   <link href="../css/dlux.css" rel="stylesheet">
-  <script type="text/javascript" src="../dmxAppConnect/dmxAppConnect.js"></script>
   <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="../dmxAppConnect/dmxAppConnect.js"></script>
   <script type="text/javascript" src="../dmxAppConnect/dmxMoment.js"></script>
-<script type="text/javascript" src="../dmxAppConnect/dmxFormatter.js"></script> <script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../dmxAppConnect/dmxFormatter.js"></script>
+  <script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
 </head>
 
 <body id="index" is="dmx-app">
@@ -60,7 +61,7 @@
    <?php include '../modules/footer.php';?>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="../js/popper.min.js"></script>
-  <script src="../js/bootstrap-4.4.1.js"></script>
+  <script type="text/javascript" src="../js/popper.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
 </body>
 </html>
