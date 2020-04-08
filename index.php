@@ -30,11 +30,10 @@ function checkCookie(){
 	console.log('Checking for login')
     user = sessionStorage.getItem('user');
 	console.log('user='+user)
-    if (user!=null){
-	console.log(user + ' logged in successfully')
-      document.getElementById('no-session').style.display = 'none';
-	document.getElementById('active-session').style.display = 'inline-block';
-	console.log(document.getElementById('userName'))
+    if (user == null){
+	document.getElementById('active-session').style.display = 'none';
+    } else {
+    	document.getElementById('no-session').style.display = 'none';
 	document.getElementById('userImage').src = 'https://token.dlux.io/getauthorpic/' + user
 	document.getElementById('userName').innerText = '@' + user;
     }
