@@ -50,7 +50,7 @@
           </center>
           <div class="card-footer">
             <div class="float-left"><i class="fas fa-heart mr-1"></i>{{comment.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{comment.children}}<i class="fas fa-star ml-2 mr-1"></i>4.5</div>
-            <div class="float-right">{{comment.total_payout_value}} <img src="../images/hextacular.svg" alt="" width="17"/></div>
+            <div class="float-right">{{comment.total_payout_value}} <img src="../img/hextacular.svg" alt="" width="17"/></div>
           </div>
         </div>
       </div>

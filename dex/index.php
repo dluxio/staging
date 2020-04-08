@@ -5,12 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="../css/bootstrap-4.4.1.css" rel="stylesheet">
   <link href="../css/dex.css" rel="stylesheet" type="text/css">
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href="../css/dlux.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
   <title>dlux DEX</title>
 </head>
 <body id="top">
@@ -18,15 +17,15 @@
 	
   <?php include '../modules/nav.php';?>
  
-	<div class="alert alert-success alert-dismissible">
+	<div class="alert alert-danger alert-dismissible text-center">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <a href="#" class="alert-link"><strong>Buy DLUX from @robotolux!</strong></a> The current price is 0.22 STEEM.
+  <a href="#" class="alert-link">The dlux DEX is still under construction. Have a look around and let us know what you think!
 </div>
 	
  
 
   <div class="container-fluid" style="padding: 0">
-	  <ul id="pagenav" class="nav nav-tabs justify-content-center" role="tablist">
+	  <ul id="pagenav" class="nav nav-pills justify-content-center" role="tablist">
 		  <li class="nav-item"> <a class="nav-link" href="#info" id="infotab" role="tab" data-toggle="tab" aria-controls="info" aria-expanded="true">INFO</a></li>
 	    <li class="nav-item"> <a class="nav-link active" href="#steem" id="steemtab" role="tab" data-toggle="tab" aria-controls="steem" aria-expanded="true">STEEM</a></li>
 	    <li class="nav-item"> <a class="nav-link" href="#sbd" role="tab" id="sbdtab" data-toggle="tab" aria-controls="sbd">SBD</a></li>
@@ -157,7 +156,7 @@
 	  <div class="col-lg-4">
 		  <div>
 			  <div class="widget">
-			<ul id="orderwidget" class="nav nav-tabs justify-content-center" role="tablist">
+			<ul id="orderwidget" class="nav nav-pills justify-content-center" role="tablist">
 			  <li class="nav-item"> <a class="nav-link active" href="#buysteem" id="buytabsteem" role="tab" data-toggle="tab" aria-controls="buysteem" aria-expanded="true">Buy DLUX</a></li>
 			  <li class="nav-item"> <a class="nav-link" href="#sellsteem" role="tab" id="selltabsteem" data-toggle="tab" aria-controls="sellsteem">Sell DLUX</a></li>
 			</ul>
@@ -371,7 +370,7 @@
 	  <div class="col-lg-4">
 		  <div>
 			  <div class="widget">
-			<ul id="orderwidgetsbd" class="nav nav-tabs justify-content-center" role="tablist">
+			<ul id="orderwidgetsbd" class="nav nav-pills justify-content-center" role="tablist">
 			  <li class="nav-item"> <a class="nav-link active" href="#buysbd" id="buytabsbd" role="tab" data-toggle="tab" aria-controls="buy" aria-expanded="true">Buy DLUX</a></li>
 			  <li class="nav-item"> <a class="nav-link" href="#sellsbd" role="tab" id="selltabsbd" data-toggle="tab" aria-controls="sell">Sell DLUX</a></li>
 			</ul>
@@ -565,6 +564,9 @@
 </div>
 	</div>
 	 <?php include '../modules/footer.php';?>
+	
+  <script type="text/javascript" src="../js/popper.min.js"></script>
+  <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
 <script>
 	
     var historicPriceSteem = document.getElementById('historicpricesteem').getContext('2d');
