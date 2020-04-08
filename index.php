@@ -49,9 +49,9 @@ function checkCookie(){
        <p>Empower your  project with an open source token  and wallet backed by deterministic concensus on a distributed ledger</p>
        <p>Simple onboarding with magic link emails and HIVE wallet creation</p>
 <p class="lead">
-          <a class="btn btn-lg btn-outline-primary" href="/documentation/start.html" role="button">Get started</a>&nbsp; &nbsp;&nbsp;
+          <a class="btn btn-lg btn-outline-primary m-3" href="/documentation/start.html" role="button">Explore<i class="fab fa-wpexplorer ml-2"></i></a>
 	
-	<a class="btn btn-lg btn-outline-secondary" href="https://github.com/dluxio/dluxio/archive/master.zip" role="button">Download</a>
+	<a class="btn btn-lg btn-outline-secondary" href="https://github.com/dluxio/dluxio/archive/master.zip" role="button">Create<i class="fas fa-plus-circle ml-2"></i></a>
        </p>
 
     </div>
