@@ -15,7 +15,7 @@ function checkCookie(){
 	console.log('user='+user)
     if (user != null){
 	document.getElementById('no-session').style.display = 'none';
-	document.getElementById('active-session').style.display = 'inline-table';
+	document.getElementById('active-session').style.display = 'block';
 	document.getElementById('userImage').src = 'https://token.dlux.io/getauthorpic/' + user
 	document.getElementById('userName').innerText = '@' + user;
     } else {
@@ -23,6 +23,11 @@ function checkCookie(){
     }
 }
 
+function logout () {
+	sessionStorage.clear()
+	document.getElementById('active-session').style.display = 'none';
+    	document.getElementById('active-session').style.display = 'block';
+}
 
 function showProfileImage(responseAsBlob) {
   try{
