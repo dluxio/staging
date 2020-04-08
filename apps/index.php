@@ -7,18 +7,43 @@
   <title>DLUX</title>
   <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
   <!-- Bootstrap -->
+	  <link href="../css/dlux.css" rel="stylesheet">
   <link href="../css/bootstrap-4.4.1.css" rel="stylesheet">
-  <link href="../css/dlux.css" rel="stylesheet">
+  
   <script type="text/javascript" src="../dmxAppConnect/dmxAppConnect.js"></script>
   <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script> <script type="text/javascript" src="../dmxAppConnect/dmxMoment.js"></script>
   <script type="text/javascript" src="../dmxAppConnect/dmxFormatter.js"></script>
   <script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
   <script src="../js/session.js"></script>
+
 </head>
 
 <body id="index" is="dmx-app">
 	<?php include '../modules/nav.php';?>
 	<dmx-api-datasource id="dluxGetBlog" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_blog'" dmx-param:params="'[%22robotolux%22,0,10]'"></dmx-api-datasource>
+	<div class="modal fade" id="detailModal" tabindex="11" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-full modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add a connection:</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body p-4" id="CMresult">
+                <hr>
+				<a href="#">
+				<h4><strong>Steem Wallet</strong></h4>
+				<p>Sign in with your Steem account for access to DLUX and STEEM</p></a>
+				<hr>
+				
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">DONE</button>
+            </div>
+        </div>
+    </div>
+</div>
   <div class="container-fluid padme-t70">
     <div class="row mt-3">
       <div class="col-md-8 text-white text-center">
@@ -28,9 +53,8 @@
       </div>
       <div class="col-md-4 text-center m-auto"> <a class="btn btn-primary btn-lg m-1 btn-1" href="#" role="button">Learn<i class="fas fa-shapes ml-2"></i></a><a class="btn btn-primary btn-lg m-1 btn-1" href="#" role="button">Create<i class="fas fa-plus-circle ml-2"></i></a></div>
     </div>
-    <div class="card-columns"></div>
-    <div class="row" id="blogResult" is="dmx-repeat" dmx-bind:repeat="dluxGetBlog.data.result">
-      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 p-2">
+    <div class="card-columns" id="blogResult" is="dmx-repeat" dmx-bind:repeat="dluxGetBlog.data.result">
+
         <div class="card text-white bg-dark">
           <div class="card-header">
             <div class="float-left"><a dmx-bind:href="https://dlux.io/dlux/@{{comment.author}}"><img dmx-bind:src="https://token.dlux.io/getauthorpic/{{comment.author}}" alt="" class="rounded-circle bg-light img-fluid mr-2 cover author-img"></a></div>
@@ -39,7 +63,7 @@
               <small class="text-muted">{{comment.created.formatDate("MMM dd, yyyy")}}</small></div>
             <div class="float-right"><span class="badge badge-secondary">{{comment.json_metadata.scat()}}</span></div>
           </div>
-          <a dmx-bind:href="https://dlux.io{{comment.url}}" class="a-1">
+          <a href="#detailModal" data-toggle="modal" class="a-1">
             <h5 class="card-title mt-2 text-center text-capitalize">{{comment.title}}</h5>
             <img src="..."  alt="Card image cap" class="card-img-top" dmx-bind:src="{{comment.json_metadata.parseJSON().image}}" />
             <div class="card-body">
@@ -55,7 +79,7 @@
           </div>
         </div>
       </div>
-    </div>
+
   </div>
   <hr>
    <?php include '../modules/footer.php';?>

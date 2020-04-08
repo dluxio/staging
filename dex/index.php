@@ -7,7 +7,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
   <link href="../css/bootstrap-4.4.1.css" rel="stylesheet">
   <link href="../css/dex.css" rel="stylesheet" type="text/css">
-  <link href="../css/dlux.css" rel="stylesheet" type="text/css">
+  <link href="../css/dlux.scss" rel="stylesheet" type="text/css">
   <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
   <script src="../js/session.js"></script>
@@ -20,7 +20,7 @@
  
 	<div class="alert alert-danger alert-dismissible text-center">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <a href="#" class="alert-link">The dlux DEX is still under construction. Have a look around and let us know what you think!
+  <a href="#" class="alert-link">The dlux DEX is under construction. Have a look around and let us know what you think!</a>
 </div>
 	
  
