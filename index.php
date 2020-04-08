@@ -11,6 +11,7 @@
   <script type="text/javascript" src="dmxAppConnect/dmxAppConnect.js"></script>
   <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
   <script src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
+	<script src="js/session.js"></script>
 <script type="text/javascript">
 function getCookie(c_name){
   if (document.cookie.length>0){
@@ -34,7 +35,7 @@ function checkCookie(){
       document.getElementById('no-session').style.display = 'none';
 	document.getElementById('active-session').style.display = 'block';
 	console.log(document.getElementById('userDropdown'))
-	document.getElementById('userDropdown').text = '@' + user;
+	document.getElementById('userName').text = '@' + user;
     }
 }
   </script>
