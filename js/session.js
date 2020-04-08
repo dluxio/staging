@@ -26,7 +26,7 @@ function checkCookie(){
 function logout () {
 	sessionStorage.clear()
 	document.getElementById('active-session').style.display = 'none';
-    	document.getElementById('active-session').style.display = 'block';
+    	document.getElementById('no-session').style.display = 'block';
 }
 
 function showProfileImage(responseAsBlob) {
