@@ -82,8 +82,7 @@ class Dluxsession {
   set steemidip (id) {
     var account = {}, itr = {}
     return new Promise((resolve, reject) =>{
-	    console.log('Por que? ' +window.location.pathname)
-    if (window.location.pathname === '/login'){
+    if (window.location.pathname.substr(0,6) === '/login'){
       console.log('why')
     let idPromises =  [Dluxsession.handshake(id)]
     Promise.all(idPromises)
