@@ -37,7 +37,7 @@ function checkCookie(){
 </head>
   <body>
  <?php include 'modules/nav.php';?>
-    <div class="jumbotron jumbotron-fluid text-center text-white bg-win">
+    <div class="jumbotron jumbotron-fluid text-center text-white mt-5 bg-win">
        <div class="container">
 		<div class="row">
          <div class="col-xl-6"><h1 class="display-4">dlux</h1>
@@ -60,7 +60,7 @@ function checkCookie(){
     </div> 
     </div>
 	  
-    <div class="container-fluid text-white">
+    <div class="container-fluid text-white bg-dark">
 	  <div class="row">
 		  <div class="col-xl-4">
 			   <p class="lead">Smart</p>

@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page-footer font-small cyan">
+<footer class="page-footer bg-dark font-small pt-5">
 
   <!-- Footer Elements -->
   <div class="container">
@@ -9,22 +9,22 @@
 
       <!-- Grid column -->
       <div class="col-md-12">
-        <div class="mb-5 text-center text-white">
-
+        <div class="mb-5 text-center">
+		
           <!-- Github -->
-          <a>
+          <a href="https://github.com/dluxio/dluxio" target="_blank">
             <i class="fab fa-github fa-lg mr-md-5 mr-3 fa-2x"> </i>
           </a>
           <!-- Discord -->
-          <a>
+          <a href="https://discord.gg/Beeb38j" target="_blank">
             <i class="fab fa-discord fa-lg mr-md-5 mr-3 fa-2x"> </i>
           </a>
           <!-- Hive -->
-          <a>
+          <a href="https://peakd.com/@dlux-io" target="_blank">
             <i class="fas fa-rss fa-lg mr-md-5 mr-3 fa-2x"> </i>
           </a>
           <!--Twitter -->
-          <a >
+          <a href="https://twitter.com/dluxxr" target="_blank">
             <i class="fab fa-twitter fa-lg mr-md-5 mr-3 fa-2x"> </i>
           </a>
         </div>

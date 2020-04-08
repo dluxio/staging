@@ -222,7 +222,7 @@ class Dluxsession {
 	</div>
     
 	  <br>
-	  <p><a href="index.html" target="_blank">Cancel</a></p>
+	  <p><a href="../" target="_blank">Cancel</a></p>
 </div>
   <!-- body code goes here --> 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
