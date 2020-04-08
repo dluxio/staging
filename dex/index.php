@@ -27,8 +27,8 @@
   <div class="container-fluid" style="padding: 0">
 	  <ul id="pagenav" class="nav nav-pills justify-content-center" role="tablist">
 		  <li class="nav-item"> <a class="nav-link" href="#info" id="infotab" role="tab" data-toggle="tab" aria-controls="info" aria-expanded="true">INFO</a></li>
-	    <li class="nav-item"> <a class="nav-link active" href="#steem" id="steemtab" role="tab" data-toggle="tab" aria-controls="steem" aria-expanded="true">STEEM</a></li>
-	    <li class="nav-item"> <a class="nav-link" href="#sbd" role="tab" id="sbdtab" data-toggle="tab" aria-controls="sbd">SBD</a></li>
+	    <li class="nav-item"> <a class="nav-link active" href="#hive" id="hivetab" role="tab" data-toggle="tab" aria-controls="hive" aria-expanded="true">HIVE</a></li>
+	    <li class="nav-item"> <a class="nav-link" href="#hbd" role="tab" id="hbdtab" data-toggle="tab" aria-controls="hbd">HBD</a></li>
 		  <li class="nav-item"> <a class="nav-link" href="#feed" role="tab" id="feedtab" data-toggle="tab" aria-controls="feed">FEED</a></li>
 	  </ul>
 	  <!-- Content Panel -->
@@ -91,7 +91,7 @@
                   </div>
                  <div class="jumbotron" style="background-color:#0F1F28; margin-bottom:20px;">
                     <h1 class="display-4">decentralized limitless user experiences</h1>
-                    <p class="lead">dlux is an open-source, fully decentralized asset platform on the STEEM blockchain.</p>
+                    <p class="lead">dlux is an open-source, fully decentralized asset platform on the hive blockchain.</p>
                     <hr class="my-4" style="background-color:#fff">
                     <p>Make and monetize anything - dlux empowers the spatial web with tokenization and crypto rewards. Join us in the metaverse today!</p>
                     <div class="btn-toolbar" role="toolbar">
@@ -102,28 +102,28 @@
                     </div>
 </div>
   </div>
-	    <div role="tabpanel" class="tab-pane fade show active" id="steem" aria-labelledby="steemtab">
+	    <div role="tabpanel" class="tab-pane fade show active" id="hive" aria-labelledby="hivetab">
 			<div class="container-fluid" style="padding:0">
 	      <div class="row">
 	    <div class="col-lg-8">
 		<div class="price-info">
-		<canvas id="historicpricesteem" height="250" class="price-chart"></canvas>
+		<canvas id="historicpricehive" height="250" class="price-chart"></canvas>
 		<div class="d-flex justify-content-center">
 		  <div class="btn-group btn-group-toggle set-timescale" data-toggle="buttons">
   				<label class="btn btn-primary active">
-    				<input type="radio" name="options" id="hoursteem" autocomplete="off" checked> 1H
+    				<input type="radio" name="options" id="hourhive" autocomplete="off" checked> 1H
   				</label>
   				<label class="btn btn-primary">
-    				<input type="radio" name="options" id="daysteem" autocomplete="off"> 1D
+    				<input type="radio" name="options" id="dayhive" autocomplete="off"> 1D
   				</label>
   				<label class="btn btn-primary">
-    			<input type="radio" name="options" id="weeksteem" autocomplete="off"> 1W
+    			<input type="radio" name="options" id="weekhive" autocomplete="off"> 1W
   				</label>
 			  	<label class="btn btn-primary">
-    			<input type="radio" name="options" id="monthsteem" autocomplete="off"> 1M
+    			<input type="radio" name="options" id="monthhive" autocomplete="off"> 1M
   				</label>
 			  	<label class="btn btn-primary">
-    			<input type="radio" name="options" id="yearsteem" autocomplete="off"> 1Y
+    			<input type="radio" name="options" id="yearhive" autocomplete="off"> 1Y
   				</label>
 			</div>
 			</div>
@@ -157,23 +157,23 @@
 		  <div>
 			  <div class="widget">
 			<ul id="orderwidget" class="nav nav-pills justify-content-center" role="tablist">
-			  <li class="nav-item"> <a class="nav-link active" href="#buysteem" id="buytabsteem" role="tab" data-toggle="tab" aria-controls="buysteem" aria-expanded="true">Buy DLUX</a></li>
-			  <li class="nav-item"> <a class="nav-link" href="#sellsteem" role="tab" id="selltabsteem" data-toggle="tab" aria-controls="sellsteem">Sell DLUX</a></li>
+			  <li class="nav-item"> <a class="nav-link active" href="#buyhive" id="buytabhive" role="tab" data-toggle="tab" aria-controls="buyhive" aria-expanded="true">Buy DLUX</a></li>
+			  <li class="nav-item"> <a class="nav-link" href="#sellhive" role="tab" id="selltabhive" data-toggle="tab" aria-controls="sellhive">Sell DLUX</a></li>
 			</ul>
 			  <!-- Content Panel -->
-		    <div id="orderformsteem" class="tab-content">
-			    <div role="tabpanel" class="tab-pane fade show active" id="buysteem" aria-labelledby="buytabsteem">
+		    <div id="orderformhive" class="tab-content">
+			    <div role="tabpanel" class="tab-pane fade show active" id="buyhive" aria-labelledby="buytabhive">
 			      <form>
 	    	<div class="form-group" style="padding-top: 10px">
-	    	  <label for="inputbuypricesteem">Bid Price</label>
-	    	  <input type="number" class="form-control" id="buypricesteem" placeholder="Amount in STEEM">
+	    	  <label for="inputbuypricehive">Bid Price</label>
+	    	  <input type="number" class="form-control" id="buypricehive" placeholder="Amount in Hive">
 			<div class="text-center" style="padding-top: 10px">
 				<button type="button" class="btn btn-outline-primary btn-sm">Lowest Ask</button>
 			</div>
         	</div>
 		    <div class="form-group">
-		      <label for="inputbuyqtysteem">Qty.</label>
-		      <input type="number" class="form-control" id="buyqtysteem" placeholder="How many">
+		      <label for="inputbuyqtyhive">Qty.</label>
+		      <input type="number" class="form-control" id="buyqtyhive" placeholder="How many">
 				<div class="text-center" style="padding-top: 10px">
 				<button type="button" class="btn btn-outline-primary btn-sm">Max</button>
 				<button type="button" class="btn btn-outline-primary btn-sm">1/2</button>
@@ -181,27 +181,27 @@
 				</div>
 	        </div>
 			<div class="form-group">
-		      <label for="inputbuytotalsteem">Total</label>
-		      <input type="number" class="form-control" id="buytotalsteem" placeholder="Order total">
-			  <div class="text-center text-secondary" style="padding-top: 10px">STEEM BALANCE</div>
+		      <label for="inputbuytotalhive">Total</label>
+		      <input type="number" class="form-control" id="buytotalhive" placeholder="Order total">
+			  <div class="text-center text-secondary" style="padding-top: 10px">HIVE BALANCE</div>
 	        </div>
 			<div class="text-center">
 		    <button type="submit" class="btn btn-outline-success">Place Buy Order</button>
 			</div>
 	      </form>
 		        </div>
-			    <div role="tabpanel" class="tab-pane fade" id="sellsteem" aria-labelledby="selltabsteem">
+			    <div role="tabpanel" class="tab-pane fade" id="sellhive" aria-labelledby="selltabhive">
 			      <form>
 	    <div class="form-group" style="padding-top: 10px">
-	      <label for="inputsellpricesteem">Ask Price</label>
-	      <input type="number" class="form-control" id="sellpricesteem" placeholder="Amount in STEEM">
+	      <label for="inputsellpricehive">Ask Price</label>
+	      <input type="number" class="form-control" id="sellpricehive" placeholder="Amount in hive">
 			<div class="text-center" style="padding-top: 10px">
 				<button type="button" class="btn btn-outline-primary btn-sm">Highest Bid</button>
 			</div>
         </div>
 		    <div class="form-group">
-		      <label for="inputsellqtysteem">Qty.</label>
-		      <input type="number" class="form-control" id="sellqtysteem" placeholder="How many">
+		      <label for="inputsellqtyhive">Qty.</label>
+		      <input type="number" class="form-control" id="sellqtyhive" placeholder="How many">
 			  <div class="text-center" style="padding-top: 10px">
 				<button type="button" class="btn btn-outline-primary btn-sm">Max</button>
 				<button type="button" class="btn btn-outline-primary btn-sm">1/2</button>
@@ -209,9 +209,9 @@
 				</div>
 	        </div>
 					  <div class="form-group">
-		      <label for="inputselltotalsteem">Total</label>
-		      <input type="number" class="form-control" id="selltotalsteem" placeholder="Order total">
-			  <div class="text-center text-secondary" style="padding-top: 10px">STEEM BALANCE</div>
+		      <label for="inputselltotalhive">Total</label>
+		      <input type="number" class="form-control" id="selltotalhive" placeholder="Order total">
+			  <div class="text-center text-secondary" style="padding-top: 10px">HIVE BALANCE</div>
 	        </div>
 		    <div class="text-center">
 		    <button type="submit" class="btn btn-outline-danger">Place Sell Order</button>
@@ -227,7 +227,7 @@
 	</div>
 	<div class="row">
 	<div class="col-lg-8">
-	<canvas id="marketorderssteem" height="125" class="orderbook-chart"></canvas>
+	<canvas id="marketordershive" height="125" class="orderbook-chart"></canvas>
 	<div class="container orderbook-table">
 	  <div class="row text-center">
 		  <div class="col-lg-6">
@@ -314,28 +314,28 @@
 	  </div>
 </div>
 		  </div>
-	    <div role="tabpanel" class="tab-pane fade" id="sbd" aria-labelledby="sbdtab">
+	    <div role="tabpanel" class="tab-pane fade" id="hbd" aria-labelledby="hbdtab">
 			<div class="container-fluid" style="padding:0">
 	      <div class="row">
 	    <div class="col-lg-8">
 		<div class="price-info">
-		<canvas id="historicpricesbd" class="price-chart" style="height:250px !important;"></canvas>
+		<canvas id="historicpricehbd" class="price-chart" style="height:250px !important;"></canvas>
 		<div class="d-flex justify-content-center">
 		  <div class="btn-group btn-group-toggle set-timescale" data-toggle="buttons">
   				<label class="btn btn-primary active">
-    				<input type="radio" name="options" id="hoursbd" autocomplete="off" checked> 1H
+    				<input type="radio" name="options" id="hourhbd" autocomplete="off" checked> 1H
   				</label>
   				<label class="btn btn-primary">
-    				<input type="radio" name="options" id="daysbd" autocomplete="off"> 1D
+    				<input type="radio" name="options" id="dayhbd" autocomplete="off"> 1D
   				</label>
   				<label class="btn btn-primary">
-    			<input type="radio" name="options" id="weeksbd" autocomplete="off"> 1W
+    			<input type="radio" name="options" id="weekhbd" autocomplete="off"> 1W
   				</label>
 			  	<label class="btn btn-primary">
-    			<input type="radio" name="options" id="monthsbd" autocomplete="off"> 1M
+    			<input type="radio" name="options" id="monthhbd" autocomplete="off"> 1M
   				</label>
 			  	<label class="btn btn-primary">
-    			<input type="radio" name="options" id="yearsbd" autocomplete="off"> 1Y
+    			<input type="radio" name="options" id="yearhbd" autocomplete="off"> 1Y
   				</label>
 			</div>
 			</div>
@@ -370,24 +370,24 @@
 	  <div class="col-lg-4">
 		  <div>
 			  <div class="widget">
-			<ul id="orderwidgetsbd" class="nav nav-pills justify-content-center" role="tablist">
-			  <li class="nav-item"> <a class="nav-link active" href="#buysbd" id="buytabsbd" role="tab" data-toggle="tab" aria-controls="buy" aria-expanded="true">Buy DLUX</a></li>
-			  <li class="nav-item"> <a class="nav-link" href="#sellsbd" role="tab" id="selltabsbd" data-toggle="tab" aria-controls="sell">Sell DLUX</a></li>
+			<ul id="orderwidgethbd" class="nav nav-pills justify-content-center" role="tablist">
+			  <li class="nav-item"> <a class="nav-link active" href="#buyhbd" id="buytabhbd" role="tab" data-toggle="tab" aria-controls="buy" aria-expanded="true">Buy DLUX</a></li>
+			  <li class="nav-item"> <a class="nav-link" href="#sellhbd" role="tab" id="selltabhbd" data-toggle="tab" aria-controls="sell">Sell DLUX</a></li>
 			</ul>
 			  <!-- Content Panel -->
-		    <div id="orderformsbd" class="tab-content">
-			    <div role="tabpanel" class="tab-pane fade show active" id="buysbd" aria-labelledby="buytabsbd">
+		    <div id="orderformhbd" class="tab-content">
+			    <div role="tabpanel" class="tab-pane fade show active" id="buyhbd" aria-labelledby="buytabhbd">
 			      <form>
 	    	<div class="form-group" style="padding-top: 10px">
-	    	  <label for="inputbuypricesbd">Bid Price</label>
-	    	  <input type="number" class="form-control" id="buypricesbd" placeholder="Amount in SBD">
+	    	  <label for="inputbuypricehbd">Bid Price</label>
+	    	  <input type="number" class="form-control" id="buypricehbd" placeholder="Amount in hbd">
 			<div class="text-center" style="padding-top: 10px">
 				<button type="button" class="btn btn-outline-primary btn-sm">Lowest Ask</button>
 			</div>
         	</div>
 		    <div class="form-group">
-		      <label for="inputbuyqtysbd">Qty.</label>
-		      <input type="number" class="form-control" id="buyqtysbd" placeholder="How many">
+		      <label for="inputbuyqtyhbd">Qty.</label>
+		      <input type="number" class="form-control" id="buyqtyhbd" placeholder="How many">
 				<div class="text-center" style="padding-top: 10px">
 				<button type="button" class="btn btn-outline-primary btn-sm">Max</button>
 				<button type="button" class="btn btn-outline-primary btn-sm">1/2</button>
@@ -395,27 +395,27 @@
 				</div>
 	        </div>
 			<div class="form-group">
-		      <label for="inputbuytotalsbd">Total</label>
-		      <input type="number" class="form-control" id="buytotalsbd" placeholder="Order total">
-			  <div class="text-center text-secondary" style="padding-top: 10px">SBD BALANCE</div>
+		      <label for="inputbuytotalhbd">Total</label>
+		      <input type="number" class="form-control" id="buytotalhbd" placeholder="Order total">
+			  <div class="text-center text-secondary" style="padding-top: 10px">hbd BALANCE</div>
 	        </div>
 			<div class="text-center">
 		    <button type="submit" class="btn btn-outline-success">Place Buy Order</button>
 			</div>
 	      </form>
 		        </div>
-			    <div role="tabpanel" class="tab-pane fade" id="sellsbd" aria-labelledby="selltabsbd">
+			    <div role="tabpanel" class="tab-pane fade" id="sellhbd" aria-labelledby="selltabhbd">
 			      <form>
 	    <div class="form-group" style="padding-top: 10px">
-	      <label for="inputsellpricesbd">Ask Price</label>
-	      <input type="number" class="form-control" id="sellpricesbd" placeholder="Amount in SBD">
+	      <label for="inputsellpricehbd">Ask Price</label>
+	      <input type="number" class="form-control" id="sellpricehbd" placeholder="Amount in hbd">
 			<div class="text-center" style="padding-top: 10px">
 				<button type="button" class="btn btn-outline-primary btn-sm">Highest Bid</button>
 			</div>
         </div>
 		    <div class="form-group">
-		      <label for="inputsellqtysbd">Qty.</label>
-		      <input type="number" class="form-control" id="sellqtysbd" placeholder="How many">
+		      <label for="inputsellqtyhbd">Qty.</label>
+		      <input type="number" class="form-control" id="sellqtyhbd" placeholder="How many">
 			  <div class="text-center" style="padding-top: 10px">
 				<button type="button" class="btn btn-outline-primary btn-sm">Max</button>
 				<button type="button" class="btn btn-outline-primary btn-sm">1/2</button>
@@ -423,9 +423,9 @@
 				</div>
 	        </div>
 			<div class="form-group">
-		      <label for="inputselltotalsbd">Total</label>
-		      <input type="number" class="form-control" id="selltotalsbd" placeholder="Order total">
-			  <div class="text-center text-secondary" style="padding-top: 10px">SBD BALANCE</div>
+		      <label for="inputselltotalhbd">Total</label>
+		      <input type="number" class="form-control" id="selltotalhbd" placeholder="Order total">
+			  <div class="text-center text-secondary" style="padding-top: 10px">hbd BALANCE</div>
 	        </div>
 		    <div class="text-center">
 		    <button type="submit" class="btn btn-outline-danger">Place Sell Order</button>
@@ -440,7 +440,7 @@
 	</div>
 	<div class="row">
 	<div class="col-lg-8">
-	<canvas id="marketorderssbd" height="125" class="orderbook-chart"></canvas>
+	<canvas id="marketordershbd" height="125" class="orderbook-chart"></canvas>
 	<div class="container orderbook-table">
 	  <div class="row text-center">
 		  <div class="col-lg-6">
@@ -552,7 +552,7 @@
       <td>370534d95d25a223eee8080c12487fc32c7dc502</td>
       <td>32086802</td>
       <td>@chrismgiles</td>
-      <td>bought 45.454 DLUX with 0.010 STEEM</td>
+      <td>bought 45.454 DLUX with 0.010 hive</td>
     </tr>
   </tbody>
 </table>
@@ -569,14 +569,14 @@
   <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
 <script>
 	
-    var historicPriceSteem = document.getElementById('historicpricesteem').getContext('2d');
+    var historicPricehive = document.getElementById('historicpricehive').getContext('2d');
 	
     // Global Options
     Chart.defaults.global.defaultFontFamily = 'Helvetica';
     Chart.defaults.global.defaultFontSize = 18;
     Chart.defaults.global.defaultFontColor = '#FFF';
 
-    var priceChartSteem = new Chart(historicPriceSteem, {
+    var priceCharthive = new Chart(historicPricehive, {
 		
       type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
       data:{
@@ -602,7 +602,7 @@
 		responsive: true,
         title:{
           display:true,
-          text:'DLUX: 0.22 STEEM',
+          text:'DLUX: 0.22 HIVE',
           fontSize:40,
 		  fontColor:'#000',
         },
@@ -645,16 +645,16 @@
       }
     });
 
-    var marketOrdersSteem = document.getElementById('marketorderssteem').getContext('2d');
-	var gradientGrnSteem = marketOrdersSteem.createLinearGradient(0, 0, 0, 400);
-	gradientGrnSteem.addColorStop(0, 'rgba(90, 216, 154, 1)');   
-	gradientGrnSteem.addColorStop(1, 'rgba(90, 216, 154, 0)');
+    var marketOrdershive = document.getElementById('marketordershive').getContext('2d');
+	var gradientGrnhive = marketOrdershive.createLinearGradient(0, 0, 0, 400);
+	gradientGrnhive.addColorStop(0, 'rgba(90, 216, 154, 1)');   
+	gradientGrnhive.addColorStop(1, 'rgba(90, 216, 154, 0)');
 	
-	var gradientRedSteem = marketOrdersSteem.createLinearGradient(0, 0, 0, 400);
-	gradientRedSteem.addColorStop(0, 'rgba(226, 94, 94, 1)');   
-	gradientRedSteem.addColorStop(1, 'rgba(226, 94, 94, 0)');
+	var gradientRedhive = marketOrdershive.createLinearGradient(0, 0, 0, 400);
+	gradientRedhive.addColorStop(0, 'rgba(226, 94, 94, 1)');   
+	gradientRedhive.addColorStop(1, 'rgba(226, 94, 94, 0)');
 	
-    var buySellChartSteem = new Chart(marketOrdersSteem, {
+    var buySellCharthive = new Chart(marketOrdershive, {
       type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
       data:{
         labels:['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
@@ -668,8 +668,8 @@
             22.35,
             22.36
           ],
-          backgroundColor:[gradientGrnSteem, gradientGrnSteem, gradientGrnSteem, gradientRedSteem, gradientRedSteem, gradientRedSteem],
-		  hoverBackgroundColor:[gradientGrnSteem, gradientGrnSteem, gradientGrnSteem, gradientRedSteem, gradientRedSteem, gradientRedSteem],
+          backgroundColor:[gradientGrnhive, gradientGrnhive, gradientGrnhive, gradientRedhive, gradientRedhive, gradientRedhive],
+		  hoverBackgroundColor:[gradientGrnhive, gradientGrnhive, gradientGrnhive, gradientRedhive, gradientRedhive, gradientRedhive],
           hoverBorderWidth:2,
           hoverBorderColor:'#FFCE00'
         }]
@@ -678,7 +678,7 @@
 		responsive: true,
         title:{
           display:true,
-          text:'DLUX-STEEM ORDER BOOK',
+          text:'DLUX-HIVE ORDER BOOK',
           fontSize:25
         },
         legend:{
@@ -721,9 +721,9 @@
       
       }
     });
-	var historicPriceSbd = document.getElementById('historicpricesbd').getContext('2d');
+	var historicPricehbd = document.getElementById('historicpricehbd').getContext('2d');
     
-	var priceChartSbd = new Chart(historicPriceSbd, {
+	var priceCharthbd = new Chart(historicPricehbd, {
 		
       type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
       data:{
@@ -749,7 +749,7 @@
 		responsive: true,
         title:{
           display:true,
-          text:'DLUX: 0.11 SBD',
+          text:'DLUX: 0.11 HBD',
           fontSize:40,
 		  fontColor:'#000',
         },
@@ -792,16 +792,16 @@
       }
     });
 
-    var marketOrdersSbd = document.getElementById('marketorderssbd').getContext('2d');
+    var marketOrdershbd = document.getElementById('marketordershbd').getContext('2d');
 	
-	var gradientGrnSbd = marketOrdersSbd.createLinearGradient(0, 0, 0, 400);
-	gradientGrnSbd.addColorStop(0, 'rgba(90, 216, 154, 1)');   
-	gradientGrnSbd.addColorStop(1, 'rgba(90, 216, 154, 0)');
+	var gradientGrnhbd = marketOrdershbd.createLinearGradient(0, 0, 0, 400);
+	gradientGrnhbd.addColorStop(0, 'rgba(90, 216, 154, 1)');   
+	gradientGrnhbd.addColorStop(1, 'rgba(90, 216, 154, 0)');
 	
-	var gradientRedSbd = marketOrdersSbd.createLinearGradient(0, 0, 0, 400);
-	gradientRedSbd.addColorStop(0, 'rgba(226, 94, 94, 1)');   
-	gradientRedSbd.addColorStop(1, 'rgba(226, 94, 94, 0)');
-    var buySellChartSbd = new Chart(marketOrdersSbd, {
+	var gradientRedhbd = marketOrdershbd.createLinearGradient(0, 0, 0, 400);
+	gradientRedhbd.addColorStop(0, 'rgba(226, 94, 94, 1)');   
+	gradientRedhbd.addColorStop(1, 'rgba(226, 94, 94, 0)');
+    var buySellCharthbd = new Chart(marketOrdershbd, {
       type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
       data:{
         labels:['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
@@ -815,8 +815,8 @@
             22.35,
             22.36
           ],
-          backgroundColor:[gradientGrnSbd, gradientGrnSbd, gradientGrnSbd, gradientRedSbd, gradientRedSbd, gradientRedSbd],
-		  hoverBackgroundColor:[gradientGrnSbd, gradientGrnSbd, gradientGrnSbd, gradientRedSbd, gradientRedSbd, gradientRedSbd],
+          backgroundColor:[gradientGrnhbd, gradientGrnhbd, gradientGrnhbd, gradientRedhbd, gradientRedhbd, gradientRedhbd],
+		  hoverBackgroundColor:[gradientGrnhbd, gradientGrnhbd, gradientGrnhbd, gradientRedhbd, gradientRedhbd, gradientRedhbd],
           hoverBorderWidth:2,
           hoverBorderColor:'#FFCE00'
         }]
@@ -825,7 +825,7 @@
 		responsive: true,
         title:{
           display:true,
-          text:'DLUX-SBD ORDER BOOK',
+          text:'DLUX-HBD ORDER BOOK',
           fontSize:25
         },
         legend:{
