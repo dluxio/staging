@@ -10,6 +10,7 @@
   <link href="../css/dlux.css" rel="stylesheet" type="text/css">
   <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
+  <script src="../js/session.js"></script>
   <title>dlux DEX</title>
 </head>
 <body id="top">
@@ -567,6 +568,7 @@
 	
   <script type="text/javascript" src="../js/popper.min.js"></script>
   <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
+	<script>checkCookie()</script>
 <script>
 	
     var historicPricehive = document.getElementById('historicpricehive').getContext('2d');
