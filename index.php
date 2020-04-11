@@ -30,7 +30,7 @@
 <p class="lead">
           <a class="btn btn-lg btn-outline-primary m-3" href="/apps/" role="button">Explore<i class="fab fa-wpexplorer ml-2"></i></a>
 	
-	<a class="btn btn-lg btn-outline-secondary" href="/create/" target="_blank" role="button">Create<i class="fas fa-plus-circle ml-2"></i></a>
+	<a class="btn btn-lg btn-outline-secondary" href="/create/" role="button">Create<i class="fas fa-plus-circle ml-2"></i></a>
        </p>
 
     </div>

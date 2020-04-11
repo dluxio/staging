@@ -14,7 +14,7 @@
 <body>
 <?php include '../modules/nav.php';?>
 <div class="padme-t70 text-center">
-<a href="supermedium.html">Create with Supercraft</a>
+<a class="btn btn-lg btn-primary m-3" role="button" href="supercraft">Create with Supercraft</a>
 	</div>
 <?php include '../modules/footer.php';?>
 <script type="text/javascript" src="../js/popper.min.js"></script>
