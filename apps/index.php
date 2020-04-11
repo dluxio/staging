@@ -20,7 +20,6 @@
 </head>
 
 <body id="index" is="dmx-app">
-<div id="conditional1" is="dmx-if"></div>
 <?php include '../modules/nav.php';?>
 <dmx-api-datasource id="dluxGetBlog" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_blog'" dmx-param:params="'[%22robotolux%22,0,10]'"></dmx-api-datasource>
 <div class="modal fade" id="detailModal" tabindex="11" role="dialog" aria-hidden="true">
@@ -49,12 +48,12 @@
     <div class="col-md-8 text-white text-center">
       <div class="display-4">Virtual Reality <i class="fas fa-vr-cardboard"></i></div>
       <p class="lead">Responsive WebVR across mobile, desktop, and headset.<br>
-        <a href="https://dlux.io/vr" class="lead" target="_blank">VR Metaverse (Beta) <i class="fas fa-external-link-alt"></i></a></p>
+        <a href="https://dlux.io/vr" class="lead" target="_blank">Enter Metaverse (Beta) <i class="fas fa-external-link-alt"></i></a></p>
     </div>
-    <div class="col-md-4 text-center m-auto"> <a class="btn btn-primary btn-lg m-1 btn-1" href="#" role="button">Learn<i class="fas fa-shapes ml-2"></i></a><a class="btn btn-primary btn-lg m-1 btn-1" href="#" role="button">Create<i class="fas fa-plus-circle ml-2"></i></a></div>
+    <div class="col-md-4 text-center m-auto"> <a class="btn btn-primary btn-lg m-1 btn-1" href="#" role="button">Learn<i class="fas fa-shapes ml-2"></i></a><a class="btn btn-primary btn-lg m-1 btn-1" href="../create/" role="button">Create<i class="fas fa-plus-circle ml-2"></i></a></div>
   </div>
   <div class="card-columns" id="blogResult" is="dmx-repeat" dmx-bind:repeat="dluxGetBlog.data.result">
-    <div class="card text-white bg-dark">
+    <div class="card text-white bg-dark mt-2 mb-3">
       <div class="card-header">
         <div class="d-inline-block">
           <div class="float-left" ><a dmx-bind:href="https://dlux.io/dlux/@{{comment.author}}"><img dmx-bind:src="https://token.dlux.io/getauthorpic/{{comment.author}}" alt="" class="rounded-circle bg-light img-fluid mr-2 cover author-img"></a></div>
@@ -64,13 +63,14 @@
         </div>
         <div class="float-right"><span class="badge badge-secondary">{{comment.json_metadata.scat()}}</span></div>
       </div>
-      <div class="card-body"> <a href="#detailModal" data-toggle="modal" class="a-1">
+      <a href="#detailModal" data-toggle="modal" class="a-1">
         <h5 class="card-title mt-2 text-center text-capitalize">{{comment.title}}</h5>
         <img src="..."  alt="Card image cap" class="card-img-top" dmx-bind:src="{{comment.json_metadata.parseJSON().image}}" />
+		   <div class="card-body">
         <p class="preview-text">{{comment.body.removeMD().trunc(100,true,"...")}}</p>
       </a></div>
       <center>
-        <a dmx-bind:href="https://dlux.io{{comment.url}}" type="button" class="btn btn-outline-danger m-2 btn-launch">Launch App</a>
+        <a dmx-bind:href="https://dlux.io{{comment.url}}" type="button" class="btn btn-outline-danger mb-4 btn-launch">Launch App</a>
       </center>
       <div class="card-footer">
         <div class="d-inline-block">
@@ -83,8 +83,6 @@
 </div>
 <hr>
 <?php include '../modules/footer.php';?>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<!-- Include all compiled plugins (below), or include individual files as needed -->
 <script type="text/javascript" src="../js/popper.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
 <script>checkCookie()</script>
