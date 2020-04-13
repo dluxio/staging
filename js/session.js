@@ -23,6 +23,13 @@ function checkCookie(){
     }
 }
 
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
 function logout () {
 	sessionStorage.clear()
 	document.getElementById('active-session').style.display = 'none';
@@ -108,6 +115,7 @@ class Dluxsession {
                 console.log(itr[storables[i]])
                 window.sessionStorage.setItem(storables[i], JSON.stringify(itr[storables[i]]))
               }
+		setCookie('user', itr.steemid, 5)
             if (window.location.pathname.substr(0,6) === '/login'){
 		// url param for return to url
               window.location = 'https://' + window.location.host 
