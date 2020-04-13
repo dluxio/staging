@@ -1,48 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DLUX</title>
-  <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
-  <link href="../css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
-  
-  <!-- Bootstrap -->
-
-  
-  <script type="text/javascript" src="../dmxAppConnect/dmxAppConnect.js"></script>
-  <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script> <script type="text/javascript" src="../dmxAppConnect/dmxMoment.js"></script>
-  <script type="text/javascript" src="../dmxAppConnect/dmxFormatter.js"></script>
-  <script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
-  <script src="../js/session.js"></script>
-
+<!doctype html>
+<html lang="en" class="h-100"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>DLUX - Apps</title>
+<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
+<link href="../css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../dmxAppConnect/dmxAppConnect.js"></script>
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../js/session.js"></script>
+<script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
+<!--page specific-->
+<script type="text/javascript" src="../dmxAppConnect/dmxMoment.js"></script>
+<script type="text/javascript" src="../dmxAppConnect/dmxFormatter.js"></script>
 </head>
 
-<body id="index" is="dmx-app">
-<?php include '../modules/nav.php';?>
+<body class="d-flex flex-column h-100" id="apps" is="dmx-app">
 <dmx-api-datasource id="dluxGetBlog" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_blog'" dmx-param:params="'[%22robotolux%22,0,10]'"></dmx-api-datasource>
-<div class="modal fade" id="detailModal" tabindex="11" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-full modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Add a connection:</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span> </button>
-      </div>
-      <div class="modal-body p-4" id="CMresult">
-        <hr>
-        <a href="#">
-          <h4><strong>Steem Wallet</strong></h4>
-          <p>Sign in with your Steem account for access to DLUX and STEEM</p>
-        </a>
-        <hr>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">DONE</button>
-      </div>
-    </div>
-  </div>
-</div>
+<?php include '../modules/nav.php';?>
+<main role="main" class="flex-shrink-0">
 <div class="container-fluid padme-t70">
   <div class="row mt-3">
     <div class="col-md-8 text-white text-center">
@@ -80,11 +56,10 @@
       </div>
     </div>
   </div>
-</div>
-<hr>
+ </div>
+</main>
 <?php include '../modules/footer.php';?>
 <script type="text/javascript" src="../js/popper.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
 <script>checkCookie()</script>
-</body>
-</html>
+</body></html>
