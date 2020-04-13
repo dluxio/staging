@@ -121,6 +121,7 @@
             iam = message;
             var un = document.getElementById('navbarDropdown1')
             un.innerHTML = message
+	    console.log('Trying: ' + iam)
             fetch(`https://token.dlux.io/@${iam}`)
                 .then(function (response) {
                     return response.json();
