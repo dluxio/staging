@@ -1856,5 +1856,5 @@
                 });
         }
 </script>
-<script>checkCookie();iam(getCookie("user"));</script>
+<script>checkCookie();iAm(getCookie("user"));</script>
 </body></html>
