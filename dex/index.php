@@ -69,12 +69,12 @@
                         console.log(res)
                         hivebal = res.balance.amount
                         hbdbal = res.sbd_balance.amount
-                        document.getElementsByClassName('text-center text-secondary')[0].innerHTML = `BALANCE: ${parseFloat(res.balance.amount / 1000).toFixed(3)} STEEM`
-                        document.getElementsByClassName('text-center text-secondary')[1].innerHTML = `BALANCE: ${parseFloat(res.balance.amount / 1000).toFixed(3)} STEEM`
+                        document.getElementsByClassName('text-center text-secondary')[0].innerHTML = `BALANCE: ${parseFloat(res.balance.amount / 1000).toFixed(3)} HIVE`
+                        document.getElementsByClassName('text-center text-secondary')[1].innerHTML = `BALANCE: ${parseFloat(res.balance.amount / 1000).toFixed(3)} HIVE`
                         document.getElementById('buytotalhive').value = parseFloat(hivebal / 1000).toFixed(3)
                         document.getElementById('buytotalhbd').value = parseFloat(hbdbal / 1000).toFixed(3)
-                        document.getElementsByClassName('text-center text-secondary')[2].innerHTML = `BALANCE: ${parseFloat(res.sbd_balance.amount / 1000).toFixed(3)} SBD`
-                        document.getElementsByClassName('text-center text-secondary')[3].innerHTML = `BALANCE: ${parseFloat(res.sbd_balance.amount / 1000).toFixed(3)} SBD`
+                        document.getElementsByClassName('text-center text-secondary')[2].innerHTML = `BALANCE: ${parseFloat(res.sbd_balance.amount / 1000).toFixed(3)} HBD`
+                        document.getElementsByClassName('text-center text-secondary')[3].innerHTML = `BALANCE: ${parseFloat(res.sbd_balance.amount / 1000).toFixed(3)} HBD`
                     })
                 });
         }
