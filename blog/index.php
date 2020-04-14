@@ -6,12 +6,14 @@
 <title>DLUX - Create</title>
 <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
 <link href="../css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../dmxAppConnect/dmxAppConnect.js"></script>
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="../js/session.js"></script>
 <script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="d-flex flex-column h-100">
+<dmx-api-datasource id="dluxPost" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_content'" dmx-param:params="'[%22author%22,%22permlink%22]'"></dmx-api-datasource>
 <?php include '../modules/nav.php';?>
 <main role="main" class="flex-shrink-0">
 	<div>
