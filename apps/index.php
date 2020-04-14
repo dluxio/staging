@@ -55,7 +55,7 @@
 		<form id="voteForm">
   		<div class="form-group">
 
-    	<button type="button" class="btn btn-primary" dmx-bind:id="voteBtn{{entry_id}}" dmx-bin:onclick="vote('{{comment.author}}','{{comment.permlink}}','slider{{entry_id}}')">100%</button>
+    	<button type="button" class="btn btn-primary" dmx-bind:id="voteBtn{{entry_id}}" dmx-bind:onclick="vote('{{comment.author}}','{{comment.permlink}}','slider{{entry_id}}')">100%</button>
     <input type="range" class="form-control-range" value="100" dmx-bind:id="slider{{entry_id}}" dmx-bind:onchange="updateVoteSubmit('voteBtn{{entry_id}}','slider{{entry_id}}');">
   </div>
 </form>
@@ -105,6 +105,7 @@
 <script>function vote(author,permlink,weightid){
 		var weight = parseInt(document.getElementById(val).value) * 100
 		var voter = sessionStorage.getItem('user')
+		console.log({voter,author,permlink,weight})
 		Dluxsession.hive_sign([voter,['vote',{voter,author,permlink,weight}],'posting'])
 		.then(r =>{
 			console.log(r)
