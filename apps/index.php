@@ -106,7 +106,7 @@
 		var weight = parseInt(document.getElementById(weightid).value) * 100
 		var voter = sessionStorage.getItem('user')
 		console.log({voter,author,permlink,weight})
-		Dluxsession.hive_sign([voter,['vote',{voter,author,permlink,weight}],'posting'])
+		Dluxsession.hive_sign([voter,[['vote',{voter,author,permlink,weight}]],'posting'])
 		.then(r =>{
 			console.log(r)
 		})
