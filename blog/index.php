@@ -37,7 +37,7 @@
       <a dmx-bind:href="{{dluxPost.data.result.url}}" type="button" class="btn btn-outline-danger mb-4 btn-launch">Launch App</a>
     </center>
 <hr class="mb-0">
-		<div class="collapse" dmx-bind:id="vote{{entry_id}}">
+		<div class="collapse" id="vote">
 		<form id="voteForm">
   		<div class="form-group">
 
@@ -55,7 +55,7 @@
 </form>
 			</div>
 		<div class="d-inline-block p-2">
-        <a data-toggle="collapse" dmx-bind:data-target="{{&quot;#&quot;}}vote{{entry_id}}"><i class="fas fa-heart mr-1"></i></a>{{dluxPost.data.result.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{dluxPost.data.result.children}}</div>
+        <a data-toggle="collapse" data-target="#vote"><i class="fas fa-heart mr-1"></i></a>{{dluxPost.data.result.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{dluxPost.data.result.children}}</div>
       </div>
       <div class="float-right p-2">{{dluxPost.data.result.total_payout_value}} <img src="../img/hextacular.svg" alt="" width="17"/></div>
 
