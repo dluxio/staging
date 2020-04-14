@@ -8,7 +8,8 @@
 <link href="../css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="../dmxAppConnect/dmxAppConnect.js"></script>
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="../dmxAppConnect/dmxFormatter.js"></script> <script type="text/javascript" src="../js/session.js"></script>
+<script type="text/javascript" src="../dmxAppConnect/dmxFormatter.js"></script>
+<script type="text/javascript" src="../js/session.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/steem/dist/steem.min.js"></script>
 <script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
