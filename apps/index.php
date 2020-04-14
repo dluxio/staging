@@ -51,17 +51,17 @@
       <a dmx-bind:href="{{comment.url}}" type="button" class="btn btn-outline-danger mb-4 btn-launch">Launch App</a>
     </center>
     <div class="card-footer">
-		<div class="collapse" dmx-bind:id="vote.{{comment.author}}.{{comment.permlink}}">
-		<form id="vote-form-" dmx-bind:id="voteForm.{{comment.author}}.{{comment.permlink}}">
+		<div class="collapse" id="vote">
+		<form id="voteForm">
   		<div class="form-group">
 
-    	<button type="button" class="btn btn-primary" dmx-bind:id="voteBtn.{{comment.author}}.{{comment.permlink}}">100%</button>
-    <input type="range" class="form-control-range" value="100" dmx-bind:onchange="updateVoteSubmit('voteBtn.{{comment.author}}.{{comment.permlink}}',this.value);">
+    	<button type="button" class="btn btn-primary" id="voteBtn">100%</button>
+    <input type="range" class="form-control-range" value="100" onchange="updateVoteSubmit(this.val);">
   </div>
 </form>
 			</div>
       <div class="d-inline-block">
-        <div class="float-left"><a data-toggle="collapse" dmx-bind:data-target="#vote.{{comment.author}}.{{comment.permlink}}"><i class="fas fa-heart mr-1"></i></a>{{comment.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{comment.children}}</div>
+        <div class="float-left"><a data-toggle="collapse" data-target="#vote"><i class="fas fa-heart mr-1"></i></a>{{comment.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{comment.children}}</div>
       </div>
       <div class="float-right">{{comment.total_payout_value}} <img src="../img/hextacular.svg" alt="" width="17"/></div>
     </div>
