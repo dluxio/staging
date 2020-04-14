@@ -41,7 +41,7 @@
       </div>
       <div class="float-right"><span class="badge badge-secondary">{{comment.json_metadata.scat()}}</span></div>
     </div>
-    <a href="#detailModal" class="a-1" data-toggle="modal" dmx-on:click="app_detail.select(entry_id)" dmx-bind:onclick="window.history.pushState('{{comment.url}}','{{comment.title}}', '/blog/{{comment.url}}');">
+    <a href="#detailModal" class="a-1" data-toggle="modal" dmx-on:click="app_detail.select(entry_id)" dmx-bind:onclick="window.history.pushState('{{comment.url}}','{{comment.title}}', '/blog{{comment.url}}');">
       <h5 class="card-title mt-2 text-center text-capitalize">{{comment.title}}</h5>
       <img src="..."  alt="Card image cap" class="card-img-top" dmx-bind:src="{{comment.json_metadata.parseJSON().image}}" /></a>
     <div class="card-body"><a href="#detailModal" data-toggle="modal" class="a-1">
