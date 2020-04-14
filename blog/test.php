@@ -11,11 +11,12 @@
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="../js/session.js"></script>
 <script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../js/session.js"></script>
 <meta charset="UTF-8">
 </head>
 
 <body id="test" is="dmx-app" class="text-white">
-	<dmx-api-datasource id="dluxPost" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_content'" dmx-param:params="'[%22dlux-io%22,%221gr2rs1mgck2rrjf6awhrrq1rm4idrb4%22]'"></dmx-api-datasource>
+	<dmx-api-datasource id="dluxPost" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_content'" dmx-param:params="'[%22dlux-io%22,%22testing-dlux-vr%22]'"></dmx-api-datasource>
 	<?php include '../modules/nav.php';?>
 	<main role="main" class="flex-shrink-0">
 	<div>
@@ -65,5 +66,6 @@
 	 </div>
 </main>
 <?php include '../modules/footer.php';?>
-</body>
+<script>checkCookie()</script>
+	</body>
 </html>
