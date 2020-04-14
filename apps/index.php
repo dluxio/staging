@@ -56,7 +56,7 @@
   		<div class="form-group">
 
     	<button type="button" class="btn btn-primary" id="vote-btn-" dmx-bind:id="voteBtn.{{comment.author}}.{{comment.permlink}}">100%</button>
-    <input type="range" class="form-control-range" value="100" id="voteInput" onchange="updateVoteSubmit(voteBtn.{{comment.author}}.{{comment.permlink}},this.value);">
+    <input type="range" class="form-control-range" value="100" id="voteInput" dmx-bind:onchange="updateVoteSubmit(voteBtn.{{comment.author}}.{{comment.permlink}},this.value);">
   </div>
 </form>
 			</div>
