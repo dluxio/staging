@@ -41,7 +41,7 @@
       </div>
       <div class="float-right"><span class="badge badge-secondary">{{comment.json_metadata.scat()}}</span></div>
     </div>
-    <a href="#detailModal" class="a-1" data-toggle="modal" dmx-on:click="app_detail.select(entry_id)">
+    <a href="#detailModal" class="a-1" data-toggle="modal" dmx-on:click="app_detail.select(entry_id)" dmx-on:click="window.history.pushState('{{comment.url}}','{{comment.title}}', '/blog/{{comment.url}}');">
       <h5 class="card-title mt-2 text-center text-capitalize">{{comment.title}}</h5>
       <img src="..."  alt="Card image cap" class="card-img-top" dmx-bind:src="{{comment.json_metadata.parseJSON().image}}" /></a>
     <div class="card-body"><a href="#detailModal" data-toggle="modal" class="a-1">
@@ -85,7 +85,7 @@
           <p class="mt-0 mb-0 text-muted text-semibold"><a dmx-bind:href="/@{{comment.author}}" class="a-1">{{data.comment.author}}<span class="ml-2 badge badge-pill badge-light">{{data.comment.author_reputation.toString().rep()}}</span></a></p>
           <small class="text-muted">{{data.comment.created.formatDate("MMM dd, yyyy")}}</small></div>
 		</div>
-      <div class="float-right p-2"><span class="badge badge-secondary">{{data.comment.json_metadata.scat()}}</span><button type="button" class="close text-white ml-3" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button></div>
+      <div class="float-right p-2"><span class="badge badge-secondary">{{data.comment.json_metadata.scat()}}</span><button type="button" class="close text-white ml-3" data-dismiss="modal" aria-label="Close" onclick="window.history.back();"> <span aria-hidden="true">×</span></button></div>
 		<hr class="mt-0">
     <h4 class="text-center p-2">{{data.comment.title}}</h4>
     
