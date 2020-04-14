@@ -56,7 +56,7 @@
   		<div class="form-group">
 
     	<button type="button" class="btn btn-primary" id="vote-btn-" dmx-bind:id="voteBtn.{{comment.author}}.{{comment.permlink}}">100%</button>
-    <input type="range" class="form-control-range" value="100" id="voteInput" onchange="updateVoteSubmit(this.value);">
+    <input type="range" class="form-control-range" value="100" id="voteInput" onchange="updateVoteSubmit(voteBtn.{{comment.author}}.{{comment.permlink}},this.value);">
   </div>
 </form>
 			</div>
@@ -102,8 +102,8 @@
 <?php include '../modules/footer.php';?>
 <script type="text/javascript" src="../js/popper.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
-<script>function updateVoteSubmit(val) {
-          document.vote.voteBtn.innerHTML.value=val; 
+<script>function updateVoteSubmit(id,val) {
+          document.getElementById(id).innerHTML.value=val; 
         }</script>
 <script>checkCookie()</script>
 </body></html>
