@@ -104,7 +104,7 @@
 <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
 <script>function updateVoteSubmit(id,val) {
 		console.log(document.getElementById(val))
-          document.getElementById(id).innerHTML.value=document.getElementById(val).value; 
+          document.getElementById(id).innerHTML = document.getElementById(val).value + '%'; 
         }</script>
 <script>checkCookie()</script>
 </body></html>
