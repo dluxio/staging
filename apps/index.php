@@ -51,8 +51,17 @@
       <a dmx-bind:href="{{comment.url}}" type="button" class="btn btn-outline-danger mb-4 btn-launch">Launch App</a>
     </center>
     <div class="card-footer">
+		<div id="vote" class="collapse">
+		<form id="vote">
+  		<div class="form-group">
+
+    	<button type="button" class="btn btn-primary" id="voteBtn">100%</button>
+    <input type="range" class="form-control-range" value="100" id="voteInput" onchange="updateVoteSubmit(this.value);">
+  </div>
+</form>
+			</div>
       <div class="d-inline-block">
-        <div class="float-left"><i class="fas fa-heart mr-1"></i>{{comment.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{comment.children}}<i class="fas fa-star ml-2 mr-1"></i>4.5</div>
+        <div class="float-left"><a data-toggle="collapse" data-target="#vote"><i class="fas fa-heart mr-1"></i></a>{{comment.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{comment.children}}</div>
       </div>
       <div class="float-right">{{comment.total_payout_value}} <img src="../img/hextacular.svg" alt="" width="17"/></div>
     </div>
@@ -80,7 +89,7 @@
     </center>
 <hr class="mb-0">
 		<div class="d-inline-block p-2">
-        <div class="float-left"><i class="fas fa-heart mr-1"></i>{{data.comment.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{data.comment.children}}<i class="fas fa-star ml-2 mr-1"></i>4.5</div>
+        <div class="float-left"><i class="fas fa-heart mr-1"></i>{{data.comment.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{data.comment.children}}</div>
       </div>
       <div class="float-right p-2">{{data.comment.total_payout_value}} <img src="../img/hextacular.svg" alt="" width="17"/></div>
 
@@ -93,5 +102,8 @@
 <?php include '../modules/footer.php';?>
 <script type="text/javascript" src="../js/popper.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
+<script>function updateVoteSubmit(val) {
+          document.vote.voteBtn.innerHTML.value=val; 
+        }</script>
 <script>checkCookie()</script>
 </body></html>
