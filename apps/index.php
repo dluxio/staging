@@ -88,7 +88,7 @@
 		</div>
       <div class="float-right p-2"><span class="badge badge-secondary">{{data.comment.json_metadata.scat()}}</span><button type="button" class="close text-white ml-3" data-dismiss="modal" aria-label="Close" onclick="window.history.back();"><span aria-hidden="true">×</span></button></div>
 		<hr class="mt-0">
-    <h4 class="text-center p-2">{{data.comment.title}}</h4>
+    <a href="/blog/@{{comment.author}}/{{comment.permlink}}"><h4 class="text-center p-2">{{data.comment.title}}</h4></a>
     
 
 	 <img src="..."  alt="Card image cap" class="card-img-top" dmx-bind:src="{{data.comment.json_metadata.parseJSON().image}}" />  
