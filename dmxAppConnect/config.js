@@ -416,7 +416,33 @@ dmx.config({
               },
               {
                 "type": "array",
-                "name": "active_votes"
+                "name": "active_votes",
+                "sub": [
+                  {
+                    "type": "number",
+                    "name": "percent"
+                  },
+                  {
+                    "type": "number",
+                    "name": "reputation"
+                  },
+                  {
+                    "type": "text",
+                    "name": "rshares"
+                  },
+                  {
+                    "type": "text",
+                    "name": "time"
+                  },
+                  {
+                    "type": "text",
+                    "name": "voter"
+                  },
+                  {
+                    "type": "number",
+                    "name": "weight"
+                  }
+                ]
               },
               {
                 "type": "boolean",
@@ -435,7 +461,7 @@ dmx.config({
                 "name": "author"
               },
               {
-                "type": "number",
+                "type": "text",
                 "name": "author_reputation"
               },
               {
@@ -444,7 +470,17 @@ dmx.config({
               },
               {
                 "type": "array",
-                "name": "beneficiaries"
+                "name": "beneficiaries",
+                "sub": [
+                  {
+                    "type": "text",
+                    "name": "account"
+                  },
+                  {
+                    "type": "number",
+                    "name": "weight"
+                  }
+                ]
               },
               {
                 "type": "text",
@@ -621,10 +657,6 @@ dmx.config({
           {
             "type": "text",
             "name": "access-control-allow-origin"
-          },
-          {
-            "type": "text",
-            "name": "connection"
           },
           {
             "type": "text",

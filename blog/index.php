@@ -13,27 +13,27 @@
 </head>
 
 <body class="d-flex flex-column h-100">
-<dmx-api-datasource id="dluxPost" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_content'" dmx-param:params=`'[%22dlux-io%22,%221gr2rs1mgck2rrjf6awhrrq1rm4idrb4%22]'`></dmx-api-datasource>
+<dmx-api-datasource id="dluxPost" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_content'" dmx-param:params="'[%22dlux-io%22,%221gr2rs1mgck2rrjf6awhrrq1rm4idrb4%22]'"></dmx-api-datasource>
 <?php include '../modules/nav.php';?>
 <main role="main" class="flex-shrink-0">
 	<div>
   <div class="modal-content bg-dark text-white">
-	<dmx-data-detail id="app_detail" dmx-bind:data="dluxGetBlog.data.result" key="entry_id">
+	
 		<div class="d-inline-block p-2">
-	  <div class="float-left" ><a dmx-bind:href="/@{{comment.author}}"><img dmx-bind:src="https://token.dlux.io/getauthorpic/{{data.comment.author}}" alt="" class="rounded-circle bg-light img-fluid mr-2 cover author-img"></a></div>
+	  <div class="float-left" ><a dmx-bind:href="/@{{comment.author}}"><img dmx-bind:src="https://token.dlux.io/getauthorpic/{{comment.author}}" alt="" class="rounded-circle bg-light img-fluid mr-2 cover author-img"></a></div>
         <div class="float-left">
-          <p class="mt-0 mb-0 text-muted text-semibold"><a dmx-bind:href="/@{{comment.author}}" class="a-1">{{data.comment.author}}<span class="ml-2 badge badge-pill badge-light">{{data.comment.author_reputation.toString().rep()}}</span></a></p>
-          <small class="text-muted">{{data.comment.created.formatDate("MMM dd, yyyy")}}</small></div>
+          <p class="mt-0 mb-0 text-muted text-semibold"><a dmx-bind:href="/@{{comment.author}}" class="a-1">{{data.comment.author}}<span class="ml-2 badge badge-pill badge-light">{{comment.author_reputation.toString().rep()}}</span></a></p>
+          <small class="text-muted">{{comment.created.formatDate("MMM dd, yyyy")}}</small></div>
 		</div>
-      <div class="float-right p-2"><span class="badge badge-secondary">{{data.comment.json_metadata.scat()}}</span><button type="button" class="close text-white ml-3" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button></div>
+      <div class="float-right p-2"><span class="badge badge-secondary">{{comment.json_metadata.scat()}}</span><button type="button" class="close text-white ml-3" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button></div>
 		<hr class="mt-0">
-    <h4 class="text-center p-2">{{data.comment.title}}</h4>
+    <h4 class="text-center p-2">{{comment.title}}</h4>
     
 
 	 <img src="..."  alt="Card image cap" class="card-img-top" dmx-bind:src="{{data.comment.json_metadata.parseJSON().image}}" />  
-    <p class="p-2">{{data.comment.body.removeMD()}}</p>
+    <p class="p-2">{{comment.body.removeMD()}}</p>
 		  <center>
-      <a dmx-bind:href="{{data.comment.url}}" type="button" class="btn btn-outline-danger mb-4 btn-launch">Launch App</a>
+      <a dmx-bind:href="{{comment.url}}" type="button" class="btn btn-outline-danger mb-4 btn-launch">Launch App</a>
     </center>
 <hr class="mb-0">
 		<div class="collapse" dmx-bind:id="vote{{entry_id}}">
@@ -54,12 +54,12 @@
 </form>
 			</div>
 		<div class="d-inline-block p-2">
-        <a data-toggle="collapse" dmx-bind:data-target="{{&quot;#&quot;}}vote{{entry_id}}"><i class="fas fa-heart mr-1"></i></a>{{data.comment.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{data.comment.children}}</div>
+        <a data-toggle="collapse" dmx-bind:data-target="{{&quot;#&quot;}}vote{{entry_id}}"><i class="fas fa-heart mr-1"></i></a>{{comment.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{comment.children}}</div>
       </div>
-      <div class="float-right p-2">{{data.comment.total_payout_value}} <img src="../img/hextacular.svg" alt="" width="17"/></div>
+      <div class="float-right p-2">{{comment.total_payout_value}} <img src="../img/hextacular.svg" alt="" width="17"/></div>
 
   </div>
-</dmx-data-detail>
+
 	 </div>
 </main>
 <?php include '../modules/footer.php';?>
