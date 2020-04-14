@@ -25,25 +25,10 @@
         */
         var postKey; //this page will be posted in IPFS and will need a way to display current state about itself. This key will be passed to declare its current state on Hive.
         var permlink, author
-        function onSceneLoad(msg) {
-            var username = msg || iam;
-        }
 
         //API for hive and dlux
         var iam = "Init", bal = 0, hivebal = 0, hbdbal = 0, hiveHis = [], hiveTick, hbdHis = [], hbdTick, contracts
-        if (window.addEventListener) {
-            window.addEventListener("message", onMessage, false);
-        }
-        else if (window.attachEvent) {
-            window.attachEvent("onmessage", onMessage, false);
-        }
-        function onMessage(event) {
-            //if (event.origin !== "https://dlux.io" || "localhost:3000") return;
-            var data = event.data;
-            if (typeof (window[data.func]) == "function") {
-                window[data.func].call(null, data.message);
-            }
-        }
+ 
 	function getCookie(cname) {
   var name = cname + "=";
   var ca = document.cookie.split(';');
@@ -58,79 +43,6 @@
   }
   return "";
 }
-        function voteMsg(message) {
-            AFRAME.scenes[0].emit('setVoteMsg', { val: message }); //transaction id in message, useful for triggering other actions.
-        }
-        function accountUpdate(message) {
-            console.log(message) //transaction id in message, useful for triggering other actions.
-        }
-        function voteButton(amt) { //
-            voteAmt = amt || 10000
-            AFRAME.scenes[0].emit('setVoteMsg', { val: 'Thank you for voting in VR' });
-            window.parent.postMessage({
-                'func': 'vote',
-                'message': voteAmt  //integer -10000(flag) to 10000(vote) on this post
-            }, "*");
-        }
-        function flagButton() {  //redundant and likely unused
-            var voteAmt = -1;
-            window.parent.postMessage({
-                'func': 'vote',
-                'message': voteAmt
-            }, "*");
-        }
-        function follow() {
-            window.parent.postMessage({
-                'func': 'follow',
-                'message': postKey.split('/')[0]
-            }, "*");
-            console.log('sent follow ' + postKey.split('/')[0])
-        }
-        /*
-        This function will prompt the user to post a comment to your dApp. This can be utilized to store everything from votable apps to references to 3d objects and media files. High scores, to reviews... this is the decentralized place to have users store and monetize information used by your dApps
-        */
-        function comment(message) {
-            window.parent.postMessage({
-                'func': 'comment',
-                'message': {
-                    'message': message.message,
-                    'customJSON': message.customJSON
-                }
-            }, "*");
-            //returns a hivestate object that will likely retrigger the data initial data load for the dApp
-        }
-        function sendLink(payload) {
-            //  var link = document.querySelector('/@dlux-io').value //pass a string to escape the dlux.io iFrame. Domain level redirects are greatm external will recieve a warning.
-            window.parent.postMessage({
-                'func': 'sendLink',
-                'message': payload
-            }, "*");
-        }
-        function aVote(data) {   //utilize this API to trigger votes for other hive content. takes data string as "author/permLink/weight"
-            window.parent.postMessage({
-                'func': 'aVote',
-                'message': {
-                    'permlink': data.split('/')[0],
-                    'author': data.split('/')[1],
-                    'weight': 10000 || data.split('/')[2],
-                }
-            }, "*");
-        }
-        var hasMemoKey = false;
-        function memoKey(message) {
-            hasMemoKey = message;
-        }
-        function key(message) { //how this post finds itself on blockchain
-            postKey = message;
-            permlink = message.split('/');
-            onSceneLoad(iam);
-        }
-        function accountUpdate(message) {
-            console.log(message)
-        }
-        function steemState(message) {  //the entirety of the current hive state will be passed in JSON. Utilize this function to initialize current state. Vote and comment also will return a hiveState(message)
-            console.log(message)
-        }
         function iAm(message) { //This is the unsecure identifier that returns logged in hive user
             iam = message;
             fetch(`https://token.dlux.io/@${iam}`)
@@ -166,24 +78,11 @@
                     })
                 });
         }
-        function onpageloaded() { //requests hive state
-            window.parent.postMessage({
-                'func': 'iloaded',
-                'message': ''
-            }, "*");
-        }
         function reqsign(op, req) { //requests keychain to sign and broadcast
-            window.parent.postMessage({
-                'func': 'reqsign',
-                'message': [op, req]
-            }, "*");
-        }
-        function escrow_transfer(ip1, ip2, ip3, ip4, ip5, ip6, ip7, ip8, ip9, ip10, ip11) { //requests keychain to sign and broadcast
-            window.parent.postMessage({
-                'func': 'reqsignescrow',
-                'message': [ip1, ip2, ip3, ip4, ip5, ip6, ip7, ip8, ip9, ip10, ip11]
-            }, "*");
-        }// JavaScript Document	
+            return new Promise ((resolve, reject) => {
+	    	Dluxsession.hive_sign([req[1],[op], req[0]])
+	    })
+        }	
 </script>
 </head>
 
