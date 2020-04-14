@@ -80,7 +80,7 @@ class Dluxsession {
         console.log(obj)
         setdata(obj.name)
         this.metadata = JSON.parse(obj.json_metadata)
-        fetch(`https://ipfs.dlux.io/api/proxy?url=${this.metadata.profile.profile_image}`)
+        fetch(`/api/proxy?url=${this.metadata.profile.profile_image}`)
         .then(validateResponse)
         .then(readResponseAsBlob)
         .then(showProfileImage)
@@ -131,7 +131,7 @@ class Dluxsession {
   
   static handshake(id){
     return new Promise ((resolve, reject) => {
-      fetch(`https://ipfs.dlux.io/api/account/${id}`)
+      fetch(`/api/account/${id}`)
       .then((response) => {
         return response.json();
       })
