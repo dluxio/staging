@@ -23,6 +23,38 @@ function checkCookie(){
     }
 }
 
+function vote(author,permlink,weightid){
+	return new Promise((resolve, reject) =>{
+		var weight = parseInt(document.getElementById(weightid).value) * 100
+		var voter = sessionStorage.getItem('user')
+		Dluxsession.hive_sign([voter,[['vote',{voter,author,permlink,weight}]],'posting'])
+		.then(r =>{
+			resolve(r)
+		})
+		.catch(e => {reject(e)})
+	});
+}
+function reply(parent_author, parent_permlink, titleid, bodyid){
+	return new Promise((resolve, reject) =>{
+		var title = document.getElementById(titleid).value
+		var body = document.getElementById(bodyid).value
+		var author = sessionStorage.getItem('user')
+		Dluxsession.hive_sign([author,[['comment',{
+			  author,
+			  title,
+			  body,
+			  parent_author,
+			  parent_permlink,
+			  permlink: 're_' + parent_permlink,
+			  json_metadata: ""
+			}]],'posting'])
+		.then(r =>{
+			resolve(r)
+		})
+		.catch(e => {reject(e)})
+	});
+}
+
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
