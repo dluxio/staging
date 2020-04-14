@@ -25,7 +25,7 @@
       <div class="col-md-8 text-white text-center">
         <div class="display-4">Virtual Reality <i class="fas fa-vr-cardboard"></i></div>
         <p class="lead">Responsive WebXR across mobile, desktop, and headset.<br>
-          <a href="https://dlux.io/vr" class="lead" target="_blank">Enter Metaverse (Beta) <i class="fas fa-external-link-alt"></i></a></p>
+          <a href="/vr" class="lead" target="_blank">Enter Metaverse (Beta) <i class="fas fa-external-link-alt"></i></a></p>
       </div>
       <div class="col-md-4 text-center m-auto"> <a class="btn btn-primary btn-lg m-1 btn-1" href="#" role="button">Learn<i class="fas fa-shapes ml-2"></i></a><a class="btn btn-primary btn-lg m-1 btn-1" href="../create/" role="button">Create<i class="fas fa-plus-circle ml-2"></i></a></div>
     </div>
@@ -34,9 +34,9 @@
   <div class="card text-white bg-dark mt-2 mb-3">
     <div class="card-header">
       <div class="d-inline-block">
-        <div class="float-left" ><a dmx-bind:href="https://dlux.io/dlux/@{{comment.author}}"><img dmx-bind:src="https://token.dlux.io/getauthorpic/{{comment.author}}" alt="" class="rounded-circle bg-light img-fluid mr-2 cover author-img"></a></div>
+        <div class="float-left" ><a dmx-bind:href="/@{{comment.author}}"><img dmx-bind:src="https://token.dlux.io/getauthorpic/{{comment.author}}" alt="" class="rounded-circle bg-light img-fluid mr-2 cover author-img"></a></div>
         <div class="float-left">
-          <p class="mt-0 mb-0 text-muted text-semibold"><a dmx-bind:href="https://dlux.io/dlux/@{{comment.author}}" class="a-1">{{comment.author}}<span class="ml-2 badge badge-pill badge-light">{{comment.author_reputation.toString().rep()}}</span></a></p>
+          <p class="mt-0 mb-0 text-muted text-semibold"><a dmx-bind:href="/@{{comment.author}}" class="a-1">{{comment.author}}<span class="ml-2 badge badge-pill badge-light">{{comment.author_reputation.toString().rep()}}</span></a></p>
           <small class="text-muted">{{comment.created.formatDate("MMM dd, yyyy")}}</small></div>
       </div>
       <div class="float-right"><span class="badge badge-secondary">{{comment.json_metadata.scat()}}</span></div>
@@ -48,7 +48,7 @@
       <p class="preview-text">{{comment.body.removeMD().trunc(100,true,"...")}}</p>
     </a></div>
     <center>
-      <a dmx-bind:href="https://dlux.io{{comment.url}}" type="button" class="btn btn-outline-danger mb-4 btn-launch">Launch App</a>
+      <a dmx-bind:href="{{comment.url}}" type="button" class="btn btn-outline-danger mb-4 btn-launch">Launch App</a>
     </center>
     <div class="card-footer">
       <div class="d-inline-block">
@@ -63,9 +63,9 @@
    <div class="modal-content bg-dark text-white">
 	<dmx-data-detail id="app_detail" dmx-bind:data="dluxGetBlog.data.result" key="entry_id">
 		<div class="d-inline-block p-2">
-	  <div class="float-left" ><a dmx-bind:href="https://dlux.io/dlux/@{{comment.author}}"><img dmx-bind:src="https://token.dlux.io/getauthorpic/{{data.comment.author}}" alt="" class="rounded-circle bg-light img-fluid mr-2 cover author-img"></a></div>
+	  <div class="float-left" ><a dmx-bind:href="/@{{comment.author}}"><img dmx-bind:src="https://token.dlux.io/getauthorpic/{{data.comment.author}}" alt="" class="rounded-circle bg-light img-fluid mr-2 cover author-img"></a></div>
         <div class="float-left">
-          <p class="mt-0 mb-0 text-muted text-semibold"><a dmx-bind:href="https://dlux.io/dlux/@{{comment.author}}" class="a-1">{{data.comment.author}}<span class="ml-2 badge badge-pill badge-light">{{data.comment.author_reputation.toString().rep()}}</span></a></p>
+          <p class="mt-0 mb-0 text-muted text-semibold"><a dmx-bind:href="/@{{comment.author}}" class="a-1">{{data.comment.author}}<span class="ml-2 badge badge-pill badge-light">{{data.comment.author_reputation.toString().rep()}}</span></a></p>
           <small class="text-muted">{{data.comment.created.formatDate("MMM dd, yyyy")}}</small></div>
 		</div>
       <div class="float-right p-2"><span class="badge badge-secondary">{{data.comment.json_metadata.scat()}}</span><button type="button" class="close text-white ml-3" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button></div>
@@ -76,7 +76,7 @@
 	 <img src="..."  alt="Card image cap" class="card-img-top" dmx-bind:src="{{data.comment.json_metadata.parseJSON().image}}" />  
     <p class="p-2">{{data.comment.body.removeMD()}}</p>
 		  <center>
-      <a dmx-bind:href="https://dlux.io{{data.comment.url}}" type="button" class="btn btn-outline-danger mb-4 btn-launch">Launch App</a>
+      <a dmx-bind:href="{{data.comment.url}}" type="button" class="btn btn-outline-danger mb-4 btn-launch">Launch App</a>
     </center>
 <hr class="mb-0">
 		<div class="d-inline-block p-2">
