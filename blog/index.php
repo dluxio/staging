@@ -37,25 +37,25 @@
       <a dmx-bind:href="{{dluxPost.data.result.url}}" type="button" class="btn btn-outline-danger mb-4 btn-launch">Launch App</a>
     </center>
 <hr class="mb-0">
-		<div class="collapse" id="vote">
+		<div class="collapse" dmx-bind:id="vote{{dluxPost.data.result.id}}">
 		<form id="voteForm">
   		<div class="form-group">
 
     	<ul class="list-unstyled">
-			<li class="float-left px-1"><button type="button" class="btn btn-primary" dmx-bind:id="voteBtn{{entry_id}}" dmx-bind:onclick="vote('{{dluxPost.data.result.author}}','{{dluxPost.data.result.permlink}}','slider{{entry_id}}')" style="width:70px">100%</button></li>
-			<li class="float-left px-1"><button type="button" class="btn btn-secondary" data-toggle="collapse" dmx-bind:data-target="{{&quot;#&quot;}}vote{{entry_id}}"><span class="close text-white">×</span></button></li>
+			<li class="float-left px-1"><button type="button" class="btn btn-primary" dmx-bind:id="voteBtn{{dluxPost.data.result.id}}" dmx-bind:onclick="vote('{{dluxPost.data.result.author}}','{{dluxPost.data.result.permlink}}','slider{{dluxPost.data.result.id}}')" style="width:70px">100%</button></li>
+			<li class="float-left px-1"><button type="button" class="btn btn-secondary" data-toggle="collapse" dmx-bind:data-target="{{&quot;#&quot;}}vote{{dluxPost.data.result.id}}"><span class="close text-white">×</span></button></li>
 		</ul>
 		<ul class="float-right list-unstyled">
 			<li>###.###  <img src="../img/hextacular.svg" alt="" width="17"/></li>
 		</ul>
 			<div class="">
-    	<div style="display: flex; flex-grow: 1" class="px-3"><input type="range" class="form-control-range" value="100" dmx-bind:id="slider{{entry_id}}" dmx-bind:onchange="updateVoteSubmit('voteBtn{{entry_id}}','slider{{entry_id}}');"></div>
+    	<div style="display: flex; flex-grow: 1" class="px-3"><input type="range" class="form-control-range" value="100" dmx-bind:id="slider{{dluxPost.data.result.id}}" dmx-bind:onchange="updateVoteSubmit('voteBtn{{dluxPost.data.result.id}}','slider{{dluxPost.data.result.id}}');"></div>
   </div>
 			</div>
 </form>
 			</div>
 		<div class="d-inline-block p-2">
-        <a data-toggle="collapse" data-target="#vote"><i class="fas fa-heart mr-1"></i></a>{{dluxPost.data.result.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{dluxPost.data.result.children}}</div>
+        <a data-toggle="collapse" dmx-bind:data-target="{{&quot;#&quot;}}vote{{dluxPost.data.result.id}}"><i class="fas fa-heart mr-1"></i></a>{{dluxPost.data.result.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{dluxPost.data.result.children}}</div>
       </div>
       <div class="float-right p-2">{{dluxPost.data.result.total_payout_value}} <img src="../img/hextacular.svg" alt="" width="17"/></div>
 
