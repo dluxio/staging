@@ -55,7 +55,7 @@
 		<form id="voteForm">
   		<div class="form-group">
 
-    	<button type="button" class="btn btn-primary" dmx-bind:id="voteBtn{{entry_id}}">100%</button>
+    	<button type="button" class="btn btn-primary" dmx-bind:id="voteBtn{{entry_id}}" dmx-bin:onclick="vote('{{comment.author}}','{{comment.permlink}}','slider{{entry_id}}')">100%</button>
     <input type="range" class="form-control-range" value="100" dmx-bind:id="slider{{entry_id}}" dmx-bind:onchange="updateVoteSubmit('voteBtn{{entry_id}}','slider{{entry_id}}');">
   </div>
 </form>
@@ -102,8 +102,17 @@
 <?php include '../modules/footer.php';?>
 <script type="text/javascript" src="../js/popper.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
-<script>function updateVoteSubmit(id,val) {
-		console.log(document.getElementById(val))
+<script>function vote(author,permlink,weightid){
+		var weight = parseInt(document.getElementById(val).value) * 100
+		var voter = sessionStorage.getItem('user')
+		Dluxsession.hive_sign([voter,['vote',{voter,author,permlink,weight}],'posting'])
+		.then(r =>{
+			console.log(r)
+		})
+		.catch(e => {console.log(e)})
+	}
+	
+	function updateVoteSubmit(id,val) {
           document.getElementById(id).innerHTML = document.getElementById(val).value + '%'; 
         }</script>
 <script>checkCookie()</script>
