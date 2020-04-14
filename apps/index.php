@@ -103,6 +103,7 @@
 <script type="text/javascript" src="../js/popper.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
 <script>function updateVoteSubmit(id,val) {
+		console.log(id,val)
           document.getElementById(id).innerHTML.value=val; 
         }</script>
 <script>checkCookie()</script>
