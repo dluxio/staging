@@ -68,6 +68,10 @@
 <?php include '../modules/footer.php';?>
 <script type="text/javascript" src="../js/popper.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
+<script>
+	function updateVoteSubmit(id,val) {
+          document.getElementById(id).innerHTML = document.getElementById(val).value + '%'; 
+        }</script>
 <script>checkCookie()</script>
 	</body>
 </html>
