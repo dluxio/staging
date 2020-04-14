@@ -30,7 +30,7 @@
       <div class="col-md-4 text-center m-auto"> <a class="btn btn-primary btn-lg m-1 btn-1" href="#" role="button">Learn<i class="fas fa-shapes ml-2"></i></a><a class="btn btn-primary btn-lg m-1 btn-1" href="../create/" role="button">Create<i class="fas fa-plus-circle ml-2"></i></a></div>
     </div>
   </div>
- <div class="card-columns" id="blogResult" is="dmx-repeat" dmx-bind:repeat="dluxGetBlog.data.result">
+ <div class="card-columns p-3" id="blogResult" is="dmx-repeat" dmx-bind:repeat="dluxGetBlog.data.result">
   <div class="card text-white bg-dark mt-2 mb-3">
     <div class="card-header">
       <div class="d-inline-block">
@@ -55,9 +55,17 @@
 		<form id="voteForm">
   		<div class="form-group">
 
-    	<button type="button" class="btn btn-primary" dmx-bind:id="voteBtn{{entry_id}}" dmx-bind:onclick="vote('{{comment.author}}','{{comment.permlink}}','slider{{entry_id}}')">100%</button>
-    <input type="range" class="form-control-range" value="100" dmx-bind:id="slider{{entry_id}}" dmx-bind:onchange="updateVoteSubmit('voteBtn{{entry_id}}','slider{{entry_id}}');">
+    	<ul class="list-unstyled">
+			<li class="float-left px-1"><button type="button" class="btn btn-primary" dmx-bind:id="voteBtn{{entry_id}}" dmx-bind:onclick="vote('{{comment.author}}','{{comment.permlink}}','slider{{entry_id}}')" style="width:70px">100%</button></li>
+			<li class="float-left px-1"><button type="button" class="btn btn-secondary" data-toggle="collapse" dmx-bind:data-target="{{&quot;#&quot;}}vote{{entry_id}}"><span class="close text-white">×</span></button></li>
+		</ul>
+		<ul class="float-right list-unstyled">
+			<li>###.###  <img src="../img/hextacular.svg" alt="" width="17"/></li>
+		</ul>
+			<div class="">
+    	<div style="display: flex; flex-grow: 1" class="px-3"><input type="range" class="form-control-range" value="100" dmx-bind:id="slider{{entry_id}}" dmx-bind:onchange="updateVoteSubmit('voteBtn{{entry_id}}','slider{{entry_id}}');"></div>
   </div>
+			</div>
 </form>
 			</div>
       <div class="d-inline-block">
