@@ -85,7 +85,7 @@
           <p class="mt-0 mb-0 text-muted text-semibold"><a dmx-bind:href="/@{{comment.author}}" class="a-1">{{data.comment.author}}<span class="ml-2 badge badge-pill badge-light">{{data.comment.author_reputation.toString().rep()}}</span></a></p>
           <small class="text-muted">{{data.comment.created.formatDate("MMM dd, yyyy")}}</small></div>
 		</div>
-      <div class="float-right p-2"><span class="badge badge-secondary">{{data.comment.json_metadata.scat()}}</span><button type="button" class="close text-white ml-3" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button></div>
+      <div class="float-right p-2"><span class="badge badge-secondary">{{data.comment.json_metadata.scat()}}</span><button type="button" class="close text-white ml-3" data-dismiss="modal" aria-label="Close" onclick="window.history.back();"><span aria-hidden="true">×</span></button></div>
 		<hr class="mt-0">
     <h4 class="text-center p-2">{{data.comment.title}}</h4>
     
