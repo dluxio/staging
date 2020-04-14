@@ -8,12 +8,13 @@
 function readResponseAsBlob(response) {
   return response.blob();
 }
-let user
+let user, dlux
 function checkCookie(){
 	console.log('Checking for login')
     user = sessionStorage.getItem('user');
 	console.log('user='+user)
     if (user != null){
+	dlux = new Dluxsession(steem, {steemid: user, account: JSON.parse(sessionStorage.getItem('account'))});
 	document.getElementById('no-session').style.display = 'none';
 	document.getElementById('active-session').style.display = 'block';
 	document.getElementById('userImage').src = 'https://token.dlux.io/getauthorpic/' + user

@@ -127,17 +127,7 @@
 <?php include '../modules/footer.php';?>
 <script type="text/javascript" src="../js/popper.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
-<script>function vote(author,permlink,weightid){
-		var weight = parseInt(document.getElementById(weightid).value) * 100
-		var voter = sessionStorage.getItem('user')
-		console.log({voter,author,permlink,weight})
-		Dluxsession.hive_sign([voter,[['vote',{voter,author,permlink,weight}]],'posting'])
-		.then(r =>{
-			console.log(r)
-		})
-		.catch(e => {console.log(e)})
-	}
-	
+<script>
 	function updateVoteSubmit(id,val) {
           document.getElementById(id).innerHTML = document.getElementById(val).value + '%'; 
         }</script>
