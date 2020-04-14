@@ -128,6 +128,23 @@ class Dluxsession {
     }
     });
   }
+	
+  static hive_sign(op){
+    return new Promise ((resolve, reject) => {
+      if (window.hive_keychain){
+        try {
+          window.hive_keychain.requestBroadcast(op[0], op[1], op[2], function(response) {
+          	console.log(response)
+		resolve(response)
+          });
+        } catch (e) {
+          reject(e)
+        }
+      } else {
+	reject({"error": "Hive Keychain is not installed."})      
+      }
+    })
+  }
   
   static handshake(id){
     return new Promise ((resolve, reject) => {
