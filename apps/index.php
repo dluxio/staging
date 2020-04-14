@@ -55,8 +55,8 @@
 		<form id="voteForm">
   		<div class="form-group">
 
-    	<button type="button" class="btn btn-primary" id="voteBtn">100%</button>
-    <input type="range" class="form-control-range" value="100" onchange="updateVoteSubmit(this.val);">
+    	<button type="button" class="btn btn-primary" dmx-bind:id="voteBtn{{entry_id}}">100%</button>
+    <input type="range" class="form-control-range" value="100" dmx-bind:onchange="updateVoteSubmit('voteBtn{{entry_id}}',this.val);">
   </div>
 </form>
 			</div>
