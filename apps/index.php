@@ -51,7 +51,7 @@
       <a dmx-bind:href="{{comment.url}}" type="button" class="btn btn-outline-danger mb-4 btn-launch">Launch App</a>
     </center>
     <div class="card-footer">
-		<div class="collapse" dmx-bind:id="vote.{{comment.author}}.{{comment.permlink}}">
+		<div class="collapse" dmx-bind:id="vote.{{$comment.author}}.{{comment.permlink}}">
 		<form id="vote-form-" dmx-bind:id="voteForm.{{comment.author}}.{{comment.permlink}}">
   		<div class="form-group">
 
