@@ -13,7 +13,7 @@
 </head>
 
 <body class="d-flex flex-column h-100">
-<dmx-api-datasource id="dluxPost" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_content'" dmx-param:params="'[%22author%22,%22permlink%22]'"></dmx-api-datasource>
+<dmx-api-datasource id="dluxPost" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_content'" dmx-param:params=`'[%22${window.location.pathname.split('/')[1].splice(0,1)}%22,%22${window.location.pathname.split('/')[2]}%22]'`></dmx-api-datasource>
 <?php include '../modules/nav.php';?>
 <main role="main" class="flex-shrink-0">
 	<div>
