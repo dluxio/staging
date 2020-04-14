@@ -41,7 +41,7 @@
       </div>
       <div class="float-right"><span class="badge badge-secondary">{{comment.json_metadata.scat()}}</span></div>
     </div>
-    <a href="#detailModal" class="a-1" data-toggle="modal" dmx-on:click="app_detail.select(entry_id)" dmx-bind:onclick="window.history.pushState('{{comment.url}}','{{comment.title}}', '/blog/@{{comment.author}}/{{comment.permlink}}');">
+    <a href="#detailModal" class="a-1" data-toggle="modal" dmx-on:click="app_detail.select(entry_id)">
       <h5 class="card-title mt-2 text-center text-capitalize">{{comment.title}}</h5>
       <img src="..."  alt="Card image cap" class="card-img-top" dmx-bind:src="{{comment.json_metadata.parseJSON().image}}" /></a>
     <div class="card-body"><a href="#detailModal" data-toggle="modal" class="a-1">
@@ -85,7 +85,7 @@
           <p class="mt-0 mb-0 text-muted text-semibold"><a dmx-bind:href="/@{{comment.author}}" class="a-1">{{data.comment.author}}<span class="ml-2 badge badge-pill badge-light">{{data.comment.author_reputation.toString().rep()}}</span></a></p>
           <small class="text-muted">{{data.comment.created.formatDate("MMM dd, yyyy")}}</small></div>
 		</div>
-      <div class="float-right p-2"><span class="badge badge-secondary">{{data.comment.json_metadata.scat()}}</span><button type="button" class="close text-white ml-3" data-dismiss="modal" aria-label="Close" onclick="window.history.back();"> <span aria-hidden="true">×</span></button></div>
+      <div class="float-right p-2"><span class="badge badge-secondary">{{data.comment.json_metadata.scat()}}</span><button type="button" class="close text-white ml-3" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button></div>
 		<hr class="mt-0">
     <h4 class="text-center p-2">{{data.comment.title}}</h4>
     
@@ -96,8 +96,25 @@
       <a dmx-bind:href="{{data.comment.url}}" type="button" class="btn btn-outline-danger mb-4 btn-launch">Launch App</a>
     </center>
 <hr class="mb-0">
+		<div class="collapse" dmx-bind:id="vote{{entry_id}}">
+		<form id="voteForm">
+  		<div class="form-group">
+
+    	<ul class="list-unstyled">
+			<li class="float-left px-1"><button type="button" class="btn btn-primary" dmx-bind:id="voteBtn{{entry_id}}" dmx-bind:onclick="vote('{{comment.author}}','{{comment.permlink}}','slider{{entry_id}}')" style="width:70px">100%</button></li>
+			<li class="float-left px-1"><button type="button" class="btn btn-secondary" data-toggle="collapse" dmx-bind:data-target="{{&quot;#&quot;}}vote{{entry_id}}"><span class="close text-white">×</span></button></li>
+		</ul>
+		<ul class="float-right list-unstyled">
+			<li>###.###  <img src="../img/hextacular.svg" alt="" width="17"/></li>
+		</ul>
+			<div class="">
+    	<div style="display: flex; flex-grow: 1" class="px-3"><input type="range" class="form-control-range" value="100" dmx-bind:id="slider{{entry_id}}" dmx-bind:onchange="updateVoteSubmit('voteBtn{{entry_id}}','slider{{entry_id}}');"></div>
+  </div>
+			</div>
+</form>
+			</div>
 		<div class="d-inline-block p-2">
-        <div class="float-left"><i class="fas fa-heart mr-1"></i>{{data.comment.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{data.comment.children}}</div>
+        <a data-toggle="collapse" dmx-bind:data-target="{{&quot;#&quot;}}vote{{entry_id}}"><i class="fas fa-heart mr-1"></i></a>{{data.comment.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{data.comment.children}}</div>
       </div>
       <div class="float-right p-2">{{data.comment.total_payout_value}} <img src="../img/hextacular.svg" alt="" width="17"/></div>
 
