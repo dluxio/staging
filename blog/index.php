@@ -49,7 +49,7 @@
       dmx-param:params="'[%22dlux-io%22,%22testing-dlux-vr%22]'"
     ></dmx-api-datasource>
 
-    <?php include '../modules/nav.php';?>
+    <?php include '../mod/nav.php';?>
 
     <main role="main" class="flex-shrink-0 ">
       <div class="container bg-dark text-white padme-t70 pb-2 mb-3">
@@ -300,7 +300,7 @@
         </div>
       </div>
     </main>
-    <?php include '../modules/footer.php';?>
+    <?php include '../mod/footer.php';?>
     <script type="text/javascript" src="../js/popper.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
     <script>

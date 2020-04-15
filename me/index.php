@@ -18,17 +18,17 @@
 </head>
 
 <body class="d-flex flex-column h-100" id="apps" is="dmx-app">
-<dmx-api-datasource id="dluxGetBlog" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_blog'" dmx-param:params="'[%22robotolux%22,0,10]'"></dmx-api-datasource>
-<?php include '../modules/nav.php';?>
+<dmx-api-datasource id="dluxGetBlog" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_blog'" dmx-param:params="'[%22markegiles%22,0,20]'"></dmx-api-datasource>
+<?php include '../mod/nav.php';?>
 <main role="main" class="flex-shrink-0">
   <div class="container-fluid padme-t70">
     <div class="row mt-3">
       <div class="col-md-8 text-white text-center">
-        <div class="display-4">Virtual Reality <i class="fas fa-vr-cardboard"></i></div>
-        <p class="lead">Responsive WebXR across mobile, desktop, and headset.<br>
-          <a href="/vr" class="lead" target="_blank">Enter Metaverse (Beta) <i class="fas fa-external-link-alt"></i></a></p>
+        <div class="display-4"><img dmx-bind:src="https://token.dlux.io/getauthorpic/{{dluxGetBlog.data.result[0].blog}}" alt="" class="rounded-circle bg-light img-fluid mr-4 cover profile-img">@{{dluxGetBlog.data.result[0].blog}} </div>
+        <p class="lead">description<br>
+          <a href="../@{{dluxGetBlog.data.result[0].blog}}" class="lead" target="_blank">My VR Page (Beta) <i class="fas fa-external-link-alt"></i></a></p>
       </div>
-      <div class="col-md-4 text-center m-auto"> <a class="btn btn-primary btn-lg m-1 btn-1" href="#" role="button">Learn<i class="fas fa-shapes ml-2"></i></a><a class="btn btn-primary btn-lg m-1 btn-1" href="../create/" role="button">Create<i class="fas fa-plus-circle ml-2"></i></a></div>
+      <div class="col-md-4 text-center m-auto"> <a class="btn btn-primary btn-lg m-1 " href="#" role="button">Settings<i class="fas fa-shapes ml-2"></i></a><a class="btn btn-primary btn-lg m-1 " href="../new/" role="button">Actions<i class="fas fa-plus-circle ml-2"></i></a></div>
     </div>
   </div>
  <div class="card-columns p-3" id="blogResult" is="dmx-repeat" dmx-bind:repeat="dluxGetBlog.data.result">
@@ -125,7 +125,7 @@
 	</div>
 	</div>
 </main>
-<?php include '../modules/footer.php';?>
+<?php include '../mod/footer.php';?>
 <script type="text/javascript" src="../js/popper.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
 <script>

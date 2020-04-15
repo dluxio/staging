@@ -12,7 +12,7 @@
 </head>
 
 <body class="d-flex flex-column h-100">
-<?php include '../modules/nav.php';?>
+<?php include '../mod/nav.php';?>
 <main role="main" class="flex-shrink-0">
 <div class="padme-t70"></div>
   <div class="container">
@@ -28,7 +28,7 @@
 		<li>Difficulty: Intermediate</li>
 		</ul>
 		</center>
-    	<a href="https://dlux-vr.glitch.me/builder.html" class="btn btn-danger">Get Started</a>
+    	<a href="https://dlux-vr.glitch.me/build.html" target="_blank" class="btn btn-danger">Get Started</a>
   	  </div>
 	</div>
 	<div class="card w-100 border-danger bg-none my-5">
@@ -43,13 +43,13 @@
 		<li>Difficulty: Easy</li>
 		</ul>
 		</center>
-    	<a href="supercraft.php" class="btn btn-danger">Get Started</a>
+    	<a href="../create/supercraft.php" class="btn btn-danger">Get Started</a>
   	  </div>
 	</div>
 		
 	</div>
 	</main>
-<?php include '../modules/footer.php';?>
+<?php include '../mod/footer.php';?>
 <script type="text/javascript" src="../js/popper.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
 <script>checkCookie()</script>

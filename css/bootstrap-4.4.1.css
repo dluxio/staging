@@ -7806,6 +7806,11 @@ body {
   height: 38px;
   border: 2px solid #B1B1B1; }
 
+.profile-img {
+  width: 96px;
+  height: 96px;
+  border: 2px solid #B1B1B1; }
+
 .a-1, .a-1:hover {
   text-decoration: none;
   color: aliceblue; }

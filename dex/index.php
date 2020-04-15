@@ -87,7 +87,7 @@
 </head>
 
 <body class="d-flex flex-column h-100 text-white">
-<?php include '../modules/nav.php';?>
+<?php include '../mod/nav.php';?>
 <main role="main" class="flex-shrink-0 padme-t70">
 <div class="container" style="padding-top: 70px text-white">
 <div class="alert alert-danger alert-dismissible text-center">
@@ -666,7 +666,7 @@
         </div>
     </div>
 </main>
-<?php include '../modules/footer.php';?>
+<?php include '../mod/footer.php';?>
 <script type="text/javascript" src="../js/popper.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
 <script>

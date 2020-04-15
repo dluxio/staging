@@ -19,7 +19,7 @@
 
 <body class="d-flex flex-column h-100" id="apps" is="dmx-app">
 <dmx-api-datasource id="dluxGetBlog" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_blog'" dmx-param:params="'[%22robotolux%22,0,10]'"></dmx-api-datasource>
-<?php include '../modules/nav.php';?>
+<?php include '../mod/nav.php';?>
 <main role="main" class="flex-shrink-0">
   <div class="container-fluid padme-t70">
     <div class="row mt-3">
@@ -125,7 +125,7 @@
 	</div>
 	</div>
 </main>
-<?php include '../modules/footer.php';?>
+<?php include '../mod/footer.php';?>
 <script type="text/javascript" src="../js/popper.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
 <script>

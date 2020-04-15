@@ -15,7 +15,7 @@
   <script src="js/session.js"></script>
 </head>
   <body id="index" is="dmx-app">
- <?php include 'modules/nav.php';?>
+ <?php include 'mod/nav.php';?>
     <div class="jumbotron jumbotron-fluid text-center text-white mt-5 bg-win">
        <div class="container">
 		<div class="row">
@@ -30,7 +30,7 @@
 <p class="lead">
           <a class="btn btn-lg btn-outline-primary m-3" href="/apps/" role="button">Explore<i class="fab fa-wpexplorer ml-2"></i></a>
 	
-	<a class="btn btn-lg btn-outline-secondary" href="/create/" role="button">Create<i class="fas fa-plus-circle ml-2"></i></a>
+	<a class="btn btn-lg btn-outline-secondary" href="/new/" role="button">Create<i class="fas fa-plus-circle ml-2"></i></a>
        </p>
 
     </div>
@@ -63,7 +63,7 @@
 	</div>
   </div>
 	  <br>
-<?php include 'modules/footer.php';?>
+<?php include 'mod/footer.php';?>
 	  <script type="text/javascript" src="../js/popper.min.js"></script>
   <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
     <script type="text/javascript">
