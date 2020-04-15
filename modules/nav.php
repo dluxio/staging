@@ -14,16 +14,21 @@
 	</ul>
     <div class="navbar-right" id="active-session">
 		<ul class="nav navbar-nav">
-		<li class="nav-item"><a href="../create/" class="text-white"><span><i class="fas fa-fw fa-plus-circle mr-2"></i></span></a></li>
+		<li class="nav-item mx-auto"><a href="../create/" class="text-white"><span><i class="fas fa-fw fa-plus-circle mr-2"></i></span></a></li>
 		<li class="nav-item dropdown">
 		  <a class="nav-link dropdown-toggle text-white-50" id="userDropdown" data-toggle="dropdown" href="#">
 			  <img src="https://token.dlux.io/getauthorpic/{{author}}" id="userImage" alt="" width="30" height="30" class="img-fluid rounded-circle bg-light mr-2 cover">
 			  <span id="userName">username</span></a>
-          <div class="dropdown-menu" aria-labelledby="userDropdown"> <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Profile</a> <a class="dropdown-item" href="#"><i class="fas fa-wallet mr-2"></i>Wallet</a><a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Settings</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#"><i class="fas fa-robot mr-2"></i>Nodes</a> <a class="dropdown-item" href="#"><i class="fas fa-info-circle mr-2"></i>About</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="../login/"><i class="fas fa-user-friends mr-2"></i>Switch User</a> <a class="dropdown-item" href="javascript:logout()"><i class="fas fa-power-off mr-2"></i>Logout</a></div>
+          <div class="dropdown-menu" aria-labelledby="userDropdown">
+			 <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Profile</a>
+			 <a class="dropdown-item" href="#"><i class="fas fa-wallet mr-2"></i>Wallet</a>
+			 <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Settings</a>
+             <div class="dropdown-divider"></div>
+             <a class="dropdown-item" href="#"><i class="fas fa-robot mr-2"></i>Nodes</a>
+			 <a class="dropdown-item" href="#"><i class="fas fa-info-circle mr-2"></i>About</a>
+             <div class="dropdown-divider"></div>
+             <a class="dropdown-item" href="../login/"><i class="fas fa-user-friends mr-2"></i>Switch User</a>
+			 <a class="dropdown-item" href="javascript:logout()"><i class="fas fa-power-off mr-2"></i>Logout</a></div>
         </li>
       </ul>
 	</div>
