@@ -86,7 +86,7 @@
 </script>
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100 text-white">
 <?php include '../modules/nav.php';?>
 <main role="main" class="flex-shrink-0 padme-t70">
 <div class="container" style="padding-top: 70px text-white">
@@ -170,7 +170,7 @@
                                         alt="Card image cap">
                                     <div class="card-body" style="background:#1B1717">
                                         <h5 class="card-title">XR Builder</h5>
-                                        <p class="card-text">Build AR and VR experiences right in your web browser,
+                                        <p class="card-text">Build AR and VR right in your web browser,
                                             without downloading any software</p>
                                         <a href="https://dlux-vr.glitch.me/build.html" class="btn btn-danger"
                                             target="_blank">Build the Metaverse</a>

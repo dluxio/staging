@@ -15,12 +15,14 @@
 <meta charset="UTF-8">
 </head>
 
-<body id="test" is="dmx-app" class="text-white">
+<body class="d-flex flex-column h-100" id="blog" is="dmx-app" class="text-white">
 	<dmx-api-datasource id="dluxPost" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_content'" dmx-param:params="'[%22dlux-io%22,%22testing-dlux-vr%22]'"></dmx-api-datasource>
+	<div class="container">
 	<?php include '../modules/nav.php';?>
-	<main role="main" class="flex-shrink-0">
-	<div>
-  <div class="bg-dark text-white">
+	
+	<main role="main" class="flex-shrink-0 ">
+	
+  <div class="bg-dark text-white padme-t70">
 	
 		<div class="d-inline-block p-2">
 	  <div class="float-left" ><a dmx-bind:href="/@{{dluxPost.data.result.author}}"><img dmx-bind:src="https://token.dlux.io/getauthorpic/{{dluxPost.data.result.author}}" alt="" class="rounded-circle bg-light img-fluid mr-2 cover author-img"></a></div>
@@ -28,7 +30,7 @@
           <p class="mt-0 mb-0 text-muted text-semibold"><a dmx-bind:href="/@{{dluxPost.data.result.author}}" class="a-1">{{dluxPost.data.result.author}}<span class="ml-2 badge badge-pill badge-light">{{dluxPost.data.result.author_reputation.toString().rep()}}</span></a></p>
           <small class="text-muted">{{dluxPost.data.result.created.formatDate("MMM dd, yyyy")}}</small></div>
 		</div>
-      <div class="float-right p-2"><span class="badge badge-secondary">{{dluxPost.data.result.json_metadata.scat()}}</span><button type="button" class="close text-white ml-3" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">×</span></button></div>
+      <div class="float-right p-2"><span class="badge badge-secondary">{{dluxPost.data.result.json_metadata.scat()}}</span></div>
 		<hr class="mt-0">
     <h4 class="text-center p-2">{{dluxPost.data.result.title}}</h4>
     
