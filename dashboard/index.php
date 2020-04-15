@@ -13,10 +13,8 @@
 
 </head>
 
-<body class="d-flex flex-column h-100">
+<body>
 <?php include '../modules/nav.php';?>
-
-<main role="main" class="flex-shrink-0">
 <div class="container-fluid text-white">
   <div class="row">
     <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
@@ -78,8 +76,12 @@
 
       </div>
     </nav>
+	  <main role="main" class="flex-shrink-0">
 </main>
-<?php include '../modules/footer.php';?>
+	</div>
+	</div>
+
+
 <script type="text/javascript" src="../js/popper.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
 <script>checkCookie()</script>
