@@ -900,7 +900,7 @@
 
             }
         });
-        onpageloaded()
+        //onpageloaded()
         let dex, stats, hive, feed
         var urls = ['https://token.dlux.io/stats', 'https://token.dlux.io/dex', 'https://token.dlux.io/feed']
         Promise.all(urls.map(u => fetch(u))).then(res =>
