@@ -116,9 +116,9 @@
 			</div>
 		<div class="d-inline-block p-2">
         <a data-toggle="collapse" dmx-bind:data-target="{{&quot;#&quot;}}vote{{entry_id}}"><i class="fas fa-heart mr-1"></i></a>{{data.comment.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{data.comment.children}}</div>
-      </div>
+      
       <div class="float-right p-2">{{data.comment.total_payout_value}} <img src="../img/hextacular.svg" alt="" width="17"/></div>
-
+</div>
   </div>
 </dmx-data-detail>
 	 </div>
