@@ -1641,12 +1641,14 @@
                     var updex = myJson.markets
                     var queue = myJson.queue
                     var addr = '', receiver = '', amount, type
-                    if (updex.hive.sellOrders[txid]) {
-                        console.log(updex.hive.sellOrders[txid].txid)
-                        addr = updex.hive.sellOrders[txid]
-                        reciever = updex.hive.sellOrders[txid].from
-                        type = ' STEEM'
-                    }
+		    try {
+			    if (updex.hive.sellOrders[txid]) {
+				console.log(updex.hive.sellOrders[txid].txid)
+				addr = updex.hive.sellOrders[txid]
+				reciever = updex.hive.sellOrders[txid].from
+				type = ' STEEM'
+			    }
+		    } catch (e){}
                     if (!addr) {
                         type = ' SBD'
                         if (updex.hbd.sellOrders[txid]) {
