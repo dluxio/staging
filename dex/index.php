@@ -968,7 +968,7 @@
         }
 
         function start() {
-            console.log(dex)
+            console.log({dex})
             var feedItems = Object.keys(feed)
             feedItems.reverse()
             for (p = 0; p < feedItems.length; p++) {
@@ -1047,10 +1047,10 @@
 					<label>Volume</label>
 				</div>`
 
-            for (var i = 0; i < until1; i++) {
+            for (var i in dex.markets.hive.his) {
                 addHistRow(dex.markets.hive.his[i])
             }
-            for (var i = 0; i < until2; i++) {
+            for (var i in dex.markets.hbd.his) {
                 const q = dex.markets.hbd.his[i].dir || '-'
                 addHbdHistRow(dex.markets.hbd.his[i].block, parseFloat(dex.markets.hbd.his[i].rate).toFixed(5), parseFloat(dex.markets.hbd.his[i].amount / 1000).toFixed(3), q)
             }
