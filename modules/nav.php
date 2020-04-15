@@ -14,7 +14,7 @@
 	</ul>
     <div class="navbar-right" id="active-session">
 		<ul class="nav navbar-nav">
-		<li class="nav-item"><a href="../create/" class="text-white"><i class="fas fa-plus-circle mr-2 fa-2x"></i></a></li>
+		<li class="nav-item"><a href="../create/" class="text-white"><i class="fas fa-fw fa-plus-circle mr-2 fa-2x"></i></a></li>
 		<li class="nav-item dropdown">
 		  <a class="nav-link dropdown-toggle text-white-50" id="userDropdown" data-toggle="dropdown" href="#">
 			  <img src="https://token.dlux.io/getauthorpic/{{author}}" id="userImage" alt="" width="30" height="30" class="img-fluid rounded-circle bg-light mr-2 cover">
