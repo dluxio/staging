@@ -19,13 +19,13 @@
 	<div class="card w-100 border-danger bg-none my-5">
       <div class="card-body text-center text-white">
     	<h5 class="card-title">DLUX VR BUILDER</h5>
-    	<p class="card-text">Remix our boilerplate on Glitch and upload your own images and 3D models.</p>
+    	<p class="card-text">Remix our boilerplate on Glitch and upload your own images and 3D models</p>
 		<hr class="bg-light">
 		<center>
 		<ul class="text-left">
 		<li>App Type: VR</li>
 		<li>Builder: 2D drag-and-drop asset upload, code panel, and publishing form; 3D A-Frame inspector</li>
-		<li>Difficulty: Intermediate - Difficult</li>
+		<li>Difficulty: Intermediate</li>
 		</ul>
 		</center>
     	<a href="https://dlux-vr.glitch.me/builder.html" class="btn btn-danger">Get Started</a>
@@ -34,7 +34,7 @@
 	<div class="card w-100 border-danger bg-none my-5">
       <div class="card-body text-center text-white">
     	<h5 class="card-title">SUPERCRAFT</h5>
-    	<p class="card-text">Use a VR headset to build scenes with your hands, then publish to DLUX.</p>
+    	<p class="card-text">Use a VR headset to build scenes with your hands, then publish to DLUX</p>
 		<hr class="bg-light">
 		<center>
 		<ul class="text-left">
