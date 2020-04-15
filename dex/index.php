@@ -578,7 +578,7 @@
                                                     </div>
                                                     <div class="text-center">
                                                         <button type="button" class="btn btn-outline-danger"
-                                                            onclick="placeHbdSell()">Place Sell Order</button>
+                                                            onclick="placeHbdAsk()">Place Sell Order</button>
                                                     </div>
                                                 </form>
                                             </div>
