@@ -13,17 +13,17 @@
 <script src="https://cdn.jsdelivr.net/npm/steem/dist/steem.min.js"></script>
 <script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
+<!--page specific-->
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 </head>
 
 <body class="d-flex flex-column h-100" id="blog" is="dmx-app" class="text-white">
 	<dmx-api-datasource id="dluxPost" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_content'" dmx-param:params="'[%22dlux-io%22,%22testing-dlux-vr%22]'"></dmx-api-datasource>
-	<div class="container">
+	
 	<?php include '../modules/nav.php';?>
 	
 	<main role="main" class="flex-shrink-0 ">
-	
-  <div class="bg-dark text-white padme-t70">
-	
+	<div class="container bg-dark text-white padme-t70 pb-2 mb-3">
 		<div class="d-inline-block p-2">
 	  <div class="float-left" ><a dmx-bind:href="/@{{dluxPost.data.result.author}}"><img dmx-bind:src="https://token.dlux.io/getauthorpic/{{dluxPost.data.result.author}}" alt="" class="rounded-circle bg-light img-fluid mr-2 cover author-img"></a></div>
         <div class="float-left">
@@ -43,7 +43,7 @@
 <hr class="mb-0">
 		<div class="collapse" dmx-bind:id="vote{{dluxPost.data.result.id}}">
 		<form id="voteForm">
-  		<div class="form-group">
+  		<div class="form-group text-white-50">
 
     	<ul class="list-unstyled">
 			<li class="float-left px-1"><button type="button" class="btn btn-primary" dmx-bind:id="voteBtn{{dluxPost.data.result.id}}" dmx-bind:onclick="vote('{{dluxPost.data.result.author}}','{{dluxPost.data.result.permlink}}','slider{{dluxPost.data.result.id}}')" style="width:70px">100%</button></li>
@@ -60,12 +60,20 @@
 			</div>
 		<div class="d-inline-block p-2">
         <a data-toggle="collapse" dmx-bind:data-target="{{&quot;#&quot;}}vote{{dluxPost.data.result.id}}"><i class="fas fa-heart mr-1"></i></a>{{dluxPost.data.result.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{dluxPost.data.result.children}}</div>
-      </div>
+    
       <div class="float-right p-2">{{dluxPost.data.result.total_payout_value}} <img src="../img/hextacular.svg" alt="" width="17"/></div>
-
+	  <hr class="mb-0">
+	  <div>
+	  <form>
+		<div class="form-group">
+            <textarea class="form-control" rows="2" id="validationCustomDescription" placeholder="Add a comment" required></textarea>
+          </div>
+		  <div class="clearfix"><button class="btn btn-primary float-right" id="submit-btn" type="submit">Reply</button></div>
+	</form>
+	  </div>
+	  <hr>
+	  <div>comment</div>
   </div>
-
-	 </div>
 </main>
 <?php include '../modules/footer.php';?>
 <script type="text/javascript" src="../js/popper.min.js"></script>
@@ -73,7 +81,53 @@
 <script>
 	function updateVoteSubmit(id,val) {
           document.getElementById(id).innerHTML = document.getElementById(val).value + '%'; 
-        }</script>
+        }
+</script>
+<script>
+  var simplemde = new SimpleMDE({ element: document.getElementById('validationCustomDescription') });
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        console.log('button')
+        if (document.getElementById('validationCustomDescription').innerHTML == 'Sign In'){sendLink('/auth')}
+        var tagField = document.getElementById('validationCustomReferal').value
+        var tags = tagField.split(',').map(item => item.trim())
+        let otherTags = tags.slice(0, 4)
+        var customJSON = JSON.stringify({
+            tags: otherTags,
+            subApp: 'SuperCraftLoader/v0.1',
+            xr: false,
+            vrHash: 'QmYbyqtGKg5TYLmpLFs2Aqt3po4qQdhab29Xba7mkwNWYo',
+            superCraft: document.getElementById('validationCustomLoader').value
+          })
+        var postData = {
+          title: document.getElementById('validationCustomTitle').value,
+          message: document.getElementById('validationCustomDescription').value,
+          customJSON: customJSON,
+        }
+        console.log(postData)
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          window.parent.postMessage({
+            'func': 'advPost',
+            'message': postData
+          }, "*");
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+   onpageloaded()
+</script>	
 <script>checkCookie()</script>
 	</body>
 </html>
