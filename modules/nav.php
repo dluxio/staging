@@ -8,13 +8,13 @@
 		<li class="nav-item"> <a class="nav-link" href="https://peakd.com/@dlux-io/" target="_blank">Updates</a></li>
         <li class="nav-item"> <a class="nav-link" href="https://github.com/dluxio/dluxio/wiki" target="_blank">Documentation</a></li>
       </ul>
-	<ul class="navbar-nav" id="no-session">
+	<ul class="navbar-nav mr-5" id="no-session">
 	<li class="nav-item"><a class="nav-link acct-link" href="../login/">Login</a></li>
 	<li class="nav-item"><a class="nav-link acct-link" href="https://signup.hive.io/">Sign up</a></li>
 	</ul>
-    <div class="navbar-right" id="active-session">
+    <div class="mr-5" id="active-session">
 		<ul class="nav navbar-nav">
-		<li class="nav-item mx-auto"><a href="../create/" class="text-white"><span><i class="fas fa-fw fa-plus-circle mr-2"></i></span></a></li>
+		<li class="nav-item mx-auto"><a href="../create/" class="text-white"><span><i class="fas fa-fw fa-lg fa-plus-circle mr-2"></i></span></a></li>
 		<li class="nav-item dropdown">
 		  <a class="nav-link dropdown-toggle text-white-50" id="userDropdown" data-toggle="dropdown" href="#">
 			  <img src="https://token.dlux.io/getauthorpic/{{author}}" id="userImage" alt="" width="30" height="30" class="img-fluid rounded-circle bg-light mr-2 cover">
