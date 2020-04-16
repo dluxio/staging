@@ -1713,7 +1713,7 @@
                     return response.json();
                 })
                 .then(function (myJson) {
-                    var updex = myJson.markets
+                    var updex = myJson.markets, u
                     var addr = ' ', receiver = '', amount, type
                     var type = '', addr = '', reciever = ''
                     console.log(`Buying ${txid}`, updex)
@@ -1723,6 +1723,7 @@
                             addr = updex.hive.buyOrders[i]
                             receiver = updex.hive.buyOrders[i].from
                             type = ' STEEM'
+			    u = `${parseFloat(updex.hive.buyOrders[i].amount / 1000).toFixed(3)} DLUX`
                         }
                     }
                     console.log({ addr, receiver })
@@ -1733,11 +1734,12 @@
                                 addr = updex.hbd.buyOrders[i]
                                 receiver = updex.hbd.buyOrders[i].from
                                 type = ' SBD'
+				u = `${parseFloat(updex.hbd.buyOrders[i].amount / 1000).toFixed(3)} DLUX`
                             }
                         }
                     }
+		    console.log({ addr, receiver })
                     if (type) {
-                        var u = `${parseFloat(updex.hive.buyOrders[i].amount / 1000).toFixed(3)} DLUX`
                         var params = {
                             "required_auths": [iam],
                             "required_posting_auths": [],
