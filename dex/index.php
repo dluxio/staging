@@ -491,7 +491,7 @@
                             <div class="col-lg-4">
                                 <div>
                                     <div class="widget">
-                                        <ul id="orderwidgethbd" class="nav nav-tabs justify-content-center"
+                                        <ul id="orderwidgethbd" class="nav nav-pills justify-content-center"
                                             role="tablist">
                                             <li class="nav-item"> <a class="nav-link active" href="#buyhbd"
                                                     id="buytabhbd" role="tab" data-toggle="tab" aria-controls="buy"
