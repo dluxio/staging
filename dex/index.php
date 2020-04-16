@@ -1714,7 +1714,7 @@
                 })
                 .then(function (myJson) {
                     var updex = myJson.markets, u
-                    var addr = ' ', receiver = '', amount, type
+                    var addr = '', receiver = '', amount, type
                     var type = '', addr = '', reciever = ''
                     console.log(`Buying ${txid}`, updex)
                     for (var i in updex.hive.buyOrders) {
