@@ -89,16 +89,16 @@
 <body class="d-flex flex-column h-100 text-white">
 <?php include '../mod/nav.php';?>
 <main role="main" class="flex-shrink-0 padme-t70">
-<div class="container" style="padding-top: 70px text-white">
+<div class="container">
 <div class="alert alert-danger alert-dismissible text-center">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   <a href="#" class="alert-link">The dlux DEX is under construction. Have a look around and let us know what you think!</a>
 </div>
-      <div class="container-fluid" style="padding: 0">
+      <div>
             <ul id="pagenav" class="nav nav-pills justify-content-center" role="tablist">
-                <li class="nav-item"> <a class="nav-link" href="#info" id="infotab" role="tab" data-toggle="tab"
+                <li class="nav-item"> <a class="nav-link active" href="#info" id="infotab" role="tab" data-toggle="tab"
                         aria-controls="info" aria-expanded="true">INFO</a></li>
-                <li class="nav-item"> <a class="nav-link active" href="#hive" id="hivetab" role="tab"
+                <li class="nav-item"> <a class="nav-link" href="#hive" id="hivetab" role="tab"
                         data-toggle="tab" aria-controls="hive" aria-expanded="true">HIVE</a></li>
                 <li class="nav-item"> <a class="nav-link" href="#hbd" role="tab" id="hbdtab" data-toggle="tab"
                         aria-controls="hbd">HBD</a></li>
@@ -107,113 +107,56 @@
             </ul>
             <!-- Content Panel -->
             <div id="pagecontent" class="tab-content">
-                <div role="tabpanel" class="tab-pane fade show" id="info" aria-labelledby="infotab">
-                    <div class="container-fluid" style="padding:0">
-                        <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel"
-                            style="background-color: grey; margin-bottom:20px; margin-top:20px;">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner" role="listbox">
-                                <div class="carousel-item active"> <img class="d-block mx-auto"
-                                        src="https://cdn.glitch.com/63c826e5-5751-4fe1-afd9-dd7635e03476%2Ftoken.jpg?v=1583619470920"
-                                        alt="First slide">
-                                    <div class="carousel-caption">
-                                        <h5>DLUX ICO</h5>
-                                        <p>Buy DLUX token now!</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item"> <img class="d-block mx-auto"
-                                        src="https://cdn.glitch.com/63c826e5-5751-4fe1-afd9-dd7635e03476%2Fbuilder.jpg?v=1583619472418"
-                                        alt="Second slide">
-                                    <div class="carousel-caption">
-                                        <h5>XR Builder Beta</h5>
-                                        <p>Build AR &amp; VR experiences with ZERO CODE!</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item"> <img class="d-block mx-auto"
-                                        src="https://cdn.glitch.com/63c826e5-5751-4fe1-afd9-dd7635e03476%2Fcommunity.jpg?v=1583619470874"
-                                        alt="Third slide">
-                                    <div class="carousel-caption">
-                                        <h5>Join our Community</h5>
-                                        <p>Chat on Discord, follow @dlux-io, &amp; watch tutorials</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button"
-                                data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span></a> <a class="carousel-control-next"
-                                href="#carouselExampleIndicators1" role="button" data-slide="next"> <span
-                                    class="carousel-control-next-icon" aria-hidden="true"></span> <span
-                                    class="sr-only">Next</span></a>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xl-4">
-                                <div class="card" style="margin-bottom:20px;"> <img class="card-img-top"
-                                        src="https://cdn.glitch.com/63c826e5-5751-4fe1-afd9-dd7635e03476%2Fmetaverse.jpg?v=1583619471970"
-                                        alt="Card image cap">
-                                    <div class="card-body" style="background:#1B1717">
-                                        <h5 class="card-title">New Internet</h5>
-                                        <p class="card-text">dlux decentralizes the spatial web to create the ultimate
-                                            social app publishing platform</p>
-                                        <a href="https://dlux.io/vr" class="btn btn-primary" target="_blank">Explore the
-                                            Metaverse</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4">
-                                <div class="card" style="margin-bottom:20px;"> <img class="card-img-top"
-                                        src="https://cdn.glitch.com/63c826e5-5751-4fe1-afd9-dd7635e03476%2Fbuilder-2.jpg?v=1583619471308"
-                                        alt="Card image cap">
-                                    <div class="card-body" style="background:#1B1717">
-                                        <h5 class="card-title">XR Builder</h5>
-                                        <p class="card-text">Build AR and VR right in your web browser,
-                                            without downloading any software</p>
-                                        <a href="https://dlux-vr.glitch.me/build.html" class="btn btn-danger"
-                                            target="_blank">Build the Metaverse</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4">
-                                <div class="card" style="margin-bottom:20px;"> <img class="card-img-top"
-                                        src="https://cdn.glitch.com/63c826e5-5751-4fe1-afd9-dd7635e03476%2Fdlux-token.jpg?v=1583619471204"
-                                        alt="Card image cap">
-                                    <div class="card-body" style="background:#1B1717">
-                                        <h5 class="card-title">DLUX Token</h5>
-                                        <p class="card-text">Peer-to-peer trading, in-game transactions, and smart
-                                            contracts on the dlux DAO</p>
-                                        <a class="btn btn-warning" href="#top">Own the Metaverse</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="jumbotron" style="background-color:#0F1F28; margin-bottom:20px;">
-                            <h1 class="display-4">decentralized limitless user experiences</h1>
-                            <p class="lead">Decentralized EXchange. DLUX pioneers a method to cooperate via HIVE and provide liquidity with no information asymetry or central control.</p>
-                            <hr class="my-4" style="background-color:#fff">
-                            <p>Make and monetize anything - dlux empowers the spatial web with tokenization and crypto
-                                rewards. Join us in the metaverse today!</p>
-				<p>What to expect when using the exchange. Exchanges are atomic swaps, which means these are smart contracts with crypto that you can buy for exactly the listed price. This exchange will over collateralize escrow transactions and pay for these transactions upon completion from an inflationary source.</p>
-				<p>In order to prevent double spend this network works on the last irreversible block to verify transactions. What this means is your account may not be credited with the hive amount until about 2-3 minutes from purchase time. Trust metrics will be maintained, fees and minimums may be enforced by some nodes depending on volume conditions. Our visionaries will get to choose which accounts are entrusted with their escrow transactions.</p>
-				<p>In addition to the network maintaining a consensus about the dlux token balances, it maintains a consensus about external data using it's nodes as oracles. The most trusted nodes are elected to hold a portion of the owner authority of a community controlled account to provide for escrow services for markets such as Account Creation Tokens and IPFS content pinning.</p>
-				<p>DLUX should be decentralized in every sense of the word. Open source, self-incentivizing. Holding it's own keys collectively between it's users.</p>
-			    <div class="btn-toolbar" role="toolbar">
-                                <a class="btn btn-outline-light mr-2"
-                                    href="https://docs.google.com/presentation/d/1L0ZhqUsetBB2jI8fcHqUIOt7ddDKFtn4VV_C2-Uogcw"
-                                    role="button" target="_blank">Slide Deck</a>
-                                <a class="btn btn-outline-light mr-2"
-                                    href="https://docs.google.com/document/d/1_jHIJsX0BRa5ujX0s-CQg3UoQC2CBW4wooP2lSSh3n0"
-                                    role="button" target="_blank">White Paper</a>
-                                <a class="btn btn-outline-light mr-2" href="https://discord.gg/Beeb38j"
-                                    target="_blank">Discord Server</a>
-                            </div>
+                <div role="tabpanel" class="tab-pane fade show active" id="info" aria-labelledby="infotab">
+                    <div class="container my-5">
+						
+				<div class="row">
+					<div class="col-12 jumbotron bg-darker">
+              <h1 class="display-4">Goodbye Centralization, Hello DEX</h1>
+                            <p class="lead ">The dlux DEX (Decentralized Exchange) offers no information asymetry or central control</p>
+                            <hr class="my-4 bg-light">
+						<p>DLUX has pioneered a method to cooperate via HIVE and provide liquidity while being decentralized in every sense of the word: Open source and self-incentivizing, holding it's own keys collectively between it's users.</p>
+					</div>
+						</div>
+						
+						<div class="row">
+							
+					<div class="col-6">
+						<p class="lead">What to expect when using the exchange</p>
+				<p> Exchanges are atomic swaps, which means these are smart contracts with crypto that you can buy for exactly the listed price. This exchange will over collateralize escrow transactions and pay for these transactions upon completion from an inflationary source.</p>
+						<div class="text-center">	
+						<a class="btn btn-outline-light m-3" href="#">Start Trading</a>
+							</div>
+							</div>
+							<div class="col-6">graphic here</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-6">graphic here</div>
+							<div class="col-6">
+								<p class="lead">Preventing double spend on the network</p>
+				<p>The last irreversible block is used to verify transactions. What this means is your account may not be credited with the hive amount until about 2-3 minutes from purchase time. Trust metrics will be maintained, fees and minimums may be enforced by some nodes depending on volume conditions. Our visionaries will get to choose which accounts are entrusted with their escrow transactions.</p>
+								<div class="text-center">	
+						<a class="btn btn-outline-light m-3" href="#">Read FAQ</a>
+							</div>
+							</div></div>
+						
+							<div class="row">
+								<div class="col-6">
+									<p class="lead">Introducing the DLUX node network</p>
+				<p>In addition to maintaining consensus about the dlux token balances, it maintains consensus about external data using nodes as oracles. The most trusted nodes are elected to hold a portion of the owner authority of a community controlled account to provide for escrow services for markets such as Account Creation Tokens and IPFS content pinning.</p>
+				<div class="text-center">	
+						<a class="btn btn-outline-light m-3" href="#">Run A Node</a>
+							</div>
+								</div>
+								<div class="col-6">graphic here</div>
+								</div>
+						
+			    
                         </div>
                     </div>
-                </div>
-                <div role="tabpanel" class="tab-pane fade show active" id="hive" aria-labelledby="hivetab">
+             
+                <div role="tabpanel" class="tab-pane fade show " id="hive" aria-labelledby="hivetab">
                     <div class="container-fluid" style="padding:0">
                         <div class="row">
                             <div class="col-lg-8">
