@@ -1729,7 +1729,7 @@
                     console.log({ addr, receiver })
                     if (!type) {
                         for (var i in updex.hbd.buyOrders) {
-                            if (updex.hbd.buyOrders[i].txid == txid) {
+                            if (updex.hbd.buyOrders[i].txid == txid.split(':')[1]) {
                                 console.log(updex.hbd.buyOrders[i].txid)
                                 addr = updex.hbd.buyOrders[i]
                                 receiver = updex.hbd.buyOrders[i].from
