@@ -192,12 +192,15 @@
                         </div>
                         <div class="jumbotron" style="background-color:#0F1F28; margin-bottom:20px;">
                             <h1 class="display-4">decentralized limitless user experiences</h1>
-                            <p class="lead">dlux is an open-source, fully decentralized asset platform on the HIVE
-                                blockchain.</p>
+                            <p class="lead">Decentralized EXchange. DLUX pioneers a method to cooperate via HIVE and provide liquidity with no information asymetry or central control.</p>
                             <hr class="my-4" style="background-color:#fff">
                             <p>Make and monetize anything - dlux empowers the spatial web with tokenization and crypto
                                 rewards. Join us in the metaverse today!</p>
-                            <div class="btn-toolbar" role="toolbar">
+				<p>What to expect when using the exchange. Exchanges are atomic swaps, which means these are smart contracts with crypto that you can buy for exactly the listed price. This exchange will over collateralize escrow transactions and pay for these transactions upon completion from an inflationary source.</p>
+				<p>In order to prevent double spend this network works on the last irreversible block to verify transactions. What this means is your account may not be credited with the hive amount until about 2-3 minutes from purchase time. Trust metrics will be maintained, fees and minimums may be enforced by some nodes depending on volume conditions. Our visionaries will get to choose which accounts are entrusted with their escrow transactions.</p>
+				<p>In addition to the network maintaining a consensus about the dlux token balances, it maintains a consensus about external data using it's nodes as oracles. The most trusted nodes are elected to hold a portion of the owner authority of a community controlled account to provide for escrow services for markets such as Account Creation Tokens and IPFS content pinning.</p>
+				<p>DLUX should be decentralized in every sense of the word. Open source, self-incentivizing. Holding it's own keys collectively between it's users.</p>
+			    <div class="btn-toolbar" role="toolbar">
                                 <a class="btn btn-outline-light mr-2"
                                     href="https://docs.google.com/presentation/d/1L0ZhqUsetBB2jI8fcHqUIOt7ddDKFtn4VV_C2-Uogcw"
                                     role="button" target="_blank">Slide Deck</a>
