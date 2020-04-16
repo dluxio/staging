@@ -287,7 +287,7 @@
                                                 aria-labelledby="buytabhive">
                                                 <form>
                                                     <div class="form-group" style="padding-top: 10px">
-                                                        <label for="inputbuypricehive">Bid Price</label>
+                                                        <label for="inputbuypricehive">Exchange Rate</label>
                                                         <input class="form-control" id="buypricehive"
                                                             placeholder="Amount in HIVE">
                                                         <div class="text-center" style="padding-top: 10px">
@@ -297,7 +297,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="inputbuyqtyhive">Qty.</label>
+                                                        <label for="inputbuyqtyhive">DLUX</label>
                                                         <input type="number" min="0.001" step="0.001"
                                                             class="form-control" id="buyqtyhive"
                                                             placeholder="How many">
@@ -311,7 +311,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="inputbuytotalhive">Total</label>
+                                                        <label for="inputbuytotalhive">Hive</label>
                                                         <input type="number" min="0.001" step="0.001"
                                                             class="form-control" id="buytotalhive"
                                                             placeholder="Order total">
@@ -506,7 +506,7 @@
                                                 aria-labelledby="buytabhbd">
                                                 <form>
                                                     <div class="form-group" style="padding-top: 10px">
-                                                        <label for="inputbuypricehbd">Bid Price</label>
+                                                        <label for="inputbuypricehbd">Exchange Rate</label>
                                                         <input class="form-control" id="buypricehbd"
                                                             placeholder="Amount in HBD">
                                                         <div class="text-center" style="padding-top: 10px">
@@ -516,7 +516,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="inputbuyqtyhbd">Qty.</label>
+                                                        <label for="inputbuyqtyhbd">DLUX</label>
                                                         <input type="number" min="0.001" step="0.001"
                                                             class="form-control" id="buyqtyhbd" placeholder="How many">
                                                         <div class="text-center" style="padding-top: 10px">
@@ -529,7 +529,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="inputbuytotalhbd">Total</label>
+                                                        <label for="inputbuytotalhbd">HBD</label>
                                                         <input type="number" min="0.001" step="0.001"
                                                             class="form-control" id="buytotalhbd"
                                                             placeholder="Order total">
