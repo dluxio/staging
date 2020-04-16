@@ -1399,7 +1399,7 @@
                 })
             }
             console.log(params)
-            reqsign(['custom_json', params], ['posting', iam])
+            reqsign(['custom_json', params], ['active', iam])
         }
 
 
