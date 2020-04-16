@@ -1243,7 +1243,7 @@
                 const button = document.createElement("button");
                 if (o) {
                     button.innerHTML = "Cancel"
-                    button.setAttribute("onclick", `cancel('${morecontent2}:${morecontent3}')`)
+                    button.setAttribute("onclick", `cancel('${morecontent3}')`)
                     button.setAttribute('class', 'btn btn-outline-warning btn-sm')
                 } else {
                     button.innerHTML = "Buy"
@@ -1276,7 +1276,7 @@
                 const button = document.createElement("button");
                 if (o) {
                     button.innerHTML = "Cancel"
-                    button.setAttribute("onclick", `cancel('${morecontent2}:${morecontent3}')`)
+                    button.setAttribute("onclick", `cancel('${morecontent3}')`)
                     button.setAttribute('class', 'btn btn-outline-warning btn-sm')
                 } else {
                     button.innerHTML = "Buy"
@@ -1311,7 +1311,7 @@
                 const button = document.createElement("button");
                 if (o) {
                     button.innerHTML = "Cancel"
-                    button.setAttribute("onclick", `cancel('${morecontent2}:${morecontent3}')`)
+                    button.setAttribute("onclick", `cancel('${morecontent3}')`)
                     button.setAttribute('class', 'btn btn-outline-warning btn-sm')
                 } else {
                     button.innerHTML = "Sell"
@@ -1345,7 +1345,7 @@
                 const button = document.createElement("button");
                 if (o) {
                     button.innerHTML = "Cancel"
-                    button.setAttribute("onclick", `cancel('${morecontent2}:${morecontent3}')`)
+                    button.setAttribute("onclick", `cancel('${morecontent3}')`)
                     button.setAttribute('class', 'btn btn-outline-warning btn-sm')
                 } else {
                     button.innerHTML = "Sell"
