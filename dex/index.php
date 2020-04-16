@@ -1727,7 +1727,7 @@
                     }
                     console.log({ addr, receiver })
                     if (!type) {
-                        for (var i in updex.hbd.buyOrders.length) {
+                        for (var i in updex.hbd.buyOrders) {
                             if (updex.hbd.buyOrders[i].txid == txid) {
                                 console.log(updex.hbd.buyOrders[i].txid)
                                 addr = updex.hbd.buyOrders[i]
