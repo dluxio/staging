@@ -19,7 +19,7 @@ body {background-color: #222222}
 
 .author-img {width: 38px; height: 38px; border: 2px solid #B1B1B1;}
 
-.profile-img {width: 64px; height: 64px; border: 2px solid #B1B1B1;}
+.profile-img {width: 96px; height: 96px; border: 2px solid #B1B1B1;}
 
 .a-1, .a-1:hover {text-decoration: none; color: aliceblue;}
 
@@ -50,7 +50,13 @@ body {background-color: #222222}
     column-count: 4;
   }
 }
-//text box
+
+//tabs
+.nav-tabs .nav-link {border: none;}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {background-color: transparent; color: cadetblue;}
+
+//SMDE text box
 /**
  * simplemde v1.11.2
  * Copyright Next Step Webs, Inc.

@@ -13,17 +13,32 @@
 <body class="d-flex flex-column h-100" id="apps" is="dmx-app">
 <dmx-api-datasource id="dluxGetBlog" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_blog'" dmx-param:params="'[%22markegiles%22,0,20]'"></dmx-api-datasource>
 <?php include '../mod/nav.php';?>
-<main role="main" class="flex-shrink-0">
-  <div class="container-fluid padme-t70">
-    <div class="row mt-3">
-      <div class="col-md-8 text-white text-center">
-        <div class="display-4"><img dmx-bind:src="https://token.dlux.io/getauthorpic/{{dluxGetBlog.data.result[0].blog}}" alt="" class="rounded-circle bg-light img-fluid mr-4 cover profile-img">@{{dluxGetBlog.data.result[0].blog}} </div>
-        <p class="lead">description needs an api or helper<br>
-          <a dmx-bind:href="../@{{dluxGetBlog.data.result[0].blog}}" class="lead" target="_blank"><i class="fas fa-vr-cardboard mx-2 fa-lg"></i>My VR Page</a></p>
-      </div>
-      <div class="col-md-4 text-center m-auto"> <a class="btn btn-outline-primary btn-lg m-1 " href="#" role="button">Settings<i class="fas fa-cog ml-2"></i></a><a class="btn btn-outline-primary btn-lg m-1 " href="../new/" role="button">Actions<i class="fas fa-ellipsis-h ml-2"></i></i></a></div>
+<main role="main" class="flex-shrink-0 text-white">
+  <div class="container-fluid px-0 ">
+	  <div class="container-fluid bg-darker border-bottom">
+	  <div class="container">
+		<div class="row mt-3  padme-t70">
+      <div class="col-md-8 text-white">
+		  
+		  <div class="d-inline-block">
+        <div class="float-left"><img dmx-bind:src="https://token.dlux.io/getauthorpic/{{dluxGetBlog.data.result[0].blog}}" alt="" class="rounded-circle bg-light img-fluid mr-4 cover profile-img"></div>
+			  <div class="float-left"><p class="display-4">@{{dluxGetBlog.data.result[0].blog}}</p>
+        <small class="lead p-2">description needs an api or helper</small>
+			  </div></div></div>
+      <div class="col-md-4 text-center m-auto"> <a class="btn btn-outline-primary btn-lg m-1" role="button" dmx-bind:href="../@{{dluxGetBlog.data.result[0].blog}}" target="_blank">VR Page<i class="fas fa-vr-cardboard mx-2 fa-lg"></i></a>
+		  <a class="btn btn-outline-primary btn-lg m-1 " href="../new/" role="button">Actions<i class="fas fa-ellipsis-h ml-2"></i></i></a></div>
     </div>
-  </div>
+  <ul class="nav nav-tabs bg-darker mx-0 px-0 mt-5 border-bottom-0" role="tablist">
+	    <li class="nav-item">
+			<a class="nav-link active" href="#blog" id="blogtab" role="tab" data-toggle="tab" aria-controls="blog" aria-expanded="true">Blog</a> </li>
+	    <li class="nav-item"> 
+			<a class="nav-link" id="wallettab" role="tab" data-toggle="tab" aria-controls="wallet" aria-expanded="true" href="#wallet">Wallet</a> </li>
+	    <li class="nav-item"> 
+			<a class="nav-link" id="settingstab" role="tab" data-toggle="tab" aria-controls="settings" aria-expanded="true" href="#settings">Settings</a> </li>
+    </ul>
+	</div></div>
+	 <div id="pagecontent" class="tab-content">
+       <div role="tabpanel" class="tab-pane fade show active" id="blog" aria-labelledby="blogtab">
  <div class="card-columns p-3" id="blogResult" is="dmx-repeat" dmx-bind:repeat="dluxGetBlog.data.result">
   <div class="card text-white bg-dark mt-2 mb-3">
     <div class="card-header">
@@ -109,18 +124,27 @@
 			</div>
 		<div class="d-inline-block p-2">
         <a data-toggle="collapse" dmx-bind:data-target="{{&quot;#&quot;}}vote{{entry_id}}"><i class="fas fa-heart mr-1"></i></a>{{data.comment.active_votes.countUpVotes()}} <i class="fas fa-comment ml-2 mr-1"></i>{{data.comment.children}}</div>
-      </div>
+      
       <div class="float-right p-2">{{data.comment.total_payout_value}} <img src="../img/hextacular.svg" alt="" width="17"/></div>
+	 
 
-  </div>
 </dmx-data-detail>
+		   </div>
+		   </div>
 	 </div>
 	</div>
+       <div role="tabpanel" class="tab-pane fade show " id="wallet" aria-labelledby="wallettab">
+		   <p>wallet</p>
+		</div>
+		 
+
+       <div role="tabpanel" class="tab-pane fade show" id="settings" aria-labelledby="settingstab">
+		    <p>settings</p>
+			 </div>
 	</div>
+	</div></div>
 </main>
 <?php include '../mod/footer.php';?>
-<script type="text/javascript" src="../js/popper.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
 <script>
 	function updateVoteSubmit(id,val) {
           document.getElementById(id).innerHTML = document.getElementById(val).value + '%'; 
