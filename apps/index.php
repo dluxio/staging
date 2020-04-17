@@ -1,23 +1,16 @@
 <!doctype html>
-<html lang="en" class="h-100"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html lang="en" class="h-100">
+<head>
 <title>DLUX - Apps</title>
-<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
-<link href="../css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+<?php include '../mod/header.php';?>
+<!--dmxAppConnect-->
 <script type="text/javascript" src="../dmxAppConnect/dmxAppConnect.js"></script>
-<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/steem/dist/steem.min.js"></script>
-<script type="text/javascript" src="../js/session.js"></script>
-<script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
-<!--page specific-->
 <script type="text/javascript" src="../dmxAppConnect/dmxMoment.js"></script>
 <script type="text/javascript" src="../dmxAppConnect/dmxFormatter.js"></script>
 <script type="text/javascript" src="../dmxAppConnect/dmxDataTraversal/dmxDataTraversal.js"></script>
 </head>
 
-<body class="d-flex flex-column h-100" id="apps" is="dmx-app">
+<body class="d-flex flex-column h-100" id="index" is="dmx-app">
 <dmx-api-datasource id="dluxGetBlog" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_blog'" dmx-param:params="'[%22robotolux%22,0,10]'"></dmx-api-datasource>
 <?php include '../mod/nav.php';?>
 <main role="main" class="flex-shrink-0">
@@ -126,8 +119,6 @@
 	</div>
 </main>
 <?php include '../mod/footer.php';?>
-<script type="text/javascript" src="../js/popper.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
 <script>
 	function updateVoteSubmit(id,val) {
           document.getElementById(id).innerHTML = document.getElementById(val).value + '%'; 

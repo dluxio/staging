@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,11 +11,19 @@
   <link href="css/dlux.scss" rel="stylesheet">
   <script type="text/javascript" src="dmxAppConnect/dmxAppConnect.js"></script>
   <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
-  <script src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
+	  <script type="text/javascript" src="../js/popper.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script> <script src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
   <script src="js/session.js"></script>
+  <script>
+	$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+	</script>
 </head>
-  <body id="index" is="dmx-app">
+<body class="d-flex flex-column h-100">
  <?php include 'mod/nav.php';?>
+<main role="main" class="flex-shrink-0">
+  <div class="container-fluid padme-t70">
     <div class="jumbotron jumbotron-fluid text-center text-white mt-5 bg-win">
        <div class="container">
 		<div class="row">
@@ -62,11 +70,10 @@
 			<p class="text-center"><a class="btn btn-lg btn-outline-primary" href="https://dlux-vr.glitch.me/build.html" target="_blank" role="button">Build VR</a></p></div>
 	</div>
   </div>
-	  <br>
+	</div>
+	</main>
 <?php include 'mod/footer.php';?>
-	  <script type="text/javascript" src="../js/popper.min.js"></script>
-  <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
-    <script type="text/javascript">
+<script type="text/javascript">
 	checkCookie()
     </script>
   </body>

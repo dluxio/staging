@@ -1,21 +1,8 @@
 <!doctype html>
-<html lang="en" class="h-100"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html lang="en" class="h-100">
+<head>
 <title>DLUX - DEX</title>
-<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
-<link href="../css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="../js/popper.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
-	<script>
-	$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-	</script>
-<script type="text/javascript" src="../js/session.js"></script>
-<script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
+<?php include '../mod/header.php';?>
 <!--page specific-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>	
 <script type="text/javascript">
@@ -102,7 +89,6 @@
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   <a href="#" class="alert-link">The dlux DEX is under construction. Have a look around and let us know what you think!</a>
 </div>
-	<a href="#" data-toggle="tooltip" placement="bottom" title="tooltip test">test</a>
       <div>
             <ul id="pagenav" class="nav nav-pills justify-content-center" role="tablist">
                 <li class="nav-item"> <a class="nav-link active" href="#info" id="infotab" role="tab" data-toggle="tab"
