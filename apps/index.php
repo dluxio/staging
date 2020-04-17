@@ -17,11 +17,11 @@
   <div class="container-fluid padme-t70">
     <div class="row mt-3">
       <div class="col-md-8 text-white text-center">
-        <div class="display-4">Virtual Reality <i class="fas fa-vr-cardboard"></i></div>
+        <div class="display-4">Virtual Reality</div>
         <p class="lead">Responsive WebXR across mobile, desktop, and headset.<br>
-          <a href="/vr" class="lead" target="_blank">Enter Metaverse (Beta) <i class="fas fa-external-link-alt"></i></a></p>
+          <a href="/vr" class="lead" target="_blank"><i class="fas fa-vr-cardboard mr-2"></i>Enter Metaverse</a></p>
       </div>
-      <div class="col-md-4 text-center m-auto"> <a class="btn btn-primary btn-lg m-1 btn-1" href="#" role="button">Learn<i class="fas fa-shapes ml-2"></i></a><a class="btn btn-primary btn-lg m-1 btn-1" href="../create/" role="button">Create<i class="fas fa-plus-circle ml-2"></i></a></div>
+      <div class="col-md-4 text-center m-auto"> <a class="btn btn-primary btn-lg m-1 btn-1" href="#" role="button">Learn<i class="fas fa-shapes ml-2"></i></a><a class="btn btn-primary btn-lg m-1 btn-1" href="../new/" role="button">Create<i class="fas fa-plus-circle ml-2"></i></a></div>
     </div>
   </div>
  <div class="card-columns p-3" id="blogResult" is="dmx-repeat" dmx-bind:repeat="dluxGetBlog.data.result">
