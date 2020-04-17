@@ -7834,6 +7834,12 @@ body {
 .mr-half {
   margin-right: 0.15rem !important; }
 
+.input-75 {
+  width: 75px; }
+
+.select {
+  text-align-last: center; }
+
 @media (max-width: 575.98px) {
   .card-columns {
     column-count: 1; } }

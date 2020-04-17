@@ -34,6 +34,10 @@
 			<a class="nav-link active" href="#blog" id="blogtab" role="tab" data-toggle="tab" aria-controls="blog" aria-expanded="true">Blog</a> </li>
 	    <li class="nav-item"> 
 			<a class="nav-link" id="wallettab" role="tab" data-toggle="tab" aria-controls="wallet" aria-expanded="true" href="#wallet">Wallet</a> </li>
+	  <li class="nav-item"> 
+			<a class="nav-link" id="inventorytab" role="tab" data-toggle="tab" aria-controls="inventory" aria-expanded="true" href="#inventory">Inventory</a> </li>
+	  <li class="nav-item"> 
+			<a class="nav-link" id="nodetab" role="tab" data-toggle="tab" aria-controls="node" aria-expanded="true" href="#node">Node</a> </li>
 	    <li class="nav-item"> 
 			<a class="nav-link" id="settingstab" role="tab" data-toggle="tab" aria-controls="settings" aria-expanded="true" href="#settings">Settings</a> </li>
     </ul>
@@ -336,12 +340,231 @@
 		   </div>
 		</div>
 		 
+		 <div role="tabpanel" class="tab-pane fade show" id="inventory" aria-labelledby="inventorytab">
+		    <p>inventory</p>
+			 </div>
+		 
+		 <div role="tabpanel" class="tab-pane fade show " id="node" aria-labelledby="nodetab">
+		    <p>node</p>
+			 </div>
 
        <div role="tabpanel" class="tab-pane fade show" id="settings" aria-labelledby="settingstab">
-		    <p>settings</p>
+	
+	<div class="p-3">
+		   <ul class="nav nav-pills justify-content-center" role="tablist">
+	    <li class="nav-item">
+			<a class="nav-link active" href="#general" id="generaltab" role="tab" data-toggle="tab" aria-controls="general" aria-expanded="true">General</a> </li>
+	    <li class="nav-item"> 
+			<a class="nav-link" id="contenttab" role="tab" data-toggle="tab" aria-controls="content" aria-expanded="true" href="#content">Content</a> </li>
+    </ul>
+		   </div>
+			   <div id="pagecontent" class="tab-content">
+       <div role="tabpanel" class="tab-pane fade show active" id="general" aria-labelledby="generaltab">
+	     <div class="container">
+			 <form>
+		   <div class="jumbotron pt-4 bg-darker">
+			   <h1 class="display-5">DLUX Settings</h1>
+                  <p class="lead ">Control your voting and rewards settings</p>
+                  <hr class="my-4 bg-light">
+			 <div class="clearfix">
+		  	  <div class="float-left">
+			  		  <h4>Default DLUX Weight For Posts</h4>
+				  		<p class="text-white-50">Adjust the default DLUX weight you vote on posts, 1-100</p>
+				  	</div>
+				  	<div class="float-right">
+						<div class="input-group">
+							<input type="number" class="form-control input-75" id="dluxweightposts" placeholder="100">
+						<div class="input-group-append">
+      							<div class="input-group-text">%</div>
+    						</div>	
+						</div>
+				  	</div>
+			  </div>
+				<hr class="my-4 bg-light">
+			  <div class="clearfix">
+		  	  <div class="float-left">
+			  		  <h4>Default DLUX Weight For Comments</h4>
+				  		<p class="text-white-50">Adjust the default DLUX weight you vote on comments, 1-100</p>
+				  	</div>
+				  	<div class="float-right">
+						<div class="input-group">
+							<input type="number" class="form-control input-75" id="dluxweightcomments" placeholder="100">
+						    <div class="input-group-append">
+      							<div class="input-group-text">%</div>
+    						</div>	
+						</div>
+				  </div>
+			  </div>
+			  <hr class="my-4 bg-light">
+				<div class="clearfix">
+		  	  <div class="float-left">
+			  		  <h4>Default DLUX Payout</h4>
+				  		<p class="text-white-50">Adjust the default DLUX reward for new posts</p>
+				  	</div>
+				  	<div class="float-right">
+							<select class="form-control" id="dluxreward">
+    						<option value="1">50% DLUX and 50% DP</option>
+    						<option value="2">100% DLUX Power</option>
+    						<option value="3">Decline Rewards</option>
+  						</select>				
+				  	</div>
+			  </div>
+			  <hr class="my-4 bg-light">
+				<div class="clearfix">
+		  	  <div class="float-left">
+			  		  <h4>DLUX Beneficiary Ammount</h4>
+				  		<p class="text-white-50">Adjust the beneficiary ammount paid to dlux on new posts, 10-100</p>
+				  	</div>
+				  	<div class="float-right">
+						<div class="input-group">
+							<input type="number" class="form-control input-75" id="dluxbeneficiary" placeholder="10">
+						<div class="input-group-append">
+      							<div class="input-group-text">%</div>
+    						</div>	
+						</div>
+				  	</div>
+			  </div>
+				  <hr class="my-4 bg-light">
+				<div class="clearfix">
+		  	  <div class="float-left">
+			  		  <h4>Default DLUX Escrow Agent</h4>
+				  		<p class="text-white-50">Choose your preffered 3rd party node for handling DEX transactions</p>
+				  	</div>
+				  	<div class="float-right">
+						<div class="input-group">
+						<div class="input-group-prepend">
+      							<div class="input-group-text">@</div>
+    						</div>
+							<input type="text" class="form-control" id="dluxbeneficiary" placeholder="disregardfiat">
+						</div>
+				  	</div>
+			  </div>
+				</div>
+				<div class="jumbotron pt-4 bg-darker">
+			   <h1 class="display-5">HIVE Settings</h1>
+                  <p class="lead ">Control your voting and rewards settings</p>
+						<hr class="my-4 bg-light">
+			<div class="clearfix">
+		  	  <div class="float-left">
+			  		  <h4>Default HIVE Weight For Posts</h4>
+				  		<p class="text-white-50">Adjust the default HIVE weight you vote on posts, 1-100</p>
+				  	</div>
+				  	<div class="float-right">
+						<div class="input-group">
+							<input type="number" class="form-control input-75" id="hiveweightposts" placeholder="100">
+						<div class="input-group-append">
+      							<div class="input-group-text">%</div>
+    						</div>	
+						</div>
+				  	</div>
+			  </div>
+					<hr class="my-4 bg-light">
+			  <div class="clearfix">
+		  	  <div class="float-left">
+			  		  <h4>Default HIVE Weight For Comments</h4>
+				  		<p class="text-white-50">Adjust the default HIVE weight you vote on comments, 1-100</p>
+				  	</div>
+				  	<div class="float-right">
+						<div class="input-group">
+							<input type="number" class="form-control input-75" id="hiveweightcomments" placeholder="100">
+						<div class="input-group-append">
+      							<div class="input-group-text">%</div>
+    						</div>	
+						</div>
+				  	</div>
+			  </div>
+					<hr class="my-4 bg-light">
+			  <div class="clearfix">
+		  	  <div class="float-left">
+			  		  <h4>Default HIVE Payout</h4>
+				  		<p class="text-white-50">Adjust the default HIVE rewards for new posts</p>
+				  	</div>
+				  	<div class="float-right">
+						<select class="form-control" id="hivereward">
+    						<option value="1">50% HBD and 50% HP</option>
+    						<option value="2">100% HIVE Power</option>
+    						<option value="3">Decline Rewards</option>
+  						</select>
+				  	</div>
+			  </div>
+                  <hr class="my-4 bg-light">
+					<div class="clearfix">
+		  	  <div class="float-left">
+			  		  <h4>Default HIVE API Node</h4>
+				  		<p class="text-white-50">Select the API node with which to retrieve data from the HIVE blockchain</p>
+				  	</div>
+				  	<div class="float-right">
+						<select class="form-control" id="hivereward">
+    						<option value="1">anyx.io</option>
+    						<option value="2">api.hive.blog</option>
+    						<option value="3">api.hivekings.com</option>
+							<option value="3">api.openhive.network</option>
+  						</select>
+				  	</div>
+			  </div>
+			   </div>
+				 <div class="text-center mb-4">
+				 <button type="submit" class="btn btn-primary btn-lg">Save</button>
 			 </div>
+			 </form>
+		   </div>
+		</div>
+		<div role="tabpanel" class="tab-pane fade show" id="content" aria-labelledby="contenttab">		   
+		  <div class="container">
+			 <form>
+		   <div class="jumbotron pt-4 bg-darker">
+			   <h1 class="display-5">Content Settings</h1>
+                  <p class="lead ">Control what you see</p>
+                  <hr class="my-4 bg-light">
+			 <div class="clearfix">
+		  	  <div class="float-left">
+			  		  <h4>NSFW Posts</h4>
+				  		<p class="text-white-50">Configure how NSFW (Not Safe For Work) posts appear</p>
+			  	</div>
+				  	<div class="float-right">
+							<select class="form-control" id="nsfwselect">
+    						<option value="1">Hide</option>
+    						<option value="2">Click to show</option>
+    						<option value="3">Show</option>
+  						</select>				
+				  	</div>
+			  </div>
+				<hr class="my-4 bg-light">
+			  <div class="clearfix">
+		  	  <div class="float-left">
+			  		  <h4>Author Muting</h4>
+				  		<p class="text-white-50">Use author's list of ignored accounts when viewing comments</p>
+			  	</div>
+				  	<div class="float-right my-3">
+						<div class="custom-control custom-switch py-2">
+  							<input type="checkbox" class="custom-control-input" id="muteswitch">
+  							<label class="custom-control-label" for="muteswitch"></label>
+						</div>
+				  </div>
+			  </div>
+			<hr class="my-4 bg-light">
+			  <div class="clearfix">
+		  	  <div class="float-left">
+			  		  <h4>Global Blacklist</h4>
+				  		<p class="text-white-50">Display a warning on accounts found in <a href="https://peakd.com/utopian-io/@themarkymark/global-blacklist-api-2-0-released" target="_blank">The Global Blacklist</a> maintained by @themarkymark</p>
+			  	</div>
+				  	<div class="float-right my-3">
+						<div class="custom-control custom-switch py-2">
+  							<input type="checkbox" class="custom-control-input" id="bkacklistswitch" checked>
+  							<label class="custom-control-label" for="blacklistswitch"></label>
+						</div>
+				  </div>
+			  </div> 
+				 </div>
+			<div class="text-center mb-4">
+			  <button type="submit" class="btn btn-primary btn-lg">Save</button>
+			 </div>
+			 </form>
+		   </div>
+		   </div>
+		</div>
 	</div>
-	</div></div>
+  </div>
 </main>
 <?php include '../mod/footer.php';?>
 <script>

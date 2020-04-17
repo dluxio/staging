@@ -35,6 +35,10 @@ body {background-color: #222222}
 
 .mr-half {margin-right: 0.15rem !important; }
 
+.input-75 {width: 75px;}
+
+.select {text-align-last: center;}
+
 .card-columns {
   @include media-breakpoint-only(xs) {
     column-count: 1;
