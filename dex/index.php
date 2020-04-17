@@ -90,10 +90,12 @@
 <?php include '../mod/nav.php';?>
 <main role="main" class="flex-shrink-0 padme-t70">
 <div class="container">
+	
 <div class="alert alert-danger alert-dismissible text-center">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   <a href="#" class="alert-link">The dlux DEX is under construction. Have a look around and let us know what you think!</a>
 </div>
+	<a href="#" data-toggle="tooltip" placement="bottom" title="tooltip test">test</a>
       <div>
             <ul id="pagenav" class="nav nav-pills justify-content-center" role="tablist">
                 <li class="nav-item"> <a class="nav-link active" href="#info" id="infotab" role="tab" data-toggle="tab"
@@ -615,6 +617,11 @@
 <?php include '../mod/footer.php';?>
 <script type="text/javascript" src="../js/popper.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
+	<script>
+	$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+	</script>
 <script>
 
         var historicPriceHive = document.getElementById('historicpricehive').getContext('2d');
