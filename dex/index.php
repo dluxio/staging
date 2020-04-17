@@ -151,7 +151,7 @@
                         </div>
                     </div>
              
-                <div role="tabpanel" class="tab-pane fade show " id="hive" aria-labelledby="hivetab">
+                <div role="tabpanel" class="tab-pane fade show" id="hive" aria-labelledby="hivetab">
                     <div class="container-fluid" style="padding:0">
                         <div class="row">
                             <div class="col-lg-8">
