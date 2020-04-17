@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" class="h-100">
 <head>
-<title>DLUX - Apps</title>
+<title>DLUX - Username</title>
 <?php include '../mod/header.php';?>
 <!--dmxAppConnect-->
 <script type="text/javascript" src="../dmxAppConnect/dmxAppConnect.js"></script>
