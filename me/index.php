@@ -8,6 +8,7 @@
 <script type="text/javascript" src="../dmxAppConnect/dmxMoment.js"></script>
 <script type="text/javascript" src="../dmxAppConnect/dmxFormatter.js"></script>
 <script type="text/javascript" src="../dmxAppConnect/dmxDataTraversal/dmxDataTraversal.js"></script>
+
 </head>
 
 <body class="d-flex flex-column h-100" id="apps" is="dmx-app">
@@ -343,6 +344,18 @@
 	</div></div>
 </main>
 <?php include '../mod/footer.php';?>
+<script>
+	// Javascript to enable link to tab
+var url = document.location.toString();
+if (url.match('#')) {
+    $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+} 
+
+// Change hash for page-reload
+$('.nav-tabs a').on('shown.bs.tab', function (e) {
+    window.location.hash = e.target.hash;
+})
+	</script>
 <script>
 	function updateVoteSubmit(id,val) {
           document.getElementById(id).innerHTML = document.getElementById(val).value + '%'; 
