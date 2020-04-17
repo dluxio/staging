@@ -7,6 +7,13 @@
 <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon" />
 <link href="../css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../js/popper.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
+	<script>
+	$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+	</script>
 <script type="text/javascript" src="../js/session.js"></script>
 <script type="text/javascript" src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
 <!--page specific-->
@@ -615,13 +622,7 @@
     </div>
 </main>
 <?php include '../mod/footer.php';?>
-<script type="text/javascript" src="../js/popper.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script>
-	<script>
-	$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-	</script>
+
 <script>
 
         var historicPriceHive = document.getElementById('historicpricehive').getContext('2d');
