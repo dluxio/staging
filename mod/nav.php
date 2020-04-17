@@ -16,8 +16,8 @@
     <div class="mr-5" id="active-session">
 	  <ul class="nav navbar-nav">
 		<li class="nav-item my-auto">
-			<a class="nav-link" href="../new/">
-				<i class="fas fa-fw fa-lg far-lightbulb mr-2"></i></a></li>
+			<a class="nav-link" href="../new/" data-toggle="tooltip" title="Create a new app">
+				<i class="far fa-fw fa-lg fa-lightbulb mr-2"></i></a></li>
 		<li class="nav-item dropdown">
 		  <a class="nav-link dropdown-toggle text-white-50" id="userDropdown" data-toggle="dropdown" href="#">
 			  <img src="https://token.dlux.io/getauthorpic/{{author}}" id="userImage" alt="" width="30" height="30" class="img-fluid rounded-circle bg-light mr-2 cover">
