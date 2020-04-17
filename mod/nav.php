@@ -15,8 +15,8 @@
 	</ul>
     <div class="mr-5" id="active-session">
 	  <ul class="nav navbar-nav">
-		<li class="nav-item">
-			<a class="nav-link my-auto" href="../new/">
+		<li class="nav-item my-auto">
+			<a class="nav-link" href="../new/">
 				<i class="fas fa-fw fa-lg fa-plus-circle mr-2"></i></a></li>
 		<li class="nav-item dropdown">
 		  <a class="nav-link dropdown-toggle text-white-50" id="userDropdown" data-toggle="dropdown" href="#">
