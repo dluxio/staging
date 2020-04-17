@@ -354,6 +354,7 @@ if (url.match('#')) {
 // Change hash for page-reload
 $('.nav-tabs a').on('shown.bs.tab', function (e) {
     window.location.hash = e.target.hash;
+	window.scrollTo(0, 0);
 })
 	</script>
 <script>

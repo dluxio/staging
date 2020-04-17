@@ -24,8 +24,8 @@
 			  <span id="userName">username</span></a>
           <div class="dropdown-menu" aria-labelledby="userDropdown">
 			 <a class="dropdown-item" href="../me/"><i class="fas fa-user fa-fw mr-2"></i>Profile</a>
-			 <a class="dropdown-item" href="#"><i class="fas fa-wallet fa-fw mr-2"></i>Wallet</a>
-			 <a class="dropdown-item" href="#"><i class="fas fa-cog fa-fw mr-2"></i>Settings</a>
+			 <a class="dropdown-item" href="../me/index.php#wallet"><i class="fas fa-wallet fa-fw mr-2"></i>Wallet</a>
+			 <a class="dropdown-item" href="../me/index.php#wallet"><i class="fas fa-cog fa-fw mr-2"></i>Settings</a>
              <div class="dropdown-divider"></div>
              <a class="dropdown-item" href="#"><i class="fas fa-robot fa-fw mr-2"></i>Nodes</a>
 			 <a class="dropdown-item" href="#"><i class="fas fa-info-circle fa-fw mr-2"></i>About</a>
