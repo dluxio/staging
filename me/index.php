@@ -22,7 +22,7 @@
 		  
 		  <div class="d-inline-block">
         <div class="float-left"><img dmx-bind:src="https://token.dlux.io/getauthorpic/{{dluxGetBlog.data.result[0].blog}}" alt="" class="rounded-circle bg-light img-fluid mr-4 cover profile-img"></div>
-			  <div class="float-left"><p class="display-4">@{{dluxGetBlog.data.result[0].blog}}</p>
+			  <div class="float-left"><p class="display-4 mb-0">{{dluxGetBlog.data.result[0].blog}}</p>
         <small class="lead p-2">description needs an api or helper</small>
 			  </div></div></div>
       <div class="col-md-4 text-center m-auto"> <a class="btn btn-outline-primary btn-lg m-1" role="button" dmx-bind:href="../@{{dluxGetBlog.data.result[0].blog}}" target="_blank">VR Page<i class="fas fa-vr-cardboard mx-2 fa-lg"></i></a>
@@ -38,7 +38,7 @@
     </ul>
 	</div></div>
 	 <div id="pagecontent" class="tab-content">
-       <div role="tabpanel" class="tab-pane fade show " id="blog" aria-labelledby="blogtab">
+       <div role="tabpanel" class="tab-pane fade show active" id="blog" aria-labelledby="blogtab">
  <div class="card-columns p-3" id="blogResult" is="dmx-repeat" dmx-bind:repeat="dluxGetBlog.data.result">
   <div class="card text-white bg-dark mt-2 mb-3">
     <div class="card-header">
@@ -133,21 +133,31 @@
 		   </div>
 	 </div>
 	</div>
-       <div role="tabpanel" class="tab-pane fade show active" id="wallet" aria-labelledby="wallettab">
-		   <div class="container mt-3">
-			  <div class="jumbotron bg-darker">
+       <div role="tabpanel" class="tab-pane fade show" id="wallet" aria-labelledby="wallettab">
+	<div class="p-3">
+		   <ul class="nav nav-pills justify-content-center" role="tablist">
+	    <li class="nav-item">
+			<a class="nav-link active" href="#dlux" id="dluxtab" role="tab" data-toggle="tab" aria-controls="dlux" aria-expanded="true">DLUX</a> </li>
+	    <li class="nav-item"> 
+			<a class="nav-link" id="hivetab" role="tab" data-toggle="tab" aria-controls="hive" aria-expanded="true" href="#hive">HIVE</a> </li>
+    </ul>
+		   </div>
+		   <div id="walletcontent" class="tab-content">
+       <div role="tabpanel" class="tab-pane fade show active" id="dlux" aria-labelledby="dluxtab">
+		   <div class="container">
+			  <div class="jumbotron pt-4 bg-darker">
 				  <h1 class="display-5">Introducing DLUX OpenToken</h1>
                   <p class="lead ">The smartest, most decentralized token powering games, apps, and the multiverse</p>
                   <hr class="my-4 bg-light">
 				  <div class="clearfix">
 				  	<div class="float-left">
 			  		  <h4>DLUX Token</h4>
-				  		<p class="text-white-50">The utility token for content distribution and smart contracts, also called a smart media token (SMT).</p>
+				  		<p class="text-white-50">The utility token for content distribution and smart contracts, also called a smart media token (SMT)</p>
 				  	</div>
 				  	<div class="float-right text-right">
 						<h5>846.068 DLUX</h5>
 						<div class="btn-group" role="group" aria-label="DLUX Actions">
-  							<button type="button" class="btn btn-info mr-half"><i class="fas fa-paper-plane mr-2"></i>Transfer</button>
+  							<button type="button" class="btn btn-info mr-half"><i class="fas fa-paper-plane mr-2"></i>Send</button>
   							<div class="btn-group" role="group">
     						<button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
     						<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
@@ -196,8 +206,132 @@
 						<h5>$187.50</h5>
 				  	</div>
 				  </div>
-				  <hr class="my-4 bg-light">
 			   </div>
+			   <div class="jumbotron pt-3 bg-darker text-white">
+				   <h4 class="mb-3">Transactions</h4>
+				   <div>
+					   <p class="my-2">put a transaction here!<br>second line wow</p>
+					   <hr class="my-3 bg-light">
+				   </div>
+				   <div>
+					   <p class="my-2">put a transaction here!<br>second line wow</p>
+					   <hr class="my-3 bg-light">
+				   </div>
+			   </div>
+		   </div>
+			   </div>
+			  <div role="tabpanel" class="tab-pane fade show" id="hive" aria-labelledby="hivetab">
+				  <div class="container">
+			  <div class="jumbotron pt-4 bg-darker">
+				  <h1 class="display-5">Hive is the new Steem</h1>
+                  <p class="lead ">A proof-of-stake blockchain built for censorship resistant content and apps</p>
+                  <hr class="my-4 bg-light">
+				  <div class="clearfix">
+				  	<div class="float-left">
+			  		  <h4>HIVE Token</h4>
+				  		<p class="text-white-50">The main token of the chain, often rewarded for content.</p>
+				  	</div>
+				  	<div class="float-right text-right">
+						<h5>768.186 HIVE</h5>
+						<div class="btn-group" role="group" aria-label="DLUX Actions">
+  							<button type="button" class="btn btn-info mr-half"><i class="fas fa-paper-plane mr-2"></i>Send</button>
+  							<div class="btn-group" role="group">
+    						<button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+    						<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
+      							<a class="dropdown-item" href="#"><i class="fas fa-angle-double-up fa-fw mr-2"></i>Power Up</a>
+								<a class="dropdown-item" href="#"><i class="fas fa-piggy-bank fa-fw mr-2"></i>Transfer to Savings</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="../dex/"><i class="fas fa-store fa-fw mr-2"></i>Trade</a>
+    						</div>
+  							</div>
+						</div>
+				  	</div>
+				  </div>
+				  <hr class="my-4 bg-light">
+				  <div class="clearfix">
+				  	<div class="float-left">
+			  		  <h4>HIVE Power</h4>
+				  		<p class="text-white-50">Staked tokens (Powered Up) allowing for inflationary rewards on new content</p>
+						<p class="text-white-50">Benefits of HIVE Power:</p>
+						<ul class="text-white-50">
+						<li>Increased voting power on content</li>
+						<li>Increased rewards from content</li>
+						<li>Increased resource credits</li>
+						</ul>
+				  	</div>
+				  	<div class="float-right text-right">
+						<h5>352.153 HP</h5>
+						<div class="btn-group" role="group" aria-label="DLUX Actions">
+  							<button type="button" class="btn btn-info mr-half"><i class="fas fa-user-friends mr-2"></i>Delegate</button>
+  							<div class="btn-group" role="group">
+    						<button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+    						<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
+      							<a class="dropdown-item" href="#"><i class="fas fa-angle-double-down fa-fw mr-2"></i>Power Down</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="../dex/">Claim Account Creation Token</a>
+    						</div>
+  							</div>
+						</div>
+				  	</div>
+				  </div>
+				  <hr class="my-4 bg-light">
+				  <div class="clearfix">
+				  	<div class="float-left">
+			  		  <h4>HIVE Backed Dollar</h4>
+				  		<p class="text-white-50">Also a reward for content, this token is pegged to the US Dollar</p>
+				  	</div>
+				  	<div class="float-right text-right">
+						<h5>63.189 HBD</h5>
+						<div class="btn-group" role="group" aria-label="DLUX Actions">
+  							<button type="button" class="btn btn-info mr-half"><i class="fas fa-paper-plane mr-2"></i>Send</button>
+  							<div class="btn-group" role="group">
+    						<button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+    						<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
+      							<a class="dropdown-item" href="#"><i class="fas fa-random fa-fw mr-2"></i>Convert to HIVE</a>
+								<a class="dropdown-item" href="#"><i class="fas fa-piggy-bank fa-fw mr-2"></i>Transfer to Savings</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="../dex/"><i class="fas fa-store fa-fw mr-2"></i>Trade</a>
+    						</div>
+  							</div>
+						</div>
+				  	</div>
+				  </div>
+				  <hr class="my-4 bg-light">
+				  <div class="clearfix">
+				  	<div class="float-left">
+			  		  <h4>HIVE Savings</h4>
+				  		<p class="text-white-50 mb-0">A 3 day waiting period is imposed on withdrawl</p>
+				  	</div>
+				  	<div class="float-right text-right">
+						<h5>86.363 HIVE</h5>
+						<h5>69.841 HBD</h5>
+				  	</div>
+				  </div>
+				  <hr class="my-4 bg-light">
+				  <div class="clearfix">
+				  	<div class="float-left">
+			  		  <h4>Estimated Account Value</h4>
+				  		<p class="text-white-50">The approximate US Dollar value for all HIVE in your account</p>
+				  	</div>
+				  	<div class="float-right text-right">
+						<h5>$126.35</h5>
+				  	</div>
+				  </div>
+			   </div>
+			   <div class="jumbotron pt-3 bg-darker text-white">
+				   <h4 class="mb-3">Transactions</h4>
+				   <div>
+					   <p class="my-2">put a transaction here!<br>second line wow</p>
+					   <hr class="my-3 bg-light">
+				   </div>
+				   <div>
+					   <p class="my-2">put a transaction here!<br>second line wow</p>
+					   <hr class="my-3 bg-light">
+				   </div>
+			   </div>
+		   </div>
+		   </div>
+			   
 		   </div>
 		</div>
 		 
