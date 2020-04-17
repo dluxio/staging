@@ -21,7 +21,7 @@
         var permlink, author
 
         //API for hive and dlux
-        var iam = "Init", bal = 0, hivebal = 0, hbdbal = 0, hiveHis = [], hiveTick, hbdHis = [], hbdTick, contracts
+        var iam = "Init", bal = 0, hivebal = 0, hbdbal = 0, hiveHis = [], hiveTick, hbdHis = [], hbdTick, contracts, opts = {to:'inconceivable', agent: 'heyhey', fee: '0.000 STEEM', expire_time: 120}
  
 	function getCookie(cname) {
   var name = cname + "=";
@@ -1353,7 +1353,8 @@
                     "id": "dlux_dex_hive_sell",
                     "json": JSON.stringify({
                         dlux,
-                        hive: amount
+                        hive: amount,
+			hours: opts.expire_time
                     })
                 }
             console.log(params)
@@ -1368,7 +1369,8 @@
                     "id": "dlux_dex_hbd_sell",
                     "json": JSON.stringify({
                         dlux,
-                        hbd: amount
+                        hbd: amount,
+			hours: opts.expire_time
                     })
                 }
             console.log(params)
@@ -1390,27 +1392,11 @@
                         var escrowTimer = {}
                         var agents = []
                         var i = 0
-                        for (var agent in queue) {
-                            if (agents.length == 1) {
-                                break;
-                            }
-                            if (queue[agent] != iam) {
-                                agents.push(queue[agent])
-                            }
-                        }
-                        for (var agent in queue) {
-                            if (agents.length == 2) {
-                                break
-                            }
-                            if (queue[agent] != agents[0] && queue[agent] != iam) {
-                                agents.push(queue[agent])
-                            }
-                        }
                         let now = new Date();
                         escrowTimer.ratifyIn = now.setHours(now.getHours() + 72);
                         escrowTimer.ratifyUTC = new Date(escrowTimer.ratifyIn);
                         escrowTimer.ratifyString = escrowTimer.ratifyUTC.toISOString().slice(0, -5);
-                        escrowTimer.expiryIn = now.setDate(now.getDate() + 5);
+                        escrowTimer.expiryIn = now.setHours(now.getHours() + opts.expire_time);
                         escrowTimer.expiryUTC = new Date(escrowTimer.expiryIn);
                         escrowTimer.expiryString = escrowTimer.expiryUTC.toISOString().slice(0, -5);
                         var formatter = amount / 1000
@@ -1418,12 +1404,12 @@
                         var eidi = Math.floor(Math.random() * 4294967296)
                         let params = {
                             from: iam,
-                            to: agents[0],
+                            to: opts.to,
                             sbd_amount: hbdAmount,
                             steem_amount: hiveAmount,
                             escrow_id: eidi,
-                            agent: agents[1],
-                            fee: '0.000 STEEM',
+                            agent: opts.agent,
+                            fee: opts.fee,
                             ratification_deadline: escrowTimer.ratifyString,
                             escrow_expiration: escrowTimer.expiryString,
                             json_meta: JSON.stringify({
@@ -1456,27 +1442,11 @@
                         var escrowTimer = {}
                         var agents = []
                         var i = 0
-                        for (var agent in queue) {
-                            if (agents.length == 1) {
-                                break;
-                            }
-                            if (queue[agent] != iam) {
-                                agents.push(queue[agent])
-                            }
-                        }
-                        for (var agent in queue) {
-                            if (agents.length == 2) {
-                                break
-                            }
-                            if (queue[agent] != agents[0] && queue[agent] != iam) {
-                                agents.push(queue[agent])
-                            }
-                        }
                         let now = new Date();
                         escrowTimer.ratifyIn = now.setHours(now.getHours() + 1);
                         escrowTimer.ratifyUTC = new Date(escrowTimer.ratifyIn);
                         escrowTimer.ratifyString = escrowTimer.ratifyUTC.toISOString().slice(0, -5);
-                        escrowTimer.expiryIn = now.setHours(now.getHours() + 2);
+                        escrowTimer.expiryIn = now.setHours(now.getHours() + opts.expire_time);
                         escrowTimer.expiryUTC = new Date(escrowTimer.expiryIn);
                         escrowTimer.expiryString = escrowTimer.expiryUTC.toISOString().slice(0, -5);
                         var formatter = amount / 1000
@@ -1484,12 +1454,12 @@
                         var eid = Math.floor(Math.random() * 4294967296)
                         let params = {
                             from: iam,
-                            to: agents[0],
+                            to: opts.to,
                             sbd_amount: hbdAmount,
                             steem_amount: hiveAmount,
                             escrow_id: eid,
-                            agent: agents[1],
-                            fee: '0.000 STEEM',
+                            agent: opts.agent,
+                            fee: opts.fee,
                             ratification_deadline: escrowTimer.ratifyString,
                             escrow_expiration: escrowTimer.expiryString,
                             json_meta: JSON.stringify({
@@ -1502,75 +1472,7 @@
                         reqsign(['escrow_transfer', params], ['active', iam])
                     }
                 })
-
-
         }
-
-        function placeHiveBuy1() {
-
-            var amount = parseInt(parseFloat(document.getElementById('buytotalhive').value) * 1000),
-                dlux = parseInt(parseFloat(document.getElementById('buyqtyhive').value) * 1000),
-                hiveAmount = `${(amount / 1000).toFixed(3)} STEEM`, hbdAmount = '0.000 SBD'
-            fetch('https://token.dlux.io/dex')
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (myJson) {
-                    var updex = myJson.markets
-                    var queue = myJson.queue
-                    if (dlux > 0 && typeof dlux == 'number' && amount > 0 && typeof amount == 'number') {
-                        var escrowTimer = {}
-                        var agents = []
-                        var i = 0
-                        for (var agent in queue) {
-                            if (agents.length == 1) {
-                                break;
-                            }
-                            if (/*state.balances[queue[agent]] > dlux && */ queue[agent] != iam) {
-                                agents.push(queue[agent])
-                            }
-                        }
-                        for (var agent in queue) {
-                            if (agents.length == 2) {
-                                break
-                            }
-                            if (queue[agent] != agents[0] && queue[agent] != iam) {
-                                agents.push(queue[agent])
-                            }
-                        }
-                        let now = new Date();
-                        escrowTimer.ratifyIn = now.setHours(now.getHours() + 72);
-                        escrowTimer.ratifyUTC = new Date(escrowTimer.ratifyIn);
-                        escrowTimer.ratifyString = escrowTimer.ratifyUTC.toISOString().slice(0, -5);
-                        escrowTimer.expiryIn = now.setDate(now.getDate() + 144);
-                        escrowTimer.expiryUTC = new Date(escrowTimer.expiryIn);
-                        escrowTimer.expiryString = escrowTimer.expiryUTC.toISOString().slice(0, -5);
-                        var formatter = amount / 1000
-                        formatter = formatter.toFixed(3)
-                        var eidi = Math.floor(Math.random() * 4294967296)
-                        let params = {
-                            from: iam,
-                            to: agents[0],
-                            sbd_amount: hbdAmount,
-                            steem_amount: hiveAmount,
-                            escrow_id: eidi,
-                            agent: agents[1],
-                            fee: '0.000 STEEM',
-                            ratification_deadline: escrowTimer.ratifyString,
-                            escrow_expiration: escrowTimer.expiryString,
-                            json_meta: JSON.stringify({
-                                dextx: {
-                                    dlux
-                                }
-                            })
-                        }
-                        console.log(params)
-                        reqsign(['escrow_transfer', params], ['active', iam])
-
-                    }
-                })
-        }
-
 
         function getItID(txid) {
             fetch('https://token.dlux.io/dex')
@@ -1607,10 +1509,10 @@
                             }
                         }
                         let now = new Date();
-                        escrowTimer.ratifyIn = now.setHours(now.getHours() + 120);
+                        escrowTimer.ratifyIn = now.setHours(now.getHours() + 1);
                         escrowTimer.ratifyUTC = new Date(escrowTimer.ratifyIn);
                         escrowTimer.ratifyString = escrowTimer.ratifyUTC.toISOString().slice(0, -5);
-                        escrowTimer.expiryIn = now.setDate(now.getDate() + 10);
+                        escrowTimer.expiryIn = now.setHours(now.getHours() + 2);
                         escrowTimer.expiryUTC = new Date(escrowTimer.expiryIn);
                         escrowTimer.expiryString = escrowTimer.expiryUTC.toISOString().slice(0, -5);
                         var eidi = Math.floor(Math.random() * 4294967296)
