@@ -16,7 +16,7 @@
     <div class="mr-5" id="active-session">
 	  <ul class="nav navbar-nav">
 		<li class="nav-item my-auto">
-			<a class="nav-link" href="../new/" data-toggle="tooltip" data-placement="bottom" data-original-title="Create a new app">
+			<a class="nav-link" href="../new/" data-toggle="tooltip" data-placement="bottom" title="Create a new app">
 				<i class="far fa-fw fa-lg fa-lightbulb mr-2"></i></a></li>
 		<li class="nav-item dropdown">
 		  <a class="nav-link dropdown-toggle text-white-50" id="userDropdown" data-toggle="dropdown" href="#">
