@@ -23,15 +23,15 @@
 			  <img src="https://token.dlux.io/getauthorpic/{{author}}" id="userImage" alt="" width="30" height="30" class="img-fluid rounded-circle bg-light mr-1 cover">
 			  <span id="userName">username</span></a>
           <div class="dropdown-menu" aria-labelledby="userDropdown">
-			 <a class="dropdown-item" href="../me/"><i class="fas fa-user mr-2"></i>Profile</a>
-			 <a class="dropdown-item" href="#"><i class="fas fa-wallet mr-2"></i>Wallet</a>
-			 <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Settings</a>
+			 <a class="dropdown-item" href="../me/"><i class="fas fa-user fa-fw mr-2"></i>Profile</a>
+			 <a class="dropdown-item" href="#"><i class="fas fa-wallet fa-fw mr-2"></i>Wallet</a>
+			 <a class="dropdown-item" href="#"><i class="fas fa-cog fa-fw mr-2"></i>Settings</a>
              <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="#"><i class="fas fa-robot mr-2"></i>Nodes</a>
-			 <a class="dropdown-item" href="#"><i class="fas fa-info-circle mr-2"></i>About</a>
+             <a class="dropdown-item" href="#"><i class="fas fa-robot fa-fw mr-2"></i>Nodes</a>
+			 <a class="dropdown-item" href="#"><i class="fas fa-info-circle fa-fw mr-2"></i>About</a>
              <div class="dropdown-divider"></div>
              <a class="dropdown-item" href="../login/"><i class="fas fa-user-friends mr-2"></i>Switch User</a>
-			 <a class="dropdown-item" href="javascript:logout()"><i class="fas fa-power-off mr-2"></i>Logout</a></div>
+			 <a class="dropdown-item" href="javascript:logout()"><i class="fas fa-power-off fa-fw mr-2"></i>Logout</a></div>
         </li>
       </ul>
 	</div>

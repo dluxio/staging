@@ -7831,6 +7831,9 @@ body {
 .bg-darker {
   background-color: #212529; }
 
+.mr-half {
+  margin-right: 0.15rem !important; }
+
 @media (max-width: 575.98px) {
   .card-columns {
     column-count: 1; } }

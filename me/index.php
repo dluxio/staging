@@ -38,7 +38,7 @@
     </ul>
 	</div></div>
 	 <div id="pagecontent" class="tab-content">
-       <div role="tabpanel" class="tab-pane fade show active" id="blog" aria-labelledby="blogtab">
+       <div role="tabpanel" class="tab-pane fade show " id="blog" aria-labelledby="blogtab">
  <div class="card-columns p-3" id="blogResult" is="dmx-repeat" dmx-bind:repeat="dluxGetBlog.data.result">
   <div class="card text-white bg-dark mt-2 mb-3">
     <div class="card-header">
@@ -133,8 +133,72 @@
 		   </div>
 	 </div>
 	</div>
-       <div role="tabpanel" class="tab-pane fade show " id="wallet" aria-labelledby="wallettab">
-		   <p>wallet</p>
+       <div role="tabpanel" class="tab-pane fade show active" id="wallet" aria-labelledby="wallettab">
+		   <div class="container mt-3">
+			  <div class="jumbotron bg-darker">
+				  <h1 class="display-5">Introducing DLUX OpenToken</h1>
+                  <p class="lead ">The smartest, most decentralized token powering games, apps, and the multiverse</p>
+                  <hr class="my-4 bg-light">
+				  <div class="clearfix">
+				  	<div class="float-left">
+			  		  <h4>DLUX Token</h4>
+				  		<p class="text-white-50">The utility token for content distribution and smart contracts, also called a smart media token (SMT).</p>
+				  	</div>
+				  	<div class="float-right text-right">
+						<h5>846.068 DLUX</h5>
+						<div class="btn-group" role="group" aria-label="DLUX Actions">
+  							<button type="button" class="btn btn-info mr-half"><i class="fas fa-paper-plane mr-2"></i>Transfer</button>
+  							<div class="btn-group" role="group">
+    						<button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+    						<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
+      							<a class="dropdown-item" href="#"><i class="fas fa-angle-double-up fa-fw mr-2"></i>Power Up</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="../dex/"><i class="fas fa-store fa-fw mr-2"></i>Trade</a>
+    						</div>
+  							</div>
+						</div>
+				  	</div>
+				  </div>
+				  <hr class="my-4 bg-light">
+				  <div class="clearfix">
+				  	<div class="float-left">
+			  		  <h4>DLUX Power</h4>
+				  		<p class="text-white-50">Staked tokens (Powered Up) allowing for inflationary rewards on new content</p>
+						<p class="text-white-50">Benefits of DLUX Power:</p>
+						<ul class="text-white-50">
+						<li>Increased voting power on content</li>
+						<li>Increased rewards from content</li>
+						<li>Increased resource credits</li>
+						</ul>
+				  	</div>
+				  	<div class="float-right text-right">
+						<h5>468.848 DLUX</h5>
+						<div class="btn-group" role="group" aria-label="DLUX Actions">
+  							<button type="button" class="btn btn-info mr-half"><i class="fas fa-user-friends mr-2"></i>Delegate</button>
+  							<div class="btn-group" role="group">
+    						<button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+    						<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
+      							<a class="dropdown-item" href="#"><i class="fas fa-angle-double-down fa-fw mr-2"></i>Power Down</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="../dex/">Claim Account Creation Token</a>
+    						</div>
+  							</div>
+						</div>
+				  	</div>
+				  </div>
+				  <hr class="my-4 bg-light">
+				  <div class="clearfix">
+				  	<div class="float-left">
+			  		  <h4>Estimated Account Value</h4>
+				  		<p class="text-white-50">The approximate US Dollar value for all DLUX in your account</p>
+				  	</div>
+				  	<div class="float-right text-right">
+						<h5>$187.50</h5>
+				  	</div>
+				  </div>
+				  <hr class="my-4 bg-light">
+			   </div>
+		   </div>
 		</div>
 		 
 
