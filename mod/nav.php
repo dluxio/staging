@@ -23,6 +23,18 @@
 			  <img src="https://token.dlux.io/getauthorpic/{{author}}" id="userImage" alt="" width="30" height="30" class="img-fluid rounded-circle bg-light mr-1 cover">
 			  <span id="userName">username</span></a>
           <div class="dropdown-menu" aria-labelledby="userDropdown">
+			  <ul class="nav nav-tabs bg-darker mx-0 px-0 mt-5 border-bottom-0" role="tablist">
+	    <li class="nav-item">
+			<a class="nav-link active" href="#blog" id="blogtab" role="tab" data-toggle="tab" aria-controls="blog" aria-expanded="true">Blog</a> </li>
+	    <li class="nav-item"> 
+			<a class="nav-link" id="wallettab" role="tab" data-toggle="tab" aria-controls="wallet" aria-expanded="true" href="#wallet">Wallet</a> </li>
+	  <li class="nav-item"> 
+			<a class="nav-link" id="inventorytab" role="tab" data-toggle="tab" aria-controls="inventory" aria-expanded="true" href="#inventory">Inventory</a> </li>
+	  <li class="nav-item"> 
+			<a class="nav-link" id="nodetab" role="tab" data-toggle="tab" aria-controls="node" aria-expanded="true" href="#node">Node</a> </li>
+	    <li class="nav-item d-none"> 
+			<a class="nav-link" id="settingstab" role="tab" data-toggle="tab" aria-controls="settings" aria-expanded="true" href="#settings">Settings</a> </li>
+    </ul>
 			 <a class="dropdown-item" href="../me/#blog"><i class="fas fa-user fa-fw mr-2"></i>Profile</a>
 			 <a class="dropdown-item" href="../me/#wallet"><i class="fas fa-wallet fa-fw mr-2"></i>Wallet</a>
 			 <a class="dropdown-item" href="../me/#inventory"><i class="fas fa-boxes fa-fw mr-2"></i>Inventory</a>
