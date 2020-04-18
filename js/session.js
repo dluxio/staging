@@ -27,7 +27,7 @@ function checkCookie(){
 	document.getElementById('userName').innerText = '@' + user;
 	let dex, stats, hive, feed
         var urls = [`https://token.dlux.io/@${user}`, 'https://token.dlux.io/dex', 'https://token.dlux.io/stats'] //datasources
-        let promises =
+        let promises = urls.map(u => fetch(u))
 	    promises.push(fetch("https://anyx.io", {
   		body: "{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_dynamic_global_properties\", \"params\":[], \"id\":1}",
   		headers: {
