@@ -33,7 +33,20 @@ function checkCookie(){
             User.dlux = jsons[0]
 	    User.dex = jsons[1]
 	    User.stats = jsons[2]
-            pageSpecfic(User);
+		fetch("https://anyx.io", {
+			  body: `{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_accounts\", \"params\":[[\"${user}\"]], \"id\":1}`,
+			  headers: {
+			    "Content-Type": "application/x-www-form-urlencoded"
+			  },
+			  method: "POST"
+			})
+		.then(reply =>{
+			reply.json()
+		})
+		.then(account =>{
+			User.hive = account
+			pageSpecfic(User);
+		})
         })
     } else {
     	document.getElementById('active-session').style.display = 'none';
