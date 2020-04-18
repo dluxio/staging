@@ -592,9 +592,11 @@ for (el in links){
 	var ref = href.split('#')[0] || ''
 	if(ref){
 		var thash = links[el].target.hash
+		var tab = links[el].href.split('#')[1] || ''
 		links[el].addEventListener("click", () => {
 			window.location.hash = thash;
     			window.scrollTo(0, 0);
+			$('.nav-tabs a[href="#' + tab + '"]').tab('show');
 			}, false);
 	}
 }
