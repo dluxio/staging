@@ -181,7 +181,7 @@
 			  		  <h4>DLUX Token</h4>
 				  		<p class="text-white-50">The utility token for content distribution and smart contracts, also called a smart media token (SMT)</p>
 				  	</div>
-				  	<div class="float-right text-right">
+				  	<div id="dluxactions" class="float-right text-right">
 						<h5>846.068 DLUX</h5>
 						<div class="btn-group" role="group" aria-label="DLUX Actions">
   							<button type="button" class="btn btn-info mr-half" data-toggle="modal" data-target="#sendDluxModal"><i class="fas fa-paper-plane mr-2"></i>Send</button>
@@ -208,7 +208,7 @@
 						<li>Increased resource credits</li>
 						</ul>
 				  	</div>
-				  	<div class="float-right text-right">
+				  	<div id="dluxpactions" class="float-right text-right">
 						<h5>468.848 DLUX</h5>
 						<div class="btn-group" role="group" aria-label="DLUX Actions">
   							<button type="button" class="btn btn-info mr-half"><i class="fas fa-user-friends mr-2"></i>Delegate</button>
@@ -646,7 +646,10 @@
 // Javascript to enable link to tab
 function pageSpecfic(usr){
 	document.getElementById('dluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal()">${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
-}	
+	var dluxEl =document.getElementById('dluxactions')
+	var dluxpEl = document.getElementById('dluxpactions') 
+	console.log(dluxEl,dluxpEl)
+	}	
 	
 var url = document.location.toString();
 if (url.match('#')) {
