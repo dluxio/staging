@@ -10,7 +10,8 @@
 <script type="text/javascript" src="../dmxAppConnect/dmxDataTraversal/dmxDataTraversal.js"></script>
 <script>
 	function changeTab(){
- $('[href="#settings"]').tab('show');
+ 		$('[href="#settings"]').tab('show');
+		window.scrollTo(0, 0);
 }
 	</script>
 </head>
