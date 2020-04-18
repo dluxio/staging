@@ -18,14 +18,14 @@
 
 <body class="d-flex flex-column h-100" id="apps" is="dmx-app">
 	
-	<!--
+	<?php
         if(isset($_COOKIE['user'])){
             echo "<dmx-api-datasource id=\"dluxGetBlog\" is=\"dmx-fetch\" url=\"https://token.dlux.io/getwrap?\" dmx-param:method=\"'condenser_api.get_blog'\" dmx-param:params=\"'[%22" . $_COOKIE['user'] . "%22,0,20]'\"></dmx-api-datasource>";
         }
         else{
             echo "<dmx-api-datasource id=\"dluxGetBlog\" is=\"dmx-fetch\" url=\"https://token.dlux.io/getwrap?\" dmx-param:method=\"'condenser_api.get_blog'\" dmx-param:params=\"'[%22robotolux%22,0,20]'\"></dmx-api-datasource>";
         }
--->
+?>
 	<dmx-api-datasource id="dluxGetBlog" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_blog'" dmx-param:params="'[%22robotolux%22,0,20]'"></dmx-api-datasource>
 <?php include '../mod/nav.php';?>
 <main role="main" class="flex-shrink-0 text-white">
@@ -189,7 +189,7 @@
   							<div class="btn-group" role="group">
     						<button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
     						<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
-      							<a class="dropdown-item" href="#"><i class="fas fa-angle-double-up fa-fw mr-2"></i>Power Up</a>
+      							<a class="dropdown-item" href="#" data-toggle="modal" data-target="#powerupDluxModal"><i class="fas fa-angle-double-up fa-fw mr-2"></i>Power Up</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="../dex/"><i class="fas fa-store fa-fw mr-2"></i>Trade</a>
     						</div>
@@ -212,13 +212,12 @@
 				  	<div id="dluxpactions" class="float-right text-right">
 						<h5>468.848 DLUX</h5>
 						<div class="btn-group" role="group" aria-label="DLUX Actions">
-  							<button type="button" class="btn btn-info mr-half"><i class="fas fa-user-friends mr-2"></i>Delegate</button>
+							<button type="button" class="btn btn-info mr-half" disabled title="Coming soon!" style="pointer-events: none;"><i class="fas fa-user-friends mr-2"></i>Delegate</button>
   							<div class="btn-group" role="group">
-    						<button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+    						<button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></button>
     						<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
-      							<a class="dropdown-item" href="#"><i class="fas fa-angle-double-down fa-fw mr-2"></i>Power Down</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="../dex/">Claim Account Creation Token</a>
+      							<a class="dropdown-item" href="#" data-toggle="modal" data-target="#powerdownDluxModal"><i class="fas fa-angle-double-down fa-fw mr-2"></i>Power Down</a>
+								
     						</div>
   							</div>
 						</div>
@@ -587,8 +586,9 @@
 		</div>
 	</div>
   </div>
+</div>
 </main>
-<!-- Modal -->
+<!-- Send DLUX Modal -->
 <div class="modal fade" id="sendDluxModal" tabindex="-1" role="dialog" aria-labelledby="sendDluxModalTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content bg-darker text-white">
@@ -597,7 +597,8 @@
 		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span class="close text-white">×</span>
         </button>
-      </div><form>
+      </div>
+		<form>
       <div class="modal-body">
 	  <div class="form-group">
 	   <label for="senddluxfrom">From:</label>
@@ -620,10 +621,10 @@
         <div class="form-group">
 	   <label id="dluxamountlab" for="senddluxammount">Amount (Balance <a href="#" onClick="insertBal()">917.26</a>):</label>
 		<div class="input-group">
-			<div class="input-group-prepend">
+			<input class="form-control" id="senddluxamount" type="number" step="0.001" min="0.001" placeholder="1.000">
+			<div class="input-group-append">
       		  <div class="input-group-text">DLUX</div>
     		</div>
-        	<input class="form-control" id="senddluxamount" type="number" step="0.001" min="0.001" placeholder="1.000">
 		  </div>
 			 </div>
 		  <div class="form-group">
@@ -636,10 +637,119 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         <button type="button" class="btn btn-primary" onClick="dluxsend('senddluxto', 'senddluxamount', 'senddluxmemo')">Continue</button>
-		  </form>
-      </div>
+		</div>
+	  </form>
     </div>
   </div>
+</div>
+<!-- Power Up DLUX Modal -->
+<div class="modal fade" id="powerupDluxModal" tabindex="-1" role="dialog" aria-labelledby="powerupDluxModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-darker text-white">
+      <div class="modal-header">
+        <h5 class="modal-title" id="sendDluxTitle">Power Up DLUX</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="close text-white">×</span>
+        </button>
+      </div>
+		<form>
+      <div class="modal-body">
+	  <div class="form-group">
+	   <label for="powerupdluxfrom">From:</label>
+		<div class="input-group">
+			<div class="input-group-prepend">
+      		  <div class="input-group-text">@</div>
+    		</div>
+        	<input class="form-control" id="powerupdluxfrom" type="text" dmx-bind:placeholder="{{dluxGetBlog.data.result[0].blog}}" readonly>
+		  </div>
+			 </div>
+		  <div class="form-group">
+	   <label for="powerupdluxto">To:</label>
+		<div class="input-group">
+			<div class="input-group-prepend">
+      		  <div class="input-group-text">@</div>
+    		</div>
+        	<input class="form-control" id="powerupdluxto" type="text" dmx-bind:placeholder="{{dluxGetBlog.data.result[0].blog}}" readonly>
+		  </div>
+			 </div>
+        <div class="form-group">
+	   <label id="dluxamountlab" for="powerupdluxammount">Amount (Balance <a href="#" onClick="insertBal()">917.26</a>):</label>
+		<div class="input-group">
+			<input class="form-control" id="powerupdluxamount" type="number" step="0.001" min="0.001" placeholder="1.000">
+			<div class="input-group-append">
+      		  <div class="input-group-text">DLUX</div>
+    		</div>
+		  </div>
+			 </div>
+		  <div class="form-group">
+	   <label for="powerupdluxmemo">Memo:</label>
+		<div class="input-group">
+        	<input class="form-control" id="powerupdluxmemo" type="text" placeholder="Include a memo (optional)">
+		  </div>
+			 </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onClick="dluxsend('powerupdluxto', 'powerupdluxamount', 'powerupdluxmemo')">Continue</button>
+      </div>
+	</form>
+    </div>
+  </div>
+  </div>
+<!-- Power Down DLUX Modal -->
+<div class="modal fade" id="powerdownDluxModal" tabindex="-1" role="dialog" aria-labelledby="powerdownDluxModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-darker text-white">
+      <div class="modal-header">
+        <h5 class="modal-title" id="powerdownDluxTitle">Power Down DLUX</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="close text-white">×</span>
+        </button>
+      </div>
+		<form>
+      <div class="modal-body">
+	  <div class="form-group">
+	   <label for="powerdowndluxfrom">From:</label>
+		<div class="input-group">
+			<div class="input-group-prepend">
+      		  <div class="input-group-text">@</div>
+    		</div>
+        	<input class="form-control" id="powerdowndluxfrom" type="text" dmx-bind:placeholder="{{dluxGetBlog.data.result[0].blog}}" readonly>
+		  </div>
+			 </div>
+		  <div class="form-group">
+	   <label for="powerdowndluxto">To:</label>
+		<div class="input-group">
+			<div class="input-group-prepend">
+      		  <div class="input-group-text">@</div>
+    		</div>
+        	<input class="form-control" id="powerdowndluxto" type="text" dmx-bind:placeholder="{{dluxGetBlog.data.result[0].blog}}" readonly>
+		  </div>
+			 </div>
+        <div class="form-group">
+	   <label id="dluxamountlab" for="powerdowndluxammount">Amount (Balance <a href="#" onClick="insertBal()">917.26</a>):</label>
+		<div class="input-group">
+			<input class="form-control" id="powerdowndluxamount" type="number" step="0.001" min="0.001" placeholder="1.000">
+			<div class="input-group-append">
+      		  <div class="input-group-text">DLUX</div>
+    		</div>
+		  </div>
+			 </div>
+		  <div class="form-group">
+	   <label for="powerdowndluxmemo">Memo:</label>
+		<div class="input-group">
+        	<input class="form-control" id="powerdowndluxmemo" type="text" placeholder="Include a memo (optional)">
+		  </div>
+			 </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onClick="dluxsend('powerdowndluxto', 'powerdowndluxamount', 'powerdowndluxmemo')">Continue</button>
+      </div>
+	</form>
+    </div>
+  </div>
+  </div>	
 </div>
 <?php include '../mod/footer.php';?>
 <script>
