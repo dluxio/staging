@@ -8,7 +8,7 @@
 function readResponseAsBlob(response) {
   return response.blob();
 }
-let user, dlux, User ={dlux:{},hive:{}}
+let user, dlux, User = { dlux: {}, hive: {}, dex: {}, stats: {}}
 function checkCookie(){
 	console.log('Checking for login')
     	user = sessionStorage.getItem('user');
@@ -26,11 +26,13 @@ function checkCookie(){
 	document.getElementById('userImage').src = 'https://token.dlux.io/getauthorpic/' + user
 	document.getElementById('userName').innerText = '@' + user;
 	let dex, stats, hive, feed
-        var urls = [`https://token.dlux.io/@${user}`] //datasources
+        var urls = [`https://token.dlux.io/@${user}`, 'https://token.dlux.io/dex', 'https://token.dlux.io/stats'] //datasources
         Promise.all(urls.map(u => fetch(u))).then(res =>
             Promise.all(res.map(res => res.json()))
         ).then(jsons => {
             User.dlux = jsons[0]
+	    User.dex = jsons[1]
+	    User.stats = jsons[2]
             pageSpecfic(User);
         })
     } else {
