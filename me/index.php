@@ -27,7 +27,17 @@
         <small class="lead p-2">description needs an api or helper</small>
 			  </div></div></div>
       <div class="col-md-4 text-center m-auto"> <a class="btn btn-outline-primary btn-lg m-1" role="button" dmx-bind:href="../@{{dluxGetBlog.data.result[0].blog}}" target="_blank">VR Page<i class="fas fa-vr-cardboard mx-2 fa-lg"></i></a>
-		  <a class="btn btn-outline-primary btn-lg m-1 " href="../new/" role="button">Actions<i class="fas fa-ellipsis-h ml-2"></i></i></a></div>
+		 <div class="btn-group">
+  <button type="button" class="btn btn-outline-primary dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Actions<i class="fas fa-ellipsis-h ml-2"></i>
+  </button>
+  <div class="dropdown-menu nav-item dropdown-menu-right">
+    <ul class="nav nav-tabs" role="tablist"><li class="nav-item"><button class="dropdown-item nav-link" type="button" href="#settings" role="tab" id="settingstab" data-toggle="tab" aria-controls="settings" aria-expanded="true">Settings</button></li></ul>
+    <button class="dropdown-item" type="button">Another action</button>
+    <button class="dropdown-item" type="button">Something else here</button>
+  </div>
+</div>
+	</div>
     </div>
   <ul class="nav nav-tabs bg-darker mx-0 px-0 mt-5 border-bottom-0" role="tablist">
 	    <li class="nav-item">
@@ -39,7 +49,7 @@
 	  <li class="nav-item"> 
 			<a class="nav-link" id="nodetab" role="tab" data-toggle="tab" aria-controls="node" aria-expanded="true" href="#node">Node</a> </li>
 	    <li class="nav-item d-none"> 
-			<a class="nav-link" id="settingstab" role="tab" data-toggle="tab" aria-controls="settings" aria-expanded="true" href="#settings">Settings</a> </li>
+			<a class="nav-link"  role="tab" data-toggle="tab" aria-controls="settings" aria-expanded="true" href="#settings">Settings</a> </li>
     </ul>
 	</div></div>
 	 <div id="pagecontent" class="tab-content">

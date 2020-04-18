@@ -22,7 +22,7 @@
 </head>
 <body class="d-flex flex-column h-100">
  <?php include 'mod/nav.php';?>
-<main role="main" class="flex-shrink-0">
+<main class="flex-shrink-0">
   <div class="container-fluid padme-t70">
     <div class="jumbotron jumbotron-fluid text-center text-white mt-5 bg-win">
        <div class="container">
