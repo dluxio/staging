@@ -154,7 +154,7 @@ class Dluxsession {
   set account (obj) {
     return new Promise ((r,e) => {
       if(obj !== undefined){
-	this.steemidip(this.steemid)
+	dlux.steemidip(this.steemid)
       } else {
       	console.log(obj)
         setdata(obj.name)
