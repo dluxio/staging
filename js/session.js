@@ -40,10 +40,7 @@ function checkCookie(){
 			  },
 			  method: "POST"
 			})
-		.then(reply =>{
-			console.log(reply)
-			reply.json()
-		})
+		.then(reply =>reply.json())
 		.then(account =>{
 			console.log(account)
 			User.hive = account
