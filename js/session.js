@@ -15,11 +15,10 @@ function checkCookie(){
 	console.log('user='+user)
     if (user != null){
 	let account = sessionStorage.getItem('account')
-	if(Object.keys(account).length){
+	if(account != undefined){
 		console.log(account)
 	dlux = new Dluxsession(steem, {steemid: user, account});
 	} else {
-		console.log('here?')
 	dlux = new Dluxsession(steem, {steemidip: user});
 	}
 	document.getElementById('no-session').style.display = 'none';
