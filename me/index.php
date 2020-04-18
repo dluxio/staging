@@ -571,7 +571,7 @@
 	// Javascript to enable link to tab
 var url = document.location.toString();
 if (url.match('#')) {
-    $('.nav-tabs a[href="#' + url.split('me/#')[1] + '"]').tab('show');
+    $('.nav-tabs a[href="me/index.php#' + url.split('me/index.php#')[1] + '"]').tab('show');
 } 
 
 // Change hash for page-reload
