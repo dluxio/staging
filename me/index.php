@@ -652,7 +652,7 @@ function pageSpecfic(usr){
 	document.getElementById('hiveactions').firstElementChild.innerText = usr.hive.balance
 	document.getElementById('hbdactions').firstElementChild.innerText = usr.hive.sbd_balance
 	document.getElementById('savingsactions').firstElementChild.innerText = usr.hive.savings_sbd_balance
-	document.getElementById('hiveval').firstElementChild.innerText = `$0.12`
+	document.getElementById('hiveval').firstElementChild.innerText = `$${parseFloat((parseFloat(( parseFloat(User.hstats.total_vesting_fund_steem) * parseFloat(User.hive.vesting_shares)) / parseFloat(User.hstats.total_vesting_shares)) + parseFloat(usr.hive.balance))*User.price).toFixed(2)}`
 	document.getElementById('dluxval').firstElementChild.innerText = `$0.55`
 }	
 	
