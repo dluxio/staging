@@ -586,6 +586,10 @@ if (url.match('#')) {
 
 // Change hash for page-reload
 
+var tabs = document.getElementsByClassName('dropdown-item'), hashItems
+for (el in tabs){
+	console.log(tabs[el].href)
+}
 $('.dropdown-item a').bind('click', function (e) {
     window.location.hash = e.target.hash;
     window.scrollTo(0, 0);
