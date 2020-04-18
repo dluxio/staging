@@ -26,7 +26,6 @@
         }
 
     ?>
-<dmx-api-datasource id="dluxGetBlog" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_blog'" dmx-param:params="'[%22markegiles%22,0,20]'"></dmx-api-datasource>
 <?php include '../mod/nav.php';?>
 <main role="main" class="flex-shrink-0 text-white">
   <div class="container-fluid px-0 ">
