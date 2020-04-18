@@ -578,27 +578,19 @@
 </main>
 <?php include '../mod/footer.php';?>
 <script>
-$(
-    function()
-    {
-        var hash = window.location.hash;
-        hash && $( 'ul.nav a[href="' + hash + '"]' ).tab( 'show' );
+window.onload = function(){  
 
-        $( '.tab-links' ).click
-        (
-            function( e )
-            {
-                $( this ).tab( 'show' );
-                
-                var scrollmem = $( 'body' ).scrollTop() || $( 'html' ).scrollTop();
-                window.location.hash = this.hash;
-                $( 'html,body' ).scrollTop( scrollmem );
-                
-                $( 'ul.nav-tabs a[href="' + window.location.hash + '"]' ).tab( 'show' );
-            }
-        );
+    var url = document.location.toString();
+    if (url.match('#')) {
+        $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
     }
-);
+
+    //Change hash for page-reload
+    $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').on('shown', function (e) {
+        window.location.hash = e.target.hash;
+		window.scrollTo(0, 0);
+    }); 
+} 
 	</script>
 <script>
 	function updateVoteSubmit(id,val) {
