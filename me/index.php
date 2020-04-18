@@ -618,12 +618,12 @@
 		  </div>
 			 </div>
         <div class="form-group">
-	   <label for="senddluxammount">Amount (Balance <a href="#" onClick="insertBal()">917.26</a>):</label>
+	   <label id="dluxamountlab" for="senddluxammount">Amount (Balance <a href="#" onClick="insertBal()">917.26</a>):</label>
 		<div class="input-group">
 			<div class="input-group-prepend">
       		  <div class="input-group-text">DLUX</div>
     		</div>
-        	<input class="form-control" id="senddluxamount" type="number" placeholder="0">
+        	<input class="form-control" id="senddluxamount" type="number" step="0.001" min="0.001" placeholder="1.000">
 		  </div>
 			 </div>
 		  <div class="form-group">
@@ -644,6 +644,10 @@
 <?php include '../mod/footer.php';?>
 <script>
 // Javascript to enable link to tab
+function pageSpecific(usr){
+	document.getElementById('dluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal()">${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
+}	
+	
 var url = document.location.toString();
 if (url.match('#')) {
     $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
@@ -654,6 +658,9 @@ $('.nav-tabs a').on('shown.bs.tab', function (e) {
     window.location.hash = e.target.hash;
     window.scrollTo(0, 0);
 })
+function insertBal(){
+
+}
 function updateVoteSubmit(id,val) {
     document.getElementById(id).innerHTML = document.getElementById(val).value + '%'; 
         }</script>
