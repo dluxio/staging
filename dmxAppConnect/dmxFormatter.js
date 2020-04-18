@@ -430,12 +430,10 @@ dmx.Formatters("global", {
         return toString(n)
       },
       rep: function (rep2){
-        console.log('ip ' + rep2)
         if (rep2 == null) return rep2;
         let rep = String(rep2);
         const neg = rep.charAt(0) === '-';
         rep = neg ? rep.substring(1) : rep;
-        console.log('new ' + rep)
         let out = log10(rep);
         if (isNaN(out)) out = 0;
         out = Math.max(out - 9, 0); // @ -9, $0.50 earned is approx magnitude 1
@@ -445,7 +443,6 @@ dmx.Formatters("global", {
         out = parseInt(out);
         return out;
         function log10(str) {
-          console.log('trigger log10: '+str)
           const leadingDigits = parseInt(str.substring(0, 4));
           const log = Math.log(leadingDigits) / Math.LN10 + 0.00000001;
           const n = str.length - 1;
