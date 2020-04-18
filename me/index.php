@@ -229,12 +229,12 @@
 			  		  <h4>Estimated Account Value</h4>
 				  		<p class="text-white-50">The approximate US Dollar value for all DLUX in your account</p>
 				  	</div>
-				  	<div class="float-right text-right">
+				  	<div id="dluxval" class="float-right text-right">
 						<h5>$187.50</h5>
 				  	</div>
 				  </div>
 			   </div>
-			   <div class="jumbotron pt-3 bg-darker text-white">
+			   <div id="dluxtxs" class="jumbotron pt-3 bg-darker text-white">
 				   <h4 class="mb-3">Transactions</h4>
 				   <div>
 					   <p class="my-2">put a transaction here!<br>second line wow</p>
@@ -258,7 +258,7 @@
 			  		  <h4>HIVE Token</h4>
 				  		<p class="text-white-50">The main token of the chain, often rewarded for content.</p>
 				  	</div>
-				  	<div class="float-right text-right">
+				  	<div id="hiveactions" class="float-right text-right">
 						<h5>768.186 HIVE</h5>
 						<div class="btn-group" role="group" aria-label="DLUX Actions">
   							<button type="button" class="btn btn-info mr-half"><i class="fas fa-paper-plane mr-2"></i>Send</button>
@@ -286,7 +286,7 @@
 						<li>Increased resource credits</li>
 						</ul>
 				  	</div>
-				  	<div class="float-right text-right">
+				  	<div id="hivepactions" class="float-right text-right">
 						<h5>352.153 HP</h5>
 						<div class="btn-group" role="group" aria-label="DLUX Actions">
   							<button type="button" class="btn btn-info mr-half"><i class="fas fa-user-friends mr-2"></i>Delegate</button>
@@ -307,7 +307,7 @@
 			  		  <h4>HIVE Backed Dollar</h4>
 				  		<p class="text-white-50">Also a reward for content, this token is pegged to the US Dollar</p>
 				  	</div>
-				  	<div class="float-right text-right">
+				  	<div id="hbdactions" class="float-right text-right">
 						<h5>63.189 HBD</h5>
 						<div class="btn-group" role="group" aria-label="DLUX Actions">
   							<button type="button" class="btn btn-info mr-half"><i class="fas fa-paper-plane mr-2"></i>Send</button>
@@ -329,8 +329,7 @@
 			  		  <h4>HIVE Savings</h4>
 				  		<p class="text-white-50 mb-0">A 3 day waiting period is imposed on withdrawl</p>
 				  	</div>
-				  	<div class="float-right text-right">
-						<h5>86.363 HIVE</h5>
+				  	<div id="savingsactions" class="float-right text-right">
 						<h5>69.841 HBD</h5>
 				  	</div>
 				  </div>
@@ -340,12 +339,12 @@
 			  		  <h4>Estimated Account Value</h4>
 				  		<p class="text-white-50">The approximate US Dollar value for all HIVE in your account</p>
 				  	</div>
-				  	<div class="float-right text-right">
+				  	<div id="hiveval" class="float-right text-right">
 						<h5>$126.35</h5>
 				  	</div>
 				  </div>
 			   </div>
-			   <div class="jumbotron pt-3 bg-darker text-white">
+			   <div id="hivetxs" class="jumbotron pt-3 bg-darker text-white">
 				   <h4 class="mb-3">Transactions</h4>
 				   <div>
 					   <p class="my-2">put a transaction here!<br>second line wow</p>
@@ -645,10 +644,16 @@
 <script>
 // Javascript to enable link to tab
 function pageSpecfic(usr){
+	console.log(usr.hive)
 	document.getElementById('dluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal()">${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
 	document.getElementById('dluxactions').firstElementChild.innerText = `${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX`
 	document.getElementById('dluxpactions').firstElementChild.innerText = `${parseFloat(parseInt(usr.dlux.poweredUp)/1000).toFixed(3)} DLUX`
-		
+	document.getElementById('hivepactions').firstElementChild.innerText = ` HP`
+	document.getElementById('hiveactions').firstElementChild.innerText = ` HIVE`
+	document.getElementById('hbdactions').firstElementChild.innerText = ` HBD`
+	document.getElementById('savingsactions').firstElementChild.innerText = ` HBD`
+	document.getElementById('hiveval').firstElementChild.innerText = `$0.12`
+	document.getElementById('dluxval').firstElementChild.innerText = `$0.55`
 }	
 	
 var url = document.location.toString();
