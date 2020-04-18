@@ -13,6 +13,10 @@
  		$('[href="#settings"]').tab('show');
 		window.scrollTo(0, 0);
 }
+	function walletTab(){
+ 		$('[href="#wallet"]').tab('show');
+		window.scrollTo(0, 0);
+}
 	</script>
 </head>
 
