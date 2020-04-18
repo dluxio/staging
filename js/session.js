@@ -171,8 +171,6 @@ class Dluxsession {
 	  console.log(err);
 	  e(err)
 	});    
-    } else {
-	dlux.steemidip(this.steemid)
       }
     });
   }
