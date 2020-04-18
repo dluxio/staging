@@ -5,7 +5,7 @@
     $router = new \bramus\router\Router();
     
     $router->get('/', function () {
-        include __DIR__. 'main.php';
+        echo 'hey'
     });
     
     $router->run();
