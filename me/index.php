@@ -578,15 +578,27 @@
 </main>
 <?php include '../mod/footer.php';?>
 <script>
-	// Javascript to enable link to tab
-	function hashchanged(){
-  var hash = location.hash.replace( /^#/, '' );
-$('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
-}
+$(
+    function()
+    {
+        var hash = window.location.hash;
+        hash && $( 'ul.nav a[href="' + hash + '"]' ).tab( 'show' );
 
-window.addEventListener("hashchange", hashchanged, false);
-	
-
+        $( '.tab-links' ).click
+        (
+            function( e )
+            {
+                $( this ).tab( 'show' );
+                
+                var scrollmem = $( 'body' ).scrollTop() || $( 'html' ).scrollTop();
+                window.location.hash = this.hash;
+                $( 'html,body' ).scrollTop( scrollmem );
+                
+                $( 'ul.nav-tabs a[href="' + window.location.hash + '"]' ).tab( 'show' );
+            }
+        );
+    }
+);
 	</script>
 <script>
 	function updateVoteSubmit(id,val) {
