@@ -593,6 +593,7 @@ for (el in links){
 	if(ref){
 		var thash = links[el].target.hash
 		var tab = links[el].href.split('#')[1] || ''
+		console.log(tab, thash)
 		links[el].addEventListener("click", () => {
 			window.location.hash = thash;
     			window.scrollTo(0, 0);
