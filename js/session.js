@@ -153,7 +153,7 @@ class Dluxsession {
   
   set account (obj) {
     return new Promise ((r,e) => {
-      if(!!obj){
+      if(obj !== undefined){
         console.log(obj)
         setdata(obj.name)
         this.metadata = JSON.parse(obj.json_metadata)
