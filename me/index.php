@@ -35,6 +35,8 @@
 	    <li class="nav-item"> 
 			<a class="nav-link" id="wallettab" role="tab" data-toggle="tab" aria-controls="wallet" aria-expanded="true" href="#wallet">Wallet</a> </li>
 	  <li class="nav-item"> 
+			<a class="nav-link" id="inventorytab" role="tab" data-toggle="tab" aria-controls="inventory" aria-expanded="true" href="#inventory">Inventory</a> </li>
+	  <li class="nav-item"> 
 			<a class="nav-link" id="nodetab" role="tab" data-toggle="tab" aria-controls="node" aria-expanded="true" href="#node">Node</a> </li>
 	    <li class="nav-item"> 
 			<a class="nav-link" id="settingstab" role="tab" data-toggle="tab" aria-controls="settings" aria-expanded="true" href="#settings">Settings</a> </li>
@@ -143,8 +145,6 @@
 			<a class="nav-link active" href="#dlux" id="dluxtab" role="tab" data-toggle="tab" aria-controls="dlux" aria-expanded="true">DLUX</a> </li>
 	    <li class="nav-item"> 
 			<a class="nav-link" id="hivetab" role="tab" data-toggle="tab" aria-controls="hive" aria-expanded="true" href="#hive">HIVE</a> </li>
-			   <li class="nav-item"> 
-			<a class="nav-link" id="nfttab" role="tab" data-toggle="tab" aria-controls="nft" aria-expanded="true" href="#nft">NFTs</a> </li>
     </ul>
 		   </div>
 		   <div id="walletcontent" class="tab-content">
@@ -340,11 +340,16 @@
 		   </div>
 		</div>
 		 
+		 <div role="tabpanel" class="tab-pane fade show" id="inventory" aria-labelledby="inventorytab">
+		    <p>inventory</p>
+			 </div>
+		 
 		 <div role="tabpanel" class="tab-pane fade show " id="node" aria-labelledby="nodetab">
 		    <p>node</p>
 			 </div>
 
        <div role="tabpanel" class="tab-pane fade show" id="settings" aria-labelledby="settingstab">
+	
 	<div class="p-3">
 		   <ul class="nav nav-pills justify-content-center" role="tablist">
 	    <li class="nav-item">
