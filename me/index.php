@@ -27,7 +27,7 @@
         <small class="lead p-2">description needs an api or helper</small>
 			  </div></div></div>
       <div class="col-md-4 text-center m-auto"> <a class="btn btn-outline-primary btn-lg m-1" role="button" dmx-bind:href="../@{{dluxGetBlog.data.result[0].blog}}" target="_blank">VR Page<i class="fas fa-vr-cardboard mx-2 fa-lg"></i></a>
-		  <a class="btn btn-outline-primary btn-lg m-1 " href="#" role="button">Actions<i class="fas fa-ellipsis-h ml-2"></i></i></a></div>
+		  <a class="btn btn-outline-primary btn-lg m-1 " href="../new/" role="button">Actions<i class="fas fa-ellipsis-h ml-2"></i></i></a></div>
     </div>
   <ul class="nav nav-tabs bg-darker mx-0 px-0 mt-5 border-bottom-0" role="tablist">
 	    <li class="nav-item">
@@ -38,7 +38,8 @@
 			<a class="nav-link" id="inventorytab" role="tab" data-toggle="tab" aria-controls="inventory" aria-expanded="true" href="#inventory">Inventory</a> </li>
 	  <li class="nav-item"> 
 			<a class="nav-link" id="nodetab" role="tab" data-toggle="tab" aria-controls="node" aria-expanded="true" href="#node">Node</a> </li>
-	   
+	    <li class="nav-item"> 
+			<a class="nav-link" id="settingstab" role="tab" data-toggle="tab" aria-controls="settings" aria-expanded="true" href="#settings"></a> </li>
     </ul>
 	</div></div>
 	 <div id="pagecontent" class="tab-content">
