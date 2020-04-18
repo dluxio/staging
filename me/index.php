@@ -18,15 +18,15 @@
 
 <body class="d-flex flex-column h-100" id="apps" is="dmx-app">
 	
-	<?php
+	<?php 
         if(isset($_COOKIE['user'])){
             echo "<dmx-api-datasource id=\"dluxGetBlog\" is=\"dmx-fetch\" url=\"https://token.dlux.io/getwrap?\" dmx-param:method=\"'condenser_api.get_blog'\" dmx-param:params=\"'[%22" . $_COOKIE['user'] . "%22,0,20]'\"></dmx-api-datasource>";
         }
         else{
-            echo "<dmx-api-datasource id=\"dluxGetBlog\" is=\"dmx-fetch\" url=\"https://token.dlux.io/getwrap?\" dmx-param:method=\"'condenser_api.get_blog'\" dmx-param:params=\"'[%22robotolux%22,0,20]'\"></dmx-api-datasource>";
+            echo "<dmx-api-datasource id=\"dluxGetBlog\" is=\"dmx-fetch\" url=\"https://token.dlux.io/getwrap?\" dmx-param:method=\"'condenser_api.get_blog'\" dmx-param:params=\"'[%22robotolux%22,0,10]'\"></dmx-api-datasource>";
         }
 ?>
-	<dmx-api-datasource id="dluxGetBlog" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_blog'" dmx-param:params="'[%22robotolux%22,0,20]'"></dmx-api-datasource>
+	<!--<dmx-api-datasource id="dluxGetBlog" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_blog'" dmx-param:params="'[%22robotolux%22,0,10]'"></dmx-api-datasource>-->
 <?php include '../mod/nav.php';?>
 <main role="main" class="flex-shrink-0 text-white">
   <div class="container-fluid px-0 ">
@@ -191,7 +191,7 @@
     						<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
       							<a class="dropdown-item" href="#" data-toggle="modal" data-target="#powerupDluxModal"><i class="fas fa-angle-double-up fa-fw mr-2"></i>Power Up</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="../dex/"><i class="fas fa-store fa-fw mr-2"></i>Trade</a>
+								<a class="dropdown-item" href="../dex/"><i class="fas fa-cart fa-fw mr-2"></i>Buy DLUX</a>
     						</div>
   							</div>
 						</div>
@@ -217,7 +217,6 @@
     						<button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></button>
     						<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
       							<a class="dropdown-item" href="#" data-toggle="modal" data-target="#powerdownDluxModal"><i class="fas fa-angle-double-down fa-fw mr-2"></i>Power Down</a>
-								
     						</div>
   							</div>
 						</div>
@@ -749,7 +748,68 @@
 	</form>
     </div>
   </div>
-  </div>	
+  </div>
+<!-- Buy DLUX Modal -->
+<div class="modal fade" id="buyDluxModal" tabindex="-1" role="dialog" aria-labelledby="buyDluxModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-darker text-white">
+      <div class="modal-header">
+        <h5 class="modal-title" id="buyDluxTitle">Playce A Buy Order For DLUX</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="close text-white">×</span>
+        </button>
+		  <p>This will place a buy order on the <a href="../dex/">DEX (Decentralized Exchange)</a></p>
+      </div>
+		<form>
+      <div class="modal-body">
+	  <div class="form-group">
+	   <label for="buydluxfrom">From:</label>
+		<div class="input-group">
+			<div class="input-group-prepend">
+      		  <div class="input-group-text">@</div>
+    		</div>
+        	<input class="form-control" id="senddluxfrom" type="text" dmx-bind:placeholder="{{dluxGetBlog.data.result[0].blog}}" readonly>
+		  </div>
+			 </div>
+		  
+		  <div class="form-group">
+	   <label id="dluxamountlab" for="buydluxammount">Amount (HIVE Balance <a href="#" onClick="insertBal()">917.26</a>):</label>
+		<div class="input-group">
+			<input class="form-control" id="buydluxamount" type="number" step="0.001" min="0.001" placeholder="1.000">
+			<div class="input-group-append">
+      		  <div class="input-group-text">DLUX</div>
+    		</div>
+		  </div>
+			 </div>
+        <div class="form-group">
+	   <label id="dluxamountlab" for="buydluxammount">Amount (HIVE Balance <a href="#" onClick="insertBal()">917.26</a>):</label>
+		<div class="input-group">
+			<input class="form-control" id="buydluxamount" type="number" step="0.001" min="0.001" placeholder="1.000">
+			<div class="input-group-append">
+      		  <div class="input-group-text">DLUX</div>
+    		</div>
+		  </div>
+			 </div>
+		  <div class="form-group">
+	   <label for="buydluxagent">Agent:</label>
+		<div class="input-group">
+			<div class="input-group-prepend">
+      		  <div class="input-group-text">@</div>
+    		</div>
+        	<input class="form-control" id="buydluxagent" type="text" placeholder="@disregardfiat">
+		  </div>
+			 </div>
+		
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onClick="dluxsend('senddluxto', 'senddluxamount', 'senddluxmemo')">Continue</button>
+		</div>
+	  </form>
+    </div>
+  </div>
+</div>
+	
 </div>
 <?php include '../mod/footer.php';?>
 <script>
