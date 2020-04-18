@@ -986,10 +986,11 @@
 				<div>
 					<label>Volume</label>
 				</div>`
-
+	    dex.markets.hive.his.reverse()
             for (var i in dex.markets.hive.his) {
                 addHistRow(dex.markets.hive.his[i])
             }
+		dex.markets.hbd.his.reverse()
             for (var i in dex.markets.hbd.his) {
                 const q = dex.markets.hbd.his[i].dir || '-'
                 addHbdHistRow(dex.markets.hbd.his[i].block, parseFloat(dex.markets.hbd.his[i].rate).toFixed(5), parseFloat(dex.markets.hbd.his[i].amount / 1000).toFixed(3), q)
