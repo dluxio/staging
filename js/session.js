@@ -11,10 +11,10 @@ function readResponseAsBlob(response) {
 let user, dlux
 function checkCookie(){
 	console.log('Checking for login')
-    user = sessionStorage.getItem('user');
+    	user = sessionStorage.getItem('user');
 	console.log('user='+user)
     if (user != null){
-	//dlux = new Dluxsession(steem, {steemid: user, account: sessionStorage.getItem('account')});
+	dlux = new Dluxsession(steem, {steemid: user, account: sessionStorage.getItem('account')});
 	document.getElementById('no-session').style.display = 'none';
 	document.getElementById('active-session').style.display = 'block';
 	document.getElementById('userImage').src = 'https://token.dlux.io/getauthorpic/' + user
@@ -27,14 +27,54 @@ function checkCookie(){
 function vote(author,permlink,weightid){
 	return new Promise((resolve, reject) =>{
 		var weight = parseInt(document.getElementById(weightid).value) * 100
-		var voter = sessionStorage.getItem('user')
-		Dluxsession.hive_sign([voter,[['vote',{voter,author,permlink,weight}]],'posting'])
+		Dluxsession.hive_sign([user,[['vote',{voter,author,permlink,weight}]],'posting'])
 		.then(r =>{
 			resolve(r)
 		})
 		.catch(e => {reject(e)})
 	});
 }
+
+function dluxvote(author,permlink,weightid){
+	return new Promise((resolve, reject) =>{
+		var weight = parseInt(document.getElementById(weightid).value) * 100
+		Dluxsession.hive_sign([user,[['custom_json',{
+                            "required_auths": [],
+                            "required_posting_auths": [user],
+                            "id": "dlux_vote_content",
+                            "json": JSON.stringify({
+                                author,
+                                permlink,
+                                weight
+                            }]],'posting'])
+		.then(r =>{
+			resolve(r)
+		})
+		.catch(e => {reject(e)})
+	});
+}
+					      
+function dluxsend (toid,amountid,memoid){
+	return new Promise((resolve, reject) => {
+		var to = document.getElementById(toid).value,
+		    amount = document.getElementById(amountid).value,
+		    memo = document.getElementById(memoid).value
+		Dluxsession.hive_sign([user,[['custom_json',{
+                            "required_auths": [user],
+                            "required_posting_auths": [],
+                            "id": "dlux_vote_content",
+                            "json": JSON.stringify({
+                                to,
+                                amount,
+                                memo
+                            }]],'active'])
+		.then(r =>{
+			resolve(r)
+		})
+		.catch(e => {reject(e)})
+	});
+}
+					      
 function reply(parent_author, parent_permlink, titleid, bodyid){
 	return new Promise((resolve, reject) =>{
 		var title = document.getElementById(titleid).value
