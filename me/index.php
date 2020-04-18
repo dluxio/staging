@@ -176,7 +176,7 @@
 				  	<div class="float-right text-right">
 						<h5>846.068 DLUX</h5>
 						<div class="btn-group" role="group" aria-label="DLUX Actions">
-  							<button type="button" class="btn btn-info mr-half"><i class="fas fa-paper-plane mr-2"></i>Send</button>
+  							<button type="button" class="btn btn-info mr-half" data-toggle="modal" data-target="#sendDluxModal"><i class="fas fa-paper-plane mr-2"></i>Send</button>
   							<div class="btn-group" role="group">
     						<button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
     						<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
@@ -580,6 +580,63 @@
 	</div>
   </div>
 </main>
+<!-- Modal -->
+<div class="modal fade" id="sendDluxModal" tabindex="-1" role="dialog" aria-labelledby="sendDluxModalTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-darker text-white">
+      <div class="modal-header">
+        <h5 class="modal-title" id="sendDluxTitle">Send DLUX</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="close text-white">×</span>
+        </button>
+      </div>
+		<form>
+      <div class="modal-body">
+	  <div class="form-group">
+	   <label for="senddluxfrom">From:</label>
+		<div class="input-group">
+			<div class="input-group-prepend">
+      		  <div class="input-group-text">@</div>
+    		</div>
+        	<input class="form-control" id="senddluxfrom" type="text" dmx-bind:placeholder="{{dluxGetBlog.data.result[0].blog}}" readonly>
+		  </div>
+			 </div>
+		  <div class="form-group">
+	   <label for="senddluxto">To:</label>
+		<div class="input-group">
+			<div class="input-group-prepend">
+      		  <div class="input-group-text">@</div>
+    		</div>
+        	<input class="form-control" id="senddluxto" type="text" placeholder="Recipient">
+		  </div>
+			 </div>
+        <div class="form-group">
+	   <label for="senddluxammount">Ammount (Balance <a href="#" onClick="insertBal()">917.26</a>):</label>
+		<div class="input-group">
+			<div class="input-group-prepend">
+      		  <div class="input-group-text">@</div>
+    		</div>
+        	<input class="form-control" id="senddluxammount" type="number" placeholder="0">
+		  </div>
+			 </div>
+		  <div class="form-group">
+	   <label for="senddluxmemo">Memo:</label>
+		<div class="input-group">
+			<div class="input-group-prepend">
+      		  <div class="input-group-text">@</div>
+    		</div>
+        	<input class="form-control" id="senddluxmemo" type="text" placeholder="Include a memo (optional)">
+		  </div>
+			 </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Continue</button>
+		  </form>
+      </div>
+    </div>
+  </div>
+</div>
 <?php include '../mod/footer.php';?>
 <script>
 // Javascript to enable link to tab
