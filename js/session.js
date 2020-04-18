@@ -46,9 +46,9 @@ function dluxvote(author,permlink,weightid){
                                 author,
                                 permlink,
                                 weight
-                            	})
-			    }
-			]],'posting'])
+			    })
+		    	}
+		    ]],'posting'])
 		.then(r =>{
 			resolve(r)
 		})
@@ -69,7 +69,9 @@ function dluxsend (toid,amountid,memoid){
                                 to,
                                 amount,
                                 memo
-                            }]],'active'])
+                            }
+			)}
+		    ]],'active'])
 		.then(r =>{
 			resolve(r)
 		})
