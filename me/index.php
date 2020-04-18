@@ -604,6 +604,7 @@ for (el in links){
 }
 
 $('.nav-tabs a').on('shown.bs.tab', function (e) {
+	console.log('hash', e.target)
     window.location.hash = e.target.hash;
     window.scrollTo(0, 0);
 })
