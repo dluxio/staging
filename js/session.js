@@ -16,7 +16,7 @@ function checkCookie(){
     if (user != null){
 	let account = sessionStorage.getItem('account')
 	if(Object.keys(account).length){
-		console.log(Object.keys(account))
+		console.log(account)
 	dlux = new Dluxsession(steem, {steemid: user, account});
 	} else {
 		console.log('here?')
