@@ -42,8 +42,7 @@ function checkCookie(){
 			})
 		.then(reply =>reply.json())
 		.then(account =>{
-			console.log(account)
-			User.hive = account
+			User.hive = account.result[0]
 			pageSpecfic(User);
 		})
         })
