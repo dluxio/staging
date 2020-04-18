@@ -588,10 +588,10 @@ if (url.match('#')) {
 
 var links = document.getElementsByClassName('dropdown-item'), hashItems
 for (el in links){
-	console.log(el)
-	var ref = el.href
-	if(ref.split('#')[0]){
-		el.addEventListener("click", () => {
+	console.log(links[el].href)
+	var ref = links[el].href.split('#')[0]
+	if(ref){
+		links[el].addEventListener("click", () => {
 			window.location.hash = links[el].target.hash;
     			window.scrollTo(0, 0);
 			}, false);
