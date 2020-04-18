@@ -644,7 +644,7 @@
 <?php include '../mod/footer.php';?>
 <script>
 // Javascript to enable link to tab
-function pageSpecific(usr){
+function pageSpecfic(usr){
 	document.getElementById('dluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal()">${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
 }	
 	
