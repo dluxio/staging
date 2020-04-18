@@ -591,14 +591,11 @@ for (el in links){
 	var href = links[el].href || ''
 	var ref = href.split('#')[0] || ''
 	if(ref){
-		console.log(links[el].target)
-		var thash = links[el].target.hash
 		var tab = links[el].href.split('#')[1] || ''
-		console.log(tab, thash)
 		links[el].addEventListener("click", () => {
-			window.location.hash = thash;
+			window.location.hash = '#' + tab;
     			window.scrollTo(0, 0);
-			$('.nav-tabs a[href="#' + tab + '"]').tab('show');
+			//$('.nav-tabs a[href="#' + tab + '"]').tab('show');
 			}, false);
 	}
 }
