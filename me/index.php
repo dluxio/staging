@@ -590,9 +590,10 @@ var links = document.getElementsByClassName('dropdown-item'), hashItems
 for (el in links){
 	var href = links[el].href || ''
 	var ref = href.split('#')[0] || ''
+	var thash = links[el].target.hash
 	if(ref){
 		links[el].addEventListener("click", () => {
-			window.location.hash = links[el].target.hash;
+			window.location.hash = thash;
     			window.scrollTo(0, 0);
 			}, false);
 	}
