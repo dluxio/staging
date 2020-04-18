@@ -160,20 +160,19 @@ class Dluxsession {
   set account (obj) {
     return new Promise ((r,e) => {
       if(obj !== undefined){
-	dlux.steemidip(this.steemid)
-      } else {
-      	console.log(obj)
-        setdata(obj.name)
-        this.metadata = JSON.parse(obj.json_metadata)
-        fetch(`/api/proxy?url=${this.metadata.profile.profile_image}`)
-        .then(validateResponse)
-        .then(readResponseAsBlob)
-        .then(showProfileImage)
+	setdata(obj.name)
+	this.metadata = JSON.parse(obj.json_metadata)
+	fetch(`/api/proxy?url=${this.metadata.profile.profile_image}`)
+	.then(validateResponse)
+	.then(readResponseAsBlob)
+	.then(showProfileImage)
 	.then(s=>{r(s)})
-        .catch(err => {
-          console.log(err);
-          e(err)
-        });
+	.catch(err => {
+	  console.log(err);
+	  e(err)
+	});    
+    } else {
+	dlux.steemidip(this.steemid)
       }
     });
   }
