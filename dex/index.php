@@ -986,15 +986,21 @@
 				<div>
 					<label>Volume</label>
 				</div>`
-	    dex.markets.hive.his.reverse()
+	    let hbdhis = [], hivehis = []
+	    
             for (var i in dex.markets.hive.his) {
-                addHistRow(dex.markets.hive.his[i])
+                hivehis.unshift(dex.markets.hive.his[i])
             }
-		dex.markets.hbd.his.reverse()
+	    for (i in hivehis){
+		addHistRow(hivehis[i])	    
+	    }
             for (var i in dex.markets.hbd.his) {
-                const q = dex.markets.hbd.his[i].dir || '-'
-                addHbdHistRow(dex.markets.hbd.his[i].block, parseFloat(dex.markets.hbd.his[i].rate).toFixed(5), parseFloat(dex.markets.hbd.his[i].amount / 1000).toFixed(3), q)
-            }
+            	hbdhis.unshift(dex.markets.hbd.his[i])
+	    }
+	    for (i in hbdhis){
+	    	addHbdHistRow(hbdhis[i].block, parseFloat(hbdhis[i].rate).toFixed(5), parseFloat(hbdhis[i].amount / 1000).toFixed(3), '-')
+                
+	    }
             var c1 = [], c2 = [], c3 = [], c4 = [], c = 0, until3 = 0, until4 = 0, until5 = 0, until6 = 0
             try {
                 until3 = Object.keys(dex.markets.hive.sellOrders).length
