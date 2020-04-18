@@ -597,8 +597,7 @@
 		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span class="close text-white">×</span>
         </button>
-      </div>
-		<form>
+      </div><form>
       <div class="modal-body">
 	  <div class="form-group">
 	   <label for="senddluxfrom">From:</label>
@@ -622,7 +621,7 @@
 	   <label for="senddluxammount">Ammount (Balance <a href="#" onClick="insertBal()">917.26</a>):</label>
 		<div class="input-group">
 			<div class="input-group-prepend">
-      		  <div class="input-group-text">@</div>
+      		  <div class="input-group-text">DLUX</div>
     		</div>
         	<input class="form-control" id="senddluxammount" type="number" placeholder="0">
 		  </div>
@@ -630,9 +629,6 @@
 		  <div class="form-group">
 	   <label for="senddluxmemo">Memo:</label>
 		<div class="input-group">
-			<div class="input-group-prepend">
-      		  <div class="input-group-text">@</div>
-    		</div>
         	<input class="form-control" id="senddluxmemo" type="text" placeholder="Include a memo (optional)">
 		  </div>
 			 </div>
