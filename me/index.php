@@ -8,7 +8,11 @@
 <script type="text/javascript" src="../dmxAppConnect/dmxMoment.js"></script>
 <script type="text/javascript" src="../dmxAppConnect/dmxFormatter.js"></script>
 <script type="text/javascript" src="../dmxAppConnect/dmxDataTraversal/dmxDataTraversal.js"></script>
-
+<script>
+	function changeTab(){
+ $('[href="#settings"]').tab('show');
+}
+	</script>
 </head>
 
 <body class="d-flex flex-column h-100" id="apps" is="dmx-app">
@@ -28,12 +32,11 @@
 			  </div></div></div>
       <div class="col-md-4 text-center m-auto"> <a class="btn btn-outline-primary btn-lg m-1" role="button" dmx-bind:href="../@{{dluxGetBlog.data.result[0].blog}}" target="_blank">VR Page<i class="fas fa-vr-cardboard mx-2 fa-lg"></i></a>
 		 <div class="btn-group">
-  <button type="button" class="btn btn-outline-primary dropdown-toggle btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <button type="button" class="btn btn-outline-primary dropdown-toggle drop-no-arrow btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Actions<i class="fas fa-ellipsis-h ml-2"></i>
   </button>
   <div class="dropdown-menu nav-item dropdown-menu-right">
-    <ul class="nav nav-tabs" role="tablist"><li class="nav-item"><button class="dropdown-item nav-link" type="button" href="#settings" role="tab" id="settingstab" data-toggle="tab" aria-controls="settings" aria-expanded="true">Settings</button></li></ul>
-    <button class="dropdown-item" type="button">Another action</button>
+    <button class="dropdown-item" type="button" onClick="changeTab()"><i class="fas fa-cog fa-fw mr-2"></i>Settings</button>
     <button class="dropdown-item" type="button">Something else here</button>
   </div>
 </div>
@@ -578,33 +581,17 @@
 </main>
 <?php include '../mod/footer.php';?>
 <script>
-    // Javascript to enable link to tab
+       // Javascript to enable link to tab
 var url = document.location.toString();
 if (url.match('#')) {
     $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
 } 
 
 // Change hash for page-reload
-
-var links = document.getElementsByClassName('dropdown-item'), hashItems
-for (el in links){
-	var href = links[el].href || ''
-	var ref = href.split('#')[0] || ''
-	if(ref){
-		var tab = links[el].href.split('#')[1] || ''
-		links[el].addEventListener("click", () => {
-			window.location.hash = '#' + tab;
-    			window.scrollTo(0, 0);
-			$('.nav-tabs a[href="#' + tab + '"]').tab('show');
-			}, false);
-	}
-}
-
 $('.nav-tabs a').on('shown.bs.tab', function (e) {
     window.location.hash = e.target.hash;
     window.scrollTo(0, 0);
 })
-
 	function updateVoteSubmit(id,val) {
           document.getElementById(id).innerHTML = document.getElementById(val).value + '%'; 
         }</script>

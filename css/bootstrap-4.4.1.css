@@ -7840,6 +7840,9 @@ body {
 .select {
   text-align-last: center; }
 
+.drop-no-arrow::after {
+  display: none; }
+
 @media (max-width: 575.98px) {
   .card-columns {
     column-count: 1; } }
