@@ -587,12 +587,6 @@ $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
 window.addEventListener("hashchange", hashchanged, false);
 	
 
-
-// Change hash for page-reload
-$('.nav-tabs a').on('shown.bs.tab', function (e) {
-    window.location.hash = e.target.hash;
-	window.scrollTo(0, 0);
-})
 	</script>
 <script>
 	function updateVoteSubmit(id,val) {
