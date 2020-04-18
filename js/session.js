@@ -70,7 +70,7 @@ function dluxsend (toid,amountid,memoid){
 		Dluxsession.hive_sign([user,[['custom_json',{
                             "required_auths": [user],
                             "required_posting_auths": [],
-                            "id": "dlux_vote_content",
+                            "id": "dlux_send",
                             "json": JSON.stringify({
                                 to,
                                 amount,
