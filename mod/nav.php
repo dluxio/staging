@@ -26,7 +26,7 @@
 			 <a class="dropdown-item" href="../me/#blog"><i class="fas fa-user fa-fw mr-2"></i>Profile</a>
 			 <a class="dropdown-item" href="../me/#wallet"><i class="fas fa-wallet fa-fw mr-2"></i>Wallet</a>
 			 <a class="dropdown-item" href="../me/#node"><i class="fas fa-robot fa-fw mr-2"></i>Node</a>
-			 <a class="dropdown-item" href="../me/#settings"><i class="fas fa-cog fa-fw mr-2"></i>Settings</a>
+			 <a class="dropdown-item" href="../me/index.php#settings"><i class="fas fa-cog fa-fw mr-2"></i>Settings</a>
              <div class="dropdown-divider"></div>
 			 <a class="dropdown-item" href="#"><i class="fas fa-info-circle fa-fw mr-2"></i>About</a>
              <div class="dropdown-divider"></div>
