@@ -585,6 +585,11 @@ if (url.match('#')) {
 } 
 
 // Change hash for page-reload
+
+$('.dropdown-item a').on('click', function (e) {
+    window.location.hash = e.target.hash;
+    window.scrollTo(0, 0);
+})
 $('.nav-tabs a').on('shown.bs.tab', function (e) {
     window.location.hash = e.target.hash;
     window.scrollTo(0, 0);
