@@ -47,7 +47,8 @@ function dluxvote(author,permlink,weightid){
                                 permlink,
                                 weight
                             	})
-			    ]],'posting'])
+			    }
+			]],'posting'])
 		.then(r =>{
 			resolve(r)
 		})
