@@ -595,13 +595,12 @@ for (el in links){
 		links[el].addEventListener("click", () => {
 			window.location.hash = '#' + tab;
     			window.scrollTo(0, 0);
-			//$('.nav-tabs a[href="#' + tab + '"]').tab('show');
+			$('.nav-tabs a[href="#' + tab + '"]').tab('show');
 			}, false);
 	}
 }
 
 $('.nav-tabs a').on('shown.bs.tab', function (e) {
-	console.log('hash', e.target)
     window.location.hash = e.target.hash;
     window.scrollTo(0, 0);
 })
