@@ -8,7 +8,7 @@
 function readResponseAsBlob(response) {
   return response.blob();
 }
-let user, dlux
+let user, dlux, User ={dlux:{},hive:{}}
 function checkCookie(){
 	console.log('Checking for login')
     	user = sessionStorage.getItem('user');
@@ -25,6 +25,14 @@ function checkCookie(){
 	document.getElementById('active-session').style.display = 'block';
 	document.getElementById('userImage').src = 'https://token.dlux.io/getauthorpic/' + user
 	document.getElementById('userName').innerText = '@' + user;
+	let dex, stats, hive, feed
+        var urls = [`https://token.dlux.io/@${user}`] //datasources
+        Promise.all(urls.map(u => fetch(u))).then(res =>
+            Promise.all(res.map(res => res.json()))
+        ).then(jsons => {
+            User.dlux = jsons[0]
+            pageSpecfic(User);
+        })
     } else {
     	document.getElementById('active-session').style.display = 'none';
     }
