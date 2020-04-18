@@ -38,8 +38,8 @@
 			<a class="nav-link" id="inventorytab" role="tab" data-toggle="tab" aria-controls="inventory" aria-expanded="true" href="#inventory">Inventory</a> </li>
 	  <li class="nav-item"> 
 			<a class="nav-link" id="nodetab" role="tab" data-toggle="tab" aria-controls="node" aria-expanded="true" href="#node">Node</a> </li>
-	    <li class="nav-item"> 
-			<a class="nav-link" id="settingstab" role="tab" data-toggle="tab" aria-controls="settings" aria-expanded="true" href="#settings"></a> </li>
+	    <li class="nav-item d-none"> 
+			<a class="nav-link" id="settingstab" role="tab" data-toggle="tab" aria-controls="settings" aria-expanded="true" href="#settings">Settings</a> </li>
     </ul>
 	</div></div>
 	 <div id="pagecontent" class="tab-content">
