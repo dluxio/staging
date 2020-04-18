@@ -26,7 +26,7 @@ function checkCookie(){
 	document.getElementById('userImage').src = 'https://token.dlux.io/getauthorpic/' + user
 	document.getElementById('userName').innerText = '@' + user;
 	let dex, stats, hive, feed
-        var urls = [`https://token.dlux.io/@${user}`, 'https://token.dlux.io/dex', 'https://token.dlux.io/stats'] //datasources
+        var urls = [`https://token.dlux.io/@${user}`, 'https://token.dlux.io/dex', 'https://token.dlux.io/stats', 'https://api.coingecko.com/api/v3/simple/price?ids=hive&vs_currencies=usd'] //datasources
         let promises = urls.map(u => fetch(u))
 	    promises.push(fetch("https://anyx.io", {
   		body: "{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_dynamic_global_properties\", \"params\":[], \"id\":1}",
@@ -48,8 +48,9 @@ function checkCookie(){
             User.dlux = jsons[0]
 	    User.dex = jsons[1]
 	    User.stats = jsons[2]
-	    User.hstats = jsons[3].result
-	    User.hive = jsons[4].result[0]
+	    User.price = jsons[3].hive.usd
+	    User.hstats = jsons[4].result
+	    User.hive = jsons[5].result[0]
 	    pageSpecfic(User);
         })
     } else {
