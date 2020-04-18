@@ -14,8 +14,12 @@ function checkCookie(){
     	user = sessionStorage.getItem('user');
 	console.log('user='+user)
     if (user != null){
-	let account = sessionStorage.getItem('account') || ''
+	let account = sessionStorage.getItem('account')
+	if(Object.keys(account).length){
 	dlux = new Dluxsession(steem, {steemid: user, account});
+	} else {
+	dlux = new Dluxsession(steem, {steemidip: user});
+	}
 	document.getElementById('no-session').style.display = 'none';
 	document.getElementById('active-session').style.display = 'block';
 	document.getElementById('userImage').src = 'https://token.dlux.io/getauthorpic/' + user
