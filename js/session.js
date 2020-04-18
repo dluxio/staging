@@ -27,24 +27,30 @@ function checkCookie(){
 	document.getElementById('userName').innerText = '@' + user;
 	let dex, stats, hive, feed
         var urls = [`https://token.dlux.io/@${user}`, 'https://token.dlux.io/dex', 'https://token.dlux.io/stats'] //datasources
-        Promise.all(urls.map(u => fetch(u))).then(res =>
-            Promise.all(res.map(res => res.json()))
-        ).then(jsons => {
-            User.dlux = jsons[0]
-	    User.dex = jsons[1]
-	    User.stats = jsons[2]
-		fetch("https://anyx.io", {
+        let promises =
+	    promises.push(fetch("https://anyx.io", {
+  		body: "{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_dynamic_global_properties\", \"params\":[], \"id\":1}",
+  		headers: {
+    			"Content-Type": "application/x-www-form-urlencoded"
+  		},
+  			method: "POST"
+		}))
+	    promises.push(fetch("https://anyx.io", {
 			  body: `{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_accounts\", \"params\":[[\"${user}\"]], \"id\":1}`,
 			  headers: {
 			    "Content-Type": "application/x-www-form-urlencoded"
 			  },
 			  method: "POST"
-			})
-		.then(reply =>reply.json())
-		.then(account =>{
-			User.hive = account.result[0]
-			pageSpecfic(User);
-		})
+			}))
+	Promise.all(promises).then(res =>
+            Promise.all(res.map(res => res.json()))
+        ).then(jsons => {
+            User.dlux = jsons[0]
+	    User.dex = jsons[1]
+	    User.stats = jsons[2]
+	    User.hstats = jsons[3].result
+	    User.hive = jsons[4].result[0]
+	    pageSpecfic(User);
         })
     } else {
     	document.getElementById('active-session').style.display = 'none';
