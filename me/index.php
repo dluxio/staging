@@ -586,7 +586,7 @@ if (url.match('#')) {
 
 // Change hash for page-reload
 
-$('.dropdown-item a').on('click', function (e) {
+$('.dropdown-item a').bind('click', function (e) {
     window.location.hash = e.target.hash;
     window.scrollTo(0, 0);
 })
@@ -594,8 +594,7 @@ $('.nav-tabs a').on('shown.bs.tab', function (e) {
     window.location.hash = e.target.hash;
     window.scrollTo(0, 0);
 })
-	</script>
-<script>
+
 	function updateVoteSubmit(id,val) {
           document.getElementById(id).innerHTML = document.getElementById(val).value + '%'; 
         }</script>
