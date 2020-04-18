@@ -590,7 +590,7 @@ var links = document.getElementsByClassName('dropdown-item'), hashItems
 for (el in links){
 	if(links[el].href.match('#')){
 		links[el].addEventListener("click", () => {
-			window.location.hash = e.target.hash;
+			window.location.hash = links[el].target.hash;
     			window.scrollTo(0, 0);
 			}, false);
 	}
