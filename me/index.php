@@ -646,8 +646,8 @@
 // Javascript to enable link to tab
 function pageSpecfic(usr){
 	document.getElementById('dluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal()">${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
-	var dluxEl =document.getElementById('dluxactions')
-	var dluxpEl = document.getElementById('dluxpactions') 
+	var dluxEl =document.getElementById('dluxactions').firstElementChild.innerHtml = `${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX`
+	var dluxpEl = document.getElementById('dluxpactions').firstElementChild.innerHtml = `${parseFloat(parseInt(usr.dlux.poweredUp)/1000).toFixed(3)} DLUX`
 	console.log(dluxEl,dluxpEl)
 	}	
 	
