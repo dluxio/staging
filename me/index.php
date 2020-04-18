@@ -586,6 +586,12 @@
 </main>
 <?php include '../mod/footer.php';?>
 <script>
+       // Javascript to enable link to tab
+var url = document.location.toString();
+if (url.match('#')) {
+    $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+} 
+
 
 	function updateVoteSubmit(id,val) {
           document.getElementById(id).innerHTML = document.getElementById(val).value + '%'; 
