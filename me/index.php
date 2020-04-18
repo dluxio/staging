@@ -586,14 +586,16 @@ if (url.match('#')) {
 
 // Change hash for page-reload
 
-var tabs = document.getElementsByClassName('dropdown-item'), hashItems
-for (el in tabs){
-	console.log(tabs[el].href)
+var links = document.getElementsByClassName('dropdown-item'), hashItems
+for (el in links){
+	if(links[el].href.match('#')){
+		links[el].addEventListener("click", () => {
+			window.location.hash = e.target.hash;
+    			window.scrollTo(0, 0);
+			}, false);
+	}
 }
-$('.dropdown-item a').bind('click', function (e) {
-    window.location.hash = e.target.hash;
-    window.scrollTo(0, 0);
-})
+
 $('.nav-tabs a').on('shown.bs.tab', function (e) {
     window.location.hash = e.target.hash;
     window.scrollTo(0, 0);
