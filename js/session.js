@@ -153,7 +153,7 @@ class Dluxsession {
   
   set account (obj) {
     return new Promise ((r,e) => {
-      if(obj){
+      if(Object.keys(obj).length){
         console.log(obj)
         setdata(obj.name)
         this.metadata = JSON.parse(obj.json_metadata)
@@ -165,6 +165,8 @@ class Dluxsession {
           console.log(err);
           e(err)
         });
+      } else {
+      	this.steemidip(this.steemid)
       }
     });
   }
