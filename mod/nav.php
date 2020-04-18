@@ -22,18 +22,17 @@
 		  <a class="nav-link dropdown-toggle text-white-50" id="userDropdown" data-toggle="dropdown" href="#">
 			  <img src="https://token.dlux.io/getauthorpic/{{author}}" id="userImage" alt="" width="30" height="30" class="img-fluid rounded-circle bg-light mr-1 cover">
 			  <span id="userName">username</span></a>
-          <ul class="nav"><div class="dropdown-menu" aria-labelledby="userDropdown">
-			 <li class="nav-item"><a class="dropdown-item nav-link" href="../me/#blog"><i class="fas fa-user fa-fw mr-2"></i>Profile</a></li>
+          <div class="dropdown-menu" aria-labelledby="userDropdown">
+			 <a class="dropdown-item" href="../me/#blog"><i class="fas fa-user fa-fw mr-2"></i>Profile</a>
 			 <a class="dropdown-item" href="../me/#wallet"><i class="fas fa-wallet fa-fw mr-2"></i>Wallet</a>
 			 <a class="dropdown-item" href="../me/#inventory"><i class="fas fa-boxes fa-fw mr-2"></i>Inventory</a>
 			 <a class="dropdown-item" href="../me/#node"><i class="fas fa-robot fa-fw mr-2"></i>Node</a>
              <div class="dropdown-divider"></div>
-			 <li class="nav-item"><a class="nav-link dropdown-item" href="../me/#settings"><i class="fas fa-cog fa-fw mr-2"></i>Settings</a></li>
+			 <a class="dropdown-item" href="../me/#settings"><i class="fas fa-cog fa-fw mr-2"></i>Settings</a>
 			 <a class="dropdown-item" href="#"><i class="fas fa-info-circle fa-fw mr-2"></i>About</a>
              <div class="dropdown-divider"></div>
              <a class="dropdown-item" href="../login/"><i class="fas fa-user-friends mr-2"></i>Switch User</a>
 			 <a class="dropdown-item" href="javascript:logout()"><i class="fas fa-power-off fa-fw mr-2"></i>Logout</a></div>
-		   </ul>
         </li>
       </ul>
 	</div>
