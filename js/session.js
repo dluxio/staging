@@ -153,7 +153,7 @@ class Dluxsession {
   
   set account (obj) {
     return new Promise ((r,e) => {
-      if(Object.keys(obj).length){
+      if(!!obj){
         console.log(obj)
         setdata(obj.name)
         this.metadata = JSON.parse(obj.json_metadata)
@@ -161,6 +161,7 @@ class Dluxsession {
         .then(validateResponse)
         .then(readResponseAsBlob)
         .then(showProfileImage)
+	.then(s=>{r(s)})
         .catch(err => {
           console.log(err);
           e(err)
