@@ -14,11 +14,14 @@
 	  <script type="text/javascript" src="../js/popper.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap-4.4.1.js"></script> <script src="https://kit.fontawesome.com/0f693ffc58.js" crossorigin="anonymous"></script>
   <script src="js/session.js"></script>
-  <script>
+	  <script src="https://cdn.jsdelivr.net/npm/steem/dist/steem.min.js"></script>
+<!-- Initialization -->
+<script>
+	steem.api.setOptions({url:"https://anyx.io"})
 	$(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
-	</script>
+</script>
 </head>
 <body class="d-flex flex-column h-100">
  <?php include 'mod/nav.php';?>
