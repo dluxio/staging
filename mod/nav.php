@@ -1,49 +1,49 @@
 <header>
 <nav class="navbar navbar-default navbar-expand-lg navbar-dark bg-dark fixed-top flex-md-nowrap">
-	<a class="navbar-brand" href="../"><img src="../img/dluxcolorlogo.png" alt="dlux-logo" width="32" height="32" class="rounded"></a>
+	<a class="navbar-brand" href="/"><img src="/img/dluxcolorlogo.png" alt="dlux-logo" width="32" height="32" class="rounded"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item"> <a class="nav-link" href="../apps/">Apps</a></li>
-        <li class="nav-item"> <a class="nav-link" href="../dex/">Exchange</a></li>
+        <li class="nav-item"> <a class="nav-link" href="/apps/">Apps</a></li>
+        <li class="nav-item"> <a class="nav-link" href="/dex/">Exchange</a></li>
 		<li class="nav-item"> <a class="nav-link" href="https://peakd.com/@dlux-io/" target="_blank">Updates</a></li>
         <li class="nav-item"> <a class="nav-link" href="https://github.com/dluxio/dluxio/wiki" target="_blank">Documentation</a></li>
       </ul>
 	<ul class="navbar-nav mr-5" id="no-session">
-	<li class="nav-item"><a class="nav-link acct-link" href="../login/">Login</a></li>
+	<li class="nav-item"><a class="nav-link acct-link" href="/login/">Login</a></li>
 	<li class="nav-item"><a class="nav-link acct-link" href="https://signup.hive.io/">Sign up</a></li>
 	</ul>
     <div class="mr-5" id="active-session">
 	  <ul class="nav navbar-nav">
 		<li class="nav-item my-auto">
-			<a class="nav-link" href="../new/" data-toggle="tooltip"  title="Create a new app">
+			<a class="nav-link" href="/new/" data-toggle="tooltip"  title="Create a new app">
 				<i class="fas fa-fw fa-lg fa-plus mr-2"></i></a></li>
 		<li class="nav-item dropdown">
 		  <a class="nav-link dropdown-toggle text-white-50" id="userDropdown" data-toggle="dropdown" href="#">
 			  <img src="https://token.dlux.io/getauthorpic/{{author}}" id="userImage" alt="" width="30" height="30" class="img-fluid rounded-circle bg-light mr-1 cover">
 			  <span id="userName">username</span></a>
           <div class="dropdown-menu" aria-labelledby="userDropdown">
-			  <ul class="nav nav-tabs bg-darker mx-0 px-0 mt-5 border-bottom-0" role="tablist">
+			<ul class="nav nav-tabs bg-darker mx-0 px-0 mt-5 border-bottom-0" role="tablist">
 	    	<li class="nav-item">
-			<a class="nav-link active" href="../me/#blog" id="blogtab" role="tab" data-toggle="tab" aria-controls="blog" aria-expanded="true">Blog</a> </li>
+			<a class="nav-link active" href="/me/#blog" id="blogtab" role="tab" data-toggle="tab" aria-controls="blog" aria-expanded="true">Blog</a> </li>
 	    	<li class="nav-item"> 
-			<a class="nav-link" id="wallettab" role="tab" data-toggle="tab" aria-controls="wallet" aria-expanded="true" href="../me/#wallet">Wallet</a> </li>
+			<a class="nav-link" id="wallettab" role="tab" data-toggle="tab" aria-controls="wallet" aria-expanded="true" href="/me/#wallet">Wallet</a> </li>
 	  		<li class="nav-item"> 
-			<a class="nav-link" id="inventorytab" role="tab" data-toggle="tab" aria-controls="inventory" aria-expanded="true" href="../me/#inventory">Inventory</a> </li>
+			<a class="nav-link" id="inventorytab" role="tab" data-toggle="tab" aria-controls="inventory" aria-expanded="true" href="/me/#inventory">Inventory</a> </li>
 	  		<li class="nav-item"> 
-			<a class="nav-link" id="nodetab" role="tab" data-toggle="tab" aria-controls="node" aria-expanded="true" href="../me/#node">Node</a> </li>
+			<a class="nav-link" id="nodetab" role="tab" data-toggle="tab" aria-controls="node" aria-expanded="true" href="/me/#node">Node</a> </li>
 	    	<li class="nav-item"> 
-			<a class="nav-link" id="settingstab" role="tab" data-toggle="tab" aria-controls="settings" aria-expanded="true" href="../me/#settings">Settings</a> </li>
-    </ul>
-			 <a class="dropdown-item" href="../me/#blog"><i class="fas fa-user fa-fw mr-2"></i>Profile</a>
-			 <a class="dropdown-item" href="../me/#wallet"><i class="fas fa-wallet fa-fw mr-2"></i>Wallet</a>
-			 <a class="dropdown-item" href="../me/#inventory"><i class="fas fa-boxes fa-fw mr-2"></i>Inventory</a>
-			 <a class="dropdown-item" href="../me/#node"><i class="fas fa-robot fa-fw mr-2"></i>Node</a>
+			<a class="nav-link" id="settingstab" role="tab" data-toggle="tab" aria-controls="settings" aria-expanded="true" href="/me/#settings">Settings</a> </li>
+    		</ul>
+			 <a class="dropdown-item" href="/me/#blog"><i class="fas fa-user fa-fw mr-2"></i>Profile</a>
+			 <a class="dropdown-item" href="/me/#wallet"><i class="fas fa-wallet fa-fw mr-2"></i>Wallet</a>
+			 <a class="dropdown-item" href="/me/#inventory"><i class="fas fa-boxes fa-fw mr-2"></i>Inventory</a>
+			 <a class="dropdown-item" href="/me/#node"><i class="fas fa-robot fa-fw mr-2"></i>Node</a>
              <div class="dropdown-divider"></div>
-			 <a class="dropdown-item" href="../me/#settings"><i class="fas fa-cog fa-fw mr-2"></i>Settings</a>
+			 <a class="dropdown-item" href="/me/#settings"><i class="fas fa-cog fa-fw mr-2"></i>Settings</a>
 			 <a class="dropdown-item" href="#"><i class="fas fa-info-circle fa-fw mr-2"></i>About</a>
              <div class="dropdown-divider"></div>
-             <a class="dropdown-item" href="../login/"><i class="fas fa-user-friends mr-2"></i>Switch User</a>
+             <a class="dropdown-item" href="/login/"><i class="fas fa-user-friends mr-2"></i>Switch User</a>
 			 <a class="dropdown-item" href="javascript:logout()"><i class="fas fa-power-off fa-fw mr-2"></i>Logout</a></div>
         </li>
       </ul>
