@@ -578,17 +578,17 @@
 </main>
 <?php include '../mod/footer.php';?>
 <script>
-$(function(){
-  var hash = window.location.hash;
-  hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+    // Javascript to enable link to tab
+var url = document.location.toString();
+if (url.match('#')) {
+    $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+} 
 
-  $('.nav-tabs a').click(function (e) {
-    $(this).tab('show');
-    var scrollmem = $('body').scrollTop() || $('html').scrollTop();
-    window.location.hash = this.hash;
-    $('html,body').scrollTop(scrollmem);
-  });
-});
+// Change hash for page-reload
+$('.nav-tabs a').on('shown.bs.tab', function (e) {
+    window.location.hash = e.target.hash;
+    window.scrollTo(0, 0);
+})
 	</script>
 <script>
 	function updateVoteSubmit(id,val) {
