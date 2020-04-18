@@ -644,14 +644,14 @@
 <script>
 // Javascript to enable link to tab
 function pageSpecfic(usr){
-	console.log(usr.hive)
+	console.log(usr.hstats)
 	document.getElementById('dluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal()">${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
 	document.getElementById('dluxactions').firstElementChild.innerText = `${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX`
 	document.getElementById('dluxpactions').firstElementChild.innerText = `${parseFloat(parseInt(usr.dlux.poweredUp)/1000).toFixed(3)} DLUX`
-	document.getElementById('hivepactions').firstElementChild.innerText = ` HP`
-	document.getElementById('hiveactions').firstElementChild.innerText = ` HIVE`
-	document.getElementById('hbdactions').firstElementChild.innerText = ` HBD`
-	document.getElementById('savingsactions').firstElementChild.innerText = ` HBD`
+	document.getElementById('hivepactions').firstElementChild.innerText = parseFloat(( User.hstats.total_vesting_fund_steem * User.hive.vesting_shares) / User.hstats.total_vesting_shares).toFixed(3) + ' HP'
+	document.getElementById('hiveactions').firstElementChild.innerText = usr.hive.balance
+	document.getElementById('hbdactions').firstElementChild.innerText = usr.hive.sbd_balance
+	document.getElementById('savingsactions').firstElementChild.innerText = usr.hive.savings_sbd_balance
 	document.getElementById('hiveval').firstElementChild.innerText = `$0.12`
 	document.getElementById('dluxval').firstElementChild.innerText = `$0.55`
 }	
