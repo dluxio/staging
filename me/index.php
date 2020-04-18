@@ -9,14 +9,9 @@
 <script type="text/javascript" src="../dmxAppConnect/dmxFormatter.js"></script>
 <script type="text/javascript" src="../dmxAppConnect/dmxDataTraversal/dmxDataTraversal.js"></script>
 <script>
-	function changeTab(){
- 		$('[href="#settings"]').tab('show');
+	function changeTab(url){
+ 		$(`[href="#${url}"]`).tab('show');
 		window.scrollTo(0, 0);
-}
-	function walletTab(){
-		window.scrollTo(0, 0);
- 		$('[href="#wallet"]').tab('show');
-		
 }
 	</script>
 </head>
@@ -42,7 +37,7 @@
     Actions<i class="fas fa-ellipsis-h ml-2"></i>
   </button>
   <div class="dropdown-menu nav-item dropdown-menu-right">
-    <button class="dropdown-item" type="button" onClick="changeTab()"><i class="fas fa-cog fa-fw mr-2"></i>Settings</button>
+    <button class="dropdown-item" type="button" onClick="changeTab('settings')"><i class="fas fa-cog fa-fw mr-2"></i>Settings</button>
     <button class="dropdown-item" type="button">Something else here</button>
   </div>
 </div>
