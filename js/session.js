@@ -51,7 +51,8 @@ function checkCookie(){
 	    User.price = jsons[3].hive.usd
 	    User.hstats = jsons[4].result
 	    User.hive = jsons[5].result[0]
-	    pageSpecfic(User);
+	    try {pageSpecfic(User);}
+		catch(e){}
         })
     } else {
     	document.getElementById('active-session').style.display = 'none';
