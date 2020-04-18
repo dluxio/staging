@@ -618,12 +618,12 @@
 		  </div>
 			 </div>
         <div class="form-group">
-	   <label for="senddluxammount">Ammount (Balance <a href="#" onClick="insertBal()">917.26</a>):</label>
+	   <label for="senddluxammount">Amount (Balance <a href="#" onClick="insertBal()">917.26</a>):</label>
 		<div class="input-group">
 			<div class="input-group-prepend">
       		  <div class="input-group-text">DLUX</div>
     		</div>
-        	<input class="form-control" id="senddluxammount" type="number" placeholder="0">
+        	<input class="form-control" id="senddluxamount" type="number" placeholder="0">
 		  </div>
 			 </div>
 		  <div class="form-group">
@@ -635,7 +635,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary">Continue</button>
+        <button type="button" class="btn btn-primary" onClick="dluxsend('senddluxto', 'senddluxamount', 'senddluxmemo')">Continue</button>
 		  </form>
       </div>
     </div>
