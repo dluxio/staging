@@ -93,7 +93,7 @@ function dluxvote(author,permlink,weightid){
 function dluxsend (toid,amountid,memoid){
 	return new Promise((resolve, reject) => {
 		var to = document.getElementById(toid).value,
-		    amount = document.getElementById(amountid).value,
+		    amount = parseInt(document.getElementById(amountid).value * 1000),
 		    memo = document.getElementById(memoid).value
 		Dluxsession.hive_sign([user,[['custom_json',{
                             "required_auths": [user],
