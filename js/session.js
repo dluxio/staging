@@ -154,7 +154,9 @@ class Dluxsession {
   set account (obj) {
     return new Promise ((r,e) => {
       if(obj !== undefined){
-        console.log(obj)
+	this.steemidip(this.steemid)
+      } else {
+      	console.log(obj)
         setdata(obj.name)
         this.metadata = JSON.parse(obj.json_metadata)
         fetch(`/api/proxy?url=${this.metadata.profile.profile_image}`)
@@ -166,8 +168,6 @@ class Dluxsession {
           console.log(err);
           e(err)
         });
-      } else {
-      	this.steemidip(this.steemid)
       }
     });
   }
