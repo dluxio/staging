@@ -15,6 +15,7 @@
 <script src="https://cdn.jsdelivr.net/npm/steem/dist/steem.min.js"></script>
 <!-- Initialization -->
 <script>
+	steem.api.setOptions({url:"https://anyx.io"})
 	$(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
