@@ -1023,6 +1023,7 @@ function pageSpecfic(usr){
 }
 													       
 function dexmodal(pair,type){
+	console.log(pair,type)
 	document.getElementById('menupairlab').innerHtml = `Order Total (<a href="#" onClick="insertBal()">Balance: ${User[pair].balance}</a>):`
 	document.getElementById('menupair').max = parseFloat(User[pair].balance)
 	document.getElementById('menupricelab').innerHtml = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${User.dex[pair].tick.toFixed(4)} ${pair.toUpperCase()}</a>):`														    
