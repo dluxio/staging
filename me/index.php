@@ -807,7 +807,7 @@
 		<div class="input-group">
 			<input class="form-control" id="menuprice" type="number" placeholder="1.000">
 			<div class="input-group-append">
-      		  <div class="input-group-text" id="menupairlab">HIVE</div>
+      		  <div class="input-group-text" id="menupairdiv">HIVE</div>
     		</div>
 		  </div>
 			 </div>
@@ -1016,9 +1016,9 @@ function pageSpecfic(usr){
 	document.getElementById('savingsactions').firstElementChild.innerText = usr.hive.savings_sbd_balance
 	document.getElementById('hiveval').firstElementChild.innerText = `$${parseFloat((parseFloat(( parseFloat(User.hstats.total_vesting_fund_steem) * parseFloat(User.hive.vesting_shares)) / parseFloat(User.hstats.total_vesting_shares)) + parseFloat(usr.hive.balance))*User.price).toFixed(2)}`
 	document.getElementById('dluxval').firstElementChild.innerText = `$${parseFloat(((parseInt(usr.dlux.balance) + parseInt(usr.dlux.poweredUp))/1000)*parseFloat(usr.dex.markets.hive.tick)*parseFloat(usr.price)).toFixed(2)}`
-	console.log(document.getElementById('menupairlab')) //.innerHtml = `Order Total (<a href="#" onClick="insertBal()">HIVE Balance: ${User.hive.balance}</a>):`
+	document.getElementById('menupairlab').innerHtml = `Order Total (<a href="#" onClick="insertBal()">HIVE Balance: ${User.hive.balance}</a>):`
 	document.getElementById('menupair').max = parseFloat(User.hive.balance)
-	console.log(document.getElementById('menupricelab')) //.innerHtml = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${User.dex.hive.tick.toFixed(4)} HIVE</a>):`														    
+	document.getElementById('menupricelab').innerHtml = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${User.dex.hive.tick.toFixed(4)} HIVE</a>):`														    
 }	
 	
 // Date Picker
