@@ -37,7 +37,7 @@
 		<li>Difficulty: Easy</li>
 		</ul>
 		</center>
-    	<a href="../create/supercraft.php" class="btn btn-danger">Get Started</a>
+    	<a href="supercraft.php" class="btn btn-danger">Get Started</a>
   	  </div>
 	</div>
 		
