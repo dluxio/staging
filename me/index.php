@@ -1023,12 +1023,13 @@ function pageSpecfic(usr){
 
 }
 													       
-function dexmodal(pair,Type){
-	type =Type										     
-	let not = type == 'hive' ? 'hive' : 'hbd'
-	console.log(pair,type, not) 					     
-	document.getElementById(`${type}tab`).class = 'nav-link active'							     
-	document.getElementById(`${not}tab`).class = 'nav-link'
+function dexmodal(pair,type){
+	let not = 'hbd'
+	if(type == not){not = 'hive'}
+	let activetab = `${type}tab`,
+	    nottab = `${not}tab`
+	document.getElementById(activetab).class = 'nav-link active'							     
+	document.getElementById(nottab).class = 'nav-link'
 	document.getElementById('menupairlab').innerHtml = `Order Total (<a href="#" onClick="insertBal()">Balance: ${User[pair].balance}</a>):`
 	document.getElementById('menupair').max = parseFloat(User[pair].balance)
 	document.getElementById('menupricelab').innerHtml = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${User.dex[pair].tick.toFixed(4)} ${pair.toUpperCase()}</a>):`														    
