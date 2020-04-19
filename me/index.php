@@ -1037,10 +1037,11 @@ function dexmodal(pair,type){
 		document.getElementById('menupairlab').innerHTML = `Order Total (<a href="#" onClick="insertBal()">Balance: ${User[pair].balance}</a>):`
 		document.getElementById('menupair').max = parseFloat(User[pair].balance)
 		document.getElementById('menupricelab').innerHTML = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${parseFloat(User.dex.markets[pair].tick).toFixed(4)} ${pair.toUpperCase()}</a>):`														    
-		let options = []
 		for(i in User.dex.queue){
-			options.push(`<option>${User.dex.queue[i]} - Fee: .0 HIVE</option>`)
+			document.getElementById('menueagent').appendChild(document.createElement('option').innerText =`@${User.dex.queue[i]} - Fee: .0 HIVE`) 
+			document.getElementById('menucagent').appendChild(document.createElement('option').innerText =`@${User.dex.queue[i]} - Fee: .0 HIVE`)
 		}
+		document.getElementById("myList").appendChild(node);
 		console.log(document.getElementById('menueagent')) //.innerHTML = options.concat()
 		console.log(document.getElementById('menucagent')) //.innerHTML = options.concat()
 }												       
