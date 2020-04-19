@@ -1025,11 +1025,11 @@ function pageSpecfic(usr){
 													       
 function dexmodal(pair,type){
 	let not = 'hbd'
-	if(type == not){not = 'hive'}
-	let activetab = `${type}tab`,
-	    nottab = `${not}tab`
-	document.getElementById(activetab).class = 'nav-link active'							     
-	document.getElementById(nottab).class = 'nav-link'
+	if(type == 'buy'){
+	document.getElementById('buyDluxTitle').innerText = 'Buy with:'
+	} else {
+	document.getElementById('buyDluxTitle').innerText = 'Sell for:'
+	}
 	document.getElementById('menupairlab').innerHtml = `Order Total (<a href="#" onClick="insertBal()">Balance: ${User[pair].balance}</a>):`
 	document.getElementById('menupair').max = parseFloat(User[pair].balance)
 	document.getElementById('menupricelab').innerHtml = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${User.dex[pair].tick.toFixed(4)} ${pair.toUpperCase()}</a>):`														    
