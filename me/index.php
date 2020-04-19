@@ -927,8 +927,8 @@
     		</div>
 		  </div>
 			 </div>
-		 
-	   
+		 <p><a data-toggle="collapse" href="#buydluxadvanced" role="button" aria-expanded="false" aria-controls="collapseExample">Toggle Advanced Options</a></p>
+	   <div class="collapse" id="buydluxadvanced">
 		<label for="buydluxcustodialagent">Custodial Agent:</label>
 		<div class="form-row" style="margin-bottom: 16px;">
 			<div class="input-group-prepend">
@@ -977,6 +977,8 @@
 			   <label for="buydluxexpire">Expiration Date and Time:</label>
 				<input class="form-control" id="buydluxexpire" />
 			 </div>
+		  </div>
+		  
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
