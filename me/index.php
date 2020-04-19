@@ -762,8 +762,8 @@
       <div class="modal-header">
 		  <h3 class="modal-title" id="buyDluxTitle">Buy With: </h3>
 		  <ul class="nav nav-pills ml-3" role="tablist">
-		  	<li class="nav-item"><a href="#" class="nav-link active" data-toggle="tabs">HIVE</a></li>
-			<li class="nav-item"><a href="#" class="nav-link" data-toggle="tabs">HBD</a></li>
+		  	<li class="nav-item"><a href="javascript:dexmodal('hive', type)" class="nav-link active" id="hivetab">HIVE</a></li>
+			<li class="nav-item"><a href="javascript:dexmodal('hbd', type)" class="nav-link" id="hbdtab">HBD</a></li>
 		  </ul>
 		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span class="close text-white">×</span>
@@ -1023,7 +1023,10 @@ function pageSpecfic(usr){
 }
 													       
 function dexmodal(pair,type){
-	console.log(pair,type)
+	let not ? (type == 'hbd') 'hive' : 'hbd'
+	console.log(pair,type, not) 					     
+	document.getElementById(`${type}tab`).class = 'nav-link active'							     
+	document.getElementById(`${not}tab`).class = 'nav-link'
 	document.getElementById('menupairlab').innerHtml = `Order Total (<a href="#" onClick="insertBal()">Balance: ${User[pair].balance}</a>):`
 	document.getElementById('menupair').max = parseFloat(User[pair].balance)
 	document.getElementById('menupricelab').innerHtml = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${User.dex[pair].tick.toFixed(4)} ${pair.toUpperCase()}</a>):`														    
