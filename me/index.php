@@ -1043,9 +1043,6 @@ function dexmodal(pair,type){
 			document.getElementById('menueagent').appendChild(node) 
 			document.getElementById('menucagent').appendChild(node)
 		}
-		document.getElementById("myList").appendChild(node);
-		console.log(document.getElementById('menueagent')) //.innerHTML = options.concat()
-		console.log(document.getElementById('menucagent')) //.innerHTML = options.concat()
 }												       
 	
 // Date Picker
