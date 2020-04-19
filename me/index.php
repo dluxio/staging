@@ -1023,7 +1023,7 @@ function pageSpecfic(usr){
 }
 													       
 function dexmodal(pair,type){
-	let not ? (type == 'hbd') 'hive' : 'hbd'
+	let not = (type == 'hbd') ? 'hive' : 'hbd'
 	console.log(pair,type, not) 					     
 	document.getElementById(`${type}tab`).class = 'nav-link active'							     
 	document.getElementById(`${not}tab`).class = 'nav-link'
