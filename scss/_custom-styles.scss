@@ -3,6 +3,8 @@
   
 body {background-color: #222222}
 
+.pos-abs {position: absolute;}
+
 .gj-datepicker {background-color: #FFF !important; border-radius: 5px;}
 
 .bg-none {background-color: transparent !important;}
@@ -47,12 +49,11 @@ body {background-color: #222222}
 
 .select {text-align-last: center;}
  
-.select-wrapper{
-	background-color: #C3CAD2;
+.append-radius{
     border-top-left-radius: 0px;
 	border-bottom-left-radius: 0px;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px !important;
+	border-bottom-right-radius: 5px !important;
 }
 
 .drop-no-arrow::after {

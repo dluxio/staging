@@ -9,8 +9,10 @@
 <script type="text/javascript" src="../dmxAppConnect/dmxFormatter.js"></script>
 <script type="text/javascript" src="../dmxAppConnect/dmxDataTraversal/dmxDataTraversal.js"></script>
 <!--Date Picker-->
-<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"></script>
+<!--Bootstrap Select-->
+<link href="../css/bootstrap-select.css" rel="stylesheet" type="text/css" />
 <script>
 	function changeTab(url){
  		$(`[href="#${url}"]`).tab('show');
@@ -769,11 +771,12 @@
 	</div>
 		<div class="container-fluid">
 		<div class="row">
-			<div class="col-6">
+			<div class="col-lg-6 col-md-12 col-sm-12 overflow-auto">
+				<div class="container pos-abs overflow-auto">
 			<div class="modal-header">
         <h4 class="modal-title w-100 text-center" id="buyDluxTitle">DLUX-HIVE Order Book</h4>
 				</div>
-				<div class="modal-body overflow-auto mt-3 mb-5">
+				<div class="modal-body mt-3 mb-5">
 				<div class="container">
 				<h5 class="text-white-50 text-uppercase">Your Open Buy Orders</h5>
 				<hr class="bg-dark mt-0 mb-4">
@@ -875,8 +878,9 @@
 					
 				</div>
 			</div>
+				</div>
 			</div>
-		<div class="col-6">
+		<div class="col-lg-6 col-md-12 col-sm-12">
 			<div class="modal-header">
         <h4 class="modal-title w-100 text-center" id="buyDluxTitle">New DLUX Buy Order</h4>
 
@@ -909,12 +913,9 @@
 	   <label id="dluxamountlab" for="buydluxprice">Desired Price Each (<a href="#" onClick="insertBal()">Market Price: 0.2 HIVE</a>):</label>
 		<div class="input-group">
 			<input class="form-control" id="buydluxprice" type="number" step="0.001" min="0.001" placeholder="1.000">
-			<span class="select-wrapper">
-			<select class="form-control" id="hivehbdselect">
-      			<option>HIVE</option>
-				<option>HBD</option>
-			</select>
-			</span>
+			<div class="input-group-append">
+      		  <div class="input-group-text" id="paycoin">HIVE</div>
+    		</div>
 		  </div>
 			 </div>
 		  <div class="form-group">
@@ -926,13 +927,43 @@
     		</div>
 		  </div>
 			 </div>
+		 
+	   
+		
+			    <div class="form-group">
+					<label for="buydluxcustodialagent">Custodial Agent:</label>
+					<div class="input-group">
+			<div class="input-group-prepend">
+      		  <div class="input-group-text">@</div>
+    		</div>
+        <select id="buydluxcustodialagent" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="disregardfiat">
+          <option>disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+          <option>markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+          <option>dlux-io - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+          <option>heyhey - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+          <option>inconcievable - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+        </select>
+			
+				<div class="btn-group" role="group">
+    			<button id="btnGroupDrop1" type="button" class="btn btn-light append-radius dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sort-amount-down"></i></button>
+    			<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
+      			<a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd mr-2"></i>Sort By Fee</a>
+				<a class="dropdown-item" href="#"><i class="fas fa-award fa-fw mr-2"></i>Sort By Trust</a>
+				<a class="dropdown-item" href="#"><i class="fas fa-fish fa-fw mr-2"></i>Sort By Liquidity</a>
+    			</div>
+  				</div>
+      		 
+ 
+      </div>
+		  </div>
+			
 		  <div class="form-group">
-	   <label for="buydluxagent">Agent:</label>
+	   <label for="buydluxescrowagent">Escrow Agent:</label>
 		<div class="input-group">
 			<div class="input-group-prepend">
       		  <div class="input-group-text">@</div>
     		</div>
-        	<input class="form-control" id="buydluxagent" type="text" placeholder="disregardfiat">
+        	<input class="form-control" id="buydluxescrowagent" type="text" placeholder="disregardfiat">
 		  </div>
 			 </div>
 		   <div class="form-group">
@@ -954,7 +985,8 @@
 	
 </div>
 <?php include '../mod/footer.php';?>
-<script>
+
+	<script>
 // User Balances
 function pageSpecfic(usr){
 	console.log(usr.hstats)
@@ -975,6 +1007,9 @@ function pageSpecfic(usr){
             modal: false,
             footer: true
         });
+	
+// Filter Escrow Agent
+
 	
 // Javascript to enable link to tab
 var url = document.location.toString();

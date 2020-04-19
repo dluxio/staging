@@ -20,3 +20,4 @@
   $('[data-toggle="tooltip"]').tooltip()
 })
 </script>
+<script src="../js/bootstrap-select.js"></script>
