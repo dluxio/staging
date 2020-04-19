@@ -757,7 +757,7 @@
   </div>
 <!-- Buy DLUX Modal -->
 <div class="modal fade" id="buyDluxModal" tabindex="-1" role="dialog" aria-labelledby="buyDluxModalTitle" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document" id="buy-modal">
     <div class="modal-content bg-darker text-white">
       <div class="modal-header">
 		  <h3 class="modal-title" id="buyDluxTitle">Buy DLUX With: </h3>
@@ -770,18 +770,12 @@
         </button>
 	</div>
 		<div class="container-fluid">
-		<div class="row bg-dark py-2">
-			<div class="col-lg-6 col-md-12 col-sm-12">
-				<h4 class="text-center text-white-50">DLUX-HIVE Order Book</h4>
-			</div>
-			<div class="col-lg-6 col-md-12 col-sm-12">
-				<button class="btn btn-dark" onClick="toggleOrders()">Orderbook</button>
-				<h4 class="text-center text-white-50">New DLUX Buy Order</h4>
-			</div>
-		</div>
 		<div class="row" id="buy-main-row">
 			<div class="col-lg-6 col-md-12 col-sm-12 overflow-auto" id="orders">
-				<div class="container pos-abs ">
+				<div class="p-4">
+				<h4 class="text-center text-white-50">DLUX-HIVE Order Book</h4>
+				</div>
+				<div class="container pos-abs" id="order-container">
 				<div class="modal-body mt-3 mb-5">
 				<div class="container">
 				<h5 class="text-white-50 text-uppercase">Your Open Buy Orders</h5>
@@ -885,9 +879,13 @@
 				</div>
 			</div>
 		<div class="col-lg-6 col-md-12 col-sm-12 offset-0" id="buy-form">
+			<div class="p-4">
+			<button class="btn btn-dark float-left" onClick="toggleOrders()"><i class="fas fa-arrows-alt-h mr-2"></i><i class="fas fa-book-open"></i></button>
+				<h4 class="text-center text-white-50">New DLUX Buy Order</h4>
+			</div>
 		<form>
       <div class="modal-body">
-		  <div class="alert alert-dark m-2 text-center" role="alert">
+		  <div class="alert alert-dark m-1 text-center" role="alert">
  		<small>This will place a buy order on the <a href="../dex/">DEX (Decentralized Exchange)</a></small>
 		</div>
 	  <div class="form-group">
@@ -999,8 +997,9 @@
 // Toggle Order Book
 function toggleOrders() {
 	$("#orders").toggleClass("collapsed");
-	$("#buy-form").toggleClass("offset-lg-3 offset-lg-0");
-	
+	$("#order-container").toggleClass("pos-abs");
+	$("#buy-form").toggleClass("col-lg-6 col-lg-12");
+	$("#buy-modal").toggleClass("modal-xl");
 }
 // User Balances
 function pageSpecfic(usr){
