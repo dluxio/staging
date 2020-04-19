@@ -1031,8 +1031,8 @@ function dexmodal(pair,type){
 	document.getElementById('buyDluxTitle').innerText = 'Sell for:'
 	}
 	console.log(document.getElementById('menupairlab'))//.innerHtml = `Order Total (<a href="#" onClick="insertBal()">Balance: ${User[pair].balance}</a>):`
-	console.log(document.getElementById('menupair') //.max = parseFloat(User[pair].balance)
-	console.log(document.getElementById('menupricelab') //.innerHtml = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${User.dex[pair].tick.toFixed(4)} ${pair.toUpperCase()}</a>):`														    
+	console.log(document.getElementById('menupair')) //.max = parseFloat(User[pair].balance)
+	console.log(document.getElementById('menupricelab')) //.innerHtml = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${User.dex[pair].tick.toFixed(4)} ${pair.toUpperCase()}</a>):`														    
 
 
 }												       
