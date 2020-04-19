@@ -776,7 +776,7 @@
 		<div class="col-lg-12 col-md-12 col-sm-12" id="buy-form">
 			<div class="pt-4 pl-3 pr-3">
 				<button class="btn btn-dark float-right" onClick="toggleOrders()"><i class="fas fa-book-open mr-2"></i>Orders</button>
-				<h4 class="text-white-50 mt-2">New Buy Order</h4>
+				<h4 id="menutitle" class="text-white-50 mt-2">New Buy Order</h4>
 				
 			</div>
 		<form>
@@ -1028,15 +1028,21 @@ function pageSpecfic(usr){
 													       
 function dexmodal(pair,type){
 	if(type == 'buy'){
-	document.getElementById('buyDluxTitle').innerText = 'Buy with:'
+		document.getElementById('buyDluxTitle').innerText = 'Buy with:'
+		document.getElementById('menutitle').innerText = 'New Buy Order'
 	} else {
-	document.getElementById('buyDluxTitle').innerText = 'Sell for:'
+		document.getElementById('buyDluxTitle').innerText = 'Sell for:'
+		document.getElementById('menutitle').innerText = 'New Sell Order'
 	}
-	document.getElementById('menupairlab').innerHTML = `Order Total (<a href="#" onClick="insertBal()">Balance: ${User[pair].balance}</a>):`
-	document.getElementById('menupair').max = parseFloat(User[pair].balance)
-	document.getElementById('menupricelab').innerHTML = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${parseFloat(User.dex.markets[pair].tick).toFixed(4)} ${pair.toUpperCase()}</a>):`														    
-
-
+		document.getElementById('menupairlab').innerHTML = `Order Total (<a href="#" onClick="insertBal()">Balance: ${User[pair].balance}</a>):`
+		document.getElementById('menupair').max = parseFloat(User[pair].balance)
+		document.getElementById('menupricelab').innerHTML = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${parseFloat(User.dex.markets[pair].tick).toFixed(4)} ${pair.toUpperCase()}</a>):`														    
+		let options = []
+		for(i in User.dex.queue){
+			options.push(`<option>${User.dex.queue[i]} - Fee: .0 HIVE</option>`)
+		}
+		document.getElementById('menueagent').innerHTML = options.concat()
+		document.getElementById('menucagent').innerHTML = options.concat()
 }												       
 	
 // Date Picker
