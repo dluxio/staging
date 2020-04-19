@@ -755,13 +755,131 @@
   </div>
 <!-- Buy DLUX Modal -->
 <div class="modal fade" id="buyDluxModal" tabindex="-1" role="dialog" aria-labelledby="buyDluxModalTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
     <div class="modal-content bg-darker text-white">
       <div class="modal-header">
-        <h5 class="modal-title" id="buyDluxTitle">Buy DLUX</h5>
+		  <h3 class="modal-title" id="buyDluxTitle">Buy DLUX With: </h3>
+		  <ul class="nav nav-pills ml-3" role="tablist">
+		  	<li class="nav-item"><a href="#" class="nav-link active" data-toggle="tabs">HIVE</a></li>
+			<li class="nav-item"><a href="#" class="nav-link" data-toggle="tabs">HBD</a></li>
+		  </ul>
 		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span class="close text-white">×</span>
         </button>
+	</div>
+		<div class="container-fluid">
+		<div class="row">
+			<div class="col-6">
+			<div class="modal-header">
+        <h4 class="modal-title w-100 text-center" id="buyDluxTitle">DLUX-HIVE Order Book</h4>
+				</div>
+				<div class="modal-body overflow-auto mt-3 mb-5">
+				<div class="container">
+				<h5 class="text-white-50 text-uppercase">Your Open Buy Orders</h5>
+				<hr class="bg-dark mt-0 mb-4">
+				<div class="clearfix">
+				<div class="float-left">
+				<p>Buy 100 DLUX for 25 HIVE</p>
+				</div>
+				<div class="float-right">
+				<button class="btn btn-75 btn-outline-warning">Cancel</button>
+				</div>
+      			</div>
+				<hr class="bg-dark mx-2">
+				<div class="clearfix">
+				<div class="float-left">
+				<p>Buy 100 DLUX for 25 HIVE</p>
+				</div>
+				<div class="float-right">
+				<button class="btn btn-75 btn-outline-warning">Cancel</button>
+				</div>
+      			</div>
+				<hr class="bg-dark mx-2">
+				<div class="clearfix">
+				<div class="float-left">
+				<p>Buy 100 DLUX for 25 HIVE</p>
+				</div>
+				<div class="float-right">
+				<button class="btn btn-75 btn-outline-warning">Cancel</button>
+				</div>
+      			</div>	
+				</div>	
+					
+				<div class="container mt-5 mb-3">
+				<h5 class="text-white-50 text-uppercase">Sell Orders on DEX</h5>
+				<hr class="bg-dark mt-0 mb-4">
+				<div class="clearfix">
+				<div class="float-left">
+				<p>Buy 100 DLUX for 25 HIVE</p>
+				</div>
+				<div class="float-right">
+				<button class="btn btn-75 btn-outline-success">Buy</button>
+				</div>
+      			</div>
+				<hr class="bg-dark mx-2">
+				<div class="clearfix">
+				<div class="float-left">
+				<p>Buy 100 DLUX for 25 HIVE</p>
+				</div>
+				<div class="float-right">
+				<button class="btn btn-75 btn-outline-success">Buy</button>
+				</div>
+      			</div>
+				<hr class="bg-dark mx-2">
+				<div class="clearfix">
+				<div class="float-left">
+				<p>Buy 100 DLUX for 25 HIVE</p>
+				</div>
+				<div class="float-right">
+				<button class="btn btn-75 btn-outline-success">Buy</button>
+				</div>
+      			</div>
+				<hr class="bg-dark mx-2">
+				<div class="clearfix">
+				<div class="float-left">
+				<p>Buy 100 DLUX for 25 HIVE</p>
+				</div>
+				<div class="float-right">
+				<button class="btn btn-75 btn-outline-success">Buy</button>
+				</div>
+      			</div>
+				<hr class="bg-dark mx-2">
+				<div class="clearfix">
+				<div class="float-left">
+				<p>Buy 100 DLUX for 25 HIVE</p>
+				</div>
+				<div class="float-right">
+				<button class="btn btn-75 btn-outline-success">Buy</button>
+				</div>
+      			</div>
+				<hr class="bg-dark mx-2">
+				<div class="clearfix">
+				<div class="float-left">
+				<p>Buy 100 DLUX for 25 HIVE</p>
+				</div>
+				<div class="float-right">
+				<button class="btn btn-75 btn-outline-success">Buy</button>
+				</div>
+      			</div>
+				<hr class="bg-dark mx-2">
+				<div class="clearfix">
+				<div class="float-left">
+				<p>Buy 100 DLUX for 25 HIVE</p>
+				</div>
+				<div class="float-right">
+				<button class="btn btn-75 btn-outline-success">Buy</button>
+				</div>
+      			</div>
+					
+					
+					
+				</div>
+			</div>
+			</div>
+		<div class="col-6">
+			<div class="modal-header">
+        <h4 class="modal-title w-100 text-center" id="buyDluxTitle">New DLUX Buy Order</h4>
+
       </div>
 		<form>
       <div class="modal-body">
@@ -827,7 +945,10 @@
         <button type="button" class="btn btn-primary" onClick="dluxsend('senddluxto', 'senddluxamount', 'senddluxmemo')">Continue</button>
 		</div>
 	  </form>
+		</div>
+			</div>
     </div>
+	  </div>
   </div>
 </div>
 	

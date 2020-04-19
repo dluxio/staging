@@ -7802,6 +7802,9 @@ body {
 .none {
   object-fit: none; }
 
+.pos-fixed {
+  position: fixed; }
+
 .btn-launch {
   border-radius: 20px 20px 20px 20px; }
 
@@ -7821,6 +7824,12 @@ body {
 
 .btn-1 {
   width: 125px; }
+
+.btn-75 {
+  width: 75px; }
+
+.ml-100 {
+  margin-left: 100px; }
 
 .padme-t70 {
   padding-top: 70px; }
