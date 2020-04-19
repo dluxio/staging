@@ -1024,12 +1024,12 @@ function pageSpecfic(usr){
 }
 													       
 function dexmodal(pair,type){
-	let not = 'hbd'
 	if(type == 'buy'){
 	document.getElementById('buyDluxTitle').innerText = 'Buy with:'
 	} else {
 	document.getElementById('buyDluxTitle').innerText = 'Sell for:'
 	}
+	console.log(pair, User.dex)
 	document.getElementById('menupairlab').innerHtml = `Order Total (<a href="#" onClick="insertBal()">Balance: ${User[pair].balance}</a>):`
 	document.getElementById('menupair').max = parseFloat(User[pair].balance)
 	document.getElementById('menupricelab').innerHtml = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${User.dex[pair].tick.toFixed(4)} ${pair.toUpperCase()}</a>):`														    
