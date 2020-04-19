@@ -20,6 +20,8 @@
 		window.scrollTo(0, 0);
 }
 	</script>
+<script type="text/javascript" src="../js/dex.js"></script>
+
 </head>
 
 <body class="d-flex flex-column h-100" id="apps" is="dmx-app">
@@ -876,7 +878,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" onClick="dluxsend('senddluxto', 'senddluxamount', 'senddluxmemo')">Continue</button>
+        <button type="button" class="btn btn-primary" onClick="dexsend(document.getElementById('buyDluxTitle').innerText.split(' ')[0], User.pair)">Continue</button>
 		</div>
 	  </form>
 		</div>
@@ -1027,6 +1029,7 @@ function pageSpecfic(usr){
 }
 													       
 function dexmodal(pair,type){
+	User.pair = pair
 	if(type == 'buy'){
 		document.getElementById('buyDluxTitle').innerText = 'Buy with:'
 		document.getElementById('menutitle').innerText = 'New Buy Order'
