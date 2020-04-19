@@ -7873,9 +7873,6 @@ body {
   /* for the animation */
   transition: margin 0.3s ease; }
 
-.collapsed {
-  display: none; }
-
 .pos-abs {
   position: absolute; }
 

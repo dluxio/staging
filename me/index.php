@@ -926,6 +926,7 @@
 		  </div>
 			 </div>
 		 <p><a data-toggle="collapse" href="#buydluxadvanced" role="button" aria-expanded="false" aria-controls="collapseExample">Toggle Advanced Options</a></p>
+		  
 	   <div class="collapse" id="buydluxadvanced">
 		<label for="buydluxcustodialagent">Custodial Agent:</label>
 		<div class="form-row" style="margin-bottom: 16px;">
@@ -996,7 +997,7 @@
 	<script>
 // Toggle Order Book
 function toggleOrders() {
-	$("#orders").toggleClass("collapsed");
+	$("#orders").toggleClass("d-none");
 	$("#order-container").toggleClass("pos-abs");
 	$("#buy-form").toggleClass("col-lg-6 col-lg-12");
 	$("#buy-modal").toggleClass("modal-xl");
