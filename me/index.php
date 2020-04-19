@@ -794,27 +794,27 @@
 			 </div>
 		  
 		  <div class="form-group">
-	   <label id="dluxamountlab" for="buydluxquantity">Desired Quantity:</label>
+	   <label id="menudluxlab" for="buydluxquantity">Desired Quantity:</label>
 		<div class="input-group">
-			<input class="form-control" id="buydluxquantity" type="number" step="0.001" min="0.001" placeholder="1.000">
+			<input class="form-control" id="menudlux" type="number" step="0.001" min="0.001" placeholder="1.000">
 			<div class="input-group-append">
       		  <div class="input-group-text">DLUX</div>
     		</div>
 		  </div>
 			 </div>
         <div class="form-group">
-	   <label id="dluxamountlab" for="buydluxprice">Desired Price Each (<a href="#" onClick="insertBal()">Market Price: 0.2 HIVE</a>):</label>
+	   <label id="menupricelab" for="buydluxprice">Desired Price Each (<a href="#" onClick="insertBal()">Market Price: 0.2 HIVE</a>):</label>
 		<div class="input-group">
-			<input class="form-control" id="buydluxprice" type="number" step="0.001" min="0.001" placeholder="1.000">
+			<input class="form-control" id="menuprice" type="number" placeholder="1.000">
 			<div class="input-group-append">
-      		  <div class="input-group-text" id="paycoin">HIVE</div>
+      		  <div class="input-group-text" id="menupairlab">HIVE</div>
     		</div>
 		  </div>
 			 </div>
 		  <div class="form-group">
-	   <label id="dluxamountlab" for="buydluxtotal">Order Total (<a href="#" onClick="insertBal()">HIVE Balance: 486 HIVE</a>):</label>
+	   <label id="menupairlab for="buydluxtotal">Order Total (<a href="#" onClick="insertBal()">HIVE Balance: 486 HIVE</a>):</label>
 		<div class="input-group">
-			<input class="form-control" id="buydluxtotal" type="number" step="0.001" min="0.001" placeholder="1.000">
+			<input class="form-control" id="menupair" type="number" step="0.001" min="0.001" placeholder="1.000">
 			<div class="input-group-append">
       		  <div class="input-group-text" id="paycoin">HIVE</div>
     		</div>
@@ -827,7 +827,7 @@
 			<div class="input-group-prepend">
       		  <div class="input-group-text">@</div>
     		</div>			
-        <select id="buydluxcustodialagent" class="selectpicker flex-fill" data-live-search="true" data-live-search-style="begins" title="disregardfiat">
+        <select id="menucagent" class="selectpicker flex-fill" data-live-search="true" data-live-search-style="begins" title="disregardfiat">
           <option>disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
           <option>markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
           <option>dlux-io - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
@@ -849,7 +849,7 @@
 			<div class="input-group-prepend">
       		  <div class="input-group-text">@</div>
     		</div>			
-        <select id="buydluxescrowagent" class="selectpicker flex-fill" data-live-search="true" data-live-search-style="begins" title="markegiles">
+        <select id="menueagent" class="selectpicker flex-fill" data-live-search="true" data-live-search-style="begins" title="markegiles">
           <option>disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
           <option>markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
           <option>dlux-io - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
@@ -867,7 +867,7 @@
       </div>
 		  
 		   <div class="form-group">
-			   <label for="buydluxexpire">Expiration Date and Time:</label>
+			   <label for="menuexpire">Expiration Date and Time:</label>
 				<input class="form-control" id="buydluxexpire" />
 			 </div>
 		  </div>
@@ -1016,6 +1016,9 @@ function pageSpecfic(usr){
 	document.getElementById('savingsactions').firstElementChild.innerText = usr.hive.savings_sbd_balance
 	document.getElementById('hiveval').firstElementChild.innerText = `$${parseFloat((parseFloat(( parseFloat(User.hstats.total_vesting_fund_steem) * parseFloat(User.hive.vesting_shares)) / parseFloat(User.hstats.total_vesting_shares)) + parseFloat(usr.hive.balance))*User.price).toFixed(2)}`
 	document.getElementById('dluxval').firstElementChild.innerText = `$${parseFloat(((parseInt(usr.dlux.balance) + parseInt(usr.dlux.poweredUp))/1000)*parseFloat(usr.dex.markets.hive.tick)*parseFloat(usr.price)).toFixed(2)}`
+	document.getElementById('menupairlab').innerHTML = `Order Total (<a href="#" onClick="insertBal()">HIVE Balance: ${User.hive.balance}</a>):`
+	document.getElementById('menupair').max = parseFloat(User.hive.balance)
+	document.getElementById('menupricelab').innerHTML = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${User.dex.hive.tick.toFixed(4)} HIVE</a>):`														    
 }	
 	
 // Date Picker
