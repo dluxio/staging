@@ -760,7 +760,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document" id="buy-modal">
     <div class="modal-content bg-darker text-white">
       <div class="modal-header">
-		  <h3 class="modal-title" id="buyDluxTitle">Buy DLUX With: </h3>
+		  <h3 class="modal-title" id="buyDluxTitle">Buy With: </h3>
 		  <ul class="nav nav-pills ml-3" role="tablist">
 		  	<li class="nav-item"><a href="#" class="nav-link active" data-toggle="tabs">HIVE</a></li>
 			<li class="nav-item"><a href="#" class="nav-link" data-toggle="tabs">HBD</a></li>
@@ -775,7 +775,7 @@
 		<div class="col-lg-12 col-md-12 col-sm-12" id="buy-form">
 			<div class="pt-4 pl-3 pr-3">
 				<button class="btn btn-dark float-right" onClick="toggleOrders()"><i class="fas fa-book-open mr-2"></i>Orders</button>
-				<h4 class="text-white-50 mt-2">New DLUX Buy Order</h4>
+				<h4 class="text-white-50 mt-2">New Buy Order</h4>
 				
 			</div>
 		<form>
