@@ -813,7 +813,7 @@
 		  </div>
 			 </div>
 		  <div class="form-group">
-	   <label id="menupairlab for="buydluxtotal">Order Total (<a href="#" onClick="insertBal()">HIVE Balance: 486 HIVE</a>):</label>
+	   <label id="menupairlab" for="buydluxtotal">Order Total (<a href="#" onClick="insertBal()">HIVE Balance: 486 HIVE</a>):</label>
 		<div class="input-group">
 			<input class="form-control" id="menupair" type="number" step="0.001" min="0.001" placeholder="1.000">
 			<div class="input-group-append">
