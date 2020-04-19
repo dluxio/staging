@@ -19,17 +19,8 @@
  		$(`[href="#${url}"]`).tab('show');
 		window.scrollTo(0, 0);
 }
-	// Set active tab
-$(document).ready(function(){
-  $("buywithhivetab").click(function(){
-    $("buywithhivetab").addClass("active");
-    $("buywithhbdtab").removeClass("active");
-  });
-  $("buywithhbdtab").click(function(){
-    $("buywithhbdtab").addClass("active");
-    $("buywithhivetab").removeClass("active");
-  });
-});
+
+
 	</script>
 <script type="text/javascript" src="../js/dex.js"></script>
 
@@ -776,8 +767,8 @@ $(document).ready(function(){
       <div class="modal-header">
 		  <h3 class="modal-title" id="buyDluxTitle">Buy With: </h3>
 		  <ul class="nav nav-pills ml-3" role="tablist">
-		  	<li class="nav-item"><a href="javascript:dexmodal('hive', 'buy')" class="nav-link active" id="buywithhivetab">HIVE</a></li>
-			<li class="nav-item"><a href="javascript:dexmodal('hbd', 'buy')" class="nav-link" id="buywithhbdtab">HBD</a></li>
+		  	<li class="nav-item"><a href="javascript:dexmodal('hive', 'buy')" class="nav-link active" id="buywithhivetab" onClick="toggleActive()">HIVE</a></li>
+			<li class="nav-item"><a href="javascript:dexmodal('hbd', 'buy')" class="nav-link" id="buywithhbdtab" onClick="toggleActive()">HBD</a></li>
 		  </ul>
 		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span class="close text-white">×</span>
@@ -788,7 +779,7 @@ $(document).ready(function(){
 			
 		<div class="col-lg-12 col-md-12 col-sm-12" id="buy-form">
 			<div class="pt-4 pl-3 pr-3">
-				<button class="btn btn-dark float-right" onClick="toggleOrders()"><i class="fas fa-book-open mr-2"></i>Orders</button>
+				<button class="btn btn-dark float-right d-none d-lg-block" onClick="toggleOrders()"><i class="fas fa-book-open mr-2"></i>Orders</button>
 				<h4 id="menutitle" class="text-white-50 mt-2">New Buy Order</h4>
 				
 			</div>
@@ -837,7 +828,7 @@ $(document).ready(function(){
 		 <p><a data-toggle="collapse" href="#buydluxadvanced" role="button" aria-expanded="false" aria-controls="collapseExample">Advanced Options<i class="fas fa-angle-double-down ml-2"></i></a></p>
 	   <div class="collapse" id="buydluxadvanced">
 		<label for="buydluxcustodialagent">Custodial Agent:</label>
-		<div class="form-row" style="margin-bottom: 16px;">
+		<div class="form-row form-group-fix" >
 			<div class="input-group-prepend">
       		  <div class="input-group-text">@</div>
     		</div>			
@@ -859,7 +850,7 @@ $(document).ready(function(){
       </div>
 		  
 		  <label for="buydluxescrowagent">Escrow Agent:</label>
-		<div class="form-row" style="margin-bottom: 16px;">
+		<div class="form-row form-group-fix">
 			<div class="input-group-prepend">
       		  <div class="input-group-text">@</div>
     		</div>			
@@ -888,9 +879,13 @@ $(document).ready(function(){
 		  
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+		<div class="mr-auto d-lg-none">
+		  <button type="button" class="btn btn-dark " onClick="toggleOrdersSM()"><i class="fas fa-book-open mr-2"></i>Orders</button>
+        </div>
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         <button type="button" class="btn btn-primary" onClick="dexsend(document.getElementById('buyDluxTitle').innerText.split(' ')[0], User.pair)">Continue</button>
-		</div>
+		
+		  </div>
 	  </form>
 		</div>
 			
@@ -898,7 +893,7 @@ $(document).ready(function(){
 				<div class="p-4">
 				<h4 class="text-center text-white-50">DLUX-HIVE Order Book</h4>
 				</div>
-				<div class="container pos-abs" id="order-container">
+				<div class="container" id="order-container">
 				<div class="modal-body mt-3 mb-5">
 				<div class="container">
 				<h5 class="text-white-50 text-uppercase">Your Open Buy Orders</h5>
@@ -1012,12 +1007,22 @@ $(document).ready(function(){
 <?php include '../mod/footer.php';?>
 
 	<script>
-
-// Toggle Order Book
+// Set active tab
+function toggleActive(){
+    $("#buywithhivetab").toggleClass("active");
+    $("#buywithhbdtab").toggleClass("active");
+  }
+// Toggle Order Book LG
 function toggleOrders() {
 	$("#orders").toggleClass("d-none");
 	$("#buy-form").toggleClass("col-lg-12 col-lg-6");
 	$("#buy-modal").toggleClass("modal-xl");
+	$("#order-container").addClass("pos-abs");
+}
+// Toggle Order Book MD SM XS
+function toggleOrdersSM() {
+	$("#orders").toggleClass("d-none");
+	$("#order-container").removeClass("pos-abs");
 }
 // User Balances
 function pageSpecfic(usr){

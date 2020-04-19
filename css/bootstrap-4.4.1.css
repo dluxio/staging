@@ -7876,6 +7876,11 @@ body {
 .pos-abs {
   position: absolute; }
 
+.form-group-fix {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 16px; }
+
 @media (max-width: 575.98px) {
   .card-columns {
     column-count: 1; } }

@@ -72,7 +72,9 @@ body {background-color: #222222}
 
 .pos-abs {position: absolute;}
 
-
+.form-group-fix {
+	padding-left: 5px; padding-right: 5px; margin-bottom: 16px;
+}
 
 .card-columns {
   @include media-breakpoint-only(xs) {
