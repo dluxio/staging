@@ -196,8 +196,8 @@
     						<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
       							<a class="dropdown-item" href="#" data-toggle="modal" data-target="#powerupDluxModal"><i class="fas fa-angle-double-up fa-fw mr-2"></i>Power Up</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#" data-toggle="modal" data-target="#buyDluxModal"><i class="fas fa-cart-arrow-down fa-fw mr-2"></i>Buy DLUX</a>
-								<a class="dropdown-item" href="#" data-toggle="modal" data-target="#sellDluxModal"><i class="fas fa-coins fa-fw mr-2"></i>Sell DLUX</a>
+								<a class="dropdown-item" href="#" id="buylink" data-toggle="modal" data-target="#buyDluxModal"><i class="fas fa-cart-arrow-down fa-fw mr-2"></i>Buy DLUX</a>
+								<a class="dropdown-item" href="#" id="selllink" data-toggle="modal" data-target="#buyDluxModal"><i class="fas fa-coins fa-fw mr-2"></i>Sell DLUX</a>
     						</div>
   							</div>
 						</div>
@@ -1007,6 +1007,7 @@ function toggleOrders() {
 // User Balances
 function pageSpecfic(usr){
 	console.log(usr.hstats)
+	User.hbd = {balance: usr.hive.sbd_balance}				      
 	document.getElementById('dluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal()">${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
 	document.getElementById('dluxactions').firstElementChild.innerText = `${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX`
 	document.getElementById('dluxpactions').firstElementChild.innerText = `${parseFloat(parseInt(usr.dlux.poweredUp)/1000).toFixed(3)} DLUX`
@@ -1016,10 +1017,18 @@ function pageSpecfic(usr){
 	document.getElementById('savingsactions').firstElementChild.innerText = usr.hive.savings_sbd_balance
 	document.getElementById('hiveval').firstElementChild.innerText = `$${parseFloat((parseFloat(( parseFloat(User.hstats.total_vesting_fund_steem) * parseFloat(User.hive.vesting_shares)) / parseFloat(User.hstats.total_vesting_shares)) + parseFloat(usr.hive.balance))*User.price).toFixed(2)}`
 	document.getElementById('dluxval').firstElementChild.innerText = `$${parseFloat(((parseInt(usr.dlux.balance) + parseInt(usr.dlux.poweredUp))/1000)*parseFloat(usr.dex.markets.hive.tick)*parseFloat(usr.price)).toFixed(2)}`
-	document.getElementById('menupairlab').innerHtml = `Order Total (<a href="#" onClick="insertBal()">HIVE Balance: ${User.hive.balance}</a>):`
-	document.getElementById('menupair').max = parseFloat(User.hive.balance)
-	document.getElementById('menupricelab').innerHtml = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${User.dex.hive.tick.toFixed(4)} HIVE</a>):`														    
-}	
+	document.getElementById('buylink').addEventListener("click", dexmodal("hive", "buy"));
+	document.getElementById('selllink').addEventListener("click", dexmodal("hive", "sell"));
+
+}
+													       
+function dexmodal(pair,type){
+	document.getElementById('menupairlab').innerHtml = `Order Total (<a href="#" onClick="insertBal()">Balance: ${User[pair].balance}</a>):`
+	document.getElementById('menupair').max = parseFloat(User[pair].balance)
+	document.getElementById('menupricelab').innerHtml = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${User.dex[pair].tick.toFixed(4)} ${pair.toUpperCase()}</a>):`														    
+
+
+}												       
 	
 // Date Picker
   $('#buydluxexpire').datetimepicker({
