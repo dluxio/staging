@@ -757,7 +757,7 @@
   </div>
 <!-- Buy DLUX Modal -->
 <div class="modal fade" id="buyDluxModal" tabindex="-1" role="dialog" aria-labelledby="buyDluxModalTitle" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered" role="document" id="buy-modal">
+  <div class="modal-dialog modal-dialog-centered" role="document" id="buy-modal">
     <div class="modal-content bg-darker text-white">
       <div class="modal-header">
 		  <h3 class="modal-title" id="buyDluxTitle">Buy DLUX With: </h3>
@@ -771,7 +771,7 @@
 	</div>
 		<div class="container-fluid">
 		<div class="row" id="buy-main-row">
-			<div class="col-lg-6 col-md-12 col-sm-12 overflow-auto" id="orders">
+			<div class="col-lg-6 col-md-12 col-sm-12 overflow-auto d-none" id="orders">
 				<div class="p-4">
 				<h4 class="text-center text-white-50">DLUX-HIVE Order Book</h4>
 				</div>
@@ -878,9 +878,9 @@
 				</div>
 				</div>
 			</div>
-		<div class="col-lg-6 col-md-12 col-sm-12 offset-0" id="buy-form">
+		<div class="col-lg-12 col-md-12 col-sm-12" id="buy-form">
 			<div class="p-4">
-			<button class="btn btn-dark float-left" onClick="toggleOrders()"><i class="fas fa-arrows-alt-h mr-2"></i><i class="fas fa-book-open"></i></button>
+			<button class="btn btn-dark float-left" onClick="toggleOrders()"><i class="fas fa-book-open mr-2"></i>Orders</button>
 				<h4 class="text-center text-white-50">New DLUX Buy Order</h4>
 			</div>
 		<form>
@@ -998,8 +998,7 @@
 // Toggle Order Book
 function toggleOrders() {
 	$("#orders").toggleClass("d-none");
-	$("#order-container").toggleClass("pos-abs");
-	$("#buy-form").toggleClass("col-lg-6 col-lg-12");
+	$("#buy-form").toggleClass("col-lg-12 col-lg-6");
 	$("#buy-modal").toggleClass("modal-xl");
 }
 // User Balances
