@@ -1041,8 +1041,8 @@ function dexmodal(pair,type){
 		for(i in User.dex.queue){
 			options.push(`<option>${User.dex.queue[i]} - Fee: .0 HIVE</option>`)
 		}
-		document.getElementById('menueagent').innerHTML = options.concat()
-		document.getElementById('menucagent').innerHTML = options.concat()
+		console.log(document.getElementById('menueagent')) //.innerHTML = options.concat()
+		console.log(document.getElementById('menucagent')) //.innerHTML = options.concat()
 }												       
 	
 // Date Picker
