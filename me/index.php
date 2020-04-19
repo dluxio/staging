@@ -14,6 +14,7 @@
 <!--Bootstrap Select-->
 <link href="../css/bootstrap-select.css" rel="stylesheet" type="text/css" />
 <script>
+	let type
 	function changeTab(url){
  		$(`[href="#${url}"]`).tab('show');
 		window.scrollTo(0, 0);
@@ -1022,7 +1023,8 @@ function pageSpecfic(usr){
 
 }
 													       
-function dexmodal(pair,type){
+function dexmodal(pair,Type){
+	type =Type										     
 	let not = (type == 'hbd') ? 'hive' : 'hbd'
 	console.log(pair,type, not) 					     
 	document.getElementById(`${type}tab`).class = 'nav-link active'							     
