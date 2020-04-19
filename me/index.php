@@ -8,6 +8,9 @@
 <script type="text/javascript" src="../dmxAppConnect/dmxMoment.js"></script>
 <script type="text/javascript" src="../dmxAppConnect/dmxFormatter.js"></script>
 <script type="text/javascript" src="../dmxAppConnect/dmxDataTraversal/dmxDataTraversal.js"></script>
+<!--Date Picker-->
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 <script>
 	function changeTab(url){
  		$(`[href="#${url}"]`).tab('show');
@@ -191,7 +194,8 @@
     						<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
       							<a class="dropdown-item" href="#" data-toggle="modal" data-target="#powerupDluxModal"><i class="fas fa-angle-double-up fa-fw mr-2"></i>Power Up</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="../dex/"><i class="fas fa-cart fa-fw mr-2"></i>Buy DLUX</a>
+								<a class="dropdown-item" href="#" data-toggle="modal" data-target="#buyDluxModal"><i class="fas fa-cart-arrow-down fa-fw mr-2"></i>Buy DLUX</a>
+								<a class="dropdown-item" href="#" data-toggle="modal" data-target="#sellDluxModal"><i class="fas fa-coins fa-fw mr-2"></i>Sell DLUX</a>
     						</div>
   							</div>
 						</div>
@@ -754,16 +758,18 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content bg-darker text-white">
       <div class="modal-header">
-        <h5 class="modal-title" id="buyDluxTitle">Playce A Buy Order For DLUX</h5>
+        <h5 class="modal-title" id="buyDluxTitle">Buy DLUX</h5>
 		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span class="close text-white">×</span>
         </button>
-		  <p>This will place a buy order on the <a href="../dex/">DEX (Decentralized Exchange)</a></p>
       </div>
 		<form>
       <div class="modal-body">
+		  <div class="alert alert-dark m-2 text-center" role="alert">
+ 		<small>This will place a buy order on the <a href="../dex/">DEX (Decentralized Exchange)</a></small>
+		</div>
 	  <div class="form-group">
-	   <label for="buydluxfrom">From:</label>
+	   <label for="buydluxfrom">Buyer:</label>
 		<div class="input-group">
 			<div class="input-group-prepend">
       		  <div class="input-group-text">@</div>
@@ -773,20 +779,32 @@
 			 </div>
 		  
 		  <div class="form-group">
-	   <label id="dluxamountlab" for="buydluxammount">Amount (HIVE Balance <a href="#" onClick="insertBal()">917.26</a>):</label>
+	   <label id="dluxamountlab" for="buydluxquantity">Desired Quantity:</label>
 		<div class="input-group">
-			<input class="form-control" id="buydluxamount" type="number" step="0.001" min="0.001" placeholder="1.000">
+			<input class="form-control" id="buydluxquantity" type="number" step="0.001" min="0.001" placeholder="1.000">
 			<div class="input-group-append">
       		  <div class="input-group-text">DLUX</div>
     		</div>
 		  </div>
 			 </div>
         <div class="form-group">
-	   <label id="dluxamountlab" for="buydluxammount">Amount (HIVE Balance <a href="#" onClick="insertBal()">917.26</a>):</label>
+	   <label id="dluxamountlab" for="buydluxprice">Desired Price Each (<a href="#" onClick="insertBal()">Market Price: 0.2 HIVE</a>):</label>
 		<div class="input-group">
-			<input class="form-control" id="buydluxamount" type="number" step="0.001" min="0.001" placeholder="1.000">
+			<input class="form-control" id="buydluxprice" type="number" step="0.001" min="0.001" placeholder="1.000">
+			<span class="select-wrapper">
+			<select class="form-control" id="hivehbdselect">
+      			<option>HIVE</option>
+				<option>HBD</option>
+			</select>
+			</span>
+		  </div>
+			 </div>
+		  <div class="form-group">
+	   <label id="dluxamountlab" for="buydluxtotal">Order Total (<a href="#" onClick="insertBal()">HIVE Balance: 486 HIVE</a>):</label>
+		<div class="input-group">
+			<input class="form-control" id="buydluxtotal" type="number" step="0.001" min="0.001" placeholder="1.000">
 			<div class="input-group-append">
-      		  <div class="input-group-text">DLUX</div>
+      		  <div class="input-group-text" id="paycoin">HIVE</div>
     		</div>
 		  </div>
 			 </div>
@@ -796,10 +814,13 @@
 			<div class="input-group-prepend">
       		  <div class="input-group-text">@</div>
     		</div>
-        	<input class="form-control" id="buydluxagent" type="text" placeholder="@disregardfiat">
+        	<input class="form-control" id="buydluxagent" type="text" placeholder="disregardfiat">
 		  </div>
 			 </div>
-		
+		   <div class="form-group">
+			   <label for="buydluxexpire">Expiration Date and Time:</label>
+				<input class="form-control" id="buydluxexpire" />
+			 </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -813,7 +834,7 @@
 </div>
 <?php include '../mod/footer.php';?>
 <script>
-// Javascript to enable link to tab
+// User Balances
 function pageSpecfic(usr){
 	console.log(usr.hstats)
 	document.getElementById('dluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal()">${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
@@ -827,6 +848,14 @@ function pageSpecfic(usr){
 	document.getElementById('dluxval').firstElementChild.innerText = `$${parseFloat(((parseInt(usr.dlux.balance) + parseInt(usr.dlux.poweredUp))/1000)*parseFloat(usr.dex.markets.hive.tick)*parseFloat(usr.price)).toFixed(2)}`
 }	
 	
+// Date Picker
+  $('#buydluxexpire').datetimepicker({
+            uiLibrary: 'bootstrap4',
+            modal: false,
+            footer: true
+        });
+	
+// Javascript to enable link to tab
 var url = document.location.toString();
 if (url.match('#')) {
     $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
