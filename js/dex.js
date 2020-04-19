@@ -11,7 +11,13 @@ function cancel(txid) {
             reqsign(['custom_json', params], ['active', user])
         }
 
-
+function dexsend(type,pair){
+	if(type == 'Buy' && pair == 'hbd'){placeHbdBuy()}
+	else if(type == 'Buy' && pair == 'hive'){placeHiveBuy()}
+	else if(type == 'Sell' && pair == 'hive'){placeHiveAsk()}
+	else if(type == 'Sell' && pair == 'hbd'){placeHibdAsk()}
+	
+}
 
         function placeHiveAsk() {
             var dlux = parseInt(parseFloat(document.getElementById('menudlux').value) * 1000),
@@ -95,7 +101,6 @@ function cancel(txid) {
 
 
         }
-
 
         function placeHbdBuy() {
             var dlux = parseInt(parseFloat(document.getElementById('menudlux').value) * 1000),
