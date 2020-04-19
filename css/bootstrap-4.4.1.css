@@ -7862,6 +7862,9 @@ body {
   border-top-right-radius: 5px !important;
   border-bottom-right-radius: 5px !important; }
 
+.no-radius {
+  border-radius: 0px !important; }
+
 .drop-no-arrow::after {
   display: none; }
 

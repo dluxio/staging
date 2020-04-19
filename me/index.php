@@ -929,43 +929,50 @@
 			 </div>
 		 
 	   
-		
-			    <div class="form-group">
-					<label for="buydluxcustodialagent">Custodial Agent:</label>
-					<div class="input-group">
+		<label for="buydluxcustodialagent">Custodial Agent:</label>
+		<div class="form-row" style="margin-bottom: 16px;">
 			<div class="input-group-prepend">
       		  <div class="input-group-text">@</div>
-    		</div>
-        <select id="buydluxcustodialagent" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="disregardfiat">
+    		</div>			
+        <select id="buydluxcustodialagent" class="selectpicker flex-fill" data-live-search="true" data-live-search-style="begins" title="disregardfiat">
           <option>disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
           <option>markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
           <option>dlux-io - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
           <option>heyhey - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
           <option>inconcievable - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
         </select>
-			
-				<div class="btn-group" role="group">
-    			<button id="btnGroupDrop1" type="button" class="btn btn-light append-radius dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sort-amount-down"></i></button>
-    			<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
-      			<a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd mr-2"></i>Sort By Fee</a>
-				<a class="dropdown-item" href="#"><i class="fas fa-award fa-fw mr-2"></i>Sort By Trust</a>
-				<a class="dropdown-item" href="#"><i class="fas fa-fish fa-fw mr-2"></i>Sort By Liquidity</a>
-    			</div>
-  				</div>
-      		 
- 
+		<div class="btn-group" role="group">
+		<button id="btnGroupDrop1" type="button" class="btn btn-light append-radius dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sort-amount-down"></i></button>
+		<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
+    	<a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd mr-2"></i>Sort By Fee</a>
+		<a class="dropdown-item" href="#"><i class="fas fa-award fa-fw mr-2"></i>Sort By Trust</a>
+		<a class="dropdown-item" href="#"><i class="fas fa-fish fa-fw mr-2"></i>Sort By Liquidity</a>
+    	</div>
+  		</div>
       </div>
-		  </div>
-			
-		  <div class="form-group">
-	   <label for="buydluxescrowagent">Escrow Agent:</label>
-		<div class="input-group">
+		  
+		  <label for="buydluxescrowagent">Escrow Agent:</label>
+		<div class="form-row" style="margin-bottom: 16px;">
 			<div class="input-group-prepend">
       		  <div class="input-group-text">@</div>
-    		</div>
-        	<input class="form-control" id="buydluxescrowagent" type="text" placeholder="disregardfiat">
-		  </div>
-			 </div>
+    		</div>			
+        <select id="buydluxescrowagent" class="selectpicker flex-fill" data-live-search="true" data-live-search-style="begins" title="markegiles">
+          <option>disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+          <option>markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+          <option>dlux-io - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+          <option>heyhey - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+          <option>inconcievable - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+        </select>
+		<div class="btn-group" role="group">
+		<button id="btnGroupDrop1" type="button" class="btn btn-light append-radius dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sort-amount-down"></i></button>
+		<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
+    	<a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd mr-2"></i>Sort By Fee</a>
+		<a class="dropdown-item" href="#"><i class="fas fa-award fa-fw mr-2"></i>Sort By Trust</a>
+		<a class="dropdown-item" href="#"><i class="fas fa-fish fa-fw mr-2"></i>Sort By Liquidity</a>
+    	</div>
+  		</div>
+      </div>
+		  
 		   <div class="form-group">
 			   <label for="buydluxexpire">Expiration Date and Time:</label>
 				<input class="form-control" id="buydluxexpire" />
