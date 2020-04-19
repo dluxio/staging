@@ -19,6 +19,17 @@
  		$(`[href="#${url}"]`).tab('show');
 		window.scrollTo(0, 0);
 }
+	// Set active tab
+$(document).ready(function(){
+  $("buywithhivetab").click(function(){
+    $("buywithhivetab").addClass("active");
+    $("buywithhbdtab").removeClass("active");
+  });
+  $("buywithhbdtab").click(function(){
+    $("buywithhbdtab").addClass("active");
+    $("buywithhivetab").removeClass("active");
+  });
+});
 	</script>
 <script type="text/javascript" src="../js/dex.js"></script>
 
@@ -765,8 +776,8 @@
       <div class="modal-header">
 		  <h3 class="modal-title" id="buyDluxTitle">Buy With: </h3>
 		  <ul class="nav nav-pills ml-3" role="tablist">
-		  	<li class="nav-item"><a href="javascript:dexmodal('hive', 'buy')" class="nav-link active" id="hivetab">HIVE</a></li>
-			<li class="nav-item"><a href="javascript:dexmodal('hbd', 'buy')" class="nav-link" id="hbdtab">HBD</a></li>
+		  	<li class="nav-item"><a href="javascript:dexmodal('hive', 'buy')" class="nav-link active" id="buywithhivetab">HIVE</a></li>
+			<li class="nav-item"><a href="javascript:dexmodal('hbd', 'buy')" class="nav-link" id="buywithhbdtab">HBD</a></li>
 		  </ul>
 		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span class="close text-white">×</span>
@@ -1001,6 +1012,7 @@
 <?php include '../mod/footer.php';?>
 
 	<script>
+
 // Toggle Order Book
 function toggleOrders() {
 	$("#orders").toggleClass("d-none");
@@ -1022,7 +1034,7 @@ function pageSpecfic(usr){
 	document.getElementById('dluxval').firstElementChild.innerText = `$${parseFloat(((parseInt(usr.dlux.balance) + parseInt(usr.dlux.poweredUp))/1000)*parseFloat(usr.dex.markets.hive.tick)*parseFloat(usr.price)).toFixed(2)}`
 	document.getElementById('buylink').addEventListener("click", function(){
 							    
-		document.getElementById('buyDluxTitle').innerText = 'Buy with:'
+		document.getElementById('buyDluxTitle').innerText = 'Buy With:'
 		dexmodal("hive", "buy")});
 	document.getElementById('selllink').addEventListener("click", function(){document.getElementById('buyDluxTitle').innerText = 'Sell for:';dexmodal("hive", "sell")});
 
@@ -1031,7 +1043,7 @@ function pageSpecfic(usr){
 function dexmodal(pair,type){
 	User.pair = pair
 	if(type == 'buy'){
-		document.getElementById('buyDluxTitle').innerText = 'Buy with:'
+		document.getElementById('buyDluxTitle').innerText = 'Buy With:'
 		document.getElementById('menutitle').innerText = 'New Buy Order'
 	} else {
 		document.getElementById('buyDluxTitle').innerText = 'Sell for:'
