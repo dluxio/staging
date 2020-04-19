@@ -71,7 +71,7 @@ function dexsend(type,pair){
                         escrowTimer.ratifyIn = now.setHours(now.getHours() + 72);
                         escrowTimer.ratifyUTC = new Date(escrowTimer.ratifyIn);
                         escrowTimer.ratifyString = escrowTimer.ratifyUTC.toISOString().slice(0, -5);
-                        escrowTimer.expiryIn = now.setHours(now.getHours() + opts.expire_time);
+                        escrowTimer.expiryIn = now.setHours(now.getHours() + User.opts.expire_time);
                         escrowTimer.expiryUTC = new Date(escrowTimer.expiryIn);
                         escrowTimer.expiryString = escrowTimer.expiryUTC.toISOString().slice(0, -5);
                         var formatter = amount / 1000
@@ -121,7 +121,7 @@ function dexsend(type,pair){
                         escrowTimer.ratifyIn = now.setHours(now.getHours() + 1);
                         escrowTimer.ratifyUTC = new Date(escrowTimer.ratifyIn);
                         escrowTimer.ratifyString = escrowTimer.ratifyUTC.toISOString().slice(0, -5);
-                        escrowTimer.expiryIn = now.setHours(now.getHours() + opts.expire_time);
+                        escrowTimer.expiryIn = now.setHours(now.getHours() + User.opts.expire_time);
                         escrowTimer.expiryUTC = new Date(escrowTimer.expiryIn);
                         escrowTimer.expiryString = escrowTimer.expiryUTC.toISOString().slice(0, -5);
                         var formatter = amount / 1000
