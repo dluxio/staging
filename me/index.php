@@ -828,7 +828,8 @@
 		 <p><a data-toggle="collapse" href="#buydluxadvanced" role="button" aria-expanded="false" aria-controls="collapseExample">Advanced Options<i class="fas fa-angle-double-down ml-2"></i></a></p>
 	   <div class="collapse" id="buydluxadvanced">
 		<label for="buydluxcustodialagent">Custodial Agent:</label>
-		<div class="form-row" >
+
+		   <div class="form-row form-group-fix">
 			<div class="input-group-prepend">
       		  <div class="input-group-text">@</div>
     		</div>			
@@ -848,7 +849,7 @@
     	</div>
   		</div>
       </div>
-		  
+
 		  <label for="buydluxescrowagent">Escrow Agent:</label>
 		<div class="form-row form-group-fix">
 			<div class="input-group-prepend">
