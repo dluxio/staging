@@ -771,6 +771,115 @@
 	</div>
 		<div class="container-fluid">
 		<div class="row" id="buy-main-row">
+			
+		<div class="col-lg-12 col-md-12 col-sm-12" id="buy-form">
+			<div class="pt-4 pl-3 pr-3">
+				<button class="btn btn-dark float-right" onClick="toggleOrders()"><i class="fas fa-book-open mr-2"></i>Orders</button>
+				<h4 class="text-white-50 mt-2">New DLUX Buy Order</h4>
+				
+			</div>
+		<form>
+      <div class="modal-body">
+		  <div class="alert alert-dark text-center" role="alert">
+ 		<small>This will place a buy order on the <a href="../dex/">DEX (Decentralized Exchange)</a></small>
+		</div>
+	  <div class="form-group">
+	   <label for="buydluxfrom">Buyer:</label>
+		<div class="input-group">
+			<div class="input-group-prepend">
+      		  <div class="input-group-text">@</div>
+    		</div>
+        	<input class="form-control" id="senddluxfrom" type="text" dmx-bind:placeholder="{{dluxGetBlog.data.result[0].blog}}" readonly>
+		  </div>
+			 </div>
+		  
+		  <div class="form-group">
+	   <label id="dluxamountlab" for="buydluxquantity">Desired Quantity:</label>
+		<div class="input-group">
+			<input class="form-control" id="buydluxquantity" type="number" step="0.001" min="0.001" placeholder="1.000">
+			<div class="input-group-append">
+      		  <div class="input-group-text">DLUX</div>
+    		</div>
+		  </div>
+			 </div>
+        <div class="form-group">
+	   <label id="dluxamountlab" for="buydluxprice">Desired Price Each (<a href="#" onClick="insertBal()">Market Price: 0.2 HIVE</a>):</label>
+		<div class="input-group">
+			<input class="form-control" id="buydluxprice" type="number" step="0.001" min="0.001" placeholder="1.000">
+			<div class="input-group-append">
+      		  <div class="input-group-text" id="paycoin">HIVE</div>
+    		</div>
+		  </div>
+			 </div>
+		  <div class="form-group">
+	   <label id="dluxamountlab" for="buydluxtotal">Order Total (<a href="#" onClick="insertBal()">HIVE Balance: 486 HIVE</a>):</label>
+		<div class="input-group">
+			<input class="form-control" id="buydluxtotal" type="number" step="0.001" min="0.001" placeholder="1.000">
+			<div class="input-group-append">
+      		  <div class="input-group-text" id="paycoin">HIVE</div>
+    		</div>
+		  </div>
+			 </div>
+		 <p><a data-toggle="collapse" href="#buydluxadvanced" role="button" aria-expanded="false" aria-controls="collapseExample">Advanced Options<i class="fas fa-angle-double-down ml-2"></i></a></p>
+	   <div class="collapse" id="buydluxadvanced">
+		<label for="buydluxcustodialagent">Custodial Agent:</label>
+		<div class="form-row" style="margin-bottom: 16px;">
+			<div class="input-group-prepend">
+      		  <div class="input-group-text">@</div>
+    		</div>			
+        <select id="buydluxcustodialagent" class="selectpicker flex-fill" data-live-search="true" data-live-search-style="begins" title="disregardfiat">
+          <option>disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+          <option>markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+          <option>dlux-io - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+          <option>heyhey - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+          <option>inconcievable - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+        </select>
+		<div class="btn-group" role="group">
+		<button id="btnGroupDrop1" type="button" class="btn btn-light append-radius dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sort-amount-down"></i></button>
+		<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
+    	<a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd mr-2"></i>Sort By Fee</a>
+		<a class="dropdown-item" href="#"><i class="fas fa-award fa-fw mr-2"></i>Sort By Trust</a>
+		<a class="dropdown-item" href="#"><i class="fas fa-fish fa-fw mr-2"></i>Sort By Liquidity</a>
+    	</div>
+  		</div>
+      </div>
+		  
+		  <label for="buydluxescrowagent">Escrow Agent:</label>
+		<div class="form-row" style="margin-bottom: 16px;">
+			<div class="input-group-prepend">
+      		  <div class="input-group-text">@</div>
+    		</div>			
+        <select id="buydluxescrowagent" class="selectpicker flex-fill" data-live-search="true" data-live-search-style="begins" title="markegiles">
+          <option>disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+          <option>markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+          <option>dlux-io - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+          <option>heyhey - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+          <option>inconcievable - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
+        </select>
+		<div class="btn-group" role="group">
+		<button id="btnGroupDrop1" type="button" class="btn btn-light append-radius dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sort-amount-down"></i></button>
+		<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
+    	<a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd mr-2"></i>Sort By Fee</a>
+		<a class="dropdown-item" href="#"><i class="fas fa-award fa-fw mr-2"></i>Sort By Trust</a>
+		<a class="dropdown-item" href="#"><i class="fas fa-fish fa-fw mr-2"></i>Sort By Liquidity</a>
+    	</div>
+  		</div>
+      </div>
+		  
+		   <div class="form-group">
+			   <label for="buydluxexpire">Expiration Date and Time:</label>
+				<input class="form-control" id="buydluxexpire" />
+			 </div>
+		  </div>
+		  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onClick="dluxsend('senddluxto', 'senddluxamount', 'senddluxmemo')">Continue</button>
+		</div>
+	  </form>
+		</div>
+			
 			<div class="col-lg-6 col-md-12 col-sm-12 overflow-auto d-none" id="orders">
 				<div class="p-4">
 				<h4 class="text-center text-white-50">DLUX-HIVE Order Book</h4>
@@ -878,113 +987,7 @@
 				</div>
 				</div>
 			</div>
-		<div class="col-lg-12 col-md-12 col-sm-12" id="buy-form">
-			<div class="p-4">
-			<button class="btn btn-dark float-left" onClick="toggleOrders()"><i class="fas fa-book-open mr-2"></i>Orders</button>
-				<h4 class="text-center text-white-50">New DLUX Buy Order</h4>
-			</div>
-		<form>
-      <div class="modal-body">
-		  <div class="alert alert-dark m-1 text-center" role="alert">
- 		<small>This will place a buy order on the <a href="../dex/">DEX (Decentralized Exchange)</a></small>
-		</div>
-	  <div class="form-group">
-	   <label for="buydluxfrom">Buyer:</label>
-		<div class="input-group">
-			<div class="input-group-prepend">
-      		  <div class="input-group-text">@</div>
-    		</div>
-        	<input class="form-control" id="senddluxfrom" type="text" dmx-bind:placeholder="{{dluxGetBlog.data.result[0].blog}}" readonly>
-		  </div>
-			 </div>
-		  
-		  <div class="form-group">
-	   <label id="dluxamountlab" for="buydluxquantity">Desired Quantity:</label>
-		<div class="input-group">
-			<input class="form-control" id="buydluxquantity" type="number" step="0.001" min="0.001" placeholder="1.000">
-			<div class="input-group-append">
-      		  <div class="input-group-text">DLUX</div>
-    		</div>
-		  </div>
-			 </div>
-        <div class="form-group">
-	   <label id="dluxamountlab" for="buydluxprice">Desired Price Each (<a href="#" onClick="insertBal()">Market Price: 0.2 HIVE</a>):</label>
-		<div class="input-group">
-			<input class="form-control" id="buydluxprice" type="number" step="0.001" min="0.001" placeholder="1.000">
-			<div class="input-group-append">
-      		  <div class="input-group-text" id="paycoin">HIVE</div>
-    		</div>
-		  </div>
-			 </div>
-		  <div class="form-group">
-	   <label id="dluxamountlab" for="buydluxtotal">Order Total (<a href="#" onClick="insertBal()">HIVE Balance: 486 HIVE</a>):</label>
-		<div class="input-group">
-			<input class="form-control" id="buydluxtotal" type="number" step="0.001" min="0.001" placeholder="1.000">
-			<div class="input-group-append">
-      		  <div class="input-group-text" id="paycoin">HIVE</div>
-    		</div>
-		  </div>
-			 </div>
-		 <p><a data-toggle="collapse" href="#buydluxadvanced" role="button" aria-expanded="false" aria-controls="collapseExample">Toggle Advanced Options</a></p>
-		  
-	   <div class="collapse" id="buydluxadvanced">
-		<label for="buydluxcustodialagent">Custodial Agent:</label>
-		<div class="form-row" style="margin-bottom: 16px;">
-			<div class="input-group-prepend">
-      		  <div class="input-group-text">@</div>
-    		</div>			
-        <select id="buydluxcustodialagent" class="selectpicker flex-fill" data-live-search="true" data-live-search-style="begins" title="disregardfiat">
-          <option>disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
-          <option>markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
-          <option>dlux-io - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
-          <option>heyhey - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
-          <option>inconcievable - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
-        </select>
-		<div class="btn-group" role="group">
-		<button id="btnGroupDrop1" type="button" class="btn btn-light append-radius dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sort-amount-down"></i></button>
-		<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
-    	<a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd mr-2"></i>Sort By Fee</a>
-		<a class="dropdown-item" href="#"><i class="fas fa-award fa-fw mr-2"></i>Sort By Trust</a>
-		<a class="dropdown-item" href="#"><i class="fas fa-fish fa-fw mr-2"></i>Sort By Liquidity</a>
-    	</div>
-  		</div>
-      </div>
-		  
-		  <label for="buydluxescrowagent">Escrow Agent:</label>
-		<div class="form-row" style="margin-bottom: 16px;">
-			<div class="input-group-prepend">
-      		  <div class="input-group-text">@</div>
-    		</div>			
-        <select id="buydluxescrowagent" class="selectpicker flex-fill" data-live-search="true" data-live-search-style="begins" title="markegiles">
-          <option>disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
-          <option>markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
-          <option>dlux-io - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
-          <option>heyhey - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
-          <option>inconcievable - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
-        </select>
-		<div class="btn-group" role="group">
-		<button id="btnGroupDrop1" type="button" class="btn btn-light append-radius dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sort-amount-down"></i></button>
-		<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
-    	<a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd mr-2"></i>Sort By Fee</a>
-		<a class="dropdown-item" href="#"><i class="fas fa-award fa-fw mr-2"></i>Sort By Trust</a>
-		<a class="dropdown-item" href="#"><i class="fas fa-fish fa-fw mr-2"></i>Sort By Liquidity</a>
-    	</div>
-  		</div>
-      </div>
-		  
-		   <div class="form-group">
-			   <label for="buydluxexpire">Expiration Date and Time:</label>
-				<input class="form-control" id="buydluxexpire" />
-			 </div>
-		  </div>
-		  
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" onClick="dluxsend('senddluxto', 'senddluxamount', 'senddluxmemo')">Continue</button>
-		</div>
-	  </form>
-		</div>
+			
 			</div>
     </div>
 	  </div>
