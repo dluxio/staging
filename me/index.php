@@ -828,7 +828,7 @@
 			<div class="input-group-prepend">
       		  <div class="input-group-text">@</div>
     		</div>			
-        <select id="menucagent" class="selectpicker flex-fill" data-live-search="true" data-live-search-style="begins" title="disregardfiat">
+        <select  class="selectpicker flex-fill" data-live-search="true" data-live-search-style="begins" title="disregardfiat">
           <option>disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
           <option>markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
           <option>dlux-io - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</option>
@@ -1037,12 +1037,40 @@ function dexmodal(pair,type){
 		document.getElementById('menupairlab').innerHTML = `Order Total (<a href="#" onClick="insertBal()">Balance: ${User[pair].balance}</a>):`
 		document.getElementById('menupair').max = parseFloat(User[pair].balance)
 		document.getElementById('menupricelab').innerHTML = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${parseFloat(User.dex.markets[pair].tick).toFixed(4)} ${pair.toUpperCase()}</a>):`														    
+		let nodes = []
 		for(i in User.dex.queue){
-			var node = document.createElement('option')
-			node.setAttribute('innerText',`@${User.dex.queue[i]} - Fee: .0 HIVE`)
-			document.getElementById('menueagent').appendChild(node) 
-			document.getElementById('menucagent').appendChild(node)
+			nodes.push(`<option>@${User.dex.queue[i]} - Fee: .0 HIVE</option>`)
 		}
+	var prepend = `<div class="input-group-prepend"><div class="input-group-text">@</div></div>			
+        	<select id="menueagent" class="selectpicker flex-fill" data-live-search="true" data-live-search-style="begins" title="${User.dex.queue[0]}">
+          	`, 
+	    cprepend = `</select>
+		<div class="btn-group" role="group">
+		<button id="btnGroupDrop1" type="button" class="btn btn-light append-radius dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sort-amount-down"></i></button>
+		<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
+    		<a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd mr-2"></i>Sort By Fee</a>
+		<a class="dropdown-item" href="#"><i class="fas fa-award fa-fw mr-2"></i>Sort By Trust</a>
+		<a class="dropdown-item" href="#"><i class="fas fa-fish fa-fw mr-2"></i>Sort By Liquidity</a>
+    		</div>
+  		</div>
+     	 	</div>
+		  
+		  <label for="buydluxescrowagent">Escrow Agent:</label>
+		<div id="menueagent" class="form-row" style="margin-bottom: 16px;">
+			<div class="input-group-prepend">
+      		  <div class="input-group-text">@</div>
+    		</div>			
+        <select id="menueagent" class="selectpicker flex-fill" data-live-search="true" data-live-search-style="begins" title="@${User.dex.queue[1]}">`,
+	    propend  = `</select>
+		<div class="btn-group" role="group">
+		<button id="btnGroupDrop1" type="button" class="btn btn-light append-radius dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sort-amount-down"></i></button>
+		<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
+    	<a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd mr-2"></i>Sort By Fee</a>
+		<a class="dropdown-item" href="#"><i class="fas fa-award fa-fw mr-2"></i>Sort By Trust</a>
+		<a class="dropdown-item" href="#"><i class="fas fa-fish fa-fw mr-2"></i>Sort By Liquidity</a>
+    	</div>
+  		</div>`
+	document.getElementById('buydluxadvanced').innerHTML = prepend + nodes.concat() + cprepend + nodes.concat() + propend
 }												       
 	
 // Date Picker
