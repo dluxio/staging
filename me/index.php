@@ -770,12 +770,18 @@
         </button>
 	</div>
 		<div class="container-fluid">
-		<div class="row">
-			<div class="col-lg-6 col-md-12 col-sm-12 overflow-auto">
-				<div class="container pos-abs overflow-auto">
-			<div class="modal-header">
-        <h4 class="modal-title w-100 text-center" id="buyDluxTitle">DLUX-HIVE Order Book</h4>
-				</div>
+		<div class="row bg-dark py-2">
+			<div class="col-lg-6 col-md-12 col-sm-12">
+				<h4 class="text-center text-white-50">DLUX-HIVE Order Book</h4>
+			</div>
+			<div class="col-lg-6 col-md-12 col-sm-12">
+				<button class="btn btn-dark" onClick="toggleOrders()">Orderbook</button>
+				<h4 class="text-center text-white-50">New DLUX Buy Order</h4>
+			</div>
+		</div>
+		<div class="row" id="buy-main-row">
+			<div class="col-lg-6 col-md-12 col-sm-12 overflow-auto" id="orders">
+				<div class="container pos-abs ">
 				<div class="modal-body mt-3 mb-5">
 				<div class="container">
 				<h5 class="text-white-50 text-uppercase">Your Open Buy Orders</h5>
@@ -873,18 +879,12 @@
 				<button class="btn btn-75 btn-outline-success">Buy</button>
 				</div>
       			</div>
-					
-					
-					
-				</div>
-			</div>
-				</div>
-			</div>
-		<div class="col-lg-6 col-md-12 col-sm-12">
-			<div class="modal-header">
-        <h4 class="modal-title w-100 text-center" id="buyDluxTitle">New DLUX Buy Order</h4>
 
-      </div>
+				</div>
+				</div>
+				</div>
+			</div>
+		<div class="col-lg-6 col-md-12 col-sm-12 offset-0" id="buy-form">
 		<form>
       <div class="modal-body">
 		  <div class="alert alert-dark m-2 text-center" role="alert">
@@ -996,6 +996,12 @@
 <?php include '../mod/footer.php';?>
 
 	<script>
+// Toggle Order Book
+function toggleOrders() {
+	$("#orders").toggleClass("collapsed");
+	$("#buy-form").toggleClass("offset-lg-3 offset-lg-0");
+	
+}
 // User Balances
 function pageSpecfic(usr){
 	console.log(usr.hstats)

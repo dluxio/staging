@@ -7868,6 +7868,22 @@ body {
 .drop-no-arrow::after {
   display: none; }
 
+#buy-main-row {
+  /* necessary to hide collapsed sidebar */
+  overflow-x: hidden; }
+
+#orders {
+  /* for the animation */
+  transition: margin 0.3s ease; }
+
+.collapsed {
+  display: none; }
+
+@media (min-width: 992px) {
+  .collapsed {
+    display: block;
+    /* same width as sidebar */
+    margin-left: -25%; } }
 @media (max-width: 575.98px) {
   .card-columns {
     column-count: 1; } }
