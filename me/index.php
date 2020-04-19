@@ -1029,7 +1029,7 @@ function dexmodal(pair,type){
 	} else {
 	document.getElementById('buyDluxTitle').innerText = 'Sell for:'
 	}
-	document.getElementById('menupairlab').innerHTML (<a href="#" onClick="insertBal()">Balance: ${User[pair].balance}</a>):`
+	document.getElementById('menupairlab').innerHTML = `(<a href="#" onClick="insertBal()">Balance: ${User[pair].balance}</a>):`
 	document.getElementById('menupair').max = parseFloat(User[pair].balance)
 	document.getElementById('menupricelab').innerHTML = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${parseFloat(User.dex.markets[pair].tick).toFixed(4)} ${pair.toUpperCase()}</a>):`														    
 
