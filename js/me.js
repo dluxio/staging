@@ -10,11 +10,20 @@ function me(usr){
 	document.getElementById('hiveval').firstElementChild.innerText = `$${parseFloat((parseFloat(( parseFloat(User.hstats.total_vesting_fund_steem) * parseFloat(User.hive.vesting_shares)) / parseFloat(User.hstats.total_vesting_shares)) + parseFloat(usr.hive.balance))*User.price).toFixed(2)}`
 	document.getElementById('dluxval').firstElementChild.innerText = `$${parseFloat(((parseInt(usr.dlux.balance) + parseInt(usr.dlux.poweredUp))/1000)*parseFloat(usr.dex.markets.hive.tick)*parseFloat(usr.price)).toFixed(2)}`
 	document.getElementById('buylink').addEventListener("click", function(){
-							    
-		document.getElementById('buyDluxTitle').innerText = 'Buy With:'
-		dexmodal("hive", "buy")});
+	document.getElementById('buyDluxTitle').innerText = 'Buy With:'
+	dexmodal("hive", "buy")});
 	document.getElementById('selllink').addEventListener("click", function(){document.getElementById('buyDluxTitle').innerText = 'Sell for:';dexmodal("hive", "sell")});
-
+	fetch("https://anyx.io", {
+  	    body: "{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_account_history\", \"params\":[\"steemit\", -1, 10000], \"id\":1}",
+  	    headers: {
+    		"Content-Type": "application/x-www-form-urlencoded"
+  	    },
+  		method: "POST"
+	})
+	.then(r=>{j.json()})
+	.then(result =>{
+		console.log('hstory', result)
+	})
 }
 
 function dexmodal(pair, type) {
