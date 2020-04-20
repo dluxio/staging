@@ -892,7 +892,15 @@
 		   
 <script>
 $(document).ready(function(){
-  $("#escrowAgent").on("keyup", function() {
+  $("#custodialAgentSearch").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".dropdown-menu li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+$(document).ready(function(){
+  $("#escrowAgentSearch").on("keyup", function() {
     var value = $(this).val().toLowerCase();
     $(".dropdown-menu li").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
