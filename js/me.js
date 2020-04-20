@@ -69,7 +69,8 @@ function me(usr) {
             node.class = "mb-3"
             let txholder = document.getElementById('hivetxs')
 
-            for (i in r.result.feed) {
+            for (i in r.result) {
+                console.log(r.result[i][1].op[0])
                 let txnode = document.createElement('div')
                 txnode.innerHTML = `
                     <p class="my-2">${r.result[i][1].op[0]}<br>${JSON.stringify(r.result[i][1].op[1])}</p>
