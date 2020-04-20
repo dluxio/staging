@@ -836,7 +836,7 @@
       		  <label class="input-group-text">@</label>
     	</div>	
     	<button class="btn btn-light dropdown-toggle form-control text-left" type="button" id="custodialAgent" data-toggle="dropdown">Custodial Agent</button>
-    	<ul class="dropdown-menu dropdown dropdown-menu-right custodial-drop form-control agent-input-ul" id="custodialAgentUl">
+    	<ul class="dropdown-menu custodial-drop form-control agent-input-ul" id="custodialAgentUl">
       		<input class="form-control agent-input" id="custodialAgentSearch" type="text" placeholder="Search..">
       		<li><a href="#">disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
       		<li><a href="#">markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
@@ -863,7 +863,7 @@
       		  <label class="input-group-text">@</label>
     	</div>	
     	<button class="btn btn-light dropdown-toggle form-control text-left" type="button" id="escrowAgent" data-toggle="dropdown">Escrow Agent</button>
-    	<ul class="dropdown-menu escrow-drop form-control agent-input-ul" id="escrowAgentUl">
+    	<ul class="dropdown-menu escrow-drop form-control agent-input-ul mx-auto" id="escrowAgentUl">
       		<input class="form-control agent-input" id="escrowAgentSearch" type="text" placeholder="Search..">
       		<li><a href="#">disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
       		<li><a href="#">markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>

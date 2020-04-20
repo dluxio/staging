@@ -7878,7 +7878,10 @@ body {
 
 .agent-input-ul {
   list-style: none;
-  border-radius: 5px !important; }
+  border-radius: 5px !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  transform: translate3d(0px, 38px, 0px) !important;
+  margin: 0px !important; }
 
 .agent-input-ul li {
   background-color: #fff; }
