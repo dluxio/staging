@@ -57,13 +57,13 @@ function dexmodal(pair, type) {
     for (i in User.dex.queue) {
             var node = document.createElement('li')
             node.innerHTML = `<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`
-            eAgentNode.appendChild(node)
+            cAgentNode.appendChild(node)
     }
     for (i in User.dex.queue) {
         if (User.opts.to !== User.dex.queue[i]) {
             var node = document.createElement('li')
             node.innerHTML = `<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`
-            cAgentNode.appendChild(node)
+            eAgentNode.appendChild(node)
         }
     }
 }
