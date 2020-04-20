@@ -73,7 +73,21 @@ body {background-color: #222222}
 .pos-abs {position: absolute;}
 
 .form-group-fix {
-	padding-left: 5px; padding-right: 5px; margin-bottom: 16px;
+	padding: 0px 5px 16px;
+
+}
+
+
+  /* Style the input field */
+.agent-input {
+	padding-top: 5px;
+    border: 0;
+    border-radius: 0;
+    background: #f1f1f1;
+  }
+.agent-input-ul {
+	padding: 5px 20px;
+	white-space: nowrap;
 }
 
 .card-columns {
