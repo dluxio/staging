@@ -37,9 +37,10 @@ function dexsend(type, pair) {
 }
 
 function powerUp(amt, tol, memol) {
+    console.log('yes')
     let amount = document.getElementById(amt).value,
-        to = document.getElementById(tol).value,
-        memo = document.getElementById(memol).value,
+        to = document.getElementById(tol).value || '',
+        memo = document.getElementById(memol).value || '',
         params = {
             "required_auths": [user],
             "required_posting_auths": 0,
@@ -57,6 +58,7 @@ function powerUp(amt, tol, memol) {
 }
 
 function powerDown(amt, tol, memol) {
+    console.log('no?')
     let amount = document.getElementById(amt).value,
         to = document.getElementById(tol).value,
         memo = document.getElementById(memol).value,
