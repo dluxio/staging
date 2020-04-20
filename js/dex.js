@@ -361,10 +361,9 @@ function dexmodal(pair, type) {
     }
     Promise.all(balsP)
         .then(b => {
-            console.log(b)
             a = {}, j = 0
             for (i in User.dex.queue) {
-                a[i] = b[j]
+                a[i] = b[j].json()
                 j++
             }
             console.log(a)
