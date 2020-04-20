@@ -921,6 +921,7 @@ $(document).ready(function(){
 </div>
 		  
       </div>
+			</div>
       <div class="modal-footer">
 		<div class="mr-auto d-lg-none">
 		  <button type="button" class="btn btn-dark " onClick="toggleOrdersSM()"><i class="fas fa-book-open mr-2"></i>Orders</button>
