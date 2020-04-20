@@ -43,7 +43,7 @@ function dexmodal(pair,type){
 		for(i in User.dex.queue){
 			if(User.opts.to !== User.dex.queue[i]){
 				console.log(document.getElementById('escrowAgent').innerText.split(' ')[0])
-				if(document.getElementById('escrowAgent').innerText.split(' ')[0] == 'Escrow'){console.log('yee');document.getElementById('escrowAgent').innerText == User.dex.queue[i]}
+				if(document.getElementById('escrowAgent').innerText.split(' ')[0] == 'Escrow'){console.log('yee');document.getElementById('escrowAgent').innerText = User.dex.queue[i]}
 				var node = document.createElement('li')
 				node.innerHTML = `<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`
 				eAgentNode.appendChild(node) 
@@ -52,7 +52,7 @@ function dexmodal(pair,type){
 		for(i in User.dex.queue){
 			if(User.opts.agent !== User.dex.queue[i]){
 				console.log(document.getElementById('custodialAgent').innerText.split(' ')[0])
-				if(document.getElementById('custodialAgent').innerText.split(' ')[0] == 'Custodial' && document.getElementById('escrowAgent').innerText != User.dex.queue[i]){document.getElementById('custodialAgent').innerText == User.dex.queue[i]}
+				if(document.getElementById('custodialAgent').innerText.split(' ')[0] == 'Custodial' && document.getElementById('escrowAgent').innerText != User.dex.queue[i]){document.getElementById('custodialAgent').innerText = User.dex.queue[i]}
 				var node = document.createElement('li')
 				node.innerHTML = `<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`
 				cAgentNode.appendChild(node) 
