@@ -16,3 +16,28 @@ function me(usr){
 	document.getElementById('selllink').addEventListener("click", function(){document.getElementById('buyDluxTitle').innerText = 'Sell for:';dexmodal("hive", "sell")});
 
 }
+
+function dexmodal(pair,type){
+	User.pair = pair
+	
+	if(type == 'buy'){
+		document.getElementById('buyDluxTitle').innerText = 'Buy With:'
+		document.getElementById('menutitle').innerText = 'New Buy Order'
+	} else {
+		document.getElementById('buyDluxTitle').innerText = 'Sell for:'
+		document.getElementById('menutitle').innerText = 'New Sell Order'
+	}
+		document.getElementById('menupairlab').innerHTML = `Order Total (<a href="#" onClick="insertBal()">Balance: ${User[pair].balance}</a>):`
+		document.getElementById('menupair').max = parseFloat(User[pair].balance)
+		document.getElementById('menupricelab').innerHTML = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${parseFloat(User.dex.markets[pair].tick).toFixed(4)} ${pair.toUpperCase()}</a>):`														    
+		var eAgentNode = document.getElementById('escrowAgent')
+		while (eAgentNode.firstChild) {
+    			eAgentNode.removeChild(eAgentNode.firstChild);
+		}
+		for(i in User.dex.queue){
+			var node = document.createElement('li')
+			node.setAttribute('innerHTML',`<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`)
+			eAgentNode.appendChild(node) 
+			//document.getElementById('menucagent').appendChild(node)
+		}
+}
