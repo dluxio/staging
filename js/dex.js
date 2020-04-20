@@ -11,6 +11,12 @@ function cancel(txid) {
             reqsign(['custom_json', params], ['active', user])
         }
 
+function reqsign(op, req) { //requests keychain to sign and broadcast
+            return new Promise ((resolve, reject) => {
+	    	Dluxsession.hive_sign([req[1],[op], req[0]], [reject, resolve])
+	    })
+        }	
+
 function dexsend(type,pair){
 	if(type == 'Buy' && pair == 'hbd'){placeHbdBuy()}
 	else if(type == 'Buy' && pair == 'hive'){placeHiveBuy()}
