@@ -37,7 +37,7 @@ function me(usr) {
     document.getElementById('sendhivemodalbutton').addEventListener("click", function() {
         document.getElementById('sendDluxTitle').innerText = `Send HIVE`
         document.getElementById('sendformunits').innerText = 'HIVE'
-        document.getElementById('senddluxammount').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.hive.balance),'senddluxamount')">${User.hive.balanace}</a>):`
+        document.getElementById('senddluxammountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.hive.balance),'senddluxamount')">${User.hive.balanace}</a>):`
         document.getElementById('senddluxammount').max = parseFloat(User.hive.balanace)
     })
 
