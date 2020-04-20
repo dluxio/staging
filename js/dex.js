@@ -361,11 +361,13 @@ function dexmodal(pair, type) {
     }
     Promise.all(balsP)
         .then(b => {
+            console.log(b)
             a = {}, j = 0
             for (i in User.dex.queue) {
                 a[i] = b[j]
                 j++
             }
+            console.log(a)
             for (i in User.dex.queue) {
                 if (User.opts.agent !== User.dex.queue[i]) {
                     var node = document.createElement('li')
