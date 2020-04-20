@@ -55,11 +55,9 @@ function dexmodal(pair, type) {
     document.getElementById('escrowAgent').innerText = User.opts.agent
     document.getElementById('custodialAgent').innerText = User.opts.to
     for (i in User.dex.queue) {
-        if (User.dex.queue[i] !== User.opts.to) {
             var node = document.createElement('li')
             node.innerHTML = `<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`
             eAgentNode.appendChild(node)
-        }
     }
     for (i in User.dex.queue) {
         if (User.opts.to !== User.dex.queue[i]) {
