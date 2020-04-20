@@ -20,13 +20,7 @@ function me(usr) {
       dexmodal("hive", "sell");
     })
 
-    fetch("https://anyx.io", {
-            body: "{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_account_history\", \"params\":[\"disregardfiat\", -1, 100], \"id\":1}",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            method: "POST"
-        })
+    fetch('https://token.dlux.io/feed')
         .then(r => {
             console.log(r)
             r.json() 
