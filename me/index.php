@@ -863,31 +863,28 @@
  <div class="form-group">
 	 <label for="escrowAgent">Escrow Agent:</label>
 	 <div class="input-group">
-	 <div class="input-group-prepend">
-      		  <div class="input-group-text">@</div>
-    		</div>	
-  <div class="dropdown agent-dropdown">
-    <button class="btn btn-light dropdown-toggle" type="button" id="escrowAgent" data-toggle="dropdown">Escrow Agent
-		<span class="caret"></span></button>
-    <ul class="dropdown-menu escrow-drop flex-fill agent-input-ul" id="escrowAgentUl">
-      <input class="form-control agent-input" id="escrowAgentSearch" type="text" placeholder="Search..">
-      <li><a href="#">disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
-      <li><a href="#">markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
-      <li><a href="#">dlux-io - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
-      <li><a href="#">heyhey - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
-      <li><a href="#">inconcievable - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
-      <li><a href="#">robotolux - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
-    </ul>
-  </div>
-	 <div class="btn-group" role="group">
-		<button id="btnGroupDrop1" type="button" class="btn btn-light append-radius dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sort-amount-down"></i></button>
-		<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
-    	<a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd mr-2"></i>Sort By Fee</a>
-		<a class="dropdown-item" href="#"><i class="fas fa-award fa-fw mr-2"></i>Sort By Trust</a>
-		<a class="dropdown-item" href="#"><i class="fas fa-fish fa-fw mr-2"></i>Sort By Liquidity</a>
-    	</div>
+	 	<div class="input-group-prepend">
+      		  <label class="input-group-text">@</label>
+    	</div>	
+    	<button class="btn btn-light dropdown-toggle form-control text-left" type="button" id="escrowAgent" data-toggle="dropdown">Escrow Agent</button>
+    	<ul class="dropdown-menu escrow-drop form-control agent-input-ul" id="escrowAgentUl">
+      	<input class="form-control agent-input" id="escrowAgentSearch" type="text" placeholder="Search..">
+      		<li><a href="#">disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
+      		<li><a href="#">markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
+      		<li><a href="#">dlux-io - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
+      		<li><a href="#">heyhey - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
+      		<li><a href="#">inconcievable - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
+      		<li><a href="#">robotolux - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
+    	</ul>
+	 	<div class="input-group-append">
+			<button type="button" class="btn btn-light append-radius" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sort-amount-down"></i></button>
+			<div class="dropdown-menu dropdown-menu-right text-white">
+    			<a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd mr-2"></i>Sort By Fee</a>
+				<a class="dropdown-item" href="#"><i class="fas fa-award fa-fw mr-2"></i>Sort By Trust</a>
+				<a class="dropdown-item" href="#"><i class="fas fa-fish fa-fw mr-2"></i>Sort By Liquidity</a>
+    		</div>
   		</div>
-</div>
+	</div>
 </div>
 		   
 <script>

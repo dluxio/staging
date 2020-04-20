@@ -7854,10 +7854,7 @@ body {
   text-align-last: center; }
 
 .append-radius {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  border-top-right-radius: 5px !important;
-  border-bottom-right-radius: 5px !important; }
+  border-radius: 0px 5px 5px 0px !important; }
 
 .no-radius {
   border-radius: 0px !important; }
@@ -7879,16 +7876,19 @@ body {
 .form-group-fix {
   padding: 0px 5px 16px; }
 
-.agent-dropdown ul {
+.agent-input-ul {
   list-style: none;
   margin: 0px;
   padding: 0px; }
+
+.agent-input-ul li {
+  background-color: #fff; }
 
 /*.agent-dropdown ul li {
 	padding: 5px 20px;
 	margin: 5px 0px;
 }*/
-.agent-dropdown ul li a {
+.agent-input-ul li a {
   display: block;
   clear: both;
   line-height: 1.428571429;
@@ -7896,7 +7896,7 @@ body {
   white-space: nowrap;
   padding: 5px 10px; }
 
-.agent-dropdown li a:hover {
+.agent-input-ul li a:hover {
   text-decoration: none;
   color: #262626;
   background-color: #999; }
