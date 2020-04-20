@@ -12,7 +12,7 @@ function feedback(r){
 function readResponseAsBlob(response) {
   return response.blob();
 }
-let user, dlux, User = { dlux: {}, hive: {}, dex: {}, stats: {}}
+let user, dlux, User = { dlux: {}, hive: {}, dex: {}, stats: {}, opts:{to:0, agent:0, fee: '0.000 STEEM', dfee:0}}
 function checkCookie(){
 	console.log('Checking for login')
     	user = sessionStorage.getItem('user');
