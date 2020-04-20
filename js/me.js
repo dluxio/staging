@@ -32,11 +32,11 @@ function me(usr) {
         document.getElementById('senddluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.dlux.balance/1000),'senddluxamount')">${parseFloat(parseInt(User.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
         document.getElementById('senddluxamount').max = parseFloat(parseInt(User.dlux.balance) / 1000)
     })
-    document.getElementById('poweruphivebutton').addEventListener("onclick", function() {
-        console.log('triggered')
+    document.getElementById('poweruphivebutton').addEventListener("click", function() {
         document.getElementById('sendmodalsend').addEventListener("click", function() {
             hivepower('senddluxto', 'senddluxamount', 'senddluxmemo')
         })
+        console.log('triggered')
         $("#senddluxmemo").addClass("d-none");
         document.getElementById('sendDluxTitle').innerText = `Power up HIVE`
         document.getElementById('sendformunits').innerText = 'HIVE'
