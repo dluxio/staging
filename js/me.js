@@ -10,14 +10,14 @@ function me(usr) {
     document.getElementById('savingsactions').firstElementChild.innerText = usr.hive.savings_sbd_balance
     document.getElementById('hiveval').firstElementChild.innerText = `$${parseFloat((parseFloat(( parseFloat(User.hstats.total_vesting_fund_steem) * parseFloat(User.hive.vesting_shares)) / parseFloat(User.hstats.total_vesting_shares)) + parseFloat(usr.hive.balance))*User.price).toFixed(2)}`
     document.getElementById('dluxval').firstElementChild.innerText = `$${parseFloat(((parseInt(usr.dlux.balance) + parseInt(usr.dlux.poweredUp))/1000)*parseFloat(usr.dex.markets.hive.tick)*parseFloat(usr.price)).toFixed(2)}`
-    document.getElementById('buylink').addEventListener("click", function() { document.getElementById('buyDluxTitle').innerText = 'Buy for:';
-      dexmodal("hive", "buy");
+    document.getElementById('buylink').addEventListener("click", function() {
       User.opts.type = 'buy'
+      dexmodal("hive", "buy");
     })
     document.getElementById('buyDluxTitle').innerText = 'Buy With:'
-    document.getElementById('selllink').addEventListener("click", function() { document.getElementById('buyDluxTitle').innerText = 'Sell for:';
-      dexmodal("hive", "sell");
+    document.getElementById('selllink').addEventListener("click", function() {
       User.opts.type = 'sell'
+      dexmodal("hive", "sell");
     })
 
     fetch("https://anyx.io", {
@@ -35,8 +35,8 @@ function me(usr) {
 
 function dexmodal(pair, type) {
     User.pair = pair
-
-    if (type == 'buy') {
+    User.opts.type = type
+    if (User.opts.type === 'buy') {
         document.getElementById('buyDluxTitle').innerText = 'Buy With:'
         document.getElementById('menutitle').innerText = 'New Buy Order'
     } else {
