@@ -900,14 +900,25 @@ $(document).ready(function(){
     });
   });
 });
-</script>
-
-		  
-		   <div class="form-group">
+</script> 
+		  <!-- <div class="form-group">
 			   <label for="menuexpire">Expiration Date and Time:</label>
 				<input class="form-control" id="buydluxexpire" />
-			 </div>
-		  </div>
+			 </div>-->
+<div class="form-group">
+    <label for="buyDluxExpire">Expiration:</label>
+    <select class="form-control" id="buyDluxExpire">
+      <option>1 hour</option>
+      <option>3 hours</option>
+      <option>6 hours</option>
+      <option>12 hours</option>
+      <option>1 day</option>
+	  <option>3 days</option>
+	  <option>5 days</option>
+	  <option>14 days</option>
+	  <option>30 days</option>
+    </select>
+</div>
 		  
       </div>
       <div class="modal-footer">
