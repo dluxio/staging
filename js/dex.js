@@ -350,18 +350,30 @@ function dexmodal(pair, type) {
     }
     document.getElementById('escrowAgent').innerText = User.opts.agent
     document.getElementById('custodialAgent').innerText = User.opts.to
+    var balsP = []
     for (i in User.dex.queue) {
-        if (User.opts.agent !== User.dex.queue[i]) {
-            var node = document.createElement('li')
-            node.innerHTML = `<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`
-            cAgentNode.appendChild(node)
-        }
+        balsP.push(fetch(`https://toekn.dlux.io/@${User.dex.queue[i]}`))
     }
-    for (i in User.dex.queue) {
-        if (User.opts.to !== User.dex.queue[i]) {
-            var node = document.createElement('li')
-            node.innerHTML = `<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`
-            eAgentNode.appendChild(node)
-        }
-    }
+    Promise.all(balsP)
+        .then(b => {
+            a = {}, j = 0
+            for (i in User.dex.queue) {
+                a[i] = b[j]
+                j++
+            }
+            for (i in User.dex.queue) {
+                if (User.opts.agent !== User.dex.queue[i]) {
+                    var node = document.createElement('li')
+                    node.innerHTML = `<a href="#" onclick="selector('${User.dex.queue[i]}', 'custodialAgent')">${User.dex.queue[i]} - Fee: .0DLUX - Trust: Hi - Liquid: ${parseInt(a[i].balance)}</a>`
+                    cAgentNode.appendChild(node)
+                }
+            }
+            for (i in User.dex.queue) {
+                if (User.opts.to !== User.dex.queue[i]) {
+                    var node = document.createElement('li')
+                    node.innerHTML = `<a href="#" onclick="selector('${User.dex.queue[i]}', 'custodialAgent')">${User.dex.queue[i]} - Fee: .0DLUX - Trust: Hi - Liquid: ${parseInt(a[i].balance/1000)}</a>`
+                    eAgentNode.appendChild(node)
+                }
+            }
+        })
 }
