@@ -33,6 +33,7 @@ function dexmodal(pair,type){
 		var eAgentNode = document.getElementById('escrowAgentUl')
 		console.log(eAgentNode)
 		let lis = eAgentNode.getElementsByTagName('li')
+		console.log(lis)
 		for ( node in lis) {
 			eAgentNode.removeChild(lis[node]);
 		}
