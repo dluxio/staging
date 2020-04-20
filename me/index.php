@@ -828,7 +828,7 @@
 		 <p><a data-toggle="collapse" href="#buydluxadvanced" role="button" aria-expanded="false" aria-controls="collapseExample">Advanced Options<i class="fas fa-angle-double-down ml-2"></i></a></p>
 	   <div class="collapse" id="buydluxadvanced">
 	
-	<div class="form-group">
+	<!--<div class="form-group">
 	 <label for="custodialAgent">Custodial Agent:</label>
 	 <div class="input-group">
 	 <div class="input-group-prepend">
@@ -856,9 +856,34 @@
     	</div>
   		</div>
 </div>
+</div>-->
+
+ <div class="form-group">
+	 <label for="custodialAgent">Custodial Agent:</label>
+	 <div class="input-group">
+	 	<div class="input-group-prepend">
+      		  <label class="input-group-text">@</label>
+    	</div>	
+    	<button class="btn btn-light dropdown-toggle form-control text-left" type="button" id="custodialAgent" data-toggle="dropdown">Custodial Agent</button>
+    	<ul class="dropdown-menu custodial-drop form-control agent-input-ul" id="custodialAgentUl">
+      	<input class="form-control agent-input" id="custodialAgentSearch" type="text" placeholder="Search..">
+      		<li><a href="#">disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
+      		<li><a href="#">markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
+      		<li><a href="#">dlux-io - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
+      		<li><a href="#">heyhey - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
+      		<li><a href="#">inconcievable - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
+      		<li><a href="#">robotolux - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
+    	</ul>
+	 	<div class="input-group-append">
+			<button id="custodialAgentSort" type="button" class="btn btn-light append-radius" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sort-amount-down"></i></button>
+			<div class="dropdown-menu dropdown-menu-right text-white">
+    			<a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd mr-2"></i>Sort By Fee</a>
+				<a class="dropdown-item" href="#"><i class="fas fa-award fa-fw mr-2"></i>Sort By Trust</a>
+				<a class="dropdown-item" href="#"><i class="fas fa-fish fa-fw mr-2"></i>Sort By Liquidity</a>
+    		</div>
+  		</div>
+	</div>
 </div>
-
-
 		
  <div class="form-group">
 	 <label for="escrowAgent">Escrow Agent:</label>
@@ -877,7 +902,7 @@
       		<li><a href="#">robotolux - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
     	</ul>
 	 	<div class="input-group-append">
-			<button type="button" class="btn btn-light append-radius" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sort-amount-down"></i></button>
+			<button type="button" id="escrowAgentSort" class="btn btn-light append-radius" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sort-amount-down"></i></button>
 			<div class="dropdown-menu dropdown-menu-right text-white">
     			<a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd mr-2"></i>Sort By Fee</a>
 				<a class="dropdown-item" href="#"><i class="fas fa-award fa-fw mr-2"></i>Sort By Trust</a>
