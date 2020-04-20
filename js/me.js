@@ -2,10 +2,11 @@ function me(usr) {
     usr.hbd = { balance: usr.hive.sbd_balance }
     console.log('here?')
     User.hbd = { balance: usr.hive.sbd_balance }
-    console.log('or here')
+    console.log(usr.hive.balance)
     document.getElementById('hiveactions').firstElementChild.innerText = usr.hive.balance
     document.getElementById('hbdactions').firstElementChild.innerText = usr.hive.sbd_balance
-    document.getElementById('savingsactions').firstElementChild.innerText = Uesr.hive.savings_sbd_balance
+    console.log('this')
+    document.getElementById('savingsactions').firstElementChild.innerText = User.hive.savings_sbd_balance
     console.log('what')
     document.getElementById('powerdluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(parseInt(User.dlux.balance)/1000),'powerupdluxamount')">${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
     document.getElementById('powerdowndluxammount').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(User.dlux.poweredUp,'powerupdluxamount')">${parseFloat(usr.dlux.poweredUp/1000).toFixed(3)} DLUX</a>):`
