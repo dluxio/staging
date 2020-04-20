@@ -628,7 +628,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button id="sendmodalsend" type="button" class="btn btn-primary" onClick="dluxsend('senddluxto', 'senddluxamount', 'senddluxmemo')">Continue</button>
+        <button id="sendmodalsend" type="button" class="btn btn-primary">Continue</button>
 		</div>
 	  </form>
     </div>
