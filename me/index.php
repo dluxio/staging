@@ -1086,9 +1086,9 @@ function dexmodal(pair,type){
 		document.getElementById('menupricelab').innerHTML = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${parseFloat(User.dex.markets[pair].tick).toFixed(4)} ${pair.toUpperCase()}</a>):`														    
 		for(i in User.dex.queue){
 			var node = document.createElement('option')
-			node.setAttribute('innerText',`@${User.dex.queue[i]} - Fee: .0 HIVE`)
-			document.getElementById('menueagent').appendChild(node) 
-			document.getElementById('menucagent').appendChild(node)
+			node.setAttribute('innerHTML',`<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`)
+			document.getElementById('escrowAgent').appendChild(node) 
+			//document.getElementById('menucagent').appendChild(node)
 		}
 }												       
 	
