@@ -42,6 +42,7 @@ function dexmodal(pair,type){
 		}
 		for(i in User.dex.queue){
 			if(User.opts.to !== User.dex.queue[i]){
+				console.log(document.getElementById('escrowAgent'))
 				if(document.getElementById('escrowAgent').innerText == 'Escrow Agent'){document.getElementById('escrowAgent').innerText == User.dex.queue[i]}
 				var node = document.createElement('li')
 				node.innerHTML = `<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`
