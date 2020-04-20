@@ -700,7 +700,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" onClick="dluxsend('powerupdluxto', 'powerupdluxamount', 'powerupdluxmemo')">Continue</button>
+        <button type="button" class="btn btn-primary" onClick="powerUp('powerupdluxamount', 'powerupdluxto' 'powerupdluxmemo')">Continue</button>
       </div>
 	</form>
     </div>
@@ -754,7 +754,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" onClick="dluxsend('powerdowndluxto', 'powerdowndluxamount', 'powerdowndluxmemo')">Continue</button>
+        <button type="button" class="btn btn-primary" onClick="powerDown('powerdowndluxamount', 'powerdowndluxto', 'powerdowndluxmemo')">Continue</button>
       </div>
 	</form>
     </div>

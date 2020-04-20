@@ -36,6 +36,46 @@ function dexsend(type, pair) {
 
 }
 
+function powerUp(amt, tol, memol) {
+    let amount = document.getElementById(amt).value,
+        to = document.getElementById(tol).value,
+        memo = document.getElementById(memol).value,
+        params = {
+            "required_auths": [user],
+            "required_posting_auths": 0,
+            "id": "dlux_dex_hive_sell",
+            "json": JSON.stringify({
+                amount,
+                to,
+                memo
+            })
+        }
+    console.log(params)
+    reqsign(['custom_json', params], ['active', user])
+        .then(r => { feedback(r) })
+        .catch(e => { feedback(e) })
+}
+
+function powerDown(amt, tol, memol) {
+    let amount = document.getElementById(amt).value,
+        to = document.getElementById(tol).value,
+        memo = document.getElementById(memol).value,
+        params = {
+            "required_auths": [user],
+            "required_posting_auths": 0,
+            "id": "dlux_power_down",
+            "json": JSON.stringify({
+                amount,
+                to,
+                memo
+            })
+        }
+    console.log(params)
+    reqsign(['custom_json', params], ['active', user])
+        .then(r => { feedback(r) })
+        .catch(e => { feedback(e) })
+}
+
 function placeHiveAsk() {
     var dlux = parseInt(parseFloat(document.getElementById('menudlux').value) * 1000),
         amount = parseInt(parseFloat(document.getElementById('menupair').value) * 1000),
@@ -328,7 +368,7 @@ function dexmodal(pair, type) {
     }
     document.getElementById('menupairdiv').innerText = User.opts.pair.toUpperCase()
     document.getElementById('paycoin').innerText = User.opts.pair.toUpperCase()
-    document.getElementById('menupairlab').innerHTML = `Order Total (<a href="#" onClick="insertBal(parseFloat(User[User.opts.pair].balance), 'menupair' )">Balance: ${User[User.opts.pair].balance}</a>):`
+    document.getElementById('menupairlab').innerHTML = `Order Total (<a href="#" onClick="insertBal(parseFloat(User[User.opts.pair].balance),'menupair')">Balance: ${User[User.opts.pair].balance}</a>):`
     document.getElementById('menupair').max = parseFloat(User[User.opts.pair].balance)
     document.getElementById('menupricelab').innerHTML = `Desired Price Each (<a href="#" onClick="insertBal('${parseFloat(User.dex.markets[User.opts.pair].tick)}', 'menuprice')">Market Price: ${parseFloat(User.dex.markets[User.opts.pair].tick).toFixed(4)} ${User.opts.pair.toUpperCase()}</a>):`
     let eAgentNode = document.getElementById('escrowAgentUl'),
