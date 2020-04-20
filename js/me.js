@@ -39,11 +39,11 @@ function me(usr) {
         .then(result => {
             console.log('hstory', result)
             let node = document.createElement('h4')
-            node.innerText = 'Transactions:'
+            node.innerHTML = 'Transactions:<form><input type="checkbox" id="hideReportsCB" name="report" value="No" checked></input></form>'
             node.class = "mb-3"
             document.getElementById('dluxtxs').appendChild(node)
             for (i in result.feed) {
-                if (result.feed[i].match(user)) {
+                if (result.feed[i].match(user) && !result.feed[i].match('Report')) {
                     let txnode = document.createElement('div')
                     txnode.innerHTML = `
 					   <p class="my-2">${i}<br>${result.feed[i]}</p>

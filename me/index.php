@@ -245,15 +245,6 @@
 				  </div>
 			   </div>
 			   <div id="dluxtxs" class="jumbotron pt-3 bg-darker text-white">
-				   <h4 class="mb-3">Transactions</h4>
-				   <div>
-					   <p class="my-2">put a transaction here!<br>second line wow</p>
-					   <hr class="my-3 bg-light">
-				   </div>
-				   <div>
-					   <p class="my-2">put a transaction here!<br>second line wow</p>
-					   <hr class="my-3 bg-light">
-				   </div>
 			   </div>
 		   </div>
 			   </div>
