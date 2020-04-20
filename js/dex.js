@@ -312,7 +312,7 @@ function insertBal(data, loc) {
 }
 
 function dexmodal(pair, type) {
-    User.pair = pair
+    User.opts.pair = pair
     User.opts.type = type
     if (User.opts.type === 'buy') {
         document.getElementById('buyDluxTitle').innerText = 'Buy With:'
@@ -321,9 +321,9 @@ function dexmodal(pair, type) {
         document.getElementById('buyDluxTitle').innerText = 'Sell for:'
         document.getElementById('menutitle').innerText = 'New Sell Order'
     }
-    document.getElementById('menupairlab').innerHTML = `Order Total (<a href="#" onClick="insertBal('${parseFloat(User[pair].balance)}', 'menupairlab' )">Balance: ${User[pair].balance}</a>):`
-    document.getElementById('menupair').max = parseFloat(User[pair].balance)
-    document.getElementById('menupricelab').innerHTML = `Desired Price Each (<a href="#" onClick="insertBal('${parseFloat(User.dex.markets[pair].tick)}', 'menuprice')">Market Price: ${parseFloat(User.dex.markets[pair].tick).toFixed(4)} ${pair.toUpperCase()}</a>):`
+    document.getElementById('menupairlab').innerHTML = `Order Total (<a href="#" onClick="insertBal('${parseFloat(User[User.opts.pair].balance)}', 'menupairlab' )">Balance: ${User[User.opts.pair].balance}</a>):`
+    document.getElementById('menupair').max = parseFloat(User[User.opts.pair].balance)
+    document.getElementById('menupricelab').innerHTML = `Desired Price Each (<a href="#" onClick="insertBal('${parseFloat(User.dex.markets[User.opts.pair].tick)}', 'menuprice')">Market Price: ${parseFloat(User.dex.markets[User.opts.pair].tick).toFixed(4)} ${User.opts.pair.toUpperCase()}</a>):`
     let eAgentNode = document.getElementById('escrowAgentUl'),
         cAgentNode = document.getElementById('custodialAgentUl')
     lis = eAgentNode.getElementsByTagName('li')
