@@ -9,7 +9,7 @@ function me(usr) {
     console.log(User.dlux.poweredUp, usr.dlux)
         //document.getElementById('powerdowndluxammount').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(User.dlux.poweredUp,'powerupdluxamount')">${parseFloat(User.dlux.poweredUp/1000).toFixed(3)} DLUX</a>):`
     console.log('here?')
-    document.getElementById('senddluxammount').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(User.dlux.balance,'senddluxamount')">${parseFloat(usr.dlux.balanace/1000).toFixed(3)} DLUX</a>):`
+        //document.getElementById('senddluxammount').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(User.dlux.balance,'senddluxamount')">${parseFloat(User.dlux.balanace/1000).toFixed(3)} DLUX</a>):`
     console.log('here?3')
     document.getElementById('dluxactions').firstElementChild.innerText = `${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX`
     console.log('here?4')
