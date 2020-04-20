@@ -73,7 +73,7 @@ function me(usr) {
                 if (r.result.feed[i].match(user) && !r.result.feed[i].match('Report')) {
                     let txnode = document.createElement('div')
                     txnode.innerHTML = `
-					   <p class="my-2">${r.result[i][1].op[0]}<br>${r.result[i][1].op[1]}</p>
+					   <p class="my-2">${r.result[i][1].op[0]}<br>${JSON.stringify(r.result[i][1].op[1])}</p>
 					   <hr class="my-3 bg-light">`
                     txholder.insertAdjacentElement('beforeend', txnode)
                 }
