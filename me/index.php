@@ -4,39 +4,30 @@
 <title>DLUX - Username</title>
 <?php include '../mod/header.php';?>
 <!--dmxAppConnect-->
-<script type="text/javascript" src="../dmxAppConnect/dmxAppConnect.js"></script>
-<script type="text/javascript" src="../dmxAppConnect/dmxMoment.js"></script>
-<script type="text/javascript" src="../dmxAppConnect/dmxFormatter.js"></script>
-<script type="text/javascript" src="../dmxAppConnect/dmxDataTraversal/dmxDataTraversal.js"></script>
-<!--Date Picker-->
-<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"></script>
-<!--Bootstrap Select-->
-<link href="../css/bootstrap-select.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../js/dex.js"></script>
-<script type="text/javascript" src="../js/me.js"></script>
+<script src="../dmxAppConnect/dmxAppConnect.js"></script>
+<script src="../dmxAppConnect/dmxMoment.js"></script>
+<script src="../dmxAppConnect/dmxFormatter.js"></script>
+<script src="../dmxAppConnect/dmxDataTraversal/dmxDataTraversal.js"></script>
+<!--page specific-->
+<script src="../js/dex.js"></script>
+<script src="../js/me.js"></script>
 <script>
 	let type
 	function changeTab(url){
  		$(`[href="#${url}"]`).tab('show');
 		window.scrollTo(0, 0);
 }
-
-
-	</script>
+</script>
 </head>
-
 <body class="d-flex flex-column h-100" id="apps" is="dmx-app">
-	
-	<?php 
-        if(isset($_COOKIE['user'])){
-            echo "<dmx-api-datasource id=\"dluxGetBlog\" is=\"dmx-fetch\" url=\"https://token.dlux.io/getwrap?\" dmx-param:method=\"'condenser_api.get_blog'\" dmx-param:params=\"'[%22" . $_COOKIE['user'] . "%22,0,20]'\"></dmx-api-datasource>";
+<?php 
+	if(isset($_COOKIE['user'])){
+    	echo "<dmx-api-datasource id=\"dluxGetBlog\" is=\"dmx-fetch\" url=\"https://token.dlux.io/getwrap?\" dmx-param:method=\"'condenser_api.get_blog'\" dmx-param:params=\"'[%22" . $_COOKIE['user'] . "%22,0,20]'\"></dmx-api-datasource>";
         }
-        else{
-            echo "<dmx-api-datasource id=\"dluxGetBlog\" is=\"dmx-fetch\" url=\"https://token.dlux.io/getwrap?\" dmx-param:method=\"'condenser_api.get_blog'\" dmx-param:params=\"'[%22robotolux%22,0,10]'\"></dmx-api-datasource>";
+    else{
+        echo "<dmx-api-datasource id=\"dluxGetBlog\" is=\"dmx-fetch\" url=\"https://token.dlux.io/getwrap?\" dmx-param:method=\"'condenser_api.get_blog'\" dmx-param:params=\"'[%22robotolux%22,0,10]'\"></dmx-api-datasource>";
         }
-?>
-	<!--<dmx-api-datasource id="dluxGetBlog" is="dmx-fetch" url="https://token.dlux.io/getwrap?" dmx-param:method="'condenser_api.get_blog'" dmx-param:params="'[%22robotolux%22,0,10]'"></dmx-api-datasource>-->
+;?>
 <?php include '../mod/nav.php';?>
 <main role="main" class="flex-shrink-0 text-white">
   <div class="container-fluid px-0 ">
@@ -1046,19 +1037,7 @@ function toggleOrders() {
 function toggleOrdersSM() {
 	$("#orders").toggleClass("d-none");
 	$("#order-container").removeClass("pos-abs");
-}
-													       												       
-	
-// Date Picker
-  $('#buydluxexpire').datetimepicker({
-            uiLibrary: 'bootstrap4',
-            modal: false,
-            footer: true
-        });
-	
-// Filter Escrow Agent
-
-	
+}				       												      
 // Javascript to enable link to tab
 var url = document.location.toString();
 if (url.match('#')) {
