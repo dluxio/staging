@@ -48,16 +48,12 @@ function dexmodal(pair, type) {
     }
     if (!User.opts.to) {
         User.opts.to = User.dex.queue[0] ? User.dex.queue[0] : User.dex.queue[2]
-        document.getElementById('custodialAgent').innerText = User.dex.queue[0]
-    } else {
-        document.getElementById('custodialAgent').innerText = User.opts.to
     }
     if (!User.opts.agent) {
         User.opts.agent = User.dex.queue[1] ? User.dex.queue[1] : User.dex.queue[2]
-        document.getElementById('escrowAgent').innerText = User.dex.queue[1]
-    } else {
-        document.getElementById('escrowAgent').innerText = User.opts.agent
     }
+    document.getElementById('escrowAgent').innerText = User.opts.agent
+    document.getElementById('custodialAgent').innerText = User.opts.to
     for (i in User.dex.queue) {
         if (User.dex.queue[i] !== User.opts.to) {
             var node = document.createElement('li')
