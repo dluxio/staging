@@ -266,10 +266,7 @@
   							<div class="btn-group" role="group">
     						<button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
     						<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
-      							<a class="dropdown-item" href="#"><i class="fas fa-angle-double-up fa-fw mr-2" id="poweruphivebutton" data-toggle="modal" data-target="#powerupDluxModal"></i>Power Up</a>
-								<a class="dropdown-item" href="#"><i class="fas fa-piggy-bank fa-fw mr-2"></i>Transfer to Savings</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="../dex/"><i class="fas fa-store fa-fw mr-2"></i>Trade</a>
+      							<a class="dropdown-item" href="#"  id="poweruphivebutton" data-toggle="modal" data-target="#powerupDluxModal"><i class="fas fa-angle-double-up fa-fw mr-2"></i>Power Up</a>
     						</div>
   							</div>
 						</div>
