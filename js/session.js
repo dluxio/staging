@@ -103,22 +103,26 @@
          var to = document.getElementById(toid).value,
              amount = parseInt(document.getElementById(amountid).value * 1000),
              memo = document.getElementById(memoid).value
-         Dluxsession.hive_sign([user, [
-                 ['custom_json', {
-                     "required_auths": [user],
-                     "required_posting_auths": [],
-                     "id": "dlux_send",
-                     "json": JSON.stringify({
-                         to,
-                         amount,
-                         memo
-                     })
-                 }]
-             ], 'active'])
+         checkAccount(to)
              .then(r => {
-                 resolve(r)
+                 Dluxsession.hive_sign([user, [
+                         ['custom_json', {
+                             "required_auths": [user],
+                             "required_posting_auths": [],
+                             "id": "dlux_send",
+                             "json": JSON.stringify({
+                                 to,
+                                 amount,
+                                 memo
+                             })
+                         }]
+                     ], 'active'])
+                     .then(r => {
+                         resolve(r)
+                     })
+                     .catch(e => { reject(e) })
              })
-             .catch(e => { reject(e) })
+             .catch(e => { alert(e) })
      });
  }
 

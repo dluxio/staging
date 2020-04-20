@@ -29,12 +29,14 @@ function me(usr) {
         document.getElementById('powerdowndluxammount').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.dlux.poweredUp/1000),'powerupdluxamount')">${parseFloat(parseInt(User.dlux.poweredUp)/1000).toFixed(3)} DLUX</a>):`
     })
     document.getElementById('senddluxmodalbutton').addEventListener("click", function() {
+        document.getElementById('sendmodalsend').onClick = "dluxsend('senddluxto', 'senddluxamount', 'senddluxmemo')"
         document.getElementById('sendDluxTitle').innerText = `Send DLUX`
         document.getElementById('sendformunits').innerText = 'DLUX'
         document.getElementById('senddluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.dlux.balance/1000),'senddluxamount')">${parseFloat(parseInt(User.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
         document.getElementById('senddluxamount').max = parseFloat(parseInt(User.dlux.balance) / 1000)
     })
     document.getElementById('sendhivemodalbutton').addEventListener("click", function() {
+        document.getElementById('sendmodalsend').onClick = "hivesend('senddluxto', 'senddluxamount', 'senddluxmemo')"
         document.getElementById('sendDluxTitle').innerText = `Send HIVE`
         document.getElementById('sendformunits').innerText = 'HIVE'
         document.getElementById('senddluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.hive.balance),'senddluxamount')">${User.hive.balance}</a>):`
@@ -89,4 +91,28 @@ function me(usr) {
             }
             txholder.insertAdjacentElement('afterbegin', node)
         })
+}
+
+function hivesend(toid, amountid, memoid) {
+    return new Promise((resolve, reject) => {
+        var to = document.getElementById(toid).value,
+            amount = parseFloat(document.getElementById(amountid).value).toFixed(3) + ' HIVE',
+            memo = document.getElementById(memoid).value
+        checkAccount(to)
+            .then(r => {
+                Dluxsession.hive_sign([user, [
+                        ['transfer', {
+                            "from": user,
+                            to,
+                            memo,
+                            amount
+                        }]
+                    ], 'active'])
+                    .then(r => {
+                        resolve(r)
+                    })
+                    .catch(e => { reject(e) })
+            })
+            .catch(e => { alert(e) })
+    });
 }

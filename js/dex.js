@@ -114,6 +114,21 @@ function placeHbdAsk() {
         .catch(e => { feedback(e) })
 }
 
+function checkAccount(name) {
+    return new Promise((r, e) => {
+        fetch("https://anyx.io", {
+                body: `{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_accounts\", \"params\":[[\"${name}\"]], \"id\":1}`,
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                method: "POST"
+            })
+            .then(r => { return r.json() })
+            .then(re => { r(re) })
+            .catch(re => { e(re) })
+    })
+}
+
 function placeHiveBuy() {
     var dlux = parseInt(parseFloat(document.getElementById('menudlux').value) * 1000),
         amount = parseInt(parseFloat(document.getElementById('menupair').value) * 1000),
