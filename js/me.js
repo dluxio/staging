@@ -46,6 +46,15 @@ function me(usr) {
         document.getElementById('senddluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.hive.balance),'senddluxamount')">${User.hive.balance}</a>):`
         document.getElementById('senddluxamount').max = parseFloat(User.hive.balance)
     })
+    document.getElementById('sendhbdmodalbutton').addEventListener("click", function() {
+        document.getElementById('sendmodalsend').addEventListener("click", function() {
+            hbdsend('senddluxto', 'senddluxamount', 'senddluxmemo')
+        })
+        document.getElementById('sendDluxTitle').innerText = `Send HBD`
+        document.getElementById('sendformunits').innerText = 'HBD'
+        document.getElementById('senddluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.hbd.balance),'senddluxamount')">${User.hbd.balance}</a>):`
+        document.getElementById('senddluxamount').max = parseFloat(User.hbd.balance)
+    })
 
     fetch('https://token.dlux.io/feed')
         .then(r => {
@@ -101,6 +110,30 @@ function hivesend(toid, amountid, memoid) {
     return new Promise((resolve, reject) => {
         var to = document.getElementById(toid).value,
             amount = parseFloat(document.getElementById(amountid).value).toFixed(3) + ' HIVE',
+            memo = document.getElementById(memoid).value
+        checkAccount(to)
+            .then(r => {
+                Dluxsession.hive_sign([user, [
+                        ['transfer', {
+                            "from": user,
+                            to,
+                            memo,
+                            amount
+                        }]
+                    ], 'active'])
+                    .then(r => {
+                        resolve(r)
+                    })
+                    .catch(e => { reject(e) })
+            })
+            .catch(e => { alert(e) })
+    });
+}
+
+function hbdsend(toid, amountid, memoid) {
+    return new Promise((resolve, reject) => {
+        var to = document.getElementById(toid).value,
+            amount = parseFloat(document.getElementById(amountid).value).toFixed(3) + ' HBD',
             memo = document.getElementById(memoid).value
         checkAccount(to)
             .then(r => {

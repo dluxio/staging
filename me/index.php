@@ -311,7 +311,7 @@
 				  	<div id="hbdactions" class="float-right text-right">
 						<h5>63.189 HBD</h5>
 						<div class="btn-group" role="group" aria-label="DLUX Actions">
-  							<button type="button" class="btn btn-info mr-half"><i class="fas fa-paper-plane mr-2"></i>Send</button>
+  							<button type="button" class="btn btn-info mr-half" data-toggle="modal" id="sendhbdmodalbutton" data-target="#sendDluxModal"><i class="fas fa-paper-plane mr-2"></i>Send</button>
   							<div class="btn-group" role="group">
     						<button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
     						<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
