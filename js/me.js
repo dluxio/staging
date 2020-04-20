@@ -31,7 +31,9 @@ function dexmodal(pair,type){
 		document.getElementById('menupair').max = parseFloat(User[pair].balance)
 		document.getElementById('menupricelab').innerHTML = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${parseFloat(User.dex.markets[pair].tick).toFixed(4)} ${pair.toUpperCase()}</a>):`														    
 		var eAgentNode = document.getElementById('escrowAgent')
+		console.log(eAgentNode)
 		while (eAgentNode.firstChild) {
+			console.log(eAgentNode.firstChild)
     			eAgentNode.removeChild(eAgentNode.firstChild);
 		}
 		for(i in User.dex.queue){
