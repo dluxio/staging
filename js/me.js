@@ -21,13 +21,16 @@ function me(usr) {
     })
 
     fetch("https://anyx.io", {
-            body: "{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_account_history\", \"params\":[\"steemit\", -1, 10000], \"id\":1}",
+            body: "{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_account_history\", \"params\":[\"disregardfiat\", -1, 10000], \"id\":1}",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded"
             },
             method: "POST"
         })
-        .then(r => { r.json() })
+        .then(r => {
+            console.log(r)
+            r.json() 
+        })
         .then(result => {
             console.log('hstory', result)
         })
