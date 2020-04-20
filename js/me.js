@@ -30,17 +30,30 @@ function dexmodal(pair,type){
 		document.getElementById('menupairlab').innerHTML = `Order Total (<a href="#" onClick="insertBal()">Balance: ${User[pair].balance}</a>):`
 		document.getElementById('menupair').max = parseFloat(User[pair].balance)
 		document.getElementById('menupricelab').innerHTML = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${parseFloat(User.dex.markets[pair].tick).toFixed(4)} ${pair.toUpperCase()}</a>):`														    
-		var eAgentNode = document.getElementById('escrowAgentUl')
-		console.log(eAgentNode)
-		let lis = eAgentNode.getElementsByTagName('li')
-		console.log(lis)
+		let eAgentNode = document.getElementById('escrowAgentUl'),
+		    cAgentNode = document.getElementById('custodialAgentUl')
+		    lis = eAgentNode.getElementsByTagName('li')
+		    lic = cAgentNode.getElementsByTagName('li')
 		while (eAgentNode.getElementsByTagName('li')[0]) {
 			eAgentNode.removeChild(eAgentNode.getElementsByTagName('li')[0]);
 		}
+		while (cAgentNode.getElementsByTagName('li')[0]) {
+			cAgentNode.removeChild(cAgentNode.getElementsByTagName('li')[0]);
+		}
 		for(i in User.dex.queue){
-			var node = document.createElement('li')
-			node.innerHTML = `<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`
-			eAgentNode.appendChild(node) 
-			//document.getElementById('menucagent').appendChild(node)
+			if(User.opts.to !== User.dex.queue[i]){
+				if(document.getElementById('escrowAgent').innerText == 'Escrow Agent'){document.getElementById('escrowAgent').innerText == User.dex.queue[i]}
+				var node = document.createElement('li')
+				node.innerHTML = `<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`
+				eAgentNode.appendChild(node) 
+			}
+		}
+		for(i in User.dex.queue){
+			if(User.opts.agent !== User.dex.queue[i]){
+				if(document.getElementById('custodialAgent').innerText == 'Custodial Agent' && document.getElementById('escrowAgent').innerText != User.dex.queue[i]){document.getElementById('custodialAgent').innerText == User.dex.queue[i]}
+				var node = document.createElement('li')
+				node.innerHTML = `<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`
+				cAgentNode.appendChild(node) 
+			}
 		}
 }
