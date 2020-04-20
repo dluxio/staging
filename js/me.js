@@ -69,8 +69,8 @@ function me(usr) {
             node.class = "mb-3"
             let txholder = document.getElementById('hivetxs')
 
-            for (i in result.feed) {
-                if (result.feed[i].match(user) && !result.feed[i].match('Report')) {
+            for (i in r.result.feed) {
+                if (r.result.feed[i].match(user) && !r.result.feed[i].match('Report')) {
                     let txnode = document.createElement('div')
                     txnode.innerHTML = `
 					   <p class="my-2">${r.result[i][1].op[0]}<br>${r.result[i][1].op[1]}</p>
