@@ -42,7 +42,8 @@ function dexmodal(pair, type) {
     }
     for (a in User.dex.queue) {
         if (User.dex.queue[a] == user) {
-            User.dex.queue.splice(a, 1)
+            delete User.dex.queue[a]
+	    break
         }
     }
     if (!User.opts.to) {
