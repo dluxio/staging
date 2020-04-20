@@ -78,18 +78,24 @@ body {background-color: #222222}
 }
 .agent-dropdown ul {
 	
-	white-space: nowrap;
+	
 }
-
 .agent-dropdown ul li {
 	padding: 5px 20px;
 	margin: 5px 0px;
 }
 .agent-dropdown ul li a {
 	color: #333;
+	line-height: 20px;
 	text-decoration-color: #333;
 	text-decoration-line: none;
 	text-decoration-style: solid;
+	white-space: nowrap;
+}
+.agent-dropdown li a:hover {
+	text-decoration: none;
+	color: #262626;
+	background-color: #999;
 }
 .agent-input {
 	margin-top: -6px;

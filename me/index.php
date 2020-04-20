@@ -840,7 +840,7 @@
   <div class="dropdown agent-dropdown">
     <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">Escrow Agent
 		<span class="caret"></span></button>
-    <ul class="dropdown-menu flex-fill agent-input-ul">
+    <ul class="dropdown-menu flex-fill agent-input-ul" id="escrowAgentUl">
       <input class="form-control agent-input" id="escrowAgent" type="text" placeholder="Search..">
       <li><a href="#">disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
       <li><a href="#">markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
