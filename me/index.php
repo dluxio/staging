@@ -906,17 +906,17 @@ $(document).ready(function(){
 				<input class="form-control" id="buydluxexpire" />
 			 </div>-->
 <div class="form-group">
-    <label for="buyDluxExpire">Expiration:</label>
-    <select class="form-control" id="buyDluxExpire">
-      <option>1 hour</option>
-      <option>3 hours</option>
-      <option>6 hours</option>
-      <option>12 hours</option>
-      <option>1 day</option>
-	  <option>3 days</option>
-	  <option>5 days</option>
-	  <option>14 days</option>
-	  <option>30 days</option>
+    <label for="escrowExpire">Expiration:</label>
+    <select class="form-control" id="escrowExpire">
+      <option value=1>1 hour</option>
+      <option value=3>3 hours</option>
+      <option value=6>6 hours</option>
+      <option value=12>12 hours</option>
+      <option value=24>1 day</option>
+	  <option value=72>3 days</option>
+	  <option value=120 selected>5 days</option>
+	  <option value=336>14 days</option>
+	  <option value=720>30 days</option>
     </select>
 </div>
 		  

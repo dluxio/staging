@@ -46,7 +46,7 @@ function placeHiveAsk() {
             "json": JSON.stringify({
                 dlux,
                 hive: amount,
-                hours: opts.expire_time
+                hours: document.getElementById('escrowExpire').value
             })
         }
     console.log(params)
@@ -65,7 +65,7 @@ function placeHbdAsk() {
             "json": JSON.stringify({
                 dlux,
                 hbd: amount,
-                hours: opts.expire_time
+                hours: document.getElementById('escrowExpire').value
             })
         }
     console.log(params)
@@ -94,7 +94,7 @@ function placeHiveBuy() {
                 escrowTimer.ratifyIn = now.setHours(now.getHours() + 72);
                 escrowTimer.ratifyUTC = new Date(escrowTimer.ratifyIn);
                 escrowTimer.ratifyString = escrowTimer.ratifyUTC.toISOString().slice(0, -5);
-                escrowTimer.expiryIn = now.setHours(now.getHours() + User.opts.expire_time);
+                escrowTimer.expiryIn = now.setHours(escrowTimer.ratifyIn + document.getElementById('escrowExpire').value);
                 escrowTimer.expiryUTC = new Date(escrowTimer.expiryIn);
                 escrowTimer.expiryString = escrowTimer.expiryUTC.toISOString().slice(0, -5);
                 var formatter = amount / 1000
@@ -141,13 +141,11 @@ function placeHbdBuy() {
             var queue = myJson.queue
             if (dlux > 0 && typeof dlux == 'number' && amount > 0 && typeof amount == 'number') {
                 var escrowTimer = {}
-                var agents = []
-                var i = 0
                 let now = new Date();
                 escrowTimer.ratifyIn = now.setHours(now.getHours() + 1);
                 escrowTimer.ratifyUTC = new Date(escrowTimer.ratifyIn);
                 escrowTimer.ratifyString = escrowTimer.ratifyUTC.toISOString().slice(0, -5);
-                escrowTimer.expiryIn = now.setHours(now.getHours() + User.opts.expire_time);
+                escrowTimer.expiryIn = now.setHours(escrowTimer.ratifyIn + document.getElementById('escrowExpire').value);
                 escrowTimer.expiryUTC = new Date(escrowTimer.expiryIn);
                 escrowTimer.expiryString = escrowTimer.expiryUTC.toISOString().slice(0, -5);
                 var formatter = amount / 1000
@@ -155,12 +153,12 @@ function placeHbdBuy() {
                 var eid = Math.floor(Math.random() * 4294967296)
                 let params = {
                     from: iam,
-                    to: opts.to,
+                    to: User.opts.to,
                     sbd_amount: hbdAmount,
                     steem_amount: hiveAmount,
                     escrow_id: eid,
-                    agent: opts.agent,
-                    fee: opts.fee,
+                    agent: User.opts.agent,
+                    fee: User.opts.fee,
                     ratification_deadline: escrowTimer.ratifyString,
                     escrow_expiration: escrowTimer.expiryString,
                     json_meta: JSON.stringify({
