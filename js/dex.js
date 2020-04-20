@@ -37,7 +37,7 @@ function dexsend(type, pair) {
 }
 
 function powerUp(amt, tol, memol) {
-    let amount = document.getElementById(amt).value,
+    let amount = parseInt(document.getElementById(amt).value * 1000),
         to = document.getElementById(tol).value || '',
         memo = document.getElementById(memol).value || '',
         params = {
@@ -57,7 +57,7 @@ function powerUp(amt, tol, memol) {
 }
 
 function powerDown(amt, tol, memol) {
-    let amount = document.getElementById(amt).value,
+    let amount = parseInt(document.getElementById(amt).value * 1000),
         to = document.getElementById(tol).value,
         memo = document.getElementById(memol).value,
         params = {
