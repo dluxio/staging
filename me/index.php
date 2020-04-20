@@ -837,7 +837,7 @@
 	 <div class="input-group-prepend">
       		  <div class="input-group-text">@</div>
     		</div>	
-  <div class="dropdown">
+  <div class="dropdown agent-dropdown">
     <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown">Escrow Agent
 		<span class="caret"></span></button>
     <ul class="dropdown-menu flex-fill agent-input-ul">

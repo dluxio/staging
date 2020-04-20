@@ -7879,16 +7879,24 @@ body {
 .form-group-fix {
   padding: 0px 5px 16px; }
 
-/* Style the input field */
+.agent-dropdown ul {
+  white-space: nowrap; }
+
+.agent-dropdown ul li {
+  padding: 5px 20px;
+  margin: 5px 0px; }
+
+.agent-dropdown ul li a {
+  color: #333;
+  text-decoration-color: #333;
+  text-decoration-line: none;
+  text-decoration-style: solid; }
+
 .agent-input {
-  padding-top: 5px;
+  margin-top: -6px;
   border: 0;
   border-radius: 0;
   background: #f1f1f1; }
-
-.agent-input-ul {
-  padding: 5px 20px;
-  white-space: nowrap; }
 
 @media (max-width: 575.98px) {
   .card-columns {
