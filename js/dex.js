@@ -119,7 +119,7 @@ function placeHiveBuy() {
                     })
                 }
                 console.log(params)
-                reqsign(['escrow_transfer', params], ['active', iam])
+                reqsign(['escrow_transfer', params], ['active', user])
                     .then(r => { feedback(r) })
                     .catch(e => { feedback(e) })
             }
@@ -171,7 +171,7 @@ function placeHbdBuy() {
                     })
                 }
                 console.log(params)
-                reqsign(['escrow_transfer', params], ['active', iam])
+                reqsign(['escrow_transfer', params], ['active', user])
                     .then(r => { feedback(r) })
                     .catch(e => { feedback(e) })
             }
@@ -208,9 +208,9 @@ function getItID(txid) {
             if (addr) {
                 var escrowTimer = {}
                 var agents = []
-                console.log(addr, iam)
+                console.log(addr, user)
                 for (var agent in queue) {
-                    if (queue[agent] !== addr.from && queue[agent] !== iam) {
+                    if (queue[agent] !== addr.from && queue[agent] !== user) {
                         agents.push(queue[agent])
                     }
                 }
@@ -231,7 +231,7 @@ function getItID(txid) {
                 }
                 let eid = parseInt(Math.random() * 1000000000) //escrow_id from DLUXQmxxxx<this
                 let params = {
-                    from: iam,
+                    from: user,
                     to: User.opts.to,
                     sbd_amount: hbdAmount,
                     steem_amount: hiveAmount,
@@ -245,7 +245,7 @@ function getItID(txid) {
                         for: addr.from
                     })
                 }
-                reqsign(['escrow_transfer', params], ['active', iam])
+                reqsign(['escrow_transfer', params], ['active', user])
                     .then(r => { feedback(r) })
                     .catch(e => { feedback(e) })
             }
@@ -291,7 +291,7 @@ function getSellID(txid) {
             console.log({ addr, receiver })
             if (type) {
                 var params = {
-                    "required_auths": [iam],
+                    "required_auths": [user],
                     "required_posting_auths": [],
                     "id": "dlux_dex_buy",
                     "json": JSON.stringify({
@@ -301,7 +301,7 @@ function getSellID(txid) {
                     })
                 }
                 console.log(params)
-                reqsign(['custom_json', params], ['active', iam])
+                reqsign(['custom_json', params], ['active', user])
                     .then(r => { feedback(r) })
                     .catch(e => { feedback(e) })
             }
