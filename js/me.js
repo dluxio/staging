@@ -31,14 +31,14 @@ function me(usr) {
     document.getElementById('senddluxmodalbutton').addEventListener("click", function() {
         document.getElementById('sendDluxTitle').innerText = `Send DLUX`
         document.getElementById('sendformunits').innerText = 'DLUX'
-        document.getElementById('senddluxammount').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.dlux.balance/1000),'senddluxamount')">${parseFloat(parseInt(User.dlux.balanace)/1000).toFixed(3)} DLUX</a>):`
-        document.getElementById('senddluxammount').max = parseFloat(parseInt(User.dlux.balanace) / 1000)
+        document.getElementById('senddluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.dlux.balance/1000),'senddluxamount')">${parseFloat(parseInt(User.dlux.balanace)/1000).toFixed(3)} DLUX</a>):`
+        document.getElementById('senddluxamount').max = parseFloat(parseInt(User.dlux.balanace) / 1000)
     })
     document.getElementById('sendhivemodalbutton').addEventListener("click", function() {
         document.getElementById('sendDluxTitle').innerText = `Send HIVE`
         document.getElementById('sendformunits').innerText = 'HIVE'
-        document.getElementById('senddluxammountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.hive.balance),'senddluxamount')">${User.hive.balanace}</a>):`
-        document.getElementById('senddluxammount').max = parseFloat(User.hive.balanace)
+        document.getElementById('senddluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.hive.balance),'senddluxamount')">${User.hive.balanace}</a>):`
+        document.getElementById('senddluxamount').max = parseFloat(User.hive.balanace)
     })
 
     fetch('https://token.dlux.io/feed')
