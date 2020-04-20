@@ -1084,10 +1084,14 @@ function dexmodal(pair,type){
 		document.getElementById('menupairlab').innerHTML = `Order Total (<a href="#" onClick="insertBal()">Balance: ${User[pair].balance}</a>):`
 		document.getElementById('menupair').max = parseFloat(User[pair].balance)
 		document.getElementById('menupricelab').innerHTML = `Desired Price Each (<a href="#" onClick="insertBal()">Market Price: ${parseFloat(User.dex.markets[pair].tick).toFixed(4)} ${pair.toUpperCase()}</a>):`														    
+		var eAgentNode = document.getElementById('escrowAgent')
+		while (eAgentNode.firstChild) {
+    			eAgentNode.removeChild(eAgentNode.firstChild);
+		}
 		for(i in User.dex.queue){
-			var node = document.createElement('option')
+			var node = document.createElement('li')
 			node.setAttribute('innerHTML',`<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`)
-			document.getElementById('escrowAgent').appendChild(node) 
+			eAgentNode.appendChild(node) 
 			//document.getElementById('menucagent').appendChild(node)
 		}
 }												       
