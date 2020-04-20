@@ -629,7 +629,7 @@
 		  </div>
 			 </div>
         <div class="form-group">
-	   <label id="dluxamountlab" for="senddluxammount">Amount (Balance <a href="#" onClick="insertBal()">917.26</a>):</label>
+	   <label id="dluxamountlab" for="senddluxammount">Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.dlux.balance/1000), 'senddluxamount')">917.26</a>):</label>
 		<div class="input-group">
 			<input class="form-control" id="senddluxamount" type="number" step="0.001" min="0.001" placeholder="1.000">
 			<div class="input-group-append">
@@ -683,7 +683,7 @@
 		  </div>
 			 </div>
         <div class="form-group">
-	   <label id="dluxamountlab" for="powerupdluxammount">Amount (Balance <a href="#" onClick="insertBal()">917.26</a>):</label>
+	   <label id="dluxamountlab" for="powerupdluxammount">Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.dlux.poweredUp/1000), 'powerupdluxamount')">917.26</a>):</label>
 		<div class="input-group">
 			<input class="form-control" id="powerupdluxamount" type="number" step="0.001" min="0.001" placeholder="1.000">
 			<div class="input-group-append">
@@ -737,7 +737,7 @@
 		  </div>
 			 </div>
         <div class="form-group">
-	   <label id="dluxamountlab" for="powerdowndluxammount">Amount (Balance <a href="#" onClick="insertBal()">917.26</a>):</label>
+	   <label id="dluxamountlab" for="powerdowndluxammount">Amount (Balance <a href="#" onClick="insertBal(User.dlux.balance,'powerdowndluxamount')">917.26</a>):</label>
 		<div class="input-group">
 			<input class="form-control" id="powerdowndluxamount" type="number" step="0.001" min="0.001" placeholder="1.000">
 			<div class="input-group-append">
@@ -808,7 +808,7 @@
 		  </div>
 			 </div>
         <div class="form-group">
-	   <label id="menupricelab" for="buydluxprice">Desired Price Each (<a href="#" onClick="insertBal()">Market Price: 0.2 HIVE</a>):</label>
+	   <label id="menupricelab" for="buydluxprice">Desired Price Each (<a href="#" onClick="insertBal(User.dex.markets[User.opts.type].tick, 'menuprice')">Market Price: 0.2 HIVE</a>):</label>
 		<div class="input-group">
 			<input class="form-control" id="menuprice" type="number" placeholder="1.000">
 			<div class="input-group-append">
@@ -817,7 +817,7 @@
 		  </div>
 			 </div>
 		  <div class="form-group">
-	   <label id="menupairlab" for="buydluxtotal">Order Total (<a href="#" onClick="insertBal()">HIVE Balance: 486 HIVE</a>):</label>
+	   <label id="menupairlab" for="buydluxtotal">Order Total (<a href="#" onClick="insertBal(parseFloat(User[User.opts.type].balance), 'menupair')">HIVE Balance: 486 HIVE</a>):</label>
 		<div class="input-group">
 			<input class="form-control" id="menupair" type="number" step="0.001" min="0.001" placeholder="1.000">
 			<div class="input-group-append">

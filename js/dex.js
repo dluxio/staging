@@ -1,4 +1,3 @@
-
 function cancel(txid) {
     var params = {
         "required_auths": [user],
@@ -306,4 +305,61 @@ function getSellID(txid) {
                     .catch(e => { feedback(e) })
             }
         });
+}
+
+function insertBal(data, loc) {
+    document.getElementById(loc).value = data
+}
+
+function dexmodal(pair, type) {
+    User.pair = pair
+    User.opts.type = type
+    if (User.opts.type === 'buy') {
+        document.getElementById('buyDluxTitle').innerText = 'Buy With:'
+        document.getElementById('menutitle').innerText = 'New Buy Order'
+    } else {
+        document.getElementById('buyDluxTitle').innerText = 'Sell for:'
+        document.getElementById('menutitle').innerText = 'New Sell Order'
+    }
+    document.getElementById('menupairlab').innerHTML = `Order Total (<a href="#" onClick="insertBal('${parseFloat(User[pair].balance)}', 'menupairlab' )">Balance: ${User[pair].balance}</a>):`
+    document.getElementById('menupair').max = parseFloat(User[pair].balance)
+    document.getElementById('menupricelab').innerHTML = `Desired Price Each (<a href="#" onClick="insertBal('${parseFloat(User.dex.markets[pair].tick)}', 'menuprice')">Market Price: ${parseFloat(User.dex.markets[pair].tick).toFixed(4)} ${pair.toUpperCase()}</a>):`
+    let eAgentNode = document.getElementById('escrowAgentUl'),
+        cAgentNode = document.getElementById('custodialAgentUl')
+    lis = eAgentNode.getElementsByTagName('li')
+    lic = cAgentNode.getElementsByTagName('li')
+    while (eAgentNode.getElementsByTagName('li')[0]) {
+        eAgentNode.removeChild(eAgentNode.getElementsByTagName('li')[0]);
+    }
+    while (cAgentNode.getElementsByTagName('li')[0]) {
+        cAgentNode.removeChild(cAgentNode.getElementsByTagName('li')[0]);
+    }
+    for (a in User.dex.queue) {
+        if (User.dex.queue[a] == user) {
+            delete User.dex.queue[a]
+            break
+        }
+    }
+    if (!User.opts.to) {
+        User.opts.to = User.dex.queue[0] ? User.dex.queue[0] : User.dex.queue[2]
+    }
+    if (!User.opts.agent) {
+        User.opts.agent = User.dex.queue[1] ? User.dex.queue[1] : User.dex.queue[2]
+    }
+    document.getElementById('escrowAgent').innerText = User.opts.agent
+    document.getElementById('custodialAgent').innerText = User.opts.to
+    for (i in User.dex.queue) {
+        if (User.opts.agent !== User.dex.queue[i]) {
+            var node = document.createElement('li')
+            node.innerHTML = `<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`
+            cAgentNode.appendChild(node)
+        }
+    }
+    for (i in User.dex.queue) {
+        if (User.opts.to !== User.dex.queue[i]) {
+            var node = document.createElement('li')
+            node.innerHTML = `<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`
+            eAgentNode.appendChild(node)
+        }
+    }
 }
