@@ -307,8 +307,12 @@ function getSellID(txid) {
         });
 }
 
-function insertBal(data, loc) {
-    document.getElementById(loc).value = data
+function insertBal(data, loc, atr) {
+    if (!atr) {
+        document.getElementById(loc).value = data
+    } else {
+        document.getElementById(loc)[atr] = data
+    }
 }
 
 function dexmodal(pair, type) {
@@ -365,14 +369,14 @@ function dexmodal(pair, type) {
             for (i in User.dex.queue) {
                 if (User.opts.agent !== User.dex.queue[i]) {
                     var node = document.createElement('li')
-                    node.innerHTML = `<a href="#" onclick="insertBal('${User.dex.queue[i]}', 'custodialAgent')">${User.dex.queue[i]} - Fee: .0DLUX - Trust: Hi - Liquid: ${parseInt(a[i].balance/1000)}</a>`
+                    node.innerHTML = `<a href="#" onclick="insertBal('${User.dex.queue[i]}', 'custodialAgent', 'innerText')">${User.dex.queue[i]} - Fee: .0DLUX - Trust: Hi - Liquid: ${parseInt(a[i].balance/1000)}</a>`
                     cAgentNode.appendChild(node)
                 }
             }
             for (i in User.dex.queue) {
                 if (User.opts.to !== User.dex.queue[i]) {
                     var node = document.createElement('li')
-                    node.innerHTML = `<a href="#" onclick="insertBal('${User.dex.queue[i]}', 'escrowAgent')">${User.dex.queue[i]} - Fee: .0DLUX - Trust: Hi - Liquid: ${parseInt(a[i].balance/1000)}</a>`
+                    node.innerHTML = `<a href="#" onclick="insertBal('${User.dex.queue[i]}', 'escrowAgent', 'innerText')">${User.dex.queue[i]} - Fee: .0DLUX - Trust: Hi - Liquid: ${parseInt(a[i].balance/1000)}</a>`
                     eAgentNode.appendChild(node)
                 }
             }
