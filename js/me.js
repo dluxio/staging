@@ -27,7 +27,7 @@ function me(usr) {
             },
             method: "POST"
         })
-        .then(r => { j.json() })
+        .then(r => { r.json() })
         .then(result => {
             console.log('hstory', result)
         })
