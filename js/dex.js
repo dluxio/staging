@@ -352,6 +352,7 @@ function dexmodal(pair, type) {
     document.getElementById('custodialAgent').innerText = User.opts.to
     var balsP = []
     for (i in User.dex.queue) {
+        console.log(User.dex.queue[i])
         balsP.push(fetch(`https://token.dlux.io/@${User.dex.queue[i]}`))
     }
     Promise.all(balsP)
