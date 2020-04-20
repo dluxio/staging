@@ -124,7 +124,10 @@ function checkAccount(name) {
                 method: "POST"
             })
             .then(r => { return r.json() })
-            .then(re => { r(re) })
+            .then(re => {
+                console.log(re)
+                r(re)
+            })
             .catch(re => { e(re) })
     })
 }
