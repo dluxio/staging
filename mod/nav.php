@@ -22,7 +22,11 @@
 		  <a class="nav-link dropdown-toggle text-white-50" id="userDropdown" data-toggle="dropdown" href="#">
 			  <img src="https://token.dlux.io/getauthorpic/{{author}}" id="userImage" alt="" width="30" height="30" class="img-fluid rounded-circle bg-light mr-1 cover">
 			  <span id="userName">username</span></a>
-			<div class="progress" style="height: 3px;">
+			
+          <div class="dropdown-menu pt-0" aria-labelledby="userDropdown">
+			  <div class="p-2" style="background-color: lightgray; border-radius: 3px 3px 0px 0px">
+			  <div class="border border-secondary">
+			  <div class="progress" style="height: 3px;">
   				<div class="progress-bar" id="dluxVotePower" role="progressbar" style="width: 70%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 			</div>
 			<div class="progress" style="height: 3px;">
@@ -31,7 +35,8 @@
 			<div class="progress" style="height: 3px;">
   				<div class="progress-bar bg-info" id="hiveResources" role="progressbar" style="width: 80%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
 			</div>
-          <div class="dropdown-menu" aria-labelledby="userDropdown">
+				  </div>
+				  </div>
 			 <a class="dropdown-item" href="../me/#blog" onClick="changeTab('blog')"><i class="fas fa-user fa-fw mr-2"></i>Profile</a>
 			 <a class="dropdown-item" href="../me/#wallet" onClick="changeTab('wallet')"><i class="fas fa-wallet fa-fw mr-2"></i>Wallet</a>
 			 <a class="dropdown-item" href="../me/#inventory" onClick="changeTab('inventory')"><i class="fas fa-boxes fa-fw mr-2"></i>Inventory</a>

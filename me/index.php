@@ -12,7 +12,7 @@
 <script src="../js/dex.js"></script>
 <script src="../js/me.js"></script>
 <script>
-	let type
+	let type	
 	function changeTab(url){
  		$(`[href="#${url}"]`).tab('show');
 		window.scrollTo(0, 0);
