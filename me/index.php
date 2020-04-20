@@ -700,7 +700,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" onClick="powerUp('powerupdluxamount', 'powerupdluxto' 'powerupdluxmemo')">Continue</button>
+        <button type="button" class="btn btn-primary" onClick="powerUp('powerupdluxamount', 'powerupdluxto', 'powerupdluxmemo')">Continue</button>
       </div>
 	</form>
     </div>
