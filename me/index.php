@@ -737,7 +737,7 @@
 		  </div>
 			 </div>
         <div class="form-group">
-	   <label id="dluxamountlab" for="powerdowndluxammount">Amount (Balance <a href="#" onClick="insertBal(User.dlux.poweredUp,'powerdowndluxamount')">917.26</a>):</label>
+	   <label id="dluxamountlab" for="powerdowndluxammount">Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.dlux.poweredUp/1000),'powerdowndluxamount')">917.26</a>):</label>
 		<div class="input-group">
 			<input class="form-control" id="powerdowndluxamount" type="number" step="0.001" min="0.001" placeholder="1.000">
 			<div class="input-group-append">

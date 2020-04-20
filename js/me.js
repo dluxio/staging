@@ -7,9 +7,9 @@ function me(usr) {
 
     document.getElementById('powerdluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(parseInt(User.dlux.balance)/1000),'powerupdluxamount')">${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
     console.log(User.dlux.poweredUp, usr.dlux)
-        //document.getElementById('powerdowndluxammount').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(User.dlux.poweredUp,'powerupdluxamount')">${parseFloat(User.dlux.poweredUp/1000).toFixed(3)} DLUX</a>):`
+    document.getElementById('powerdowndluxammount').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.dlux.poweredUp/1000),'powerupdluxamount')">${parseFloat(parseInt(User.dlux.poweredUp)/1000).toFixed(3)} DLUX</a>):`
     console.log('here?')
-        //document.getElementById('senddluxammount').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(User.dlux.balance,'senddluxamount')">${parseFloat(User.dlux.balanace/1000).toFixed(3)} DLUX</a>):`
+    document.getElementById('senddluxammount').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.dlux.balance/1000),'senddluxamount')">${parseFloat(parseInt(User.dlux.balanace)/1000).toFixed(3)} DLUX</a>):`
     console.log('here?3')
     document.getElementById('dluxactions').firstElementChild.innerText = `${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX`
     console.log('here?4')
