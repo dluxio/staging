@@ -767,8 +767,8 @@
       <div class="modal-header">
 		  <h3 class="modal-title" id="buyDluxTitle">Buy With: </h3>
 		  <ul class="nav nav-pills ml-3" role="tablist">
-		  	<li class="nav-item"><a href="javascript:dexmodal('hive', 'buy')" class="nav-link active" id="buywithhivetab" onClick="toggleActive()">HIVE</a></li>
-			<li class="nav-item"><a href="javascript:dexmodal('hbd', 'buy')" class="nav-link" id="buywithhbdtab" onClick="toggleActive()">HBD</a></li>
+		  	<li class="nav-item"><a href="javascript:dexmodal('hive', User.opts.type)" class="nav-link active" id="buywithhivetab" onClick="toggleActive()">HIVE</a></li>
+			<li class="nav-item"><a href="javascript:dexmodal('hbd', User.opts.type)" class="nav-link" id="buywithhbdtab" onClick="toggleActive()">HBD</a></li>
 		  </ul>
 		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span class="close text-white">×</span>
