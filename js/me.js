@@ -31,13 +31,26 @@ function me(usr) {
     document.getElementById('senddluxmodalbutton').addEventListener("click", function() {
         document.getElementById('senddluxammount').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.dlux.balance/1000),'senddluxamount')">${parseFloat(parseInt(User.dlux.balanace)/1000).toFixed(3)} DLUX</a>):`
     })
-    console.log('what?')
+
     fetch('https://token.dlux.io/feed')
         .then(r => {
             return r.json()
         })
         .then(result => {
             console.log('hstory', result)
+            let node = document.createElement('h4')
+            node.innerText = 'Transactions:'
+            node.class = "mb-3"
+            document.getElementById('dluxtxs').appendChild(node)
+            for (i in result.feed) {
+                if (result.feed[i].match(user)) {
+                    let txnode = document.createElement('div')
+                    txnode.innerHTML = `
+					   <p class="my-2">${i}<br>${result.feed[i]}</p>
+					   <hr class="my-3 bg-light">`
+                    document.getElementById('dluxtxs').appendChild(txnode)
+                }
+            }
         })
         .catch(e => { console.log(e) })
 }
