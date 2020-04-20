@@ -22,8 +22,7 @@ function me(usr) {
 
     fetch('https://token.dlux.io/feed')
         .then(r => {
-            console.log(r)
-            r.json() 
+            return r.json() 
         })
         .then(result => {
             console.log('hstory', result)
