@@ -837,7 +837,7 @@
   <div class="dropdown agent-dropdown">
     <button class="btn btn-light dropdown-toggle" type="button" id="custodialAgent" data-toggle="dropdown">Custodial Agent
 		<span class="caret"></span></button>
-    <ul class="dropdown-menu flex-fill agent-input-ul" id="custodialAgentUl">
+    <ul class="dropdown-menu custodial-drop flex-fill agent-input-ul" id="custodialAgentUl">
       <input class="form-control agent-input" id="custodialAgentSearch" type="text" placeholder="Search..">
       <li><a href="#">disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
       <li><a href="#">markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
@@ -869,7 +869,7 @@
   <div class="dropdown agent-dropdown">
     <button class="btn btn-light dropdown-toggle" type="button" id="escrowAgent" data-toggle="dropdown">Escrow Agent
 		<span class="caret"></span></button>
-    <ul class="dropdown-menu flex-fill agent-input-ul" id="escrowAgentUl">
+    <ul class="dropdown-menu escrow-drop flex-fill agent-input-ul" id="escrowAgentUl">
       <input class="form-control agent-input" id="escrowAgentSearch" type="text" placeholder="Search..">
       <li><a href="#">disregardfiat - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
       <li><a href="#">markegiles - Fee: .1DLUX - Trust: 99 - Liquid: 1000000000</a></li>
@@ -894,7 +894,7 @@
 $(document).ready(function(){
   $("#custodialAgentSearch").on("keyup", function() {
     var value = $(this).val().toLowerCase();
-    $(".dropdown-menu li").filter(function() {
+    $(".custodial-drop li").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
@@ -902,7 +902,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $("#escrowAgentSearch").on("keyup", function() {
     var value = $(this).val().toLowerCase();
-    $(".dropdown-menu li").filter(function() {
+    $(".escrow-drop li").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
