@@ -65,18 +65,16 @@ function me(usr) {
         .then(r => {
             console.log(r)
             let node = document.createElement('h4')
-            node.innerHTML = 'Transactions:<form><input type="checkbox" id="hideReportsCB" name="report" value="No" checked></input></form>'
+            node.innerHTML = 'Transactions:'
             node.class = "mb-3"
             let txholder = document.getElementById('hivetxs')
 
             for (i in r.result.feed) {
-                if (r.result.feed[i].match(user) && !r.result.feed[i].match('Report')) {
-                    let txnode = document.createElement('div')
-                    txnode.innerHTML = `
-					   <p class="my-2">${r.result[i][1].op[0]}<br>${JSON.stringify(r.result[i][1].op[1])}</p>
-					   <hr class="my-3 bg-light">`
-                    txholder.insertAdjacentElement('beforeend', txnode)
-                }
+                let txnode = document.createElement('div')
+                txnode.innerHTML = `
+                    <p class="my-2">${r.result[i][1].op[0]}<br>${JSON.stringify(r.result[i][1].op[1])}</p>
+                    <hr class="my-3 bg-light">`
+                txholder.insertAdjacentElement('beforeend', txnode)
             }
             txholder.insertAdjacentElement('afterbegin', node)
         })
