@@ -114,7 +114,7 @@ function placeHiveBuy() {
                     json_meta: JSON.stringify({
                         dextx: {
                             dlux,
-                            fee
+                            fee: User.opts.dfee
                         }
                     })
                 }
@@ -165,7 +165,8 @@ function placeHbdBuy() {
                     escrow_expiration: escrowTimer.expiryString,
                     json_meta: JSON.stringify({
                         dextx: {
-                            dlux
+                            dlux,
+                            fee: User.opts.dfee
                         }
                     })
                 }
