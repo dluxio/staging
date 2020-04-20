@@ -43,7 +43,7 @@ function powerUp(amt, tol, memol) {
         params = {
             "required_auths": [user],
             "required_posting_auths": 0,
-            "id": "dlux_dex_hive_sell",
+            "id": "dlux_power_up",
             "json": JSON.stringify({
                 amount,
                 to,
