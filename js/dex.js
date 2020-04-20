@@ -360,7 +360,9 @@ function dexmodal(pair, type) {
         balsP.push(fetch(`https://token.dlux.io/@${User.dex.queue[i]}`))
     }
     Promise.all(balsP)
-        .then(r => { console.log(r[0]); return r.json() })
+        .then(res =>
+            Promise.all(res.map(res => res.json()))
+        )
         .then(b => {
             a = {}, j = 0
             for (i in User.dex.queue) {
