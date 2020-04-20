@@ -5,6 +5,10 @@
   return response;
 }
 
+function feedback(r){
+  console.log(r)
+}
+
 function readResponseAsBlob(response) {
   return response.blob();
 }
