@@ -1,29 +1,36 @@
-function me(usr){
-  User.hbd = {balance: usr.hive.sbd_balance}				      
-	document.getElementById('dluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal()">${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
-	document.getElementById('dluxactions').firstElementChild.innerText = `${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX`
-	document.getElementById('dluxpactions').firstElementChild.innerText = `${parseFloat(parseInt(usr.dlux.poweredUp)/1000).toFixed(3)} DLUX`
-	document.getElementById('hivepactions').firstElementChild.innerText = parseFloat(( parseFloat(User.hstats.total_vesting_fund_steem) * parseFloat(User.hive.vesting_shares)) / parseFloat(User.hstats.total_vesting_shares)).toFixed(3) + ' HP'
-	document.getElementById('hiveactions').firstElementChild.innerText = usr.hive.balance
-	document.getElementById('hbdactions').firstElementChild.innerText = usr.hive.sbd_balance
-	document.getElementById('savingsactions').firstElementChild.innerText = usr.hive.savings_sbd_balance
-	document.getElementById('hiveval').firstElementChild.innerText = `$${parseFloat((parseFloat(( parseFloat(User.hstats.total_vesting_fund_steem) * parseFloat(User.hive.vesting_shares)) / parseFloat(User.hstats.total_vesting_shares)) + parseFloat(usr.hive.balance))*User.price).toFixed(2)}`
-	document.getElementById('dluxval').firstElementChild.innerText = `$${parseFloat(((parseInt(usr.dlux.balance) + parseInt(usr.dlux.poweredUp))/1000)*parseFloat(usr.dex.markets.hive.tick)*parseFloat(usr.price)).toFixed(2)}`
-	document.getElementById('buylink').addEventListener("click", function(){document.getElementById('buyDluxTitle').innerText = 'Buy for:';dexmodal("hive", "buy"); User.opts.type='buy'});
-	document.getElementById('buyDluxTitle').innerText = 'Buy With:'
-	dexmodal("hive", "buy")});
-	document.getElementById('selllink').addEventListener("click", function(){document.getElementById('buyDluxTitle').innerText = 'Sell for:';dexmodal("hive", "sell"); User.opts.type='sell'});
-	fetch("https://anyx.io", {
-  	    body: "{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_account_history\", \"params\":[\"steemit\", -1, 10000], \"id\":1}",
-  	    headers: {
-    		"Content-Type": "application/x-www-form-urlencoded"
-  	    },
-  		method: "POST"
-	})
-	.then(r=>{j.json()})
-	.then(result =>{
-		console.log('hstory', result)
-	})
+
+function me(usr) {
+    User.hbd = { balance: usr.hive.sbd_balance }
+    document.getElementById('dluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal()">${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
+    document.getElementById('dluxactions').firstElementChild.innerText = `${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX`
+    document.getElementById('dluxpactions').firstElementChild.innerText = `${parseFloat(parseInt(usr.dlux.poweredUp)/1000).toFixed(3)} DLUX`
+    document.getElementById('hivepactions').firstElementChild.innerText = parseFloat((parseFloat(User.hstats.total_vesting_fund_steem) * parseFloat(User.hive.vesting_shares)) / parseFloat(User.hstats.total_vesting_shares)).toFixed(3) + ' HP'
+    document.getElementById('hiveactions').firstElementChild.innerText = usr.hive.balance
+    document.getElementById('hbdactions').firstElementChild.innerText = usr.hive.sbd_balance
+    document.getElementById('savingsactions').firstElementChild.innerText = usr.hive.savings_sbd_balance
+    document.getElementById('hiveval').firstElementChild.innerText = `$${parseFloat((parseFloat(( parseFloat(User.hstats.total_vesting_fund_steem) * parseFloat(User.hive.vesting_shares)) / parseFloat(User.hstats.total_vesting_shares)) + parseFloat(usr.hive.balance))*User.price).toFixed(2)}`
+    document.getElementById('dluxval').firstElementChild.innerText = `$${parseFloat(((parseInt(usr.dlux.balance) + parseInt(usr.dlux.poweredUp))/1000)*parseFloat(usr.dex.markets.hive.tick)*parseFloat(usr.price)).toFixed(2)}`
+    document.getElementById('buylink').addEventListener("click", function() { document.getElementById('buyDluxTitle').innerText = 'Buy for:';
+      dexmodal("hive", "buy");
+      User.opts.type = 'buy'
+    })
+    document.getElementById('buyDluxTitle').innerText = 'Buy With:'
+    document.getElementById('selllink').addEventListener("click", function() { document.getElementById('buyDluxTitle').innerText = 'Sell for:';
+      dexmodal("hive", "sell");
+      User.opts.type = 'sell'
+    })
+
+    fetch("https://anyx.io", {
+            body: "{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_account_history\", \"params\":[\"steemit\", -1, 10000], \"id\":1}",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            method: "POST"
+        })
+        .then(r => { j.json() })
+        .then(result => {
+            console.log('hstory', result)
+        })
 }
 
 function dexmodal(pair, type) {
@@ -52,7 +59,7 @@ function dexmodal(pair, type) {
     for (a in User.dex.queue) {
         if (User.dex.queue[a] == user) {
             delete User.dex.queue[a]
-	    break
+            break
         }
     }
     if (!User.opts.to) {
@@ -64,11 +71,11 @@ function dexmodal(pair, type) {
     document.getElementById('escrowAgent').innerText = User.opts.agent
     document.getElementById('custodialAgent').innerText = User.opts.to
     for (i in User.dex.queue) {
-	if (User.opts.agent !== User.dex.queue[i]) {
+        if (User.opts.agent !== User.dex.queue[i]) {
             var node = document.createElement('li')
             node.innerHTML = `<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`
             cAgentNode.appendChild(node)
-	}
+        }
     }
     for (i in User.dex.queue) {
         if (User.opts.to !== User.dex.queue[i]) {
