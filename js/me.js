@@ -1,4 +1,5 @@
 function me(usr) {
+    console.log('what?')
     usr.hbd = { balance: usr.hive.sbd_balance }
     User.hbd = { balance: usr.hive.sbd_balance }
     document.getElementById('powerdluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(parseInt(User.dlux.balance)/1000),'powerupdluxamount')">${parseFloat(parseInt(usr.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
