@@ -154,7 +154,7 @@ function placeHbdBuy() {
                 formatter = formatter.toFixed(3)
                 var eid = Math.floor(Math.random() * 4294967296)
                 let params = {
-                    from: iam,
+                    from: user,
                     to: User.opts.to,
                     sbd_amount: hbdAmount,
                     steem_amount: hiveAmount,
