@@ -38,6 +38,7 @@ function me(usr) {
         document.getElementById('senddluxamount').max = parseFloat(parseInt(User.dlux.balance) / 1000)
     })
     document.getElementById('poweruphivebutton').addEventListener("click", function() {
+        console.log('triggered')
         document.getElementById('sendmodalsend').addEventListener("click", function() {
             hivepower('senddluxto', 'senddluxamount', 'senddluxmemo')
         })
