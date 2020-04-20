@@ -23,13 +23,13 @@
 			  <img src="https://token.dlux.io/getauthorpic/{{author}}" id="userImage" alt="" width="30" height="30" class="img-fluid rounded-circle bg-light mr-1 cover">
 			  <span id="userName">username</span></a>
 			<div class="progress" style="height: 3px;">
-  				<div class="progress-bar" id="dluxVotePower" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+  				<div class="progress-bar" id="dluxVotePower" role="progressbar" style="width: 70%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 			</div>
 			<div class="progress" style="height: 3px;">
-  				<div class="progress-bar bg-warning" id="hiveVotePower" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  				<div class="progress-bar bg-danger" id="hiveVotePower" role="progressbar" style="width: 90%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 			</div>
 			<div class="progress" style="height: 3px;">
-  				<div class="progress-bar bg-info" id="hiveResources" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+  				<div class="progress-bar bg-info" id="hiveResources" role="progressbar" style="width: 80%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
 			</div>
           <div class="dropdown-menu" aria-labelledby="userDropdown">
 			 <a class="dropdown-item" href="../me/#blog" onClick="changeTab('blog')"><i class="fas fa-user fa-fw mr-2"></i>Profile</a>
