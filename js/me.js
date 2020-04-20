@@ -1,6 +1,8 @@
 function me(usr) {
     usr.hbd = { balance: usr.hive.sbd_balance }
+    console.log('here?')
     User.hbd = { balance: usr.hive.sbd_balance }
+    console.log('or here')
     document.getElementById('hiveactions').firstElementChild.innerText = usr.hive.balance
     document.getElementById('hbdactions').firstElementChild.innerText = usr.hive.sbd_balance
     document.getElementById('savingsactions').firstElementChild.innerText = Uesr.hive.savings_sbd_balance
