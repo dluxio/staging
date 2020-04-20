@@ -321,7 +321,7 @@ function dexmodal(pair, type) {
         document.getElementById('buyDluxTitle').innerText = 'Sell for:'
         document.getElementById('menutitle').innerText = 'New Sell Order'
     }
-    document.getElementById('menupairlab').innerHTML = `Order Total (<a href="#" onClick="insertBal('${parseFloat(User[User.opts.pair].balance)}', 'menupairlab' )">Balance: ${User[User.opts.pair].balance}</a>):`
+    document.getElementById('menupairlab').innerHTML = `Order Total (<a href="#" onClick="insertBal(parseFloat(User[User.opts.pair].balance), 'menupair' )">Balance: ${User[User.opts.pair].balance}</a>):`
     document.getElementById('menupair').max = parseFloat(User[User.opts.pair].balance)
     document.getElementById('menupricelab').innerHTML = `Desired Price Each (<a href="#" onClick="insertBal('${parseFloat(User.dex.markets[User.opts.pair].tick)}', 'menuprice')">Market Price: ${parseFloat(User.dex.markets[User.opts.pair].tick).toFixed(4)} ${User.opts.pair.toUpperCase()}</a>):`
     let eAgentNode = document.getElementById('escrowAgentUl'),
