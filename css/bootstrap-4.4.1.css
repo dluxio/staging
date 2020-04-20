@@ -7878,8 +7878,7 @@ body {
 
 .agent-input-ul {
   list-style: none;
-  margin: 0px;
-  padding: 0px; }
+  border-radius: 5px !important; }
 
 .agent-input-ul li {
   background-color: #fff; }
@@ -7902,9 +7901,9 @@ body {
   background-color: #999; }
 
 .agent-input {
-  margin-top: -6px;
+  margin-top: -8px;
   border: 0;
-  border-radius: 0;
+  border-radius: 5px 5px 0 0;
   background: #f1f1f1; }
 
 @media (max-width: 575.98px) {
