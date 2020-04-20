@@ -68,12 +68,12 @@ function me(usr) {
             node.innerHTML = 'Transactions:'
             node.class = "mb-3"
             let txholder = document.getElementById('hivetxs')
-
-            for (i in r.results) {
-                console.log(r.results[i][1].op[0])
+            console.log(r.result[0][1].op[0])
+            for (i in r.result) {
+                console.log(r.result[i][1].op[0])
                 let txnode = document.createElement('div')
                 txnode.innerHTML = `
-                    <p class="my-2">${r.results[i][1].op[0]}<br>${JSON.stringify(r.results[i][1].op[1])}</p>
+                    <p class="my-2">${r.result[i][1].op[0]}<br>${JSON.stringify(r.result[i][1].op[1])}</p>
                     <hr class="my-3 bg-light">`
                 txholder.insertAdjacentElement('beforeend', txnode)
             }
