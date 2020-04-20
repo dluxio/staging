@@ -34,8 +34,8 @@ function dexmodal(pair,type){
 		console.log(eAgentNode)
 		let lis = eAgentNode.getElementsByTagName('li')
 		console.log(lis)
-		for ( node in lis) {
-			eAgentNode.removeChild(lis[node]);
+		while (eAgentNode.getElementsByTagName('li')[0]) {
+			eAgentNode.removeChild(eAgentNode.getElementsByTagName('li')[0]);
 		}
 		for(i in User.dex.queue){
 			var node = document.createElement('li')
