@@ -1068,10 +1068,6 @@ function toggleOrdersSM() {
 	$("#orders").toggleClass("d-none");
 	$("#order-container").removeClass("pos-abs");
 }
-// User Balances
-function pageSpecfic(usr){
-	me(usr);
-}
 													       												       
 	
 // Date Picker
@@ -1098,5 +1094,9 @@ $('.nav-tabs a').on('shown.bs.tab', function (e) {
 function updateVoteSubmit(id,val) {
     document.getElementById(id).innerHTML = document.getElementById(val).value + '%'; 
         }</script>
-<script>checkCookie()</script>
+<script>
+checkCookie();
+function pageSpecfic(usr){
+	me(usr);
+}</script>
 </body></html>
