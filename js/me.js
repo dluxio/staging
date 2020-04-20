@@ -1,6 +1,6 @@
 function me(usr) {
     User.hbd = { balance: User.hive.sbd_balance }
-    document.getElementById('dluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(parseInt(User.dlux.balance)/1000),'senddluxamount')">${parseFloat(parseInt(User.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
+    document.getElementById('dluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(parseInt(User.dlux.balance)/1000),'powerupdluxamount')">${parseFloat(parseInt(User.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
     document.getElementById('powerdowndluxammount').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(User.dlux.balance,'powerdowndluxamount')">${parseFloat(User.dlux.balance/1000).toFixed(3)} DLUX</a>):`
     document.getElementById('dluxactions').firstElementChild.innerText = `${parseFloat(parseInt(User.dlux.balance)/1000).toFixed(3)} DLUX`
     document.getElementById('dluxpactions').firstElementChild.innerText = `${parseFloat(parseInt(User.dlux.poweredUp)/1000).toFixed(3)} DLUX`
