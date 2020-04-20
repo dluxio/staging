@@ -48,9 +48,9 @@ function dexmodal(pair, type) {
     }
     if (!User.opts.to) {
         User.opts.to = User.dex.queue[0]
-        document.getElementById('escrowAgent').innerText = User.dex.queue[0]
+        document.getElementById('custodialAgent').innerText = User.dex.queue[0]
     } else {
-        document.getElementById('escrowAgent').innerText = User.opts.to
+        document.getElementById('custodialAgent').innerText = User.opts.to
     }
     if (!User.opts.agent) {
         User.opts.agent = User.dex.queue[1]
@@ -59,7 +59,7 @@ function dexmodal(pair, type) {
         document.getElementById('escrowAgent').innerText = User.opts.agent
     }
     for (i in User.dex.queue) {
-        if (User.dex.queue != User.opts.to) {
+        if (User.dex.queue[i] !== User.opts.to) {
             var node = document.createElement('li')
             node.innerHTML = `<a href="#">${User.dex.queue[i]} - Fee: .1DLUX - Trust: 9 - Liquid: 1000000000</a>`
             eAgentNode.appendChild(node)
