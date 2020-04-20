@@ -42,16 +42,17 @@ function me(usr) {
             node.innerHTML = 'Transactions:<form><input type="checkbox" id="hideReportsCB" name="report" value="No" checked></input></form>'
             node.class = "mb-3"
             let txholder = document.getElementById('dluxtxs')
-            txholder.appendChild(node)
+
             for (i in result.feed) {
                 if (result.feed[i].match(user) && !result.feed[i].match('Report')) {
                     let txnode = document.createElement('div')
                     txnode.innerHTML = `
 					   <p class="my-2">${i}<br>${result.feed[i]}</p>
 					   <hr class="my-3 bg-light">`
-                    txholder.insertAdjacentElement('beforeend', txnode)
+                    txholder.insertAdjacentElement('afterbegin', txnode)
                 }
             }
+            txholder.insertAdjacentElement('afterbegin', node)
         })
         .catch(e => { console.log(e) })
 }
