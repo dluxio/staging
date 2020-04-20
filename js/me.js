@@ -37,7 +37,6 @@ function me(usr) {
             return r.json()
         })
         .then(result => {
-            console.log('hstory', result)
             let node = document.createElement('h4')
             node.innerHTML = 'Transactions:<form><input type="checkbox" id="hideReportsCB" name="report" value="No" checked></input></form>'
             node.class = "mb-3"
@@ -55,4 +54,15 @@ function me(usr) {
             txholder.insertAdjacentElement('afterbegin', node)
         })
         .catch(e => { console.log(e) })
+    fetch("https://anyx.io", {
+            body: `{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_account_history\", \"params\":[\"${user}\", -1, 100], \"id\":1}`,
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            method: "POST"
+        })
+        .then(r => { return r.json() })
+        .then(r => {
+            console.log(r)
+        })
 }
