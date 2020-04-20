@@ -262,7 +262,7 @@
 				  	<div id="hiveactions" class="float-right text-right">
 						<h5>768.186 HIVE</h5>
 						<div class="btn-group" role="group" aria-label="DLUX Actions">
-  							<button type="button" class="btn btn-info mr-half"><i class="fas fa-paper-plane mr-2"></i>Send</button>
+  							<button type="button" class="btn btn-info mr-half" data-toggle="modal" id="sendhivemodalbutton" data-target="#sendDluxModal"><i class="fas fa-paper-plane mr-2"></i>Send</button>
   							<div class="btn-group" role="group">
     						<button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
     						<div class="dropdown-menu dropdown-menu-right text-white" aria-labelledby="btnGroupDrop1">
@@ -615,7 +615,7 @@
 		<div class="input-group">
 			<input class="form-control" id="senddluxamount" type="number" step="0.001" min="0.001" placeholder="1.000">
 			<div class="input-group-append">
-      		  <div class="input-group-text">DLUX</div>
+      		  <div class="input-group-text" id="sendformunits">DLUX</div>
     		</div>
 		  </div>
 			 </div>
