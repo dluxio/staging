@@ -37,6 +37,15 @@ function me(usr) {
         document.getElementById('senddluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.dlux.balance/1000),'senddluxamount')">${parseFloat(parseInt(User.dlux.balance)/1000).toFixed(3)} DLUX</a>):`
         document.getElementById('senddluxamount').max = parseFloat(parseInt(User.dlux.balance) / 1000)
     })
+    document.getElementById('poweruphivebutton').addEventListener("click", function() {
+        document.getElementById('sendmodalsend').addEventListener("click", function() {
+            hivepower('senddluxto', 'senddluxamount', 'senddluxmemo')
+        })
+        document.getElementById('sendDluxTitle').innerText = `Power up HIVE`
+        document.getElementById('sendformunits').innerText = 'HIVE'
+        document.getElementById('senddluxamountlab').innerHTML = `Amount (Balance <a href="#" onClick="insertBal(parseFloat(User.hive.balance),'senddluxamount')">${User.hive.balance}</a>):`
+        document.getElementById('senddluxamount').max = parseFloat(User.hive.balance)
+    })
     document.getElementById('sendhivemodalbutton').addEventListener("click", function() {
         document.getElementById('sendmodalsend').addEventListener("click", function() {
             hivesend('senddluxto', 'senddluxamount', 'senddluxmemo')
@@ -151,5 +160,42 @@ function hbdsend(toid, amountid, memoid) {
                     .catch(e => { reject(e) })
             })
             .catch(e => { alert(e) })
+    });
+}
+
+function hivepower(toid, amountid, memoid) {
+    return new Promise((resolve, reject) => {
+        var to = document.getElementById(toid).value || "",
+            amount = parseFloat(document.getElementById(amountid).value).toFixed(3) + ' HIVE',
+            memo = document.getElementById(memoid).value
+        if (to) {
+            checkAccount(to)
+                .then(r => {
+                    Dluxsession.hive_sign([user, [
+                            ['transfer_to_vesting', {
+                                "from": user,
+                                to: to,
+                                amount
+                            }]
+                        ], 'active'])
+                        .then(r => {
+                            resolve(r)
+                        })
+                        .catch(e => { reject(e) })
+                })
+                .catch(e => { alert(e) })
+        } else {
+            Dluxsession.hive_sign([user, [
+                    ['transfer_to_vesting', {
+                        "from": user,
+                        to: "",
+                        amount
+                    }]
+                ], 'active'])
+                .then(r => {
+                    resolve(r)
+                })
+                .catch(e => { reject(e) })
+        }
     });
 }
